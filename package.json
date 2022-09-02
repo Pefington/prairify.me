@@ -1,4 +1,12 @@
 {
+  "name": "Prairify.me",
+  "version": "0.1.0",
+  "description": "Fuck lawns.",
+  "main": "application.js",
+  "repository": "https://github.com/Pefington/prairify.me",
+  "author": "Pierre-François Salmand <maabaa@gmail.com>",
+  "license": "MIT",
+  "private": false,
   "devDependencies": {
     "vite": "^3.0.0",
     "vite-plugin-full-reload": "^1.0.4",
