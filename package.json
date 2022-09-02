@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "vite": "^3.0.9",
-    "vite-plugin-ruby": "^3.1.2"
+    "vite": "^3.0.0",
+    "vite-plugin-full-reload": "^1.0.4",
+    "vite-plugin-ruby": "^3.1.0"
   }
 }
