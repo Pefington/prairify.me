@@ -3,8 +3,12 @@
   <head>
     <title>Prairify.me</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <%# https://fontawesome.com/kits/e05ffa89c7/use %>
+    <script src="https://kit.fontawesome.com/e05ffa89c7.js" crossorigin="anonymous"></script>
 
     <%# https://tailwindcss.com/docs/editor-setup %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
@@ -16,9 +20,11 @@
     <%# https://vite-ruby.netlify.app/guide/rails %>
     <%= vite_client_tag %>
     <%= vite_javascript_tag 'application' %>
+
   </head>
   <body class="flex flex-col h-screen items-center">
-    <main class="flex flex-col flex-1 items-center w-screen">
+    <%= render 'shared/flashes' %>
+    <main class="flex flex-col flex-1 items-center w-full">
       <%= yield %>
     </main>
   </body>
