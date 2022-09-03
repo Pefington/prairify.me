@@ -15,21 +15,60 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
-# Use Vite [https://vite-ruby.netlify.app]
+########################################
+# ~ means gem we added for the project #
+########################################
+
+# ~ Vite [https://github.com/ElMassimo/vite_ruby#readme]
+# Replaces rails crappy front end assets management
 gem "vite_rails"
 
-# Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
+# ~ Tailwind CSS [https://github.com/rails/tailwindcss-rails#readme]
+# More flexible than bootstrap
 gem "tailwindcss-rails"
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+# ~ Faker [https://github.com/faker-ruby/faker#readme]
+# For generating fake data
+gem 'faker'
+
+# ~ bcrypt [https://github.com/bcrypt-ruby/bcrypt-ruby#readme]
+# For password hashing
+gem 'bcrypt'
+
+# ~ devise [https://github.com/heartcombo/devise#readme]
+gem 'devise'
+
+# ~ SendGrid or Mailjet [readme-url]
+# For sending emails
+# TO BE DECIDED BY THE TEAM
+
+# ~ Amazon S3 [https://github.com/aws/aws-sdk-ruby#readme]
+# For active storage
+gem 'aws-sdk-s3', require: false
+
+# ########################################
+
+group :development do
+  # ~ Better Errors [https://github.com/BetterErrors/better_errors#readme]
+  # For better error messages
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  # ~ DatabaseConsistency [https://github.com/djezzzl/database_consistency#readme]
+  # For checking database consistency
+  gem 'database_consistency', require: false
+
+  # ~ table_print [https://github.com/arches/table_print#readme]
+  # For console display of the database
+  gem 'table_print'
+
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
+end
+
+# ########################################
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-end
-
-group :development do
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
 end
