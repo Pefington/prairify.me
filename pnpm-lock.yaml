@@ -1,15 +1,15 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@prettier/plugin-ruby': ^3.2.0
   prettier: ^2.7.1
+  prettier-plugin-tailwindcss: ^0.1.13
   vite: ^3.0.0
   vite-plugin-full-reload: ^1.0.4
   vite-plugin-ruby: ^3.1.0
 
 devDependencies:
-  '@prettier/plugin-ruby': 3.2.0
   prettier: 2.7.1
+  prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
   vite: 3.0.9
   vite-plugin-full-reload: 1.0.4_vite@3.0.9
   vite-plugin-ruby: 3.1.2_vite@3.0.9
@@ -44,12 +44,6 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
-    dev: true
-
-  /@prettier/plugin-ruby/3.2.0:
-    resolution: {integrity: sha512-hCE4OVohe79FBAy0s9QLq8PmUc9cD4NbQtm2NHPWbSMq3mwHCRaxA+KYDRhHvG4AQIcf4YeQM8oRuTNyvLA41w==}
-    dependencies:
-      prettier: 2.7.1
     dev: true
 
   /braces/3.0.2:
@@ -396,6 +390,15 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
+
+  /prettier-plugin-tailwindcss/0.1.13_prettier@2.7.1:
+    resolution: {integrity: sha512-/EKQURUrxLu66CMUg4+1LwGdxnz8of7IDvrSLqEtDqhLH61SAlNNUSr90UTvZaemujgl3OH/VHg+fyGltrNixw==}
+    engines: {node: '>=12.17.0'}
+    peerDependencies:
+      prettier: '>=2.2.0'
+    dependencies:
+      prettier: 2.7.1
     dev: true
 
   /prettier/2.7.1:

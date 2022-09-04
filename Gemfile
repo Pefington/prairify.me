@@ -62,6 +62,16 @@ group :development do
   # For console display of the database
   gem 'table_print'
 
+  # ~ erb-formatter [https://github.com/nebulab/erb-formatter#readme]
+  # For formatting ERB files
+  gem 'erb-formatter'
+
+  # ~ rubocop [https://github.com/rubocop/rubocop#readme]
+  # For code quality
+  gem 'rubocop', require: false
+  gem 'rubocop-faker'
+  gem 'rubocop-rails', require: false
+
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end

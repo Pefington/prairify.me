@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "craigmaslowski.erb",
+    "rayhanw.erb-helpers",
+    "divyamrit.alpine-snippets",
+    "lorankloeze.ruby-rubocop-revived",
+    "elia.erb-formatter"
+  ]
+}

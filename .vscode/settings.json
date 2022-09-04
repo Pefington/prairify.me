@@ -1,0 +1,19 @@
+{
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[erb]": {
+    "editor.defaultFormatter": "elia.erb-formatter",
+    "editor.formatOnSave": false
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "files.associations": {
+    "*.html": "html",
+    "*.js": "javascript",
+    "*.html.erb": "erb",
+    "*.js.erb": "javascript"
+  }
+}
