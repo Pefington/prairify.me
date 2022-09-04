@@ -1,6 +1,8 @@
 {
   "devDependencies": {
+    "@prettier/plugin-ruby": "^3.2.0",
     "prettier": "^2.7.1",
+    "prettier-plugin-erb": "^0.4.0",
     "vite": "^3.0.0",
     "vite-plugin-full-reload": "^1.0.4",
     "vite-plugin-ruby": "^3.1.0"
@@ -20,5 +22,9 @@
   ],
   "license": "ISC",
   "private": true,
-  "scripts": {}
+  "scripts": {
+    "start": "bundle install; gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs; pnpm install",
+    "dev": "bin/dev",
+    "format": "bundle exec rbprettier --write '**/*'; pnpx prettier --write '**/*'"
+  }
 }
