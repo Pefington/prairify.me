@@ -7,7 +7,7 @@
     "editor.formatOnSave": false
   },
   "[ruby]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "LoranKloeze.ruby-rubocop-revived",
     "editor.formatOnSave": false
   },
   "files.associations": {
