@@ -1,5 +1,7 @@
 {
   "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "vite": "^3.0.0",
     "vite-plugin-full-reload": "^1.0.4",
@@ -10,8 +12,17 @@
   "description": "Fuck lawns.",
   "main": "application.js",
   "repository": "https://github.com/Pefington/prairify.me",
-  "author": "Pierre-François Salmand <maabaa@gmail.com>",
+  "authors": [
+    "Pierre Andrieu - https://github.com/PierreAND",
+    "Gregory Laigneau - https://github.com/GregoryLAIGNEAU",
+    "Sam Linard - https://github.com/Samsou1",
+    "Noellie Peuch - https://github.com/pandaka87",
+    "Chris Pfeiffer - https://github.com/chrispfr",
+    "Pierre-François Salmand - https://github.com/Pefington"
+  ],
   "license": "ISC",
   "private": true,
-  "scripts": {}
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
 }
