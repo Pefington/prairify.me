@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@prettier/plugin-ruby': ^3.2.0
   prettier: ^2.7.1
-  prettier-plugin-erb: ^0.4.0
   vite: ^3.0.0
   vite-plugin-full-reload: ^1.0.4
   vite-plugin-ruby: ^3.1.0
@@ -11,7 +10,6 @@ specifiers:
 devDependencies:
   '@prettier/plugin-ruby': 3.2.0
   prettier: 2.7.1
-  prettier-plugin-erb: 0.4.0_6jq4yqbf5bzz2inzptf6nimnpy
   vite: 3.0.9
   vite-plugin-full-reload: 1.0.4_vite@3.0.9
   vite-plugin-ruby: 3.1.2_vite@3.0.9
@@ -398,25 +396,6 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
-    dev: true
-
-  /prettier-html-templates/0.1.0_prettier@2.7.1:
-    resolution: {integrity: sha512-KdLveYzO2kJLiwUAebd5UFeKP8h3OqFhOiLbkgeIuS1WNoCRTyxW4KuyGfbh3F+Rp/2A6mipRxCq2zPi+//pmg==}
-    peerDependencies:
-      prettier: ^2.0.0
-    dependencies:
-      prettier: 2.7.1
-    dev: true
-
-  /prettier-plugin-erb/0.4.0_6jq4yqbf5bzz2inzptf6nimnpy:
-    resolution: {integrity: sha512-5RAdvT5BBf29hfC8GmqiMRFiD5g4BZGZDERZHvM5ouOor2TVT0jM0ntmCzFpS2Q32OkUAGFYsRxXDoYscvToXA==}
-    peerDependencies:
-      '@prettier/plugin-ruby': ^1.0.0
-      prettier: '>=2.0.0 <2.3'
-    dependencies:
-      '@prettier/plugin-ruby': 3.2.0
-      prettier: 2.7.1
-      prettier-html-templates: 0.1.0_prettier@2.7.1
     dev: true
 
   /prettier/2.7.1:
