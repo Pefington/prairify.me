@@ -1,119 +1,49 @@
 # [prairify.me](https://prairify.me)
 
-<!-- ![Image](https://prairify.me/public/images/midsummer-prairie.png) -->
+# Vocal01 tech stack extraordinaire :beetle: :evergreen_tree: :bee:
 
-## In a nutshell, the app would help a person or company turn a lawn into a patch of prairie
+## Clone the repo first
 
-It is inspired by the [r/NoLawns](https://www.reddit.com/r/NoLawns/top/?t=all) subreddit:
+```sh
+git clone git@github.com:Pefington/prairify.me.git
+```
 
-> Discussions and advice for anyone looking for an alternative to the boring grassy lawn. With an emphasis on **native planting**, conservation and **pollination**. No Lawns is a way to utilise yard space other than traditional grass lawn such as flowers, fruits and veggies, herbs, and paths.
-> No Lawns is a place where we encourage multi-species lawns and moving away from a monoculture lawn.
+## To use this stack, there is a _small_ installfest
 
-## 1. Présentation
+```sh
+# 1. First install Ruby 3.0.4
+rvm install 3.0.4
 
-> Présente en un ou deux paragraphes ton application. Commence par le besoin : à quel besoin réponds-tu ?
+# 2. Then install NVM: Node Version Manager. It's like RVM for Node.JS
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
-Le besoin d'aider l'environnement dans une demarche collective et agréable, nous responsabiliser sur l'impact des pelouses sur la nature.
+# 3. Then install Node.JS v16.17.0. LTS means "Long Term Support"
+nvm install --lts
 
-> Puis décris ton application brièvement de manière compréhensible. Si c'est long chiant et ennuyeux, les gens vont s'arrêter à ce paragraphe. Si c'est trop vague, les gens vont penser que tu ne sais pas ce que tu veux. C'est normal d'être dans le brouillard, mais ce n'est pas normal de ne pas pouvoir décrire son application en un paragraphe.
+# 4. If it goes "nVm: cOmMaNd NoT fOuNd" then reload your shell config:
+source ~/.zshrc
+# or
+source ~/.bashrc
 
-**En un mot, aider un utilisateur a transformer son gazon uniquement décoratif en magnifique petit bout de prairie, avec sa faune de papillons, abeilles , etc.**
+  # 4.1 Check you're good:
+  node -v
 
-## 2. Parcours utilisateur
+# 5. Install pnpm, it's a package manager for Node.JS, like bundle for gems.
+sudo npm install -g pnpm
 
-> Décris le parcours utilisateur de ton application. En terme de produit à quoi elle ressemblera.
+  # 5.1 Check you're good:
+  pnpm -v
 
-- User va ouvrir la page web
-- User verra un carousel de photos d'exemples de résultats possibles
-- Le site demandera à l'utilisateur de sélectionner une region (post THP)
-- User verra une liste de plantes compatibles avec la region
+# 6. Use this nice script to install all the dependencies:
+pnpm setmeup
 
-  - Jolies cards avec une ou deux images par plante
-  - Le(s) nom(s) de la plante
-  - Plus d'informations sur la plante (vertus médicinales, preparations etc)
-  - Un système d’icônes ludique qui montre la faune de la plante (e.g. abeille, papillon, coccinelle...)
-  - Le prix des graines, potentiellement
-  - Une liste basique de ressources DIY
+# 7. The server (port 3000) can be started with:
+pnpm dev
+# or
+bin/dev
 
-- Invitation a la creation de compte pour acceder a :
-  - **La creation d'un projet utilisant les plantes sélectionnées**
-    - dashboard
-    - photo initiale
-    - checklist avec les différentes plantes
-  - Une liste de plantes modifiable
-  - Les ressources DIY customisables (filtrage, favoris, sauvegardées en BDD)
+# 8. Before a commit, please run:
+pnpm format # <= I failed to automate this
+```
 
-## 3. Concrètement et techniquement
-
-> Dans cette partie, tu pourras décrire l'aspect technique du projet.
-
-### 3.1. Base de données
-
-> Comment tu vois la base de données de l'application ?
-
-![Diagram](https://prairify.me/public/images/db-diagram.png)
-_Sur le diagramme, \* signifie many, 1 signifie 1._
-
-Un User pourra avoir plusieurs projets.
-
-- **Une table Projet (joint presque tout)**
-- Une table User
-- Une table Region
-- Des tables comment et like pour les projets
-- Une table plante, par projet aussi, qui a une table insectes
-
-### 3.2. Front
-
-> Quels sont les composants dont vous aurez besoin ? Aurez-vous besoin d'un peu de front dynamique avec JavaScript pour la faire fonctionner ?
-
-On tenterait bien TailwindCSS pour le front, et un peu de JS pour les interactions et l'UI.
-Fallback: Bootstrap
-
-### 3.3. Backend
-
-> De quoi avez-vous besoin pour le backend ? Quelles sont les APIs en back que vous allez brancher et utiliser ?
-
-- API de recherche (google ?)
-  - Recherche inversée sur la DB des plantes (e.g. Lavande dans quelle region...)
-- API de partage de projets (Facebook, twitter, etc) => étudier la faisabilité
-- API de géolocalisation => étudier la faisabilité
-
-### 3.4. Mes besoins techniques
-
-Équipe deja constituée, on a des competences bien variées.
-
-## 4. La version minimaliste mais fonctionnelle qu'il faut avoir livré la première semaine
-
-> Nous allons vous demander de livrer une version minimaliste mais fonctionnelle à la fin de la première semaine. Décris ce que vous voulez avoir fait à la fin de la première semaine. Pense minimaliste, fonctionnel, efficace. Comment avec le moins de code possible vous arrivez à donner une version fonctionnelle de l'application.
-
-- User avec compte
-- Carousel de photos d'exemples de résultats possibles
-- Creation de projet
-- Une region test (Ile de France? Sud ?)
-- Liste de plantes (cards)
-- Active Storage pour les photos
-- Les insectes par plante (sans icônes au moment de la création)
-- Une section avec des cards de ressources DIY
-
-## 5. La version que l'on présentera aux jury
-
-> La deuxième semaine vous allez ajouter des fonctionnalités pour améliorer l'expérience utilisateurs de votre application. Quelles fonctionnalités tu aimerais bien ajouter ?
-
-- Plus d'informations sur la plante (vertus médicinales, preparations etc)
-- Un système d’icônes ludique qui montre la faune de la plante (e.g. abeille, papillon, coccinelle...)
-- Adaptation de la liste de ressources DIY par projet
-- Le prix des graines, potentiellement
-
-- checklist avec les différentes plantes
-  - Une liste de plantes modifiable
-  - Les ressources DIY customisables (filtrage, favoris, sauvegardées en BDD)
-
-## 6. Notre mentor
-
-Qui est ton mentor ?
-
-"Josselin" Muller
-
-## 7. Options de features si on continue apres THP (post THP) ou en semaine
-
-- CMS (post THP)
+## Thank you for reading!
