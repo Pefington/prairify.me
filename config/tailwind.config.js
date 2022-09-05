@@ -10,6 +10,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        FjallaOne: ["Fjalla One", ...defaultTheme.fontFamily.sans],
+        Cantarell: ["Cantarell", ...defaultTheme.fontFamily.sans],
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
     },
