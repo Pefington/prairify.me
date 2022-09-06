@@ -1,5 +1,7 @@
 {
   "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "vite": "^3.0.0",
@@ -26,7 +28,13 @@
     "dev": "bin/dev",
     "format-rb": "rubocop -A '**/*.rb'",
     "format-erb": "bundle exec erb-format --write",
-    "format-rest": "prettier --write '**/*.{js, json, md, css, ts, yml}'",
-    "format": "pnpm format-rb && pnpm format-erb && pnpm format-rest"
+    "format-rest": "prettier --write '**/*.{js,json,yml,yaml,css,ts,md,js.erb,html}'",
+    "format": "pnpm format-rb && pnpm format-erb && pnpm format-rest",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{rb}": "rubocop --auto-correct",
+    "*.{html.erb}": "bundle exec erb-format --write",
+    "*.{js,json,yml,yaml,css,ts,md,js.erb,html}": "prettier --write"
   }
 }
