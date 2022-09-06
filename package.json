@@ -33,8 +33,8 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{rb}": "rubocop --auto-correct",
-    "*.{html.erb}": "bundle exec erb-format --write",
+    "*.rb": "rubocop --auto-correct",
+    "*.html.erb": "bundle exec erb-format --write",
     "*.{js,json,yml,yaml,css,ts,md,js.erb,html}": "prettier --write"
   }
 }
