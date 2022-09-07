@@ -14,11 +14,20 @@ module.exports = {
         Cantarell: ["Cantarell", ...defaultTheme.fontFamily.sans],
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: {
+        'google-signin': "url('images/btn_google_signin_dark_normal_web.png')",
+      }
+    },
+  },
+  variants: {
+    extend: {
+      lineClamp: ["hover"],
     },
   },
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
   ],
 };
