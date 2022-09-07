@@ -38,6 +38,7 @@ module SearchHelper
     results = []
     taxa_data.size.times do |index|
       hash_data = {}
+      hash_data[:id] = taxa_data[index]["id"]
       hash_data[:common_name] = taxa_data[index]["preferred_common_name"].capitalize
       hash_data[:scientific_name] = taxa_data[index]["name"]
       hash_data[:wiki] = taxa_data[index]["wikipedia_url"]
