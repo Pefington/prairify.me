@@ -3,14 +3,14 @@
 <%else%>
   Results for: <%= @place %>
   <div class="flex">
-    <% @plants.size.times do |index|%>
+    <% 10.times do%>
       <div class="box">
-      <%=@plants[index][:common_name]%><br>
-      <%=@plants[index][:scientific_name]%><br>
-      <%=@plants[index][:wiki]%><br>
-      <%=@plants[index][:picture_url]%>
-      test
+        <%=@plants.sample[:common_name]%><br>
+        <%=@plants.sample[:scientific_name]%><br>
+        <%=@plants.sample[:wiki]%><br>
+        <%=@plants.sample[:picture_url]%><br>
       </div>
     <%end%>
+    
   <%end%>
 </div>
