@@ -16,24 +16,29 @@ module.exports = {
       },
       textColor: {
         skin: {
-          base: 'var(--color-text-base)',
-          muted: 'var(--color-text-muted)',
-          inverted: 'var(--color-text-inverted)',
-        }
+          base: "var(--color-text-base)",
+          muted: "var(--color-text-muted)",
+          inverted: "var(--color-text-inverted)",
+        },
       },
       backgroundColor: {
         skin: {
-          'button-accent': 'var(--color-button-accent)',
-          'button-accent-hover': 'var(--color-button-accent-hover)',
-          'button-muted': 'var(--color-button-muted)',
-          'button-muted-hover': 'var(--color-button-muted-hover)',
-          'button-warning': 'var(--color-button-warning)',
-          'button-warning-hover': 'var(--color-button-warning-hover)'
-        }
+          "button-accent": "var(--color-button-accent)",
+          "button-accent-hover": "var(--color-button-accent-hover)",
+          "button-muted": "var(--color-button-muted)",
+          "button-muted-hover": "var(--color-button-muted-hover)",
+          "button-warning": "var(--color-button-warning)",
+          "button-warning-hover": "var(--color-button-warning-hover)",
+        },
       },
       backgroundImage: {
-        'google-signin': "url('images/btn_google_signin_dark_normal_web.png')",
-      }
+        "google-signin": "url('images/btn_google_signin_dark_normal_web.png')",
+      },
+      borderColor: {
+        skin: {
+          "border-base": "var(--color-border-base)",
+        },
+      },
     },
   },
   variants: {
