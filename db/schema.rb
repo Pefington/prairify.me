@@ -27,8 +27,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_121042) do
     t.integer "place_id"
     t.datetime "begin"
     t.datetime "finish"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
