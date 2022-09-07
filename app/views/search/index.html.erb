@@ -1,0 +1,16 @@
+<%if @plants == nil%>
+  Sorry, couldn't find any plant, please try again.
+<%else%>
+  Results for: <%= @place %>
+  <div class="flex">
+    <% 10.times do%>
+      <div class="box">
+        <%=@plants.sample[:common_name]%><br>
+        <%=@plants.sample[:scientific_name]%><br>
+        <%=@plants.sample[:wiki]%><br>
+        <%=@plants.sample[:picture_url]%><br>
+      </div>
+    <%end%>
+    
+  <%end%>
+</div>
