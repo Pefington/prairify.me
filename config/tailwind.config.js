@@ -14,6 +14,9 @@ module.exports = {
         Cantarell: ["Cantarell", ...defaultTheme.fontFamily.sans],
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: {
+        'google-signin': "url('images/btn_google_signin_dark_normal_web.png')",
+      }
     },
   },
   plugins: [
