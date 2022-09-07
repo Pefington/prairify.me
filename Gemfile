@@ -52,6 +52,11 @@ gem 'devise'
 # For active storage
 gem 'aws-sdk-s3', require: false
 
+
+# ~
+gem 'open-uri'
+gem 'json'
+
 # ########################################
 
 group :development do
