@@ -20,5 +20,7 @@ class User < ApplicationRecord
     user ||= User.create(email: data['email'],
                          password: Devise.friendly_token[0, 20])
     user
+
+    
   end
 end
