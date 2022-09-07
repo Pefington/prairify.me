@@ -27,8 +27,8 @@
     <% if current_user %>
       <%= button_to  "Sign out", destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to "Login", user_session_path %>
-      <%= link_to "Register", new_user_registration_path %>
+      <%= link_to "Login", user_session_path, class: "link" %>
+      <%= link_to "Register", new_user_registration_path, class: "link" %>
     <% end %>
     <main class="flex flex-col flex-1 items-center w-full">
       <%= yield %>
