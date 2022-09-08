@@ -274,6 +274,8 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
+    rubocop-rspec (2.12.1)
+      rubocop (~> 1.31)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     sprockets (4.1.1)
@@ -338,6 +340,7 @@ DEPENDENCIES
   rubocop
   rubocop-faker
   rubocop-rails
+  rubocop-rspec
   sprockets-rails
   table_print
   tailwindcss-rails
