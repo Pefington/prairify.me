@@ -26,7 +26,11 @@
 
   body,
   html {
-    @apply font-Cantarell;
+    @apply font-Cantarell text-skin-base;
+  }
+
+  p {
+    @apply font-semibold;
   }
 
   h1,
