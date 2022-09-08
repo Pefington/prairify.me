@@ -107,6 +107,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.5.0)
     digest (3.1.0)
     dry-cli (0.7.0)
     erb-formatter (0.3.0)
@@ -155,10 +156,6 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
-    open-uri (0.2.0)
-      stringio
-      time
-      uri
     oauth2 (2.0.8)
       faraday (>= 0.17.3, < 3.0)
       jwt (>= 1.0, < 3.0)
@@ -181,6 +178,10 @@ GEM
     omniauth-rails_csrf_protection (1.0.1)
       actionpack (>= 4.2)
       omniauth (~> 2.0)
+    open-uri (0.2.0)
+      stringio
+      time
+      uri
     orm_adapter (0.5.0)
     parallel (1.22.1)
     parser (3.1.2.1)
@@ -231,6 +232,23 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-rails (6.0.0.rc1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
+    rspec-support (3.11.0)
     rubocop (1.36.0)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -304,13 +322,14 @@ DEPENDENCIES
   erb-formatter
   faker
   json
-  open-uri
   omniauth
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
+  open-uri
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
+  rspec-rails (~> 6.0.0.rc1)
   rubocop
   rubocop-faker
   rubocop-rails

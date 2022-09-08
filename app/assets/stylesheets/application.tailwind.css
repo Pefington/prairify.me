@@ -5,7 +5,27 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  :root {
+    --color-text-base: #585d65;
+    --color-text-muted: #3db388;
+    --color-text-title: #2ea57a;
+    --color-text-inverted: #ffffff;
+    --color-button-accent: #12433c;
+    --color-button-accent-hover: #1f5b49;
+    --color-button-muted: #2ea57a;
+    --color-button-muted-hover: #3db388;
+    --color-button-warning: #f25834;
+    --color-button-warning-hover: #f67c12;
+    --color-border-base: #12433c;
+    --color-back-nav: #2ea57a;
+  }
+
+  * {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+
+  body,
+  html {
     @apply font-Cantarell;
   }
 
@@ -15,16 +35,44 @@
   h4,
   h5,
   h6 {
-    @apply font-FjallaOne;
+    @apply font-FjallaOne text-skin-title drop-shadow;
   }
 }
-
-/*
 
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .btn {
+    @apply text-skin-inverted bg-skin-button-accent m-4 transform rounded-md px-6 py-2 font-medium capitalize tracking-wide shadow;
+  }
+  ,
+  .btn:hover {
+    @apply bg-skin-button-accent-hover;
+  }
+  ,
+  .btn-muted {
+    @apply text-skin-inverted bg-skin-button-muted m-4 transform rounded-md px-6 py-2 font-medium capitalize tracking-wide shadow;
+  }
+  ,
+  .btn-muted:hover {
+    @apply bg-skin-button-muted-hover;
+  }
+  ,
+  .btn-warning {
+    @apply text-skin-inverted bg-skin-button-warning m-4 transform rounded-md px-6 py-2 font-medium capitalize tracking-wide shadow;
+  }
+  ,
+  .btn-warning:hover {
+    @apply bg-skin-button-warning-hover;
+  }
+  ,
+  .form-field {
+    @apply text-skin-muted border-skin-border-base mt-2 block w-full rounded-md bg-white px-4 py-2 shadow focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300;
+  }
+  ,
+  .text-muted {
+    @apply text-skin-muted;
+  }
+  ,
+  .link {
+    @apply text-skin-muted;
   }
 }
-
-*/
