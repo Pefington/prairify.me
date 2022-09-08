@@ -3,7 +3,7 @@
     <div class="lg:flex lg:items-center lg:justify-between">
       <div class="flex items-center justify-between">
         <div class="text-xl font-semibold text-gray-700">
-          <a class="text-2xl font-bold text-gray-800 transition-colors duration-300 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">Prairify</a>
+          <%= link_to "Prairify", root_path, class: "text-2xl font-bold text-gray-800 transition-colors duration-300 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" %>
         </div>
         <div class="flex lg:hidden">
           <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
@@ -18,19 +18,22 @@
       </div>
       <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
         <div class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
+        <%= link_to "Home", root_path, class: "px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
           <%= link_to "Team", team_path, class: "px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
           <%= link_to "About", about_path, class: "px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
           <%= link_to "Contact", contact_path, class: "px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
           <%= link_to "Blog", blog_path, class: "px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" %>
         </div>
         <%= render "layouts/search_bar" %>
-        <div x-data="{isOpen: false}" class="ml-10 relative">
+        <div x-data="{isOpen: false}" class="relative">
+        <div class="lg:pl-6">
           <button x-on:click="isOpen = !isOpen" type="button" class="flex items-center focus:outline-none" aria-label="toggle profile dropdown">
             <div class="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
               <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" class="object-cover w-full h-full" alt="avatar">
             </div>
             <h3 class="mx-2 text-gray-700 dark:text-gray-200 lg:hidden">NOM DE PROFIL</h3>
           </button>
+        </div>
           <div
             x-cloak
             x-on:click.outside="isOpen = false"
