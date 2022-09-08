@@ -1,4 +1,8 @@
 class LikesController < ApplicationController
+  def new
+
+  end
+
   def create
 
   end
@@ -6,4 +10,5 @@ class LikesController < ApplicationController
   def destroy
     
   end
+
 end
