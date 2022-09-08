@@ -1,17 +1,26 @@
 <%if @plants == nil%>
-  Sorry, couldn't find any plant, please try again.
+  <p>Sorry, couldn't find any plant, please try again.</p>
 <%else%>
+
   <h1>Results for: <%= @place %></h1>
-  <h2>Not where you live? Please try again</h2>
-  <%= render 'layouts/search_bar'%>
-  <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-    <% 10.times do%>
+
+  <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+    <% 12.times do%>
       <% @plant = @plants.sample%>
       <%= render 'layouts/plant'%>
+
     <%end%>
   </div>
 <%end%>
-Do you want to create a project with such plants?
-<div class="flex justify-between items-center">
-  <%= link_to 'New project', new_project_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", params:[@plants] %>
+
+<div class="flex flex-col justify-between items-center p-4">
+ <h2>Not where you live? Please try again</h2>
+  <%= render 'layouts/search_bar'%>
 </div>
+
+<div class="flex flex-col justify-between items-center p-4 m-4">
+  <h2>Do you want to create a project with such plants?</h2>
+  <%= link_to 'New project', new_project_path, class: "btn-muted", params:[@plants] %>
+</div>
+
+

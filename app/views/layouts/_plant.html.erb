@@ -1,11 +1,12 @@
-<div class="rounded overflow-hidden shadow-lg">
-  <img class="w-full" src=<%=@plants.sample[:picture_url]%> alt="Plant">
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2">
-      <a href =<%=@plant[:wiki]%>>
-        <h3>Common name: <%=@plant[:common_name]%></h3>
-        <h3>Scientific name: <%=@plant[:scientific_name]%></h3>
-      </a>
+<div class="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+    <img class="object-cover object-center w-full h-72" src="<%=@plant[:picture_url]%>" alt="plant-picture">
+
+    <div class="px-6 py-4">
+        <h1 class="text-xl font-semibold text-gray-800 dark:text-white"><%=@plant[:common_name]%></h1>
+
+        <p class="py-2 text-gray-700 dark:text-gray-400"><%=@plant[:scientific_name]%></p>
+
+        <%= link_to 'En savoir +', @plant[:wiki], class:"btn-muted"%>
+
     </div>
-  </div>
 </div>
