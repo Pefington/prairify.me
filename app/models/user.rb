@@ -7,6 +7,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   after_initialize :set_default_role, if: :new_record?
+  has_many :likes
+  has_many :projects, through: :likes
 
   after_create :welcome_send
   def welcome_send

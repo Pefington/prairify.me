@@ -1,0 +1,11 @@
+<div class="rounded overflow-hidden shadow-lg">
+  <img class="w-full" src=<%=@plants.sample[:picture_url]%> alt="Plant">
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2">
+      <a href =<%=@plant[:wiki]%>>
+        <h3>Common name: <%=@plant[:common_name]%></h3>
+        <h3>Scientific name: <%=@plant[:scientific_name]%></h3>
+      </a>
+    </div>
+  </div>
+</div>
