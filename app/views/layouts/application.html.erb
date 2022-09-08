@@ -31,6 +31,7 @@
       <%= link_to "Register", new_user_registration_path, class: "link" %>
     <% end %>
     <main class="flex flex-col flex-1 items-center w-full">
+      <%= render 'layouts/search_bar' %>
       <%= yield %>
     </main>
   </body>

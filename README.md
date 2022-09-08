@@ -42,7 +42,8 @@ pnpm dev
 # or
 bin/dev
 
-# 8. Staged files will be formatted automatically on commit.
+# 8. Before a commit, please run:
+pnpm format # <= I failed to automate this
 ```
 
 ## Thank you for reading!
