@@ -1,11 +1,13 @@
 module SearchHelper
 
   def get_place(place)
-    place_url = "https://api.inaturalist.org/v1/search?q=#{place}&sources=places&per_page=1"
+    place_url = "https://api.inaturalist.org/v1/search?q=#{place.gsub(" ", "%20")}&sources=places&per_page=1"
     place_data = JSON.load(URI.open(place_url))['results'][0]
     if place_data != nil
       if place_data['matches'] != nil
-        [place_data['matches'].join(" "), place_data['record']['id']]
+        return [place_data['matches'].join(" "), place_data['matches']['id']]
+      elsif place_data['record'] != nil
+        return [place_data['record']['display_name'], place_data['record']['id']]
       else
         nil
       end
