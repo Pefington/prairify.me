@@ -1,16 +1,24 @@
 <%if @plants == nil%>
-  Sorry, couldn't find any plant, please try again.
+  <p>Sorry, couldn't find any plant, please try again.</p>
 <%else%>
-  Results for: <%= @place %>
-  <div class="flex">
+  <h3>Results for:</h3> <p><%= @place %></p>
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mx-12 my-8">
     <% 10.times do%>
-      <div class="box">
-        <%=@plants.sample[:common_name]%><br>
-        <%=@plants.sample[:scientific_name]%><br>
-        <%=@plants.sample[:wiki]%><br>
-        <%=@plants.sample[:picture_url]%><br>
-      </div>
+<div class="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+    <img class="object-cover object-center w-full h-56" src="<%=@plants.sample[:picture_url]%>" alt="plant-picture">
+
+    <div class="px-6 py-4">
+        <h1 class="text-xl font-semibold text-gray-800 dark:text-white"><%=@plants.sample[:common_name]%></h1>
+
+        <p class="py-2 text-gray-700 dark:text-gray-400"><%=@plants.sample[:scientific_name]%></p>
+
+        <p class="py-2 text-gray-700 dark:text-gray-400"><%=@plants.sample[:wiki]%></p>
+
+    </div>
+</div>
     <%end%>
     
   <%end%>
 </div>
+
+
