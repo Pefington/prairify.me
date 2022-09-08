@@ -14,3 +14,8 @@
     
   <%end%>
 </div>
+
+Do you want to create a project with such plants?
+<div class="flex justify-between items-center">
+  <%= link_to 'New project', new_project_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", params:[@plants] %>
+</div>
