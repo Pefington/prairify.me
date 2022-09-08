@@ -19,10 +19,12 @@ module.exports = {
           base: "var(--color-text-base)",
           muted: "var(--color-text-muted)",
           inverted: "var(--color-text-inverted)",
+          title: "var(--color-text-title)",
         },
       },
       backgroundColor: {
         skin: {
+          "back-nav": "var(--color-back-nav)",
           "button-accent": "var(--color-button-accent)",
           "button-accent-hover": "var(--color-button-accent-hover)",
           "button-muted": "var(--color-button-muted)",
