@@ -42,13 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_171437) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "join_table_project_plants", force: :cascade do |t|
-    t.bigint "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_join_table_project_plants_on_project_id"
-  end
-
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "project_id"
@@ -56,6 +49,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_171437) do
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_likes_on_project_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.bigint "project_id"
+    t.integer "inaturalist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_plants_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
