@@ -23,10 +23,26 @@
     <strong class="block font-medium mb-1">Finish:</strong>
     <%= project.finish %>
   </p>
+  
+  <%= form_with (model: like, method: toggle_like_dislike) do |form| %>
+  <button class="bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+    <i class="fas fa-heart"></i>
+  </button>
+  <%end%>
+  <button class="bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+    <i class="fa-solid fa-thumbs-up"></i>
+  </button>
+  <button class="bg-cyan-500 text-white active:bg-cyan-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+    <i class="fa-solid fa-thumbs-up"></i>
+  </button>
+  <button class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+    <i class="fas fa-heart"></i>
+  </button>
 
   <% if action_name != "show" %>
     <%= link_to "Show this project", project, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this project', edit_project_path(project), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
   <% end %>
+
 </div>
