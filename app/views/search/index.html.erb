@@ -1,24 +1,20 @@
 <%if @plants == nil%>
   <p>Sorry, couldn't find any plant, please try again.</p>
 <%else%>
-  <h3>Results for:</h3> <p><%= @place %></p>
-  <div class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mx-12 my-8">
+
+  <h1>Results for: <%= @place %></h1>
+  <h2>Not where you live? Please try again</h2>
+  <%= render 'layouts/search_bar'%>
+  <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
     <% 10.times do%>
-<div class="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-    <img class="object-cover object-center w-full h-56" src="<%=@plants.sample[:picture_url]%>" alt="plant-picture">
+      <%= render 'layouts/plant'%>
 
-    <div class="px-6 py-4">
-        <h1 class="text-xl font-semibold text-gray-800 dark:text-white"><%=@plants.sample[:common_name]%></h1>
-
-        <p class="py-2 text-gray-700 dark:text-gray-400"><%=@plants.sample[:scientific_name]%></p>
-
-        <p class="py-2 text-gray-700 dark:text-gray-400"><%=@plants.sample[:wiki]%></p>
-
-    </div>
-</div>
     <%end%>
-    
-  <%end%>
+  </div>
+<%end%>
+Do you want to create a project with such plants?
+<div class="flex justify-between items-center">
+  <%= link_to 'New project', new_project_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", params:[@plants] %>
 </div>
 
 
