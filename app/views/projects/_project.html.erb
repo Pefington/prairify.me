@@ -9,21 +9,33 @@
     <%= project.description %>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Place:</strong>
-    <%= project.place_id %>
-  </p>
+  <% if project.photos.attached?%>
+    <% project.photos.each do |photo|%>
+      <%= image_tag photo %>
+    <%end%>
+  <%end%>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Begin:</strong>
-    <%= project.begin %>
-  </p>
+  <% if project.place_id != nil%>
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Place:</strong>
+      <%= project.place_id %>
+    </p>
+  <%end%>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Finish:</strong>
-    <%= project.finish %>
-  </p>
-  <%if user_logged_in?%>
+  <% if project.begin != nil%>
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Begin:</strong>
+      <%= project.begin %>
+    </p>
+  <%end%>
+
+  <% if project.finish != nil%>
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Finish:</strong>
+      <%= project.finish %>
+    </p>
+  <%end%>
+  <%if user_signed_in?%>
     <button class="bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
       <i class="fas fa-heart"></i>
     </button>
