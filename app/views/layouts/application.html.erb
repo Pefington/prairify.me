@@ -23,15 +23,11 @@
 
   </head>
   <body class="flex flex-col h-screen items-center">
+    <header class="w-screen bg-skin-back-nav text-skin-inverted">
+      <%= render 'layouts/navbar' %>
+    </header>
     <%= render 'shared/flashes' %>
-    <% if current_user %>
-      <%= button_to  "Sign out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Login", user_session_path, class: "link" %>
-      <%= link_to "Register", new_user_registration_path, class: "link" %>
-    <% end %>
     <main class="flex flex-col flex-1 items-center w-full">
-      <%= render 'layouts/search_bar' %>
       <%= yield %>
     </main>
     <footer class="bg-skin-back-nav w-screen text-skin-inverted py-3 sm:px-16 flex flex-col items-center justify-evenly sm:flex-row sm:justify-between sm:items-center">
