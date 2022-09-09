@@ -11,6 +11,7 @@ class Project < ApplicationRecord
 
   def project_post
     UserMailer.email_project(self).deliver_now
-    AdminMailer.project_start(self).deliver_now
+    AdminMailer.project_email(self).deliver_now
   end
+
 end

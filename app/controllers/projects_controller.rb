@@ -8,6 +8,10 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   def show
+    @project = Project.find(params[:id])
+    @likes = @project.likes.count
+    @liked = helpers.liked?(@project)
+    @favourite = helpers.favourite?(@project)
   end
 
   # GET /projects/new

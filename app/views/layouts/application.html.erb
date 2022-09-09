@@ -22,16 +22,12 @@
     <%= vite_javascript_tag 'application' %>
 
   </head>
-  <body class="flex flex-col h-screen items-center">
-    <header class="w-screen bg-skin-back-nav text-skin-inverted">
-      <%= render 'layouts/navbar' %>
-    </header>
+  <body class="flex flex-col items-center h-full">
+    <%= render 'layouts/navbar' %>
     <%= render 'shared/flashes' %>
-    <main class="flex flex-col flex-1 items-center w-full justify-center">
+    <main class="flex flex-col flex-1 items-center w-full justify-center pt-12 pb-16">
       <%= yield %>
     </main>
-    <footer class="bg-skin-back-nav w-screen text-skin-inverted py-3 sm:px-16 flex flex-col items-center justify-evenly sm:flex-row sm:justify-between sm:items-center">
-      <%= render 'layouts/footer'%>
-    </footer>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
