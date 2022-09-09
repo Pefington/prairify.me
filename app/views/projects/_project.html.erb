@@ -1,12 +1,12 @@
 <section class="bg-white flex flex-1 justify-center">
  <div id="<%= dom_id project %>" class=" p-6 rounded-lg shadow-lg w-[500px]">
   <p class="my-5">
-    <dIv><h1>Deccription :<h1></div>
+    <h1>Name:</h1>
     <%= project.name %>
   </p>
 
   <p class="my-5">
-    <dIv><h1>Deccription :<h1></div>
+    <h1>Description:</h1>
     <%= project.description %>
   </p>
 
@@ -18,21 +18,21 @@
 
   <% if project.place_id != nil%>
     <p class="my-5">
-      <dIv><h1>Place :<h1></div>
+      <h1>Place:</h1>
       <%= project.place_id %>
     </p>
   <%end%>
 
   <% if project.begin != nil%>
     <p class="my-5">
-      <dIv><h1>Begin :<h1></div>
+      <h1>Begin:</h1>
       <%= project.begin %>
     </p>
   <%end%>
 
   <% if project.finish != nil%>
     <p class="my-5">
-      <dIv><h1>Finish :<h1></div>
+      <h1>Finish:</h1>
       <%= project.finish %>
     </p>
   <%end%>
@@ -49,7 +49,7 @@
           <%=number_of_likes(project)%>
       <%end%>
     <%end%>
-       
+
     <% if favourite?(project)[0]%>
       <%= button_to favourite_path(favourite?(project)[1]), method: :delete, class:"bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
         <i class="fas fa-heart"></i>
