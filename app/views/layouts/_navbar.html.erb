@@ -93,6 +93,9 @@
             <%= link_to "Team", team_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
             <%= link_to "About", about_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
             <%= link_to "Contact", contact_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
+            <% if user_signed_in?%>
+                <%= link_to "Projects", projects_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
+            <% end %>
           </div>
           <%= render "layouts/search_bar" %>
           <%# Profile control: desktop %>
