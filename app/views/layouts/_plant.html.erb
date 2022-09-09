@@ -1,12 +1,14 @@
 <div class="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
     <img class="object-cover object-center w-full h-72" src="<%=@plant[:picture_url]%>" alt="plant-picture">
 
-    <div class="px-6 py-4">
-        <h1 class="text-xl font-semibold text-gray-800 dark:text-white"><%=@plant[:common_name]%></h1>
+    <div class="px-6 py-4 m-2 text-center">
+        <h1 class="text-xl"><%=@plant[:common_name]%></h1>
 
-        <p class="py-2 text-gray-700 dark:text-gray-400"><%=@plant[:scientific_name]%></p>
-
-        <%= link_to 'En savoir +', @plant[:wiki], class:"btn-muted"%>
+        <p class="py-2 text-skin-base italic font-Cantarell"><%=@plant[:scientific_name]%></p>
+        
+        <div class="m-2 object-center">
+        <%= link_to 'More infos', @plant[:wiki], class:"btn-muted"%>
+        </div>
 
     </div>
 </div>

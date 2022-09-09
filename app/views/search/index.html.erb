@@ -2,25 +2,26 @@
   <p>Sorry, couldn't find any plant, please try again.</p>
 <%else%>
 
-  <h1>Results for: <%= @place %></h1>
+<section class="m-5 text-center">
+    <h1 class="text-xl">Results for: </h1>
+    <p><%= @place %></p>
 
-  <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-    <% 12.times do%>
-      <% @plant = @plants.sample%>
-      <%= render 'layouts/plant'%>
+    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+      <% 12.times do%>
+        <% @plant = @plants.sample%>
+        <%= render 'layouts/plant'%>
 
-    <%end%>
+      <%end%>
+    </div>
+  <%end%>
+
+  <div class="flex flex-col justify-between items-center p-4">
+  <h2>Not where you live? Please try again</h2>
+    <%= render 'layouts/search_bar'%>
   </div>
-<%end%>
 
-<div class="flex flex-col justify-between items-center p-4">
- <h2>Not where you live? Please try again</h2>
-  <%= render 'layouts/search_bar'%>
-</div>
-
-<div class="flex flex-col justify-between items-center p-4 m-4">
-  <h2>Do you want to create a project with such plants?</h2>
-  <%= link_to 'New project', new_project_path, class: "btn-muted", params:[@plants] %>
-</div>
-
-
+  <div class="flex flex-col justify-between items-center p-4 m-4">
+    <h2>Do you want to create a project with such plants?</h2>
+    <%= link_to 'New project', new_project_path, class: "btn-muted", params:[@plants] %>
+  </div>
+</section>
