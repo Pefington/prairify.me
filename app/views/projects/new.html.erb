@@ -1,7 +1,9 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class=" mt-6 font-bold text-4xl">New project</h1>
+<div class=" mx-auto md:w-2/3 w-full">
+  <h1 class=" mt-4 font-bold text-4xl text-center">New project</h1>
 
   <%= render "form", project: @project %>
 
-  <%= link_to 'Back to projects', projects_path, class: "ml-4 rounded-lg py-3 px-5 btn inline-block font-medium" %>
-</div>
+  <div class="w-full flex justify-center">
+    <%= link_to "Back", :back, class: "ml-4 rounded-lg py-3 px-5 btn inline-block " %>
+  </div>
+  </div>
