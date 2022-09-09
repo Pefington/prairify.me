@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   }
   resources :projects
   resources :search, only: %i[index]
-  resources :likes, only: %i[new create destroy]
-  resources :favourites, only: %i[new create destroy]
+  resources :likes, only: %i[create destroy]
+  resources :favourites, only: %i[create destroy]
   scope '/', controller: :static_pages do
     get :team, :about, :contact
   end
