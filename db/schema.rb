@@ -51,6 +51,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_094100) do
     t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
+  create_table "join_table_project_plants", force: :cascade do |t|
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_join_table_project_plants_on_project_id"
+  end
+
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "project_id"
@@ -60,24 +67,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_094100) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "plants", force: :cascade do |t|
-    t.bigint "project_id"
-    t.integer "inaturalist_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_plants_on_project_id"
-  end
-
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "place_id"
     t.datetime "begin"
     t.datetime "finish"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

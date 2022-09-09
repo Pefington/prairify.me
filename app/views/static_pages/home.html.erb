@@ -1,3 +1,85 @@
-<p>HOME</p>
-<h1>Look what species you could grow where you live!</h1>
-<%= render 'layouts/search_bar' %>
+<% if current_user %>
+  <p>Welcome <%= current_user.email %></p>
+<% else %>
+  <section class="w-full -mt-12 bg-center bg-cover sm:h-48 md:h-80 bg-[url('https://images.unsplash.com/photo-1605802447037-d660fc4b2fd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')]">
+      <div class="container flex flex-col place-items-center p-6 text-center">
+        <div class="bg-white bg-opacity-50 sm:w-9/12 xl:w-6/12 p-4 rounded-lg h-5/6">
+          <p class="sm:text-xl md:text-2xl font-semibold tracking-tight text-skin-base italic">
+              <p class="font-bold text-skin-title mb-2">You want to make your first step to a better world?</p> We can help you change your purely decorative piece of grass into a very useful meadow welcoming a diversified fauna and flora !
+          </p>
+
+          <div class="m-8 text-center">
+              <div class="w-full">
+              <%= link_to "Join us", new_user_registration_path, class: "btn-muted" %>
+              </div>
+          </div>
+            <h1>Look what species you could grow where you live!</h1>
+            <%= render 'layouts/search_bar' %>
+        </div>
+      </div>
+  </section>
+
+  <section class="relative flex w-9/12 my-3">
+    <div class="flex flex-col justify-center min-h-screen">
+        <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl xl:text-4xl dark:text-white">
+            Our <span class="text-skin-title">budding gardeners</span> <br> projects
+        </h1>
+
+        <div class="grid w-full grid-cols-1 gap-8 mt-8 2xl:grid-cols-4 lg:mt-12 md:grid-cols-2 lg:grid-cols-3">
+            <div class="w-full p-8 bg-white rounded-md shadow-lg">
+                <%= image_tag 'https://i.pinimg.com/564x/9a/60/03/9a6003c3b3d27e10ec8d51c5f250b652.jpg', class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
+
+                <div class="flex items-center mt-6 -mx-2">
+                    <img class="object-cover mx-2 rounded-full w-14 h-14" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
+
+                    <div class="mx-2">
+                        <p class="font-semibold text-skin-base text-xl drop-shadow">Author</p>
+                        <p class="text-skin-base text-sm italic">Publication date</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full p-8 bg-white rounded-md shadow-lg">
+                <%= image_tag 'https://i.pinimg.com/564x/92/e5/5e/92e55e3c0eff7f7d17e48a9588eeb537.jpg', class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
+
+                <div class="flex items-center mt-6 -mx-2">
+                    <img class="object-cover mx-2 rounded-full w-14 h-14" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80" alt="">
+
+                    <div class="mx-2">
+                        <p class="font-semibold text-skin-base text-xl drop-shadow">Author</p>
+                        <p class="text-skin-base text-sm italic">Publication date</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full p-8 bg-white rounded-md shadow-lg dark:bg-gray-800 md:hidden lg:block">
+                <%= image_tag 'https://i.pinimg.com/564x/08/09/8b/08098bd66d4cc91b44c9ca74ea94f5eb.jpg', class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
+
+                <div class="flex items-center mt-6 -mx-2">
+                    <img class="object-cover mx-2 rounded-full w-14 h-14" src="https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
+
+                    <div class="mx-2">
+                        <p class="font-semibold text-skin-base text-xl drop-shadow">Author</p>
+                        <p class="text-skin-base text-sm italic">Publication date</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="items-center hidden mt-12 md:flex">
+            <button class="p-2 text-gray-800 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800 hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+
+            <button class="p-2 text-gray-800 transition-colors duration-300 border rounded-full rtl:-scale-x-100 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800 lg:mx-6 hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+  </section>
+
+<% end %>
