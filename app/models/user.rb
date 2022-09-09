@@ -1,15 +1,23 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many :projects
+  has_many :projects # rubocop:disable Rails/HasManyOrHasOneDependent
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
-  enum role: { user: 0, admin: 1 }
   after_initialize :set_default_role, if: :new_record?
   has_many :likes
   has_many :projects, through: :likes
+  has_many :favourites
+  has_many :projects, through: :favourites
+
+  after_create :welcome_send
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
+
+  enum role: { user: 0, admin: 1 }
 
   def set_default_role
     self.role ||= :user
@@ -23,7 +31,5 @@ class User < ApplicationRecord
     user ||= User.create(email: data['email'],
                          password: Devise.friendly_token[0, 20])
     user
-
   end
-  
 end
