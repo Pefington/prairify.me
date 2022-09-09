@@ -17,14 +17,9 @@
 <%end%>
 
 <section class="flex flex-col justify-evenly items-center space-y-8">
-  <%if current_user %>
-    <h3 class="text-xl">Happy with the selected plants?</h3>
-    <%= link_to 'New project', new_project_path, class: "btn-muted", params:[@plants] %>
-  <%else%>
-    <h3 class="text-xl">Happy with the selected plants?</h3>
-    <%= link_to "New project", user_session_path, class: "btn-muted" %>
-  <%end%>
+  <h3 class="text-xl">Happy with the selected plants?</h3>
+  <%= link_to 'New project', new_project_path, class: "btn-muted", params:[@plants] %>
   <p>or</p>
-    <h3 class="text-xl">Search another location</h3>
-    <%= render 'layouts/search_bar'%>
+  <h3 class="text-xl">Search another location</h3>
+  <%= render 'layouts/search_bar'%>
 </section>
