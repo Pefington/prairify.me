@@ -61,6 +61,7 @@ gem 'json'
 # ~ open-URI [https://github.com/ruby/open-uri#readme]
 gem 'open-uri'
 
+gem 'unsplash'
 # ########################################
 
 group :development do
@@ -93,7 +94,6 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'unsplash'
 end
 
 # ########################################
