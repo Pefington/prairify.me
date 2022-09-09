@@ -1,12 +1,21 @@
-<div class="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-    <img class="object-cover object-center w-full h-72" src="<%=@plant[:picture_url]%>" alt="plant-picture">
+<article class="w-full max-w-sm rounded-lg bg-white shadow-lg mb-4 flex flex-col items-center">
+  <img
+    class="h-72 w-full object-cover object-center rounded-t-lg"
+    src="<%=@plant[:picture_url]%>"
+    alt="A photography of <%= @plant[:scientific_name] %>"
+  />
 
-    <div class="px-6 py-4">
-        <h1 class="text-xl font-semibold text-gray-800 dark:text-white"><%=@plant[:common_name]%></h1>
-
-        <p class="py-2 text-gray-700 dark:text-gray-400"><%=@plant[:scientific_name]%></p>
-
-        <%= link_to 'En savoir +', @plant[:wiki], class:"btn-muted"%>
-
-    </div>
-</div>
+  <div class="px-6 py-4 flex flex-col items-center justify-center w-full text-skin-base">
+    <h1 class="text-xl font-semibold h-14 text-center flex items-center">
+      <%= @plant[:common_name] %>
+    </h1>
+    <p>-</p>
+    <p class="font-semibold"><%= @plant[:scientific_name] %></p>
+  </div>
+  <%= link_to "More about #{@plant[:scientific_name]}", @plant[:wiki],
+    class:"btn-muted text-center mt-0" %>
+  <div class="flex justify-evenly items-center w-full mb-4 sm:py-4">
+    <i class="fa-solid fa-check fa-3x h-full flex items-center justify-center w-12 rounded-md hover:ring text-skin-muted"></i>
+    <i class="fa-solid fa-xmark fa-3x h-full flex items-center justify-center w-12 rounded-md hover:ring text-red-600/75"></i>
+  </div>
+</article>
