@@ -15,9 +15,16 @@ users = User.all
   Project.last.photos.attach(io: file, filename: 'garden-image.jpg')
 end
 
-project = Project.all
+projects = Project.all
 plants = [61905, 51876, 47853, 53438, 47603, 50829, 47561, 48177, 126844, 48891, 60001]
 30.times do
-  Plant.create!(inaturalist_id: plants.sample, project: project.sample)  
+  Plant.create!(inaturalist_id: plants.sample, project: projects.sample)  
 end
 
+50.times do 
+  Like.create(user: users.sample, project: projects.sample)
+end
+
+20.times do
+  Favourite.create(user: users.sample, project: projects.sample)
+end
