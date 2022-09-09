@@ -22,10 +22,10 @@
     <%= vite_javascript_tag 'application' %>
 
   </head>
-  <body class="flex flex-col items-center h-full">
+  <body class="flex flex-col items-center h-full min-h-screen">
     <%= render 'layouts/navbar' %>
     <%= render 'shared/flashes' %>
-    <main class="flex flex-col flex-1 items-center w-full justify-center pt-12 pb-16">
+    <main class="flex flex-col flex-1 items-center w-full pt-12 pb-16">
       <%= yield %>
     </main>
     <%= render 'layouts/footer' %>
