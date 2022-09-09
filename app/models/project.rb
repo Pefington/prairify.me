@@ -2,6 +2,8 @@ class Project < ApplicationRecord
   has_many :plants
   has_many :likes
   has_many :users, through: :likes
+  has_many :favourites
+  has_many :users, through: :favourites
   has_many_attached :photos
   belongs_to :user
 
