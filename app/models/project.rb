@@ -1,8 +1,14 @@
 class Project < ApplicationRecord
-  has_many :plants
-  has_many :likes
+  has_many :plants # rubocop:disable Rails/HasManyOrHasOneDependent
+  has_many :likes # rubocop:disable Rails/HasManyOrHasOneDependent
   has_many :users, through: :likes
   has_many_attached :photos
   belongs_to :user
 
+  after_create :project_post
+
+  def project_post
+    UserMailer.email_project(self).deliver_now
+    AdminMailer.project_start(self).deliver_now
+  end
 end
