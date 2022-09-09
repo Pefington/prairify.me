@@ -1,11 +1,12 @@
-<div id="<%= dom_id project %>">
+<section class="bg-white flex flex-1 justify-center">
+ <div id="<%= dom_id project %>" class=" p-4 rounded-lg shadow-lg w-[500px] ">
   <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
+    <dIv><h1>Deccription :<h1></div>
     <%= project.name %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
+    <dIv><h1>Deccription :<h1></div>
     <%= project.description %>
   </p>
 
@@ -17,28 +18,28 @@
 
   <% if project.place_id != nil%>
     <p class="my-5">
-      <strong class="block font-medium mb-1">Place:</strong>
+      <dIv><h1>Place :<h1></div>
       <%= project.place_id %>
     </p>
   <%end%>
 
   <% if project.begin != nil%>
     <p class="my-5">
-      <strong class="block font-medium mb-1">Begin:</strong>
+      <dIv><h1>Begin :<h1></div>
       <%= project.begin %>
     </p>
   <%end%>
 
   <% if project.finish != nil%>
     <p class="my-5">
-      <strong class="block font-medium mb-1">Finish:</strong>
+      <dIv><h1>Finish :<h1></div>
       <%= project.finish %>
     </p>
   <%end%>
 
   <%if user_signed_in?%>
     <%if liked?(project)[0]%>
-      <%= button_to like_path(liked?(project)[1]), method: :delete, class:"bg-cyan-500 text-white active:bg-cyan-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
+      <%= button_to like_path(liked?(project)[1]), method: :delete, class:"bg-blue-500 text-white active:bg-cyan-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
           <i class="fa-solid fa-thumbs-up"></i>
           <%=number_of_likes(project)%>
       <%end%>
@@ -60,10 +61,12 @@
     <%end%>
   <%end%>
 
-  <% if action_name != "show" %>
-    <%= link_to "Show this project", project, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this project', edit_project_path(project), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+  <div class="pt-4 ">
+    <% if action_name != "show" %>
+        <%= link_to "Show this project", project, class: "btn" %>
+        <hr class="mt-6">
+    <% end %>
+  </div>
 
-</div>
+ </div>
+</section>
