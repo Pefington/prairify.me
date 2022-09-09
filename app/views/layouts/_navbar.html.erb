@@ -11,8 +11,14 @@
             text-skin-inverted
           "
         >
+          <div>
+            <%= link_to root_path do %>
+            <%= vite_image_tag 'images/original_logo.png', class: "mx-4 h-16" %>
+            <% end %>
+          </div>          
+          
           <div class="text-xl font-semibold text-skin-inverted hover:text-gray-700">
-            <%= link_to "Prairify", root_path, class: "font-FjallaOne text-2xl font-bold transition-colors duration-300 transform lg:text-3xl rounded-md px-3 py-2 focus:bg-skin-button-accent-hover" %>
+            <%= link_to "Prairify", root_path, class: "font-FjallaOne text-2xl font-bold transition-colors duration-300 transform lg:text-3xl rounded-md px-3 py-2 focus:bg-skin-button-accent-hover drop-shadow-md" %>
           </div>
           <%# Burger %>
           <div class="flex lg:hidden">
@@ -87,6 +93,9 @@
             <%= link_to "Team", team_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
             <%= link_to "About", about_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
             <%= link_to "Contact", contact_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
+            <% if user_signed_in?%>
+                <%= link_to "Projects", projects_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
+            <% end %>
           </div>
           <%= render "layouts/search_bar" %>
           <%# Profile control: desktop %>
