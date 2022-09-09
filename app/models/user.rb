@@ -23,13 +23,19 @@ class User < ApplicationRecord
     self.role ||= :user
   end
 
+  enum provider: { null: 0, google_oauth2: 1 }
+
+  def set_default_provider
+    self.provider ||= :null
+  end
+
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
-
-    # Uncomment the section below if you want users to be created if they don't exist
+    
     user ||= User.create(email: data['email'],
-                         password: Devise.friendly_token[0, 20])
+                         password: Devise.friendly_token[0, 20],
+                         provider: User.providers[:google_oauth2])
     user
   end
 end
