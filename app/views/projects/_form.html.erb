@@ -10,33 +10,36 @@
       </ul>
     </div>
   <% end %>
+  <div class="flex justify-center">
+    <div class="w-full block p-4 rounded-lg shadow-lg bg-green-400 max-w-sm">
+      <div class="my-5">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 " %>
+      </div>
 
-  <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+      <div class="my-5">
+        <%= form.label :description %>
+        <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      </div>
 
-  <div class="my-5">
-    <%= form.label :description %>
-    <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+      <div class="my-5">
+        <%= form.label :place_id %>
+        <%= form.number_field :place_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 " %>
+      </div>
 
-  <div class="my-5">
-    <%= form.label :place_id %>
-    <%= form.number_field :place_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+      <div class="my-5">
+        <%= form.label :begin %>
+        <%= form.datetime_field :begin, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 " %>
+      </div>
 
-  <div class="my-5">
-    <%= form.label :begin %>
-    <%= form.datetime_field :begin, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+      <div class="my-5">
+        <%= form.label :finish %>
+        <%= form.datetime_field :finish, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 " %>
+      </div>
 
-  <div class="my-5">
-    <%= form.label :finish %>
-    <%= form.datetime_field :finish, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
-  </div>
+      <div class="inline">
+        <%= form.submit class: "btn" %>
+      </div>
+    </div>
+  </div>   
 <% end %>
