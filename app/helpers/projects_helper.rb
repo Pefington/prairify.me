@@ -23,4 +23,5 @@ module ProjectsHelper
   def number_of_likes(project)
     project.likes.count
   end
+
 end
