@@ -15,5 +15,7 @@
     "*.js": "javascript",
     "*.html.erb": "erb",
     "*.js.erb": "javascript"
-  }
+  },
+  "tailwindCSS.experimental.classRegex": ["class: ['\"](.+?)['\"]"]
+  // class: "..." // ruby .html.erb,
 }

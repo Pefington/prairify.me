@@ -1,4 +1,8 @@
 class FavouritesController < ApplicationController
+  def index
+    @projects = helpers.favourite_projects
+  end
+
   def create
     Favourite.create(project_id: params[:project_id], user_id: current_user.id)
     redirect_back(fallback_location: root_path)

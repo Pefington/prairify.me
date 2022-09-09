@@ -37,20 +37,20 @@
   <%end%>
 
   <%if user_signed_in?%>
-    <%if @liked[0]%>
-      <%= button_to like_path(@liked[1]), method: :delete, class:"bg-cyan-500 text-white active:bg-cyan-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
+    <%if liked?(project)[0]%>
+      <%= button_to like_path(liked?(project)[1]), method: :delete, class:"bg-cyan-500 text-white active:bg-cyan-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
           <i class="fa-solid fa-thumbs-up"></i>
-          <%=@likes%>
+          <%=number_of_likes(project)%>
       <%end%>
     <%else%>
       <%= button_to likes_path, method: :post, params: {project_id: project}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
           <i class="fa-solid fa-thumbs-up"></i>
-          <%=@likes%>
+          <%=number_of_likes(project)%>
       <%end%>
     <%end%>
        
-    <% if @favourite[0]%>
-      <%= button_to favourite_path(@favourite[1]), method: :delete, class:"bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
+    <% if favourite?(project)[0]%>
+      <%= button_to favourite_path(favourite?(project)[1]), method: :delete, class:"bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
         <i class="fas fa-heart"></i>
       <%end%>
     <%else%>
