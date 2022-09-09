@@ -1,3 +1,21 @@
-<p>HOME</p>
-<h1>Look what species you could grow where you live!</h1>
-<%= render 'layouts/search_bar' %>
+<% if current_user %>
+  <p>Home</p>
+<% else %>
+  <section class="w-full bg-center bg-cover sm:h-48 md:h-72" style="background-image: url(https://images.unsplash.com/photo-1605802447037-d660fc4b2fd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+      <div class="container flex flex-col items-center px-4 py-12 mx-auto text-center">
+        <div class="bg-white bg-opacity-50 sm:w-9/12 xl:w-6/12 m-4 p-4 rounded-lg">
+          <h2 class="sm:text-xl md:text-3xl font-semibold tracking-tight text-gray-700">
+              Join us and get the update <br> from anywhere
+          </h2>
+
+          <div class="mt-6 sm:-mx-2">
+              <div class="inline-flex w-full mt-4 sm:w-auto sm:mx-2 sm:mt-0">
+              <%= link_to "Join us", new_user_registration_path, class: "btn-muted" %>
+              </div>
+          </div>
+            <h1>Look what species you could grow where you live!</h1>
+            <%= render 'layouts/search_bar' %>
+        </div>
+      </div>
+  </section>
+<% end %>
