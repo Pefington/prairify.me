@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :search, only: %i[index]
   resources :like, only: %i[new create destroy]
   scope '/', controller: :static_pages do
-    get :team, :about, :contact, :blog
+    get :team, :about, :contact
   end
 end
