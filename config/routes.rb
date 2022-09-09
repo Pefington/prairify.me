@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   resources :favourites, only: %i[index create destroy]
 
   scope '/', controller: :static_pages do
-    get :team, :about, :contact
+    get :team, :about, :contact, :profile
   end
 end
