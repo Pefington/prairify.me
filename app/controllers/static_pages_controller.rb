@@ -13,5 +13,6 @@ class StaticPagesController < ApplicationController
 
   def profile
     @profiles = current_user
+    @projects = helpers.current_user_projects
   end
 end
