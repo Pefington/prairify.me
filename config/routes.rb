@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :projects do
     resources :project_updates
   end
-  resources :search, only: %i[index update]
+  resources :search, only: %i[index]
   resources :likes, only: %i[create destroy]
   resources :favourites, only: %i[index create destroy]
 
