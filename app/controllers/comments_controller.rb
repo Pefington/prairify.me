@@ -7,21 +7,14 @@ class CommentsController < ApplicationController
   end
 
   def new
-    puts "$"*50
-    puts params
-    puts "$"*50
     @comment = Comment.new
     @project = Project.find(params[:project_id])
   end
 
-  def create
-    puts "%"*50
-    puts params
-    puts "%"*50
-  
+  def create  
     @comment = Comment.new(comment_params)
-    @project = Project.find(params[:project_update][:project_id])
-    @comment.update(project_id:@project.id)
+    @project = Project.find(params[:comment][:project_id])
+    @comment.update(project_id:@project.id, user_id:current_user.id)
 
     if @comment.save
       redirect_to @project, notice: "Comment was successfully created."
