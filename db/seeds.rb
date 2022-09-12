@@ -39,3 +39,4 @@ end
 50.times do 
   Comment.create!(project: projects.sample, user: users.sample, content: Faker::Lorem.sentence(word_count: 5))
 end
+
