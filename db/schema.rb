@@ -68,6 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_080150) do
     t.index ["project_id"], name: "index_plants_on_project_id"
   end
 
+<<<<<<< HEAD
   create_table "project_updates", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -77,6 +78,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_080150) do
     t.index ["project_id"], name: "index_project_updates_on_project_id"
   end
 
+=======
+>>>>>>> main
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
