@@ -7,11 +7,13 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   resources :projects do
-    resources :project_updates
+    resources :project_updates, only: %i[index new create destroy]
+    resources :comments, only: %i[index new create destroy]
   end
-  resources :search, only: %i[index]
+
   resources :likes, only: %i[create destroy]
   resources :favourites, only: %i[index create destroy]
+  resources :search, only: %i[index]
 
   scope '/', controller: :static_pages do
     get :team, :about, :contact, :profile
