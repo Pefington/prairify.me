@@ -24,7 +24,7 @@
 <div class="mb-4 flex w-full items-center justify-evenly sm:py-4">
   <% if current_user %>
 
-    <%= link_to  do %>
+    <%= button_to selected_plants_path,action: :create, params: {inaturalist_id: @plant[:id].to_i}, remote: :true do %>
       <i
         @click=""
         class="
