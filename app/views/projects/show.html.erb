@@ -7,9 +7,13 @@
     <%= render @project %>
 
     <div class="w-full flex justify-center">
+    <%if current_user%>
       <%= link_to 'Edit this project', edit_project_path(@project), class: "btn" %>
       <%= button_to 'Destroy this project', project_path(@project), method: :delete, class: "btn" %>
       <%= link_to 'Back to projects', projects_path, class: "btn" %>
+    <%else%>
+      <%= link_to 'Back to projects', projects_path, class: "btn" %>
+    <%end%>
     </div>
   </div>
 </div>
