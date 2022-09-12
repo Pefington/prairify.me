@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_09_214418) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_09_12_080150) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,6 +69,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_214418) do
     t.index ["project_id"], name: "index_plants_on_project_id"
   end
 
+  create_table "project_updates", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_updates_on_project_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -101,4 +111,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_214418) do
   add_foreign_key "favourites", "users"
   add_foreign_key "likes", "projects"
   add_foreign_key "likes", "users"
+  add_foreign_key "project_updates", "projects"
 end

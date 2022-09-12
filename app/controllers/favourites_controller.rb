@@ -1,4 +1,5 @@
 class FavouritesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @projects = helpers.favourite_projects
   end

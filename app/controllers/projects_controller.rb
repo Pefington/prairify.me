@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
+  
 
   # GET /projects
   def index
@@ -9,6 +11,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   def show
     @project = Project.find(params[:id])
+    @project_updates = @project.project_updates
   end
 
   # GET /projects/new
@@ -23,6 +26,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   def create
     @project = Project.new(project_params)
+    puts params
     @project.user = current_user
     if @project.save
       redirect_to @project, notice: "Project was successfully created."
@@ -54,6 +58,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, :description, :place_id, :begin, :finish)
+      params.require(:project).permit(:name, :description, :place_id, :begin, :finish, :photos)
     end
 end
