@@ -34,10 +34,4 @@ module SearchHelper
     end
     results
   end
-
-  def indexes_to_show
-    i = 0
-    j = 11
-    Array(i..j)
-  end
 end

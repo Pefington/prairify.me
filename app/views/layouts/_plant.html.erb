@@ -22,6 +22,7 @@
 <%= link_to "More about #{@plant[:scientific_name]}", @plant[:wiki], class:
       "btn-muted text-center mt-0" %>
 <div class="mb-4 flex w-full items-center justify-evenly sm:py-4">
+<%= link_to  do %>
   <i
     @click=""
     class="
@@ -39,6 +40,7 @@
       hover:ring
     "
   ></i>
+<% end %>
   <i
     @click="shown = false"
     class="
