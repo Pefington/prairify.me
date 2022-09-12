@@ -8,9 +8,9 @@ class User < ApplicationRecord
 
   after_initialize :set_default_role, if: :new_record?
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :projects, through: :likes
   has_many :favourites, dependent: :destroy
-  has_many :projects, through: :favourites
 
   after_create :welcome_send
   def welcome_send
