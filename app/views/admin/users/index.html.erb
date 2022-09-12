@@ -6,9 +6,6 @@
           <h3 class="text-xl font-bold text-gray-900 mb-2">All Registered Users</h3>
           <span class="text-base font-normal text-gray-500">This is a list of all registered users</span>
         </div>
-        <div class="flex-shrink-0">
-          <%= link_to "View all", admin_users_path, class: "text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg p-2" %>
-        </div>
       </div>
       <div class="flex flex-col mt-8">
         <div class="overflow-x-auto rounded-lg">
@@ -26,6 +23,9 @@
                     <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Email
                     </th>
+                    <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Management
+                    </th>
                   </tr>
                 </thead>
                 <tbody class="bg-white">
@@ -41,8 +41,8 @@
                       <%= user.email %>
                     </td>
                     <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900 flex flex-row">
-                      <%= link_to 'Edit', root_path, class: "btn" %>
-                      <%= button_to 'Delete', admin_user_path(user.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-warning" %>
+                      <%= link_to 'Edit', edit_admin_user_path(user.id), class: "btn" %>
+                      <%= button_to 'Delete', admin_user_path(user.id), class: "btn-warning sm:ml-0", method: :delete, form: { data: { 'turbo-confirm': 'Are you sure?' } } %>
                     </td>
                   </tr>
                   <% end %>
