@@ -28,5 +28,8 @@
     "format-erb": "bundle exec erb-format --write",
     "format-rest": "prettier --write '**/*.{js, json, md, css, ts, yml}'",
     "format": "pnpm format-rb && pnpm format-erb && pnpm format-rest"
+  },
+  "dependencies": {
+    "alpinejs": "^3.10.3"
   }
 }
