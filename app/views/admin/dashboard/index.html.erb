@@ -1,6 +1,6 @@
 <div class="lg:flex w-full">
   <div class="flex flex-col lg:w-full">
-    <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 m-8">
+    <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 mt-8 mx-8">
       <div class="mb-4 flex items-center justify-between">
         <div>
           <h3 class="text-xl font-bold text-gray-900 mb-2">Latest Registered Users</h3>
@@ -49,8 +49,8 @@
         </div>
       </div>
     </div>
-    <div class="lg:flex">
-      <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 mx-8 mb-8">
+    <div class="lg:flex lg:justify-between mx-8 mb-8">
+      <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 mt-8 mr-4 flex-1">
         <div class="flex items-center">
           <div class="flex-shrink-0">
             <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900"><%= @last_users_seven_days %></span>
@@ -58,7 +58,7 @@
           </div>
         </div>
       </div>
-      <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 mx-8 mb-8">
+      <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 mt-8 lg:ml-4 flex-1">
         <div class="flex items-center">
           <div class="flex-shrink-0">
             <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900"><%= @last_users_thirty_days %></span>
@@ -69,7 +69,7 @@
     </div>
   </div>
   <div class="flex flex-col lg:w-full">
-    <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 m-8">
+    <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 mt-8 mx-8">
       <div class="mb-4 flex items-center justify-between">
         <div>
           <h3 class="text-xl font-bold text-gray-900 mb-2">Latest Created Projects</h3>
@@ -118,8 +118,8 @@
         </div>
       </div>
     </div>
-    <div class="lg:flex">
-      <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 mx-8 mb-8">
+    <div class="lg:flex lg:justify-between mx-8 mb-8">
+      <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 mt-8 mr-4 flex-1">
         <div class="flex items-center">
           <div class="flex-shrink-0">
             <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900"><%= @last_projects_seven_days %></span>
@@ -127,7 +127,7 @@
           </div>
         </div>
       </div>
-      <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 mx-8 mb-8">
+      <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 mt-8 lg:ml-4 flex-1">
         <div class="flex items-center">
           <div class="flex-shrink-0">
             <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900"><%= @last_projects_thirty_days %></span>
