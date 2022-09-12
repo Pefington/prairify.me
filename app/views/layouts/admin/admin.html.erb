@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>prairify.me</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%# https://fontawesome.com/kits/e05ffa89c7/use %>
+    <script src="https://kit.fontawesome.com/e05ffa89c7.js" crossorigin="anonymous"></script>
+
+    <%# https://tailwindcss.com/docs/editor-setup %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%# https://alpinejs.dev/start-here %>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>[x-cloak] {display: none;}</style>
+
+
+
+    <%# https://vite-ruby.netlify.app/guide/rails %>
+    <%= vite_client_tag %>
+    <%= vite_javascript_tag 'application' %>
+
+  </head>
+  <body class="flex">
+    <%= render 'layouts/admin/sidebar' %>
+  <main class="flex flex-col bg-gray-100 w-screen">
+    <%= yield %>
+  </main>
+  </body>
+</html>
