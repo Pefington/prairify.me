@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
   }
-  resources :projects
+  resources :projects do
+    resources :project_updates, only: %i[index create destroy]
+  end
   resources :search, only: %i[index]
   resources :likes, only: %i[create destroy]
   resources :favourites, only: %i[index create destroy]
