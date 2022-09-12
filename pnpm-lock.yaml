@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@alpinejs/intersect': ^3.10.3
   alpinejs: ^3.10.3
   prettier: ^2.7.1
   prettier-plugin-tailwindcss: ^0.1.13
@@ -9,6 +10,7 @@ specifiers:
   vite-plugin-ruby: ^3.1.0
 
 dependencies:
+  '@alpinejs/intersect': 3.10.3
   alpinejs: 3.10.3
 
 devDependencies:
@@ -19,6 +21,10 @@ devDependencies:
   vite-plugin-ruby: 3.1.2_vite@3.0.9
 
 packages:
+
+  /@alpinejs/intersect/3.10.3:
+    resolution: {integrity: sha512-vMRvhbMJzS1tupb2a/3GF5H+gLxxWaXJpcxJlfSHrV2JTb+RFWOJIkL/63JpPPGibtpaNBDrx3hsRN0CJ4d5mw==}
+    dev: false
 
   /@esbuild/linux-loong64/0.14.54:
     resolution: {integrity: sha512-bZBrLAIX1kpWelV0XemxBZllyRmM6vgFQQG2GdNb+r3Fkp0FOh1NJSvekXDs7jq70k4euu1cryLMfU+mTXlEpw==}

@@ -30,6 +30,7 @@
     "format": "pnpm format-rb && pnpm format-erb && pnpm format-rest"
   },
   "dependencies": {
+    "@alpinejs/intersect": "^3.10.3",
     "alpinejs": "^3.10.3"
   }
 }
