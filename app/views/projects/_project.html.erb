@@ -2,60 +2,60 @@
  <div id="<%= dom_id project %>" class=" p-6 rounded-lg shadow-lg w-[500px] bg-white/50">
   <p class="my-5">
     <h1 class="text-black">Name:</h1>
-    <%= @project.name %>
+    <%= project.name %>
   </p>
 
   <p class="my-5">
     <h1  class="text-black">Description:</h1>
-    <%= @project.description %>
+    <%= project.description %>
   </p>
 
-  <% if @project.photos.attached?%>
-    <% @project.photos.each do |photo|%>
+  <% if project.photos.attached?%>
+    <% project.photos.each do |photo|%>
       <%= image_tag photo %>
     <%end%>
   <%end%>
 
-  <% if @project.place_id != nil%>
+  <% if project.place_id != nil%>
     <p class="my-5">
       <h1  class="text-black">Place:</h1>
-      <%= @project.place_id %>
+      <%= project.place_id %>
     </p>
   <%end%>
 
-  <% if @project.begin != nil%>
+  <% if project.begin != nil%>
     <p class="my-5">
       <h1  class="text-black">Begin:</h1>
-      <%= @project.begin %>
+      <%= project.begin %>
     </p>
   <%end%>
 
-  <% if @project.finish != nil%>
+  <% if project.finish != nil%>
     <p class="my-5">
       <h1 class="text-black">Finish:</h1>
-      <%= @project.finish %>
+      <%= project.finish %>
     </p>
   <%end%>
 
   <%if user_signed_in?%>
-    <%if liked?(@project)[0]%>
-      <%= button_to like_path(liked?(@project)[1]), method: :delete, class:"bg-blue-500 text-white active:bg-cyan-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
+    <%if liked?(project)[0]%>
+      <%= button_to like_path(liked?(project)[1]), method: :delete, class:"bg-blue-500 text-white active:bg-cyan-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
           <i class="fa-solid fa-thumbs-up"></i>
-          <%=number_of_likes(@project)%>
+          <%=number_of_likes(project)%>
       <%end%>
     <%else%>
-      <%= button_to likes_path, method: :post, params: {project_id: @project}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
+      <%= button_to likes_path, method: :post, params: {project_id: project}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
           <i class="fa-solid fa-thumbs-up"></i>
-          <%=number_of_likes(@project)%>
+          <%=number_of_likes(project)%>
       <%end%>
     <%end%>
 
-    <% if favourite?(@project)[0]%>
-      <%= button_to favourite_path(favourite?(@project)[1]), method: :delete, class:"bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
+    <% if favourite?(project)[0]%>
+      <%= button_to favourite_path(favourite?(project)[1]), method: :delete, class:"bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
         <i class="fas fa-heart"></i>
       <%end%>
     <%else%>
-      <%= button_to favourites_path, method: :post, params: {project_id: @project}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
+      <%= button_to favourites_path, method: :post, params: {project_id: project}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
         <i class="fas fa-heart"></i>
       <%end%>
     <%end%>
@@ -63,7 +63,7 @@
 
   <div class="pt-4 ">
     <% if action_name != "show" %>
-        <%= link_to "Show this project", @project, class: "btn" %>
+        <%= link_to "Show this project", project, class: "btn" %>
         <hr class="mt-6">
     <% end %>
   </div>
