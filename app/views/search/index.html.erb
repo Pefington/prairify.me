@@ -10,23 +10,30 @@
     <p>-</p>
   </div>
 
-  <div
-    class="
-      p-5
-      sm:p-10
-      grid
-      grid-cols-1
-      md:grid-cols-2
-      gap-10
-      lg:grid-cols-3
-      h-min
-      lg:w-5/6
-    "
-  >
-    <% @local_plants.each_with_index do | plant, index | %>
-      <% @plant = plant %>
-      <% @index = index %>
-      <%= render 'layouts/plant' %>
+  <div class="w-full p-5 sm:p-10 flex flex-wrap justify-evenly h-min">
+    <% @local_plants.each do | plant | %>
+      <article
+        x-data="{ shown : true }"
+        x-transition.duration.500ms
+        x-cloak
+        x-show="shown"
+        x-transition
+        class="
+          mb-12
+          mx-4
+          flex
+          w-full
+          max-w-sm
+          flex-col
+          items-center
+          rounded-lg
+          bg-white
+          shadow-lg
+        "
+      >
+        <% @plant = plant %>
+        <%= render 'layouts/plant' %>
+      </article>
     <% end %>
   </div>
 

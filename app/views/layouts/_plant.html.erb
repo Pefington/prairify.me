@@ -1,62 +1,59 @@
-<article
-  x-data="{ show : <%= @indexes_to_show.include?(@index) %> }"
-  x-show="show"
-  x-transition.duration.500ms
-  x-cloak
+<%= image_tag @plant[:picture_url],
+    class: "h-72 w-full rounded-t-lg object-cover object-center",
+    alt: "A close up photography of #{@plant[:scientific_name]}" %>
+<div
   class="
-    mb-4
+    text-skin-base
     flex
     w-full
-    max-w-sm
     flex-col
     items-center
-    rounded-lg
-    bg-white
-    shadow-lg
+    justify-center
+    px-6
+    py-4
   "
 >
-
-  <%= image_tag @plant[:picture_url],
-  class: "h-72 w-full rounded-t-lg object-cover object-center",
-  alt: "A close up photography of #{@plant[:scientific_name]}" %>
-
-  <div
+  <h2 class="flex h-14 items-center text-center text-xl">
+    <%= @plant[:common_name] %>
+  </h2>
+  <p>-</p>
+  <p class="font-semibold"><%= @plant[:scientific_name] %></p>
+</div>
+<%= link_to "More about #{@plant[:scientific_name]}", @plant[:wiki], class:
+      "btn-muted text-center mt-0" %>
+<div class="mb-4 flex w-full items-center justify-evenly sm:py-4">
+  <i
+    @click=""
     class="
-      text-skin-base
+      fa-solid
+      fa-check
+      fa-3x
       flex
-      w-full
-      flex-col
+      h-full
+      w-12
       items-center
       justify-center
-      px-6
-      py-4
+      rounded-md
+      text-green-600
+      hover:cursor-pointer
+      hover:ring
     "
-  >
-    <h2 class="flex h-14 items-center text-center text-xl">
-      <%= @plant[:common_name] %>
-    </h2>
-    <p>-</p>
-    <p class="font-semibold"><%= @plant[:scientific_name] %></p>
-  </div>
-  <%= link_to "More about #{@plant[:scientific_name]}", @plant[:wiki], class:
-    "btn-muted text-center mt-0" %>
-  <div class="mb-4 flex w-full items-center justify-evenly sm:py-4">
-    <i
-      @click="show = false, console.log(<%= @index %>, <%= @indexes_to_show %>, <%= @indexes_to_show.include?(@index) %>)"
-      class="
-        fa-solid
-        fa-xmark
-        fa-3x
-        flex
-        h-full
-        w-12
-        items-center
-        justify-center
-        rounded-md
-        text-red-600/75
-        hover:cursor-pointer
-        hover:ring
-      "
-    ></i>
-  </div>
-</article>
+  ></i>
+  <i
+    @click="shown = false"
+    class="
+      fa-solid
+      fa-xmark
+      fa-3x
+      flex
+      h-full
+      w-12
+      items-center
+      justify-center
+      rounded-md
+      text-red-600/75
+      hover:cursor-pointer
+      hover:ring
+    "
+  ></i>
+</div>
