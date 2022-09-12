@@ -1,9 +1,8 @@
 class Project < ApplicationRecord
   has_many :plants, dependent: :destroy
-  has_many :likes, dependent: :destroy # rubocop:disable Rails/HasManyOrHasOneDependent
-  has_many :users, through: :likes
+  has_many :likes, dependent: :destroy
   has_many :favourites, dependent: :destroy
-  has_many :users, through: :favourites
+  has_many :comments, dependent: :destroy
   has_many :project_updates, dependent: :destroy
   has_many_attached :photos, dependent: :destroy
   belongs_to :user
