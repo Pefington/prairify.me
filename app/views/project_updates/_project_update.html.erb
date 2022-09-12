@@ -1,0 +1,25 @@
+<section class="flex flex-1 justify-center text-white">
+  <div id="<%= dom_id project_update %>" class="p-6 rounded-lg shadow-lg w-[500px] bg-white/50">
+    <p class="my-5">
+      <h1 class="text-black">Posted on:</h1>
+      <%= project_update.created_at %>
+    </p>
+
+    <p class="my-5">
+      <h1 class="text-black">Title:</h1>
+      <%= project_update.title %>
+    </p>
+
+    <p class="my-5">
+      <h1 class="text-black">Description:</h1>
+      <%= project_update.description %>
+    </p>
+
+    <% if project_update.photo.attached?%>
+      <p class="my-5">
+        <%= image_tag project_update.photo %>
+      </p>
+    <%end%>
+
+  </div>
+</section>
