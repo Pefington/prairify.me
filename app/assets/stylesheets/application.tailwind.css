@@ -83,10 +83,10 @@
   .link:hover {
     @apply underline text-skin-title;
   },
-.form-check-input {
+  .form-check-input {
     @apply appearance-none rounded focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-emerald-700 focus:border-skin-base checked:bg-skin-button-muted checked:border-skin-base checked:hover:bg-skin-button-muted checked:focus:bg-skin-button-muted transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer;
-},
-.form-check-input:hover {
+  },
+  .form-check-input:hover {
     @apply border-skin-base ring ring-opacity-40 ring-emerald-700
-}
+  }
 }
