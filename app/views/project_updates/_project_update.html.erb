@@ -1,22 +1,25 @@
-<div id="<%= dom_id project_update %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
-    <%= project_update.title %>
-  </p>
+<section class="flex flex-1 justify-center text-white">
+  <div id="<%= dom_id project_update %>" class="p-6 rounded-lg shadow-lg w-[500px] bg-white/50">
+    <p class="my-5">
+      <h1 class="text-black">Posted on:</h1>
+      <%= project_update.created_at %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= project_update.description %>
-  </p>
+    <p class="my-5">
+      <h1 class="text-black">Title:</h1>
+      <%= project_update.title %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Project:</strong>
-    <%= project_update.project_id %>
-  </p>
+    <p class="my-5">
+      <h1 class="text-black">Description:</h1>
+      <%= project_update.description %>
+    </p>
 
-  <% if action_name != "show" %>
-    <%= link_to "Show this project update", project_update, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this project update', edit_project_update_path(project_update), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-</div>
+    <% if project_update.photo.attached?%>
+      <p class="my-5">
+        <%= image_tag project_update.photo %>
+      </p>
+    <%end%>
+
+  </div>
+</section>
