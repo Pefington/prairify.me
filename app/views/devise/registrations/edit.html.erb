@@ -21,6 +21,7 @@
         <%= f.label :username, class: "hidden" %><br />
         <%= f.text_field :username, placeholder: "Username", class:"block w-full px-10 py-3 text-gray-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40", autocomplete: "username" %>
       </div>
+      <% if current_user.provider != 'google_oauth2' %>
       <div class="relative flex items-center mt-4">
         <span class="absolute">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -48,6 +49,7 @@
         <%= f.label :current_password, class: "hidden" %><br />
         <%= f.password_field :current_password, placeholder: "Current password", class:"block w-full px-10 py-3 text-gray-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40", autocomplete: "current_password" %>
       </div>
+      <% end %>
       <div class="mt-6">
         <%= f.submit "Update", class: "w-full btn m-0" %>
       </div>
