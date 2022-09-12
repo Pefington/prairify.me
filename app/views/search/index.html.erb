@@ -4,19 +4,23 @@
 
 <% else %>
 
-  <div class="flex flex-col items-center space-y-4">
-    <h2 class="text-xl">Results for:</h2>
-    <p class><%= @place %></p>
+  <div x-data="{ plants : JSON.parse('<%= @local_plants.first.to_json %>') }" class="flex flex-col items-center space-y-4 text-center">
+    <h2 x-on:click="console.log(plants['id']); console.log(plants)" class="text-xl">Results for:</h2>
+    <pclass><%= @place %></p>
     <p>-</p>
   </div>
 
-  <div class="p-5 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 h-min">
+  <template x-for="item in items" :key="item.id">
+
+  </template>
+
+  <!-- <div class="p-5 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 h-min">
     <% @local_plants.each_with_index do | plant, index | %>
       <% @plant = plant %>
       <% @index = index %>
       <%= render 'layouts/plant' %>
     <% end %>
-  </div>
+  </div> -->
 
 <% end %>
 
