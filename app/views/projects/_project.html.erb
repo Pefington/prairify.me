@@ -1,12 +1,12 @@
-<section class="bg-white flex flex-1 justify-center">
- <div id="<%= dom_id project %>" class=" p-6 rounded-lg shadow-lg w-[500px]">
+<section class="flex flex-1 justify-center text-white">
+ <div id="<%= dom_id project %>" class=" p-6 rounded-lg shadow-lg w-[500px] bg-white/50">
   <p class="my-5">
-    <h1>Name:</h1>
+    <h1 class="text-black">Name:</h1>
     <%= project.name %>
   </p>
 
   <p class="my-5">
-    <h1>Description:</h1>
+    <h1  class="text-black">Description:</h1>
     <%= project.description %>
   </p>
 
@@ -18,21 +18,21 @@
 
   <% if project.place_id != nil%>
     <p class="my-5">
-      <h1>Place:</h1>
+      <h1  class="text-black">Place:</h1>
       <%= project.place_id %>
     </p>
   <%end%>
 
   <% if project.begin != nil%>
     <p class="my-5">
-      <h1>Begin:</h1>
+      <h1  class="text-black">Begin:</h1>
       <%= project.begin %>
     </p>
   <%end%>
 
   <% if project.finish != nil%>
     <p class="my-5">
-      <h1>Finish:</h1>
+      <h1 class="text-black">Finish:</h1>
       <%= project.finish %>
     </p>
   <%end%>
@@ -70,3 +70,4 @@
 
  </div>
 </section>
+

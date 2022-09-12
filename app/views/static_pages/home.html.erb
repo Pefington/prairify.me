@@ -74,32 +74,8 @@
         <%= image_tag 'https://i.pinimg.com/564x/9a/60/03/9a6003c3b3d27e10ec8d51c5f250b652.jpg',
         class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
         <div class="-mx-2 mt-6 flex items-center">
-          <img
-            class="mx-2 h-14 w-14 rounded-full object-cover"
-            src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-            alt=""
-          />
-
-          <div class="mx-2">
-            <p class="text-skin-base text-xl font-semibold drop-shadow">
-              Author
-            </p>
-            <p class="text-skin-base text-sm italic">Publication date</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full rounded-md bg-white p-8 shadow-lg">
-        <%= image_tag 'https://i.pinimg.com/564x/92/e5/5e/92e55e3c0eff7f7d17e48a9588eeb537.jpg',
-        class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
-
-        <div class="-mx-2 mt-6 flex items-center">
-          <img
-            class="mx-2 h-14 w-14 rounded-full object-cover"
-            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80"
-            alt=""
-          />
-
+          <%= image_tag 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+          class:"mx-2 h-14 w-14 rounded-full object-cover" %>
           <div class="mx-2">
             <p class="text-skin-base text-xl font-semibold drop-shadow">
               Author
@@ -122,14 +98,9 @@
       >
         <%= image_tag 'https://i.pinimg.com/564x/08/09/8b/08098bd66d4cc91b44c9ca74ea94f5eb.jpg',
         class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
-
         <div class="-mx-2 mt-6 flex items-center">
-          <img
-            class="mx-2 h-14 w-14 rounded-full object-cover"
-            src="https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-            alt=""
-          />
-
+          <%= image_tag 'https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+          class:"mx-2 h-14 w-14 rounded-full object-cover" %>
           <div class="mx-2">
             <p class="text-skin-base text-xl font-semibold drop-shadow">
               Author
@@ -154,12 +125,8 @@
         class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
 
         <div class="-mx-2 mt-6 flex items-center">
-          <img
-            class="mx-2 h-14 w-14 rounded-full object-cover"
-            src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-            alt=""
-          />
-
+          <%= image_tag 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+          class:"mx-2 h-14 w-14 rounded-full object-cover" %>
           <div class="mx-2">
             <p class="text-skin-base text-xl font-semibold drop-shadow">
               Author
@@ -168,6 +135,33 @@
           </div>
         </div>
       </div>
+
+      <div
+        class="
+          w-full
+          rounded-md
+          bg-white
+          p-8
+          shadow-lg
+          md:hidden
+          lg:block
+        "
+      >
+        <%= image_tag 'https://i.pinimg.com/236x/b4/39/0b/b4390ba3eebed650899f09d3751da4b3.jpg',
+        class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
+
+        <div class="-mx-2 mt-6 flex items-center">
+          <%= image_tag 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29tYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
+          class:"mx-2 h-14 w-14 rounded-full object-cover" %>
+          <div class="mx-2">
+            <p class="text-skin-base text-xl font-semibold drop-shadow">
+              Author
+            </p>
+            <p class="text-skin-base text-sm italic">Publication date</p>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="mt-12 hidden items-center md:flex">
@@ -181,9 +175,6 @@
           duration-300
           hover:bg-gray-100
           rtl:-scale-x-100
-          dark:border-gray-700
-          dark:text-gray-200
-          dark:hover:bg-gray-800
         "
       >
         <svg
@@ -208,9 +199,6 @@
           duration-300
           hover:bg-gray-100
           rtl:-scale-x-100
-          dark:border-gray-700
-          dark:text-gray-200
-          dark:hover:bg-gray-800
           lg:mx-6
         "
       >
