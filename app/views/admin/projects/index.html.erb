@@ -6,9 +6,6 @@
           <h3 class="text-xl font-bold text-gray-900 mb-2">All Created Projects</h3>
           <span class="text-base font-normal text-gray-500">This is a list of all created projects</span>
         </div>
-        <div class="flex-shrink-0">
-          <%= link_to "View all", admin_users_path, class: "text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg p-2" %>
-        </div>
       </div>
       <div class="flex flex-col mt-8">
         <div class="overflow-x-auto rounded-lg">
@@ -44,8 +41,8 @@
                       <%= project.description %>
                     </td>
                     <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900 flex flex-row">
-                      <%= link_to 'Edit', root_path, class: "btn" %>
-                      <%= button_to 'Delete', admin_project_path(project.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-warning" %>
+                      <%= link_to 'Edit', edit_admin_project_path(project.id), class: "btn sm:ml-0" %>
+                      <%= button_to 'Delete', admin_project_path(project.id), class: "btn-warning sm:ml-0", method: :delete, form: { data: { 'turbo-confirm': 'Are you sure?' } } %>
                     </td>
                   </tr>
                   <% end %>
