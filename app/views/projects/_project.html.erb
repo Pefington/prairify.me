@@ -26,14 +26,14 @@
   <% if project.begin != nil%>
     <p class="my-5">
       <h1>Begin:</h1>
-      <%= project.begin %>
+      <%= project.begin.strftime("%d/%m/%Y, at %I:%M%p")%>
     </p>
   <%end%>
 
   <% if project.finish != nil%>
     <p class="my-5">
       <h1>Finish:</h1>
-      <%= project.finish %>
+      <%= project.finish.strftime("%d/%m/%Y, at %I:%M%p") %>
     </p>
   <%end%>
 
