@@ -40,7 +40,7 @@
                     <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
                       <%= user.email %>
                     </td>
-                    <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
+                    <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900 flex flex-row">
                       <%= link_to 'Edit', root_path, class: "btn" %>
                       <%= button_to 'Delete', admin_user_path(user.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-warning" %>
                     </td>
