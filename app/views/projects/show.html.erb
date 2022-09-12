@@ -5,10 +5,13 @@
     <% end %>
 
     <%= render @project %>
+    <h1>Updates</h1>
+    <%= render @project_updates%>
 
     <div class="w-full flex justify-center">
       <%= link_to 'Edit this project', edit_project_path(@project), class: "btn" %>
       <%= button_to 'Destroy this project', project_path(@project), method: :delete, class: "btn" %>
+      <%= button_to 'Add an update', new_project_project_update_path(@project), method: :get, class: "btn" %>
       <%= link_to 'Back to projects', projects_path, class: "btn" %>
     </div>
   </div>

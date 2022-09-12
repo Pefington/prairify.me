@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_09_094100) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_12_080150) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,13 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_094100) do
     t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
-  create_table "join_table_project_plants", force: :cascade do |t|
-    t.bigint "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_join_table_project_plants_on_project_id"
-  end
-
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "project_id"
@@ -67,14 +60,33 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_094100) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "plants", force: :cascade do |t|
+    t.bigint "project_id"
+    t.integer "inaturalist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_plants_on_project_id"
+  end
+
+  create_table "project_updates", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_updates_on_project_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "place_id"
     t.datetime "begin"
     t.datetime "finish"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,6 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_094100) do
     t.datetime "updated_at", null: false
     t.integer "role"
     t.string "username"
+    t.integer "provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -97,4 +110,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_094100) do
   add_foreign_key "favourites", "users"
   add_foreign_key "likes", "projects"
   add_foreign_key "likes", "users"
+  add_foreign_key "project_updates", "projects"
 end
