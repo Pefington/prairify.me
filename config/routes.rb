@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     root 'dashboard#index'
     resources :projects, only: %i[index edit update destroy]
     resources :users, only: %i[index new edit update create destroy]
+    resources :comments, only: %i[index edit update destroy]
   end
   resources :selected_plants
   resources :project_updates
