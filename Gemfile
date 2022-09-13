@@ -61,7 +61,7 @@ gem 'httparty'
 # ~ Unsplash [https://github.com/unsplash/unsplash_rb#readme]
 # For generating random images during dev and prod tests
 gem 'unsplash'
-
+gem 'geocoder'
 # ########################################
 
 group :development do
