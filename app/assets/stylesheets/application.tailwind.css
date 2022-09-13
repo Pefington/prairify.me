@@ -50,7 +50,7 @@
   }
   ,
   .btn:hover {
-    @apply bg-skin-button-accent-hover;
+    @apply bg-skin-button-accent-hover cursor-pointer;
   }
   ,
   .btn-muted {
