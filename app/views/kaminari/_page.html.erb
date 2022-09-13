@@ -1,0 +1,12 @@
+<%# Link showing page number
+  - available local variables
+    page:          a page object for "this" page
+    url:           url to this page
+    current_page:  a page object for the currently displayed page
+    total_pages:   total number of pages
+    per_page:      number of items to fetch per page
+    remote:        data-remote
+-%>
+<span class="px-4 py-2 mx-1 text-gray-700 border border-gray-300 bg-white rounded-md sm:inline hover:bg-blue-400 hover:text-white<%= ' current' if page.current? %>">
+  <%= link_to_unless page.current?, page, url, {remote: remote, rel: page.rel} %>
+</span>
