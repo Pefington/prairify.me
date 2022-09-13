@@ -58,14 +58,14 @@ gem 'omniauth-rails_csrf_protection'
 # For active storage
 gem 'aws-sdk-s3', require: false
 
-# ~ JSON [https://github.com/flori/json#readme]
-# For handling XHR requests (API)
-gem 'json'
+# ~ httparty [https://github.com/jnunemaker/httparty#readme]
+# For handling API requests
+gem 'httparty'
 
-# ~ open-URI [https://github.com/ruby/open-uri#readme]
-gem 'open-uri'
-
+# ~ Unsplash [https://github.com/unsplash/unsplash_rb#readme]
+# For generating random images during dev and prod tests
 gem 'unsplash'
+gem 'geocoder'
 # ########################################
 
 group :development do
@@ -109,4 +109,8 @@ group :development, :test do
   # ~ rspec [https://github.com/rspec/rspec-rails#readme]
   # For testing
   gem 'rspec-rails', '~> 6.0.0.rc1'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing'
+
 end

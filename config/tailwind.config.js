@@ -39,7 +39,7 @@ module.exports = {
       },
       borderColor: {
         skin: {
-          "border-base": "var(--color-border-base)",
+          base: "var(--color-border-base)",
         },
       },
     },

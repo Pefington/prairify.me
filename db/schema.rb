@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_12_080150) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_12_161148) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,9 +42,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_080150) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.string "content", null: false
+    t.bigint "project_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_comments_on_project_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "favourites", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "project_id"
+    t.bigint "user_id", null: false
+    t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_favourites_on_project_id"
@@ -52,8 +62,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_080150) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "project_id"
+    t.bigint "user_id", null: false
+    t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_likes_on_project_id"
@@ -61,16 +71,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_080150) do
   end
 
   create_table "plants", force: :cascade do |t|
-    t.bigint "project_id"
-    t.integer "inaturalist_id"
+    t.bigint "project_id", null: false
+    t.integer "inaturalist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_plants_on_project_id"
   end
 
   create_table "project_updates", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
+    t.string "title", null: false
+    t.string "description", null: false
     t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -83,10 +93,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_080150) do
     t.integer "place_id"
     t.datetime "begin"
     t.datetime "finish"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "selected_plants", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "inaturalist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_selected_plants_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -106,9 +124,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_080150) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "projects"
+  add_foreign_key "comments", "users"
   add_foreign_key "favourites", "projects"
   add_foreign_key "favourites", "users"
   add_foreign_key "likes", "projects"
   add_foreign_key "likes", "users"
+  add_foreign_key "plants", "projects"
   add_foreign_key "project_updates", "projects"
+  add_foreign_key "projects", "users"
+  add_foreign_key "selected_plants", "users"
 end

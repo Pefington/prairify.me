@@ -1,25 +1,50 @@
-<div class="
+<section
+  class="
     -mt-12
-    -mb-16
     flex
     w-full
     flex-col
     items-center
-    bg-[url('https://images.unsplash.com/photo-1601335677626-e244f8061a63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')]
+    bg-[url('https://images.unsplash.com/photo-1621371047525-f99f36b60b9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80')]
     bg-cover
     bg-center
     p-8
-  ">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
+  "
+>
+  <div class="h-5/6 max-w-xl rounded-lg bg-white/50 p-6 text-center">
+    <h1 class="mb-2 text-white text-4xl">
+      Projects
+    </h1>
+    <br>
+    <p
+      class="
+        text-skin-base
+        font-medium
+        tracking-tight
+        text-base
+        sm:text-lg
+        md:text-xl
+        text-gray-800
+      "
+    >
+      Here you can see all the projects in progress, you can inspire yourself as you can inspire others, the first step is here!
+    </p>
+    <div class="m-8 text-center">
+      <div class="w-full">
+       <%= link_to 'New project', new_project_path, class: "btn-muted" %>
+      </div>
+</section>
 
-  <div class="flex justify-center pb-4 ">
-    <h1 class="font-bold text-4xl text-white">Projects</h1>
-  </div>
+<%= button_to "Sort by: most ancient", projects_path, method: :get, params: {sort_by: "ancient"}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"%>
+<%= button_to "Sort by: most recent", projects_path, method: :get, params: {sort_by: "recent"}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"%>
+<%= button_to "Sort by: most liked", projects_path, method: :get, params: {sort_by: "most_liked"}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"%>
+<%= button_to "Sort by: least liked", projects_path, method: :get, params: {sort_by: "least_liked"}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"%>
+
+<section class="bg-gray-200 -mb-16">
 
   <div id="projects" class="p-5 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 h-min">
+
+<section class="p-5 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 h-min">
+
     <%= render @projects %>
-  </div>
-  <%= link_to 'New project', new_project_path, class: "btn-muted" %> 
-</div>
+</section>

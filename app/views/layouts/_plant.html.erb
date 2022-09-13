@@ -1,20 +1,66 @@
-<article class="w-full max-w-sm rounded-lg bg-white shadow-lg mb-4 flex flex-col items-center">
-  <img
-    class="h-72 w-full object-cover object-center rounded-t-lg"
-    src="<%=@plant[:picture_url]%>"
-    alt="A photography of <%= @plant[:scientific_name] %>"
-  />
-  <div class="px-6 py-4 flex flex-col items-center justify-center w-full text-skin-base">
-    <h1 class="text-xl font-semibold h-14 text-center flex items-center">
-      <%= @plant[:common_name] %>
-    </h1>
-    <p>-</p>
-    <p class="font-semibold"><%= @plant[:scientific_name] %></p>
-  </div>
-  <%= link_to "More about #{@plant[:scientific_name]}", @plant[:wiki],
-    class:"btn-muted text-center mt-0" %>
-  <div class="flex justify-evenly items-center w-full mb-4 sm:py-4">
-    <i class="fa-solid fa-check fa-3x h-full flex items-center justify-center w-12 rounded-md hover:ring text-skin-muted"></i>
-    <i class="fa-solid fa-xmark fa-3x h-full flex items-center justify-center w-12 rounded-md hover:ring text-red-600/75"></i>
-  </div>
-</article>
+<%= image_tag @plant[:picture_url],
+    class: "h-72 w-full rounded-t-lg object-cover object-center",
+    alt: "A close up photography of #{@plant[:scientific_name]}" %>
+<div
+  class="
+    text-skin-base
+    flex
+    w-full
+    flex-col
+    items-center
+    justify-center
+    px-6
+    py-4
+  "
+>
+  <h2 class="flex h-14 items-center text-center text-xl">
+    <%= @plant[:common_name] %>
+  </h2>
+  <p>-</p>
+  <p class="font-semibold"><%= @plant[:scientific_name] %></p>
+</div>
+<%= link_to "More about #{@plant[:scientific_name]}", @plant[:wiki], class:
+      "btn-muted text-center mt-0" %>
+<div class="mb-4 flex w-full items-center justify-evenly sm:py-4">
+  <% if current_user %>
+
+    <%= button_to selected_plants_path,action: :create, params: {inaturalist_id: @plant[:id].to_i}, remote: :true do %>
+      <i
+        @click=""
+        class="
+          fa-solid
+          fa-check
+          fa-3x
+          flex
+          h-full
+          w-12
+          items-center
+          justify-center
+          rounded-md
+          text-green-600
+          hover:cursor-pointer
+          hover:ring
+        "
+      ></i>
+    <% end %>
+    <i
+      @click="shown = false"
+      class="
+        fa-solid
+        fa-xmark
+        fa-3x
+        flex
+        h-full
+        w-12
+        items-center
+        justify-center
+        rounded-md
+        text-red-600/75
+        hover:cursor-pointer
+        hover:ring
+      "
+    ></i>
+
+  <% end %>
+
+</div>
