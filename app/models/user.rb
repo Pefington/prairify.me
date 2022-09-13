@@ -17,10 +17,10 @@ class User < ApplicationRecord
 	length: { in: 6..15 },
 	format: { without: /[!@#%*+;,?&()=]/ }
 
-  # after_create :welcome_send
-  # def welcome_send
-  #   UserMailer.welcome_email(self).deliver_now
-  # end
+  after_create :welcome_send
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
 
   enum role: { user: 0, admin: 1 }
 
