@@ -36,6 +36,7 @@
     </div>
     <h1 class="mb-3">Look what species you could grow where you live!</h1>
     <%= render 'shared/search_bar' %>
+    <%= button_to "Click here to geolocate", search_index_path, method: :get, params: {search: 'geoloc'} %>
   </div>
 </section>
 

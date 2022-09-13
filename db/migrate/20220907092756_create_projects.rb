@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.integer :place_id
       t.datetime :begin
       t.datetime :finish
-      t.belongs_to :user, index: true
+      t.belongs_to :user, foreign_key: true, null: false
       
       t.timestamps
     end

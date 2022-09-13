@@ -3,7 +3,11 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @projects = Project.all
+    if params[:sort_by] == nil
+      @projects = Project.all
+    else
+      @projects = helpers.project_sorted_by(params[:sort_by])
+    end
   end
 
   def show
