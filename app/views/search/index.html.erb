@@ -1,38 +1,32 @@
-<section x-data="{ selectedCount: <%= @selected_plants.count %> }">
+<div x-data="{ selectedCount: <%= @selected_plants.count %> }">
   <% if @local_plants == nil %>
-
-    <p>No result. You could try a wider area (district, county, département...)</p>
-
+    <p>
+      No result. You could try a wider area (district, county, département...)
+    </p>
   <% else %>
-    <% if current_user %>
-
-      <section class="flex flex-col items-center justify-evenly">
-        <h3 class="mb-4 text-xl">
+    <section class="flex flex-col items-center justify-between text-center">
+      <p class="text-xl"><%= @hits %>
+        results for
+        <%= @place %></p>
+      <% if current_user %>
+        <h3 class="mt-8 text-xl">
           <span x-text="selectedCount"></span>
           out of 12 plants selected.
         </h3>
-        <%= link_to 'New project', new_project_path, class: "btn-muted",
-    params:[@plants] %>
+        <%= link_to 'Add them to a new project!', new_project_path, class:
+    "btn-muted", params:[@plants] %>
         <div @click="eliminated = false, selected = false, selectedCount = 0">
-          <%= button_to 'Reset Selection', selected_plants_reset_path, method: :reset, remote: :true, class: "btn-warning" %>
+          <%= button_to 'Reset Selection', selected_plants_reset_path, method:
+      :reset, remote: :true, class: "btn-warning my-8" %>
         </div>
-      </section>
-
-    <% else %>
-
-      <div class="mb-8 flex flex-col items-center space-y-8 text-center">
-        <p class="cursor-pointer text-xl"><%= @hits %>
-          results for
-          <%= @place %></p>
+      <% else %>
         <p class="flex flex-col text-2xl sm:flex-row sm:items-center">
           <%= link_to "Join us", new_user_registration_path, class: "btn-muted" %>
           to start a project!
         </p>
-      </div>
-
-    <% end %>
-
-    <div class="flex h-min w-full flex-wrap justify-evenly p-5 sm:p-10">
+      <% end %>
+    </section>
+    <section class="flex h-min w-full flex-wrap justify-evenly p-5 sm:p-10">
       <% @local_plants.each do | plant | %>
         <article
           x-data="{
@@ -52,7 +46,7 @@
             items-center
             rounded-lg
             bg-white
-            pb-8
+            pb-4
             shadow-lg
             sm:mx-4
           "
@@ -61,7 +55,6 @@
           <%= render 'shared/plant' %>
         </article>
       <% end %>
-    </div>
-
+    </section>
   <% end %>
-</section>
+</div>
