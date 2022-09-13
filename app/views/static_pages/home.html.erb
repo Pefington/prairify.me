@@ -1,51 +1,55 @@
-<section
-  class="
-    -mt-12
-    flex
-    w-full
-    flex-col
-    items-center
-    bg-[url('https://images.unsplash.com/photo-1605802447037-d660fc4b2fd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')]
-    bg-cover
-    bg-center
-    p-8
-  "
->
-  <div class="h-5/6 max-w-xl rounded-lg bg-white/50 p-6 text-center">
-    <h2 class="mb-2 font-semibold text-2xl">
-      You want to make your first step to a better world?
-    </h2>
-    <br>
-    <p
-      class="
-        text-skin-base
-        font-medium
-        tracking-tight
-        text-base
-        sm:text-lg
-        md:text-xl
-      "
-    >
-      We can help you change your purely decorative piece of grass into a very
-      useful meadow welcoming a diversified fauna and flora!
-    </p>
-    <div class="m-8 text-center">
-      <div class="w-full">
-        <%= link_to "Join us", new_user_registration_path, class: "btn-muted" %>
+<% if current_user %>
+
+<% else %>
+  <section
+    class="
+      -mt-12
+      flex
+      w-full
+      flex-col
+      items-center
+      bg-[url('https://images.unsplash.com/photo-1605802447037-d660fc4b2fd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')]
+      bg-cover
+      bg-center
+      p-8
+    "
+  >
+    <div class="h-5/6 max-w-xl rounded-lg bg-white/50 p-6 text-center">
+      <h2 class="mb-2 font-semibold text-2xl">
+        You want to make your first step to a better world?
+      </h2>
+      <br>
+      <p
+        class="
+          text-skin-base
+          font-medium
+          tracking-tight
+          text-base
+          sm:text-lg
+          md:text-xl
+        "
+      >
+        We can help you change your purely decorative piece of grass into a very
+        useful meadow welcoming a diversified fauna and flora!
+      </p>
+      <div class="m-8 text-center">
+        <div class="w-full">
+          <%= link_to "Join us", new_user_registration_path, class: "btn-muted" %>
+        </div>
+      </div>
+      <h1 class="mb-3">Look what species you could grow where you live!</h1>
+      <div class="flex items-center justify-center">
+        <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9 mr-2 sm:mr-6 -ml-6 mt-2 hover:bg-white/50 hover:rounded-full"> 
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+          </svg>
+        <%end%>
+        <%= render 'layouts/search_bar' %>
       </div>
     </div>
-    <h1 class="mb-3">Look what species you could grow where you live!</h1>
-    <div class="flex items-center justify-center">
-      <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9 mr-6 -ml-6 mt-2 hover:bg-white/50 hover:rounded-full"> 
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-        </svg>
-      <%end%>
-      <%= render 'layouts/search_bar' %>
-    </div>
-  </div>
-</section>
+  </section>
+<%end%>
 
 <section class="relative mt-8 flex w-9/12">
   <div class="flex flex-col justify-center">
