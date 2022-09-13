@@ -27,7 +27,7 @@
       <i
         x-cloak
         @click="selected = true, selectedCount++"
-        x-show="!selected || selectedCount == 0"
+        x-show="!selected && !(selectedCount >= 12) || selectedCount == 0"
         class="
           mx-12
           fa-solid
@@ -45,7 +45,7 @@
         "
       ></i>
     <% end %>
-    <%= button_to selected_plants_path,action: :destroy, params: {inaturalist_id: @plant[:id].to_i}, remote: :true do %>
+    <%= button_to selected_plant_path(@plant), method: :delete, remote: :true do %>
       <i
         x-cloak
         @click="selected = false, selectedCount--"
@@ -69,7 +69,7 @@
     <i
       x-cloak
       @click="eliminated = true"
-      x-show="!selected || selectedCount == 0"
+      x-show="!selected && !(selectedCount >= 12) || selectedCount == 0"
       class="
         mx-12
         fa-solid

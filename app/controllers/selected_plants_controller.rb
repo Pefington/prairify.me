@@ -1,5 +1,4 @@
 class SelectedPlantsController < ApplicationController
-  before_action :set_selected_plant, only: %i[destroy]
   skip_before_action :verify_authenticity_token, only: [:reset]
 
   def create
@@ -15,20 +14,16 @@ class SelectedPlantsController < ApplicationController
   end
 
   def destroy
-    @selected_plant.destroy
+    SelectedPlant.where(user_id: current_user.id, inaturalist_id: params[:id]).destroy_all
     flash.now[:success] = 'Plant was successfully removed.'
   end
 
   def reset
     SelectedPlant.where(user_id: current_user.id).destroy_all
-    flash.now[:notice] = 'Selected plants were successfully reset.'
+    redirect_back(fallback_location: root_path)
   end
 
   private
-
-  def set_selected_plant
-    @selected_plant = SelectedPlant.find(params[:id])
-  end
 
   def selected_plant_params
     params.permit(:user_id, :inaturalist_id)
