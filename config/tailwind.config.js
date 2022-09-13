@@ -25,6 +25,7 @@ module.exports = {
       backgroundColor: {
         skin: {
           "back-nav": "var(--color-back-nav)",
+          "accent": "var(--color-back-accent)",
           "button-accent": "var(--color-button-accent)",
           "button-accent-hover": "var(--color-button-accent-hover)",
           "button-muted": "var(--color-button-muted)",
@@ -38,7 +39,7 @@ module.exports = {
       },
       borderColor: {
         skin: {
-          "border-base": "var(--color-border-base)",
+          base: "var(--color-border-base)",
         },
       },
     },

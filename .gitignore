@@ -17,6 +17,7 @@
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
+/storage
 
 
 /public/assets
@@ -34,3 +35,5 @@ node_modules
 # https://vitejs.dev/guide/env-and-mode.html#env-files
 *.local
 
+# Active storage files
+/storage
