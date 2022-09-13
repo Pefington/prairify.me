@@ -7,7 +7,8 @@ class SearchController < ApplicationController
       @place = helpers.get_place_name(helpers.usable_url(params[:search]))
       @local_plants = helpers.get_data(helpers.usable_url(params[:search]))
     end
-    @selected_plants = selected_plants.map(&:inaturalist_id)
     @hits = @local_plants.count
+    selected_plants = SelectedPlant.where(user_id: current_user&.id)
+    @selected_plants = selected_plants.map(&:inaturalist_id)
   end
 end

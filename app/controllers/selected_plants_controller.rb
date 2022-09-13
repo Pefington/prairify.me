@@ -4,8 +4,6 @@ class SelectedPlantsController < ApplicationController
   def create
     @selected_plant = SelectedPlant.new(selected_plant_params)
     @selected_plant.user_id = current_user.id
-    Rails.logger.debug params.inspect
-
     if @selected_plant.save
       flash.now[:success] = 'Plant was successfully selected.'
     else
