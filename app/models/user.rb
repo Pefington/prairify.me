@@ -8,9 +8,6 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favourites, dependent: :destroy
 
-  validates :username,
-            length: { minimum: 3, maximum: 20 }
-
   validates :password,
             length: { minimum: 6 }
 
