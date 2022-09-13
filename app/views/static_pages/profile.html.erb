@@ -1,0 +1,28 @@
+<section class="bg-white flex flex-1">
+  <div class="container mx-auto flex flex-col py-28 lg:py-0 lg:pt-28">
+    <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl">My profile</h1>
+    <div class="mt-8 xl:mt-16">
+      <div class="sm:px-12 py-8 border rounded-xl ">
+        <div class="flex flex-col sm:-mx-4 sm:flex-row">
+          <div class="mt-4 sm:mx-4 sm:mt-0 px-6 lg:px-0">
+            <div class="mb-5">
+              <h2 class="text-2xl">Username</h2>
+              <p class="text-xl text-gray-700"><%= @profiles.username %></p>
+            </div>
+            <div class="mb-5">
+              <h2 class="text-2xl">Email</h2>
+              <p class="text-xl text-gray-700"><%= @profiles.email %></p>
+            </div>
+          </div>
+        </div>
+        <div class="flex text-center">
+          <%= link_to "Edit", edit_user_registration_path, class: "btn w-full" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <div class="mb-5 mt-4">
+    <h2 class="text-2xl">My Project(s) : </h2>
+  </div>
+<%= render @projects %>

@@ -11,6 +11,8 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
-  def blog
+  def profile
+    @profiles = current_user
+    @projects = helpers.current_user_projects
   end
 end

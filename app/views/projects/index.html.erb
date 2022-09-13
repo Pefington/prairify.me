@@ -1,14 +1,43 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
+<section
+  class="
+    -mt-12
+    flex
+    w-full
+    flex-col
+    items-center
+    bg-[url('https://images.unsplash.com/photo-1621371047525-f99f36b60b9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80')]
+    bg-cover
+    bg-center
+    p-8
+  "
+>
+  <div class="h-5/6 max-w-xl rounded-lg bg-white/50 p-6 text-center">
+    <h1 class="mb-2 text-white text-4xl">
+      Projects
+    </h1>
+    <br>
+    <p
+      class="
+        text-skin-base
+        font-medium
+        tracking-tight
+        text-base
+        sm:text-lg
+        md:text-xl
+        text-gray-800
+      "
+    >
+      Here you can see all the projects in progress, you can inspire yourself as you can inspire others, the first step is here!
+    </p>
+    <div class="m-8 text-center">
+      <div class="w-full">
+       <%= link_to 'New project', new_project_path, class: "btn-muted" %>
+      </div>
+</section>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Projects</h1>
-    <%= link_to 'New project', new_project_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
+<section class="bg-gray-200 -mb-16">
 
-  <div id="projects" class="min-w-full">
+  <div id="projects" class="p-5 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 h-min">
     <%= render @projects %>
-  </div>
-</div>
+   </div>
+</section>

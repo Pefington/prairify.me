@@ -4,12 +4,26 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <%= render @project %>
-
-    <%= link_to 'Edit this project', edit_project_path(@project), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Destroy this project', project_path(@project), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <div class="bg-gray-100 rounded-lg">
+      <%= render @project %>
+    <h1>Updates</h1>
+    <%= render @project_updates%>
+    <h1>Comments</h1>
+    <%= render @comments%>
     </div>
-    <%= link_to 'Back to projects', projects_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+    <div class="w-full flex justify-center">
+    <%if current_user%>
+      <%if @project.user == current_user%>
+        <%= link_to 'Edit this project', edit_project_path(@project), class: "btn" %>
+        <%= button_to 'Destroy this project', project_path(@project), method: :delete, class: "btn" %>
+        <%= button_to 'Add an update', new_project_project_update_path(@project), method: :get, class: "btn" %>
+      <%end%>
+      <%= button_to 'Add a comment', new_project_comment_path(@project), method: :get, class: "btn" %>
+      <%= link_to 'Back to projects', projects_path, class: "btn" %>
+    <%else%>
+      <%= link_to 'Back to projects', projects_path, class: "btn" %>
+      <%end%>
+    </div>
   </div>
 </div>

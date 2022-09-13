@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     Like.create(project_id: params[:project_id], user_id: current_user.id)
