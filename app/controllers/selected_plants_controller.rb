@@ -24,9 +24,9 @@ class SelectedPlantsController < ApplicationController
     Rails.logger.debug params.inspect
 
     if @selected_plant.save
-      render :new, flash.now[:notice] = 'Selected plant was successfully created.'
+      flash[:success] = 'Selected plant was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      flash[:alert] = 'Plant is already selected.'
     end
   end
 
@@ -42,7 +42,7 @@ class SelectedPlantsController < ApplicationController
   # DELETE /selected_plants/1
   def destroy
     @selected_plant.destroy
-    redirect_to selected_plants_url, notice: 'Selected plant was successfully destroyed.'
+    flash[:success] = 'Selected plant was successfully created.'
   end
 
   private
