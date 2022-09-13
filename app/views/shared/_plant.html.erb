@@ -21,13 +21,15 @@
 </div>
 <%= link_to "More about #{@plant[:scientific_name]}", @plant[:wiki], class:
       "btn-muted text-center mt-0" %>
-<div class="mb-4 flex w-full items-center justify-evenly sm:py-4">
-  <% if current_user %>
-
+<% if current_user %>
+  <div class="mb-4 flex w-full items-center justify-center sm:py-4">
     <%= button_to selected_plants_path,action: :create, params: {inaturalist_id: @plant[:id].to_i}, remote: :true do %>
       <i
-        @click=""
+        x-cloak
+        @click="selected = true, selectedCount++"
+        x-show="!selected || selectedCount == 0"
         class="
+          mx-12
           fa-solid
           fa-check
           fa-3x
@@ -43,9 +45,33 @@
         "
       ></i>
     <% end %>
+    <%= button_to selected_plants_path,action: :destroy, params: {inaturalist_id: @plant[:id].to_i}, remote: :true do %>
+      <i
+        x-cloak
+        @click="selected = false, selectedCount--"
+        x-show="selected && selectedCount > 0"
+        class="
+          fa-solid
+          fa-circle-check
+          fa-3x
+          flex
+          h-full
+          w-12
+          items-center
+          justify-center
+          rounded-md
+          text-green-900
+          hover:cursor-pointer
+          hover:ring
+        "
+      ></i>
+    <% end %>
     <i
-      @click="shown = false"
+      x-cloak
+      @click="eliminated = true"
+      x-show="!selected || selectedCount == 0"
       class="
+        mx-12
         fa-solid
         fa-xmark
         fa-3x
@@ -60,7 +86,5 @@
         hover:ring
       "
     ></i>
-
-  <% end %>
-
-</div>
+  </div>
+<% end %>
