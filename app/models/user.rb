@@ -1,16 +1,17 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many :projects # rubocop:disable Rails/HasManyOrHasOneDependent
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:google_oauth2]
-
+  :recoverable, :rememberable, :validatable,
+  :omniauthable, omniauth_providers: [:google_oauth2]
   after_initialize :set_default_role, if: :new_record?
+  has_many :projects 
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :projects, through: :likes
   has_many :favourites, dependent: :destroy
+    
+  validates :username, :password,
+  presence: true,
+	length: { in: 6..15 },
+	format: { without: /[!@#%*+;,?&()=]/ }
 
   after_create :welcome_send
   def welcome_send
