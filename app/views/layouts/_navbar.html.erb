@@ -1,4 +1,4 @@
-<header class="w-screen bg-skin-back-nav text-skin-inverted">
+<header class="w-full bg-skin-back-nav text-skin-inverted">
   <nav x-data="{ isOpen: false }" class="relative bg-skin-back-nav">
     <div class="container px-6 py-4 mx-auto">
       <div class="lg:flex lg:items-center lg:justify-between">
@@ -13,10 +13,10 @@
         >
           <div>
             <%= link_to root_path do %>
-            <%= vite_image_tag 'images/original_logo.png', class: "mx-4 h-16" %>
+            <%= vite_image_tag 'images/logo.png', class: "mx-4 h-16" %>
             <% end %>
-          </div>          
-          
+          </div>
+
           <div class="text-xl font-semibold text-skin-inverted hover:text-gray-700">
             <%= link_to "Prairify", root_path, class: "font-FjallaOne text-2xl font-bold transition-colors duration-300 transform lg:text-3xl rounded-md px-3 py-2 focus:bg-skin-button-accent-hover drop-shadow-md" %>
           </div>
