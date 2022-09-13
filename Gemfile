@@ -105,4 +105,8 @@ group :development, :test do
   # ~ rspec [https://github.com/rspec/rspec-rails#readme]
   # For testing
   gem 'rspec-rails', '~> 6.0.0.rc1'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing'
+
 end
