@@ -2,9 +2,11 @@ class Admin::DashboardController < Admin::AdminController
   def index
     @users = User.all
 
-    @latest_users = User.order('id desc').first(10)
-
     @projects = Project.all
+
+    @comments = Comment.all
+
+    @latest_users = User.order('id desc').first(10)
 
     @latest_projects = Project.order('id desc').first(10)
 
