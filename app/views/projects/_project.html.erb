@@ -1,71 +1,68 @@
-<section class="flex flex-1 justify-center">
-  <div id="<%= dom_id project %>" class="p-6 rounded-lg shadow-lg w-[500px] bg-white">
-    <p class="my-5">
-      <h1 class="text-black">Name:</h1>
-      <%= project.name %>
-    </p>
-
-    <p class="my-5">
-      <h1  class="text-black">Description:</h1>
-      <%= project.description %>
-    </p>
-
+<section class="flex flex-col justify-center w-full max-h-[500px]">
+  <div id="<%= dom_id project %>" class="flex justify-center overflow-hidden bg-white rounded-lg shadow-lg m-4 h-[500px]">
     <% if project.photos.attached?%>
       <% project.photos.each do |photo|%>
-        <%= image_tag photo %>
+        <%= image_tag photo, class:"w-1/2 object-cover object-center" %>
       <%end%>
     <%end%>
+    <div class="w-1/2 p-4 md:p-4 relative">
+      <div class=" flex flex-col justify-center">
+        <h1 class="text-2xl font-bold"><%= project.name %></h1>
 
-    <% if project.place_id != nil%>
-      <p class="my-5">
-        <h1  class="text-black">Place:</h1>
-        <%= project.place_id %>
-      </p>
-    <%end%>
+        <p class="my-3"><%= project.description %></p>
 
-    <% if project.begin != nil%>
-      <p class="my-5">
-        <h1>Begin:</h1>
-        <%= project.begin.strftime("%d/%m/%Y, at %I:%M%p")%>
-      </p>
-    <%end%>
-
-    <% if project.finish != nil%>
-      <p class="my-5">
-        <h1>Finish:</h1>
-        <%= project.finish.strftime("%d/%m/%Y, at %I:%M%p") %>
-      </p>
-    <%end%>
-
-    <%if user_signed_in?%>
-      <%if liked?(project)[0]%>
-        <%= button_to like_path(liked?(project)[1]), method: :delete, class:"bg-blue-500 text-white active:bg-cyan-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
-            <i class="fa-solid fa-thumbs-up"></i>
-            <%=number_of_likes(project)%>
-        <%end%>
-      <%else%>
-        <%= button_to likes_path, method: :post, params: {project_id: project}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
-            <i class="fa-solid fa-thumbs-up"></i>
-            <%=number_of_likes(project)%>
-        <%end%>
+      <% if project.place_id != nil%>
+        <p class="my-3">
+          <h1>Place:</h1>
+          <%= project.place_id %>
+        </p>
+      <%end%>
+    <% if action_name != "index" %>
+      <% if project.begin != nil%>
+        <p class="my-3">
+          <h1>Begin:</h1>
+          <%= project.begin.strftime("%d/%m/%Y, at %I:%M%p")%>
+        </p>
       <%end%>
 
-      <% if favourite?(project)[0]%>
-        <%= button_to favourite_path(favourite?(project)[1]), method: :delete, class:"bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
-          <i class="fas fa-heart"></i>
-        <%end%>
-      <%else%>
-        <%= button_to favourites_path, method: :post, params: {project_id: project}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" do%>
-          <i class="fas fa-heart"></i>
-        <%end%>
+      <% if project.finish != nil%>
+        <p class="my-3">
+          <h1>Finish:</h1>
+          <%= project.finish.strftime("%d/%m/%Y, at %I:%M%p") %>
+        </p>
       <%end%>
     <%end%>
-
-    <div class="pt-4 ">
-      <% if action_name != "show" %>
-          <%= link_to "Show this project", project, class: "btn" %>
-          <hr class="mt-6">
-      <% end %>
     </div>
+    <div class="flex absolute bottom-0 right-0 mr-2">
+      <%if user_signed_in?%>
+        <%if liked?(project)[0]%>
+          <%= button_to like_path(liked?(project)[1]), method: :delete, class:"bg-blue-500 text-white text-sm active:bg-cyan-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-cyan-400 outline-none focus:outline-none ease-linear transition-all duration-150" do%>
+              <i class="fa-solid fa-thumbs-up"></i>
+              <%=number_of_likes(project)%>
+          <%end%>
+        <%else%>
+          <%= button_to likes_path, method: :post, params: {project_id: project}, class:"bg-gray-500 text-white text-sm active:bg-gray-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-cyan-400 outline-none focus:outline-none ease-linear transition-all duration-150" do%>
+              <i class="fa-solid fa-thumbs-up"></i>
+              <%=number_of_likes(project)%>
+          <%end%>
+        <%end%>
+        <% if favourite?(project)[0]%>
+          <%= button_to favourite_path(favourite?(project)[1]), method: :delete, class:"bg-pink-500 text-white text-sm active:bg-pink-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-pink-400 outline-none focus:outline-none ease-linear transition-all duration-150" do%>
+            <i class="fas fa-heart"></i>
+          <%end%>
+        <%else%>
+          <%= button_to favourites_path, method: :post, params: {project_id: project}, class:"bg-gray-500 text-white text-sm active:bg-gray-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-pink-400 outline-none focus:outline-none ease-linear transition-all duration-150" do%>
+            <i class="fas fa-heart"></i>
+          <%end%>
+        <%end%>
+      <%end%>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-end">
+    <% if action_name != "show" %>
+        <%= link_to "Show this project", project, class: "btn-muted" %>
+    <% end %>
   </div>
 </section>
