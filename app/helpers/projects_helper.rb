@@ -24,4 +24,46 @@ module ProjectsHelper
     project.likes.count
   end
 
+  def project_sorted_by(argument)
+    case argument
+    when 'ancient' || ''
+      return Project.all
+    when 'recent'
+      return Project.all.reverse
+    when 'most_liked'
+      hash = {}
+      likes = Like.all
+      likes.each do |like|
+        if hash[:like.project_id] == nil
+          hash[:like.project_id] = 1
+        else
+          hash[:like.project_id] += 1
+        end
+      end
+      hash.sort_by {|k, v| -v}
+      result = []
+      hash.each_with_index do |like, index|
+        result.push(Project.find_by(id:hash[index][0]))
+      end
+      return result
+    when 'least_liked'
+      hash = {}
+      likes = Like.all
+      likes.each do |like|
+        if hash[:like.project_id] == nil
+          hash[:like.project_id] = 1
+        else
+          hash[:like.project_id] += 1
+        end
+      end
+      hash.sort_by {|k, v| v}
+      result = []
+      hash.each_with_index do |like, index|
+        result.push(Project.find_by(id:hash[index][0]))
+      end
+      return result
+    end
+
+  end
+
 end
