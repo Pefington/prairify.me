@@ -31,39 +31,31 @@ module ProjectsHelper
     when 'recent'
       return Project.all.reverse
     when 'most_liked'
-      hash = {}
-      likes = Like.all
-      likes.each do |like|
-        if hash[:like.project_id] == nil
-          hash[:like.project_id] = 1
-        else
-          hash[:like.project_id] += 1
-        end
-      end
-      hash.sort_by {|k, v| -v}
-      result = []
-      hash.each_with_index do |like, index|
-        result.push(Project.find_by(id:hash[index][0]))
-      end
-      return result
+      hash = sort_likes.sort_by {|k, v| -v}
+      create_right_order_of_display(hash)
     when 'least_liked'
-      hash = {}
-      likes = Like.all
-      likes.each do |like|
-        if hash[:like.project_id] == nil
-          hash[:like.project_id] = 1
-        else
-          hash[:like.project_id] += 1
-        end
-      end
-      hash.sort_by {|k, v| v}
-      result = []
-      hash.each_with_index do |like, index|
-        result.push(Project.find_by(id:hash[index][0]))
-      end
-      return result
+      hash = sort_likes.sort_by {|k, v| v}
+      create_right_order_of_display(hash)
     end
-
   end
 
+  def sort_likes
+    likes = Like.all
+    hash = {}
+    Project.all.length.times do |index|
+      hash[index + 1] = 0
+    end
+    likes.each do |like|
+      hash[like.project_id] += 1
+    end
+    hash
+  end
+
+  def create_right_order_of_display(hash)
+    result = []
+    hash.each_with_index do |like, index|
+      result.push(Project.find_by(id:hash[index][0]))
+    end
+    result
+  end
 end
