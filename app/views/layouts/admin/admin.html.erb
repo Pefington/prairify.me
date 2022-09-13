@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,8 +17,6 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>[x-cloak] {display: none;}</style>
 
-
-
     <%# https://vite-ruby.netlify.app/guide/rails %>
     <%= vite_client_tag %>
     <%= vite_javascript_tag 'application' %>
@@ -27,8 +24,9 @@
   </head>
   <body class="flex">
     <%= render 'layouts/admin/sidebar' %>
-  <main class="flex flex-col bg-gray-100 w-screen">
-    <%= yield %>
-  </main>
+    <main class="flex flex-col bg-gray-100 w-screen">
+    <%= render 'shared/flashes' %>
+      <%= yield %>
+    </main>
   </body>
 </html>
