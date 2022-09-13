@@ -1,17 +1,18 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable,
-  :omniauthable, omniauth_providers: [:google_oauth2]
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [:google_oauth2]
   after_initialize :set_default_role, if: :new_record?
-  has_many :projects 
+  has_many :projects, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :favourites, dependent: :destroy
-    
-  validates :username, :password,
-  presence: true,
-	length: { in: 6..15 },
-	format: { without: /[!@#%*+;,?&()=]/ }
+
+  validates :username,
+            length: { minimum: 3, maximum: 20 }
+
+  validates :password,
+            length: { minimum: 6 }
 
   after_create :welcome_send
   def welcome_send
@@ -33,7 +34,7 @@ class User < ApplicationRecord
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
-    
+
     user ||= User.create(email: data['email'],
                          password: Devise.friendly_token[0, 20],
                          provider: User.providers[:google_oauth2])
