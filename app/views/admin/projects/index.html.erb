@@ -1,57 +1,150 @@
-<div class="lg:flex w-full">
+<section class="w-full lg:flex">
   <div class="flex flex-col lg:w-full">
-    <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 m-8">
+    <div class="m-8 rounded-lg bg-white p-4 shadow sm:p-6 xl:p-8">
       <div class="mb-4 flex items-center justify-between">
         <div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">All Created Projects</h3>
+          <h3 class="mb-2 text-xl font-bold text-gray-900">
+            All Created Projects
+          </h3>
           <span class="text-base font-normal text-gray-500">This is a list of all created projects</span>
         </div>
       </div>
-      <div class="flex flex-col mt-8">
+      <div class="mt-8 flex flex-col">
         <div class="overflow-x-auto rounded-lg">
-          <div class="align-middle inline-block min-w-full">
-            <div class="shadow overflow-hidden sm:rounded-lg">
+          <div class="inline-block min-w-full align-middle">
+            <div class="overflow-hidden shadow sm:rounded-lg">
               <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-50">
                   <tr>
-                    <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th
+                      scope="col"
+                      class="
+                        p-4
+                        text-left
+                        text-xs
+                        font-medium
+                        uppercase
+                        tracking-wider
+                        text-gray-500
+                      "
+                    >
                       ID
                     </th>
-                    <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th
+                      scope="col"
+                      class="
+                        p-4
+                        text-left
+                        text-xs
+                        font-medium
+                        uppercase
+                        tracking-wider
+                        text-gray-500
+                      "
+                    >
                       Name
                     </th>
-                    <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th
+                      scope="col"
+                      class="
+                        p-4
+                        text-left
+                        text-xs
+                        font-medium
+                        uppercase
+                        tracking-wider
+                        text-gray-500
+                      "
+                    >
                       Description
                     </th>
-                     <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Management
+                    <th
+                      scope="col"
+                      class="
+                        p-4
+                        text-left
+                        text-xs
+                        font-medium
+                        uppercase
+                        tracking-wider
+                        text-gray-500
+                      "
+                    >
+                      Manage
                     </th>
                   </tr>
                 </thead>
                 <tbody class="bg-white">
                   <% @projects.each do |project| %>
-                  <tr>
-                    <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                      <%= project.id %>
-                    </td>
-                    <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                      <%= project.name %>
-                    </td>
-                    <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                      <%= project.description %>
-                    </td>
-                    <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900 flex flex-row">
-                      <%= link_to 'Edit', edit_admin_project_path(project.id), class: "btn sm:ml-0" %>
-                      <%= button_to 'Delete', admin_project_path(project.id), class: "btn-warning sm:ml-0", method: :delete, form: { data: { 'turbo-confirm': 'Are you sure?' } } %>
-                    </td>
-                  </tr>
+                    <tr>
+                      <td class="whitespace-nowrap pl-4 text-sm font-normal text-gray-900">
+                        <%= project.id %>
+                      </td>
+                      <td class="whitespace-nowrap pl-4 text-sm font-normal text-gray-500">
+                        <%= project.name %>
+                      </td>
+                      <td class="whitespace-nowrap pl-4 text-sm font-semibold text-gray-900">
+                        <%= project.description %>
+                      </td>
+                      <td
+                        class="
+                          flex
+                          flex-row
+                          whitespace-nowrap
+                          pl-1
+                          text-sm
+                          font-semibold
+                          text-gray-900
+                        "
+                      >
+                        <%= link_to edit_admin_project_path(project.id), class:
+                      "flex items-center px-4 py-2 mt-2 text-gray-600
+                      transition-colors duration-300 transform rounded-md
+                      dark:text-gray-400 hover:bg-gray-200
+                      dark:hover:bg-gray-700 dark:hover:text-gray-200
+                      hover:text-gray-700" do %>
+                          <svg
+                            class="h-5 w-5"
+                            viewBox="0 0 24 24"
+                            fill="#0092E4"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M5,18H9.24a1,1,0,0,0,.71-.29l6.92-6.93h0L19.71,8a1,1,0,0,0,0-1.42L15.47,2.29a1,1,0,0,0-1.42,0L11.23,5.12h0L4.29,12.05a1,1,0,0,0-.29.71V17A1,1,0,0,0,5,18ZM14.76,4.41l2.83,2.83L16.17,8.66,13.34,5.83ZM6,13.17l5.93-5.93,2.83,2.83L8.83,16H6ZM21,20H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z"
+                            />
+                          </svg>
+                        <% end %>
+                        <%= button_to admin_project_path(project.id),
+                      method: :delete, form: { data: { 'turbo-confirm': 'Are you
+                      sure?' } }, class: "w-full flex items-center px-4 py-2
+                      mt-2 text-gray-600 transition-colors duration-300
+                      transform rounded-md dark:text-gray-400 hover:bg-gray-200
+                      dark:hover:bg-gray-700 dark:hover:text-gray-200
+                      hover:text-gray-700" do %>
+                          <svg
+                            class="h-5 w-5"
+                            viewBox="0 0 24 24"
+                            fill="#F32013"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10,18a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,10,18ZM20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Zm-3-1a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,14,18Z"
+                            />
+                          </svg>
+                        <% end %>
+                      </td>
+                    </tr>
                   <% end %>
                 </tbody>
               </table>
+              <div class="flex justify-center pt-4">
+                <%= paginate @projects %>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
