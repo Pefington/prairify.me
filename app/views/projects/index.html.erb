@@ -35,6 +35,16 @@
       </div>
 </section>
 
+<%= button_to "Sort by: most ancient", projects_path, method: :get, params: {sort_by: "ancient"}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"%>
+<%= button_to "Sort by: most recent", projects_path, method: :get, params: {sort_by: "recent"}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"%>
+<%= button_to "Sort by: most liked", projects_path, method: :get, params: {sort_by: "most_liked"}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"%>
+<%= button_to "Sort by: least liked", projects_path, method: :get, params: {sort_by: "least_liked"}, class:"bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"%>
+
+<section class="bg-gray-200 -mb-16">
+
+  <div id="projects" class="p-5 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 h-min">
+
 <section class="p-5 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 h-min">
+
     <%= render @projects %>
 </section>
