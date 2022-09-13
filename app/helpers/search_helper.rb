@@ -1,7 +1,7 @@
 module SearchHelper
 
   def get_place(place)
-    place_url = "https://api.inaturalist.org/v1/search?q=#{place}&sources=places&per_page=1"
+    place_url = "https://api.inaturalist.org/v1/search?q=#{place}&per_page=1"
     place_data = JSON.load(URI.open(place_url))['results'][0]
     if place_data != nil
       if place_data['matches'] != nil
@@ -46,6 +46,11 @@ module SearchHelper
       results.push(hash_data)
     end
     results
+  end
+
+  def usable_url(str)
+    str = str.gsub(/[!@%&"]/,'').gsub('-', ' ')
+    ERB::Util.url_encode(str)
   end
 
 end

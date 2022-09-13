@@ -62,6 +62,7 @@ gem 'json'
 gem 'open-uri'
 
 gem 'unsplash'
+gem 'geocoder'
 # ########################################
 
 group :development do
