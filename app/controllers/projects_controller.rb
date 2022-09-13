@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
-  
+
   def index
     @projects = Project.all
   end
@@ -21,7 +21,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    puts params
     @project.user = current_user
     if @project.save
       redirect_to @project, notice: "Project was successfully created."

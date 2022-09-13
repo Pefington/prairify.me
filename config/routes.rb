@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :selected_plants
   resources :project_updates
   root 'static_pages#home'
   devise_for :users, controllers: {
