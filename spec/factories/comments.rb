@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :comment do
-    user_id { User.last.id || association(:user) }
-    project_id { Project.last.id || association(:project) }
+    user { FactoryBot.create(:user) }
+    project { FactoryBot.create(:project) }
+    sequence(:content) { |i| "Content numero #{i}"}
   end
 end
