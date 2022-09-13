@@ -1,25 +1,18 @@
-<section class="flex flex-1 justify-center text-white">
-  <div id="<%= dom_id project_update %>" class="p-6 rounded-lg shadow-lg w-[500px] bg-white/50">
-    <p class="my-5">
-      <h1 class="text-black">Posted on:</h1>
-      <%= project_update.created_at %>
-    </p>
-
-    <p class="my-5">
-      <h1 class="text-black">Title:</h1>
-      <%= project_update.title %>
-    </p>
-
-    <p class="my-5">
-      <h1 class="text-black">Description:</h1>
-      <%= project_update.description %>
-    </p>
-
+<section class="flex flex-col justify-center w-full max-h-[500px]">
+  <div id="<%= dom_id project_update %>" class="flex justify-center overflow-hidden bg-white rounded-lg shadow-lg m-4">
+    <div class="w-1/2 p-4 md:p-4 flex flex-col justify-center">
+        <h1 class="text-2xl font-bold"><%= project_update.title %></h1>
+        <p class="my-3">
+          <h1>Description:</h1>
+          <%= project_update.description %>
+        </p>
+        <p class="my-3">
+          <h1>Posted on:</h1>
+          <%= project_update.created_at.strftime("%d/%m/%Y, at %I:%M%p") %>
+        </p>
+    </div>
     <% if project_update.photo.attached?%>
-      <p class="my-5">
-        <%= image_tag project_update.photo %>
-      </p>
+      <%= image_tag project_update.photo, class:"w-1/2 object-cover object-center h-[400px]" %>
     <%end%>
-
   </div>
 </section>
