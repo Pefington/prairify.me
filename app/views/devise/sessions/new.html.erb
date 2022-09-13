@@ -9,7 +9,7 @@
           </svg>
         </span>
         <%= f.label :email, class: "hidden" %>
-        <%= f.email_field :email, autofocus: true, placeholder: "Email address", class: "form-field", autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, placeholder: "Email address", class: "form-field indent-6", autocomplete: "email" %>
       </div>
       <div class="relative flex items-center mt-4">
         <span class="absolute">
@@ -18,7 +18,7 @@
           </svg>
         </span>
         <%= f.label :password, class: "hidden" %><br />
-        <%= f.password_field :password, placeholder: "Password", class:"form-field", autocomplete: "current-password" %>
+        <%= f.password_field :password, placeholder: "Password", class:"form-field indent-6", autocomplete: "current-password" %>
       </div>
       <% if devise_mapping.rememberable? %>
       <div class="mt-3">
