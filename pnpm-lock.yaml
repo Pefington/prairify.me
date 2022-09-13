@@ -1,11 +1,17 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@alpinejs/intersect': ^3.10.3
+  alpinejs: ^3.10.3
   prettier: ^2.7.1
   prettier-plugin-tailwindcss: ^0.1.13
   vite: ^3.0.0
   vite-plugin-full-reload: ^1.0.4
   vite-plugin-ruby: ^3.1.0
+
+dependencies:
+  '@alpinejs/intersect': 3.10.3
+  alpinejs: 3.10.3
 
 devDependencies:
   prettier: 2.7.1
@@ -15,6 +21,10 @@ devDependencies:
   vite-plugin-ruby: 3.1.2_vite@3.0.9
 
 packages:
+
+  /@alpinejs/intersect/3.10.3:
+    resolution: {integrity: sha512-vMRvhbMJzS1tupb2a/3GF5H+gLxxWaXJpcxJlfSHrV2JTb+RFWOJIkL/63JpPPGibtpaNBDrx3hsRN0CJ4d5mw==}
+    dev: false
 
   /@esbuild/linux-loong64/0.14.54:
     resolution: {integrity: sha512-bZBrLAIX1kpWelV0XemxBZllyRmM6vgFQQG2GdNb+r3Fkp0FOh1NJSvekXDs7jq70k4euu1cryLMfU+mTXlEpw==}
@@ -45,6 +55,22 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: true
+
+  /@vue/reactivity/3.1.5:
+    resolution: {integrity: sha512-1tdfLmNjWG6t/CsPldh+foumYFo3cpyCHgBYQ34ylaMsJ+SNHQ1kApMIa8jN+i593zQuaw3AdWH0nJTARzCFhg==}
+    dependencies:
+      '@vue/shared': 3.1.5
+    dev: false
+
+  /@vue/shared/3.1.5:
+    resolution: {integrity: sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==}
+    dev: false
+
+  /alpinejs/3.10.3:
+    resolution: {integrity: sha512-nt/w4hLq9pPaexCsHmO5zV5Alvq4yu9n0Iclti6aV0HmiqLWH/axUb0pn8z3XVuVNcj8EOXOQw+WpwPzMzLBWg==}
+    dependencies:
+      '@vue/reactivity': 3.1.5
+    dev: false
 
   /braces/3.0.2:
     resolution: {integrity: sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==}
