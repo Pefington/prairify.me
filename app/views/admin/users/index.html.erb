@@ -1,57 +1,197 @@
-<div class="lg:flex w-full">
-  <div class="flex flex-col lg:w-full">
-    <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 m-8">
-      <div class="mb-4 flex items-center justify-between">
-        <div>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">All Registered Users</h3>
-          <span class="text-base font-normal text-gray-500">This is a list of all registered users</span>
-        </div>
+<section class="flex flex-col lg:w-full">
+  <div class="m-8 rounded-lg bg-white p-4 shadow sm:p-6 xl:p-8">
+    <div class="mb-4 flex items-center justify-between">
+      <div>
+        <h2 class="mb-2 text-xl font-bold text-gray-900">
+          All Registered Users
+        </h2>
+        <span class="text-base font-normal text-gray-500">This is a list of all registered users</span>
       </div>
-      <div class="flex flex-col mt-8">
-        <div class="overflow-x-auto rounded-lg">
-          <div class="align-middle inline-block min-w-full">
-            <div class="shadow overflow-hidden sm:rounded-lg">
-              <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
+    </div>
+    <div class="mt-8 flex flex-col">
+      <div class="overflow-x-auto rounded-lg">
+        <div class="inline-block min-w-full align-middle">
+          <div class="overflow-hidden shadow sm:rounded-lg">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    scope="col"
+                    class="
+                      p-4
+                      text-left
+                      text-xs
+                      font-medium
+                      uppercase
+                      tracking-wider
+                      text-gray-500
+                    "
+                  >
+                    ID
+                  </th>
+                  <th
+                    scope="col"
+                    class="
+                      p-4
+                      text-left
+                      text-xs
+                      font-medium
+                      uppercase
+                      tracking-wider
+                      text-gray-500
+                    "
+                  >
+                    Username
+                  </th>
+                  <th
+                    scope="col"
+                    class="
+                      p-4
+                      text-left
+                      text-xs
+                      font-medium
+                      uppercase
+                      tracking-wider
+                      text-gray-500
+                    "
+                  >
+                    Email
+                  </th>
+                  <th
+                    scope="col"
+                    class="
+                      p-4
+                      text-left
+                      text-xs
+                      font-medium
+                      uppercase
+                      tracking-wider
+                      text-gray-500
+                    "
+                  >
+                    Role
+                  </th>
+                  <th
+                    scope="col"
+                    class="
+                      p-4
+                      text-left
+                      text-xs
+                      font-medium
+                      uppercase
+                      tracking-wider
+                      text-gray-500
+                    "
+                  >
+                    Created
+                  </th>
+                  <th
+                    scope="col"
+                    class="
+                      flex
+                      p-4
+                      text-left
+                      text-xs
+                      font-medium
+                      uppercase
+                      tracking-wider
+                      text-gray-500
+                    "
+                  >
+                    Manage
+                    <%= link_to new_admin_user_path, class: "ml-2
+                    text-gray-600 transition-colors duration-300 transform
+                    rounded-md dark:text-gray-400 hover:bg-gray-200
+                    dark:hover:bg-gray-700 dark:hover:text-gray-200
+                    hover:text-gray-700" do %>
+                      <svg
+                        class="h-5 w-5"
+                        viewBox="0 0 24 24"
+                        fill="#29c273"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M21,10.5H20v-1a1,1,0,0,0-2,0v1H17a1,1,0,0,0,0,2h1v1a1,1,0,0,0,2,0v-1h1a1,1,0,0,0,0-2Zm-7.7,1.72A4.92,4.92,0,0,0,15,8.5a5,5,0,0,0-10,0,4.92,4.92,0,0,0,1.7,3.72A8,8,0,0,0,2,19.5a1,1,0,0,0,2,0,6,6,0,0,1,12,0,1,1,0,0,0,2,0A8,8,0,0,0,13.3,12.22ZM10,11.5a3,3,0,1,1,3-3A3,3,0,0,1,10,11.5Z"
+                        />
+                      </svg>
+                    <% end %>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white">
+                <% @users.each do |user| %>
                   <tr>
-                    <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      ID
-                    </th>
-                    <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Username
-                    </th>
-                    <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Email
-                    </th>
-                    <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Management
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="bg-white">
-                  <% @users.each do |user| %>
-                  <tr>
-                    <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
+                    <td class="whitespace-nowrap pl-4 text-sm font-normal text-gray-900">
                       <%= user.id %>
                     </td>
-                    <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
+                    <td class="whitespace-nowrap pl-4 text-sm font-normal text-gray-500">
                       <%= user.username %>
                     </td>
-                    <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
+                    <td class="whitespace-nowrap pl-4 text-sm font-semibold text-gray-900">
                       <%= user.email %>
                     </td>
-                    <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900 flex flex-row">
-                      <%= link_to 'Edit', edit_admin_user_path(user.id), class: "btn" %>
-                      <%= button_to 'Delete', admin_user_path(user.id), class: "btn-warning sm:ml-0", method: :delete, form: { data: { 'turbo-confirm': 'Are you sure?' } } %>
+                    <td class="whitespace-nowrap pl-4 text-sm font-semibold text-gray-900">
+                      <%= user.role %>
+                    </td>
+                    <td class="whitespace-nowrap pl-4 text-sm font-semibold text-gray-900">
+                      <%= user.created_at.strftime("%d/%m/%Y") %>
+                    </td>
+                    <td
+                      class="
+                        flex
+                        flex-row
+                        whitespace-nowrap
+                        pl-1
+                        text-sm
+                        font-semibold
+                        text-gray-900
+                      "
+                    >
+                      <%= link_to edit_admin_user_path(user.id), class: "flex
+                    items-center px-4 py-2 mt-2 text-gray-600 transition-colors
+                    duration-300 transform rounded-md dark:text-gray-400
+                    hover:bg-gray-200 dark:hover:bg-gray-700
+                    dark:hover:text-gray-200 hover:text-gray-700" do %>
+                        <svg
+                          class="h-5 w-5"
+                          viewBox="0 0 24 24"
+                          fill="#0092E4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M5,18H9.24a1,1,0,0,0,.71-.29l6.92-6.93h0L19.71,8a1,1,0,0,0,0-1.42L15.47,2.29a1,1,0,0,0-1.42,0L11.23,5.12h0L4.29,12.05a1,1,0,0,0-.29.71V17A1,1,0,0,0,5,18ZM14.76,4.41l2.83,2.83L16.17,8.66,13.34,5.83ZM6,13.17l5.93-5.93,2.83,2.83L8.83,16H6ZM21,20H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z"
+                          />
+                        </svg>
+                      <% end %>
+                      <%= button_to admin_user_path(user.id), method:
+                    :delete, form: { data: { 'turbo-confirm': 'Are you sure?' }
+                    }, class: "w-full flex items-center px-4 py-2 mt-2
+                    text-gray-600 transition-colors duration-300 transform
+                    rounded-md dark:text-gray-400 hover:bg-gray-200
+                    dark:hover:bg-gray-700 dark:hover:text-gray-200
+                    hover:text-gray-700" do %>
+                        <svg
+                          class="h-5 w-5"
+                          viewBox="0 0 24 24"
+                          fill="#F32013"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10,18a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,10,18ZM20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Zm-3-1a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,14,18Z"
+                          />
+                        </svg>
+                      <% end %>
                     </td>
                   </tr>
-                  <% end %>
-                </tbody>
-              </table>
-            </div>
+                <% end %>
+              </tbody>
+            </table>
+            <div class="flex justify-center pt-4"><%= paginate @users %></div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
