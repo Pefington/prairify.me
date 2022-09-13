@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
     root 'dashboard#index'
-    resources :projects
-    resources :users
+    resources :projects, only: %i[index edit update destroy]
+    resources :users, only: %i[index new edit update create destroy]
   end
   resources :project_updates
   root 'static_pages#home'
