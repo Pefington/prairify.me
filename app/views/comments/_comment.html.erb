@@ -1,20 +1,23 @@
-<section class="flex flex-1 justify-center text-white">
-  <div id="<%= dom_id comment %>" class="p-6 rounded-lg shadow-lg w-[500px] bg-white/50">
-    <p class="my-5">
-      <strong class="text-black">User </strong>
-      <% if comment.user.username? %>
-        <%= comment.user.username %>
-      <% else%>
-        Annonymous
-      <% end %>
-      <strong class="text-black">posted on: </strong>
-      <%= comment.created_at %>
-    </p>
-    
-    <p class="my-5">
-      <strong class="text-black">Content:</strong>
-      <%= comment.content %>
-    </p>
-    
+<section class="flex flex-col justify-center w-full lg:w-2/3 max-h-[500px]">
+  <div id="<%= dom_id comment %>" class="flex flex-col justify-center overflow-hidden bg-white rounded-lg shadow-lg m-4 p-4 md:p-8">
+    <div class="flex items-center justify-between">
+        <span class="text-sm font-light text-gray-600"><%= comment.created_at.strftime("%d/%m/%Y, at %I:%M%p") %></span>
+    </div>
+
+    <div class="mt-2">
+      <h1>Content:</h1>
+      <p class="text-lg"><%= comment.content %></p>
+    </div>
+
+    <div class="flex items-center justify-end">
+        <img class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block" src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=40&q=80" alt="avatar">
+        <p class="my-5 font-light text-gray-600">
+        <% if comment.user.username? %>
+          <%= comment.user.username %>
+        <% else%>
+          Annonymous
+        <% end %>
+        </p>
+    </div>
   </div>
-  </section>
+</section>
