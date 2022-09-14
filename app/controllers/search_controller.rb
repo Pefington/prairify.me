@@ -2,12 +2,19 @@ class SearchController < ApplicationController
   def index
     if params[:search] == 'geoloc'
       @place = helpers.get_place_name(helpers.usable_url(request.location.region))
+      puts "@place"
+      puts @place
       @local_plants = helpers.get_data(helpers.usable_url(request.location.region))
+      puts '@local_plants'
+      puts @local_plants
     else
       @place = helpers.get_place_name(helpers.usable_url(params[:search]))
       @local_plants = helpers.get_data(helpers.usable_url(params[:search]))
     end
-    @hits = @local_plants.count
+    @hits = @local_plants.count if !@hits.nil?
+    @hits = [] if @hits.nil?
+    puts '@hits'    
+    puts @hits    
     if current_user
       selected_plants = SelectedPlant.where(user_id: current_user.id)
     else

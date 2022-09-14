@@ -1,14 +1,28 @@
 module SearchHelper
   def get_place(place)
     place_url = "https://api.inaturalist.org/v1/search?q=#{place}&sources=places&per_page=1"
+    puts 'place_url'
+    puts place_url
     if HTTParty.get(place_url)['total_results'] != 0
       place_record = HTTParty.get(place_url)['results'][0]
+      puts 'place_record'
+      puts place_record
+      puts "place_record['matches'].join(' ')"
+      puts place_record['matches'].join(' ')
+      puts "place_record['record']['id']"
+      puts place_record['record']['id']
       return [place_record['matches'].join(' '), place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil?
       nil
     else
       place_url = "https://api.inaturalist.org/v1/search?q=#{place}&per_page=1"
       if HTTParty.get(place_url)['total_results'] != 0
         place_record = HTTParty.get(place_url)['results'][0]
+        puts 'place_record'
+        puts place_record
+        puts "place_record['matches'].join(' ')"
+        puts place_record['matches'].join(' ')
+        puts "place_record['record']['id']"
+        puts place_record['record']['id']
         return [place_record['matches'].join(' '), place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil?
         nil
       else
@@ -27,10 +41,15 @@ module SearchHelper
 
   def get_data(place)
     place_id = get_place_id(place)
+    puts 'place_id'
+    puts place_id
     return nil if place_id.nil?
-
     obs_url = "https://api.inaturalist.org/v1/observations/species_counts?identified=true&taxon_is_active=true&place_id=#{place_id}&iconic_taxa=Plantae&identifications=most_agree"
+    puts 'obs_url'
+    puts obs_url
     observations = HTTParty.get(obs_url)['results']
+    puts 'observations'
+    puts observations
     results = []
     observations.each do |obs|
       hash_data = {}
@@ -44,12 +63,15 @@ module SearchHelper
       hash_data[:picture_url] = obs['taxon']['default_photo']['medium_url']
       results.push(hash_data)
     end
-
+    puts 'results'
+    puts results
     results
   end
 
   def usable_url(str)
     str = str.gsub(/[!@%&"]/, '').gsub('-', ' ')
+    puts 'ERB::Util.url_encode(str)'
+    puts ERB::Util.url_encode(str)
     ERB::Util.url_encode(str)
   end
 end
