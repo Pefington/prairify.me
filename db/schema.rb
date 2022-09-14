@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_161148) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "content"
+    t.string "content", null: false
     t.bigint "project_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -53,8 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_161148) do
   end
 
   create_table "favourites", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "project_id"
+    t.bigint "user_id", null: false
+    t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_favourites_on_project_id"
@@ -62,8 +62,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_161148) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "project_id"
+    t.bigint "user_id", null: false
+    t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_likes_on_project_id"
@@ -71,16 +71,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_161148) do
   end
 
   create_table "plants", force: :cascade do |t|
-    t.bigint "project_id"
-    t.integer "inaturalist_id"
+    t.bigint "project_id", null: false
+    t.integer "inaturalist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_plants_on_project_id"
   end
 
   create_table "project_updates", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
+    t.string "title", null: false
+    t.string "description", null: false
     t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -90,10 +90,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_161148) do
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "place_id"
+    t.string "place_name"
+    t.string "country"
     t.datetime "begin"
     t.datetime "finish"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
@@ -101,7 +102,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_161148) do
 
   create_table "selected_plants", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "inaturalist_id"
+    t.integer "inaturalist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_selected_plants_on_user_id"
@@ -130,6 +131,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_161148) do
   add_foreign_key "favourites", "users"
   add_foreign_key "likes", "projects"
   add_foreign_key "likes", "users"
+  add_foreign_key "plants", "projects"
   add_foreign_key "project_updates", "projects"
+  add_foreign_key "projects", "users"
   add_foreign_key "selected_plants", "users"
 end

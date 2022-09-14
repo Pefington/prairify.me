@@ -14,16 +14,18 @@ RSpec.describe User, type: :model do
       expect(@user).to be_a(User)
     end
 
-    describe '#username' do
-      it { expect(@user).to validate_presence_of(:username) }
-      it { expect(@user).to validate_length_of(:username).is_at_least(6) }
-      it { expect(@user).to validate_length_of(:username).is_at_most(15) }
-    end
-
     describe '#password' do
-      it { expect(@user).to validate_presence_of(:password) }
       it { expect(@user).to validate_length_of(:password).is_at_least(6) }
-      it { expect(@user).to validate_length_of(:password).is_at_most(15) }
+    end
+    
+    it "should return a string" do
+      expect(@user.username).to be_a(String)
+    end
+    it "should return a string" do
+      expect(@user.password).to be_a(String)
+    end
+    it "should return a string" do
+      expect(@user.email).to be_a(String)
     end
 
     context 'associations' do
@@ -38,3 +40,4 @@ RSpec.describe User, type: :model do
     end
   end
 end
+

@@ -35,6 +35,13 @@
       </div>
 </section>
 
+<section class="flex flex-wrap justify-center my-8">
+  <%= button_to "Sort by: most ancient", projects_path, method: :get, params: {sort_by: "ancient"}, class:"btn-muted rounded-3xl"%>
+  <%= button_to "Sort by: most recent", projects_path, method: :get, params: {sort_by: "recent"}, class:"btn-muted rounded-3xl"%>
+  <%= button_to "Sort by: most liked", projects_path, method: :get, params: {sort_by: "most_liked"}, class:"btn-muted rounded-3xl"%>
+  <%= button_to "Sort by: least liked", projects_path, method: :get, params: {sort_by: "least_liked"}, class:"btn-muted rounded-3xl"%>
+</section>
+
 <section class="p-5 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 h-min">
     <%= render @projects %>
 </section>
