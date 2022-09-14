@@ -20,7 +20,7 @@
           <div class="text-xl font-semibold text-skin-inverted hover:text-gray-700">
             <%= link_to "Prairify", root_path, class: "font-FjallaOne text-2xl font-bold transition-colors duration-300 transform lg:text-3xl rounded-md px-3 py-2 focus:bg-skin-button-accent-hover drop-shadow-md" %>
           </div>
-          <%# Burger %>
+
           <div class="flex lg:hidden">
             <button
               x-cloak
@@ -60,7 +60,7 @@
             </button>
           </div>
         </div>
-        <%# Menu, mobile and desktop %>
+
         <div
           x-cloak
           :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
@@ -105,7 +105,7 @@
               <%end%>
               <%= render "layouts/search_bar" %>
             </div>
-          <%# Profile control: desktop %>
+
           <div x-data="{isOpen: false}" class="relative">
             <div class="lg:pl-6 my-6 lg:my-0">
               <button
@@ -133,7 +133,7 @@
                 <h3 class="mx-2 lg:hidden text-skin-inverted lg:hover:text-gray-700">NOM DE PROFIL</h3>
               </button>
             </div>
-            <%# Profile dropdown: desktop %>
+            
             <div
               x-cloak
               x-on:click.outside="isOpen = false"
