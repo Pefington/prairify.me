@@ -40,3 +40,17 @@ en:
   projec: "projects"
 #TEAMPAGE
   teamp: "Here is the wonderful team who made this project happen."
+  titlep: "Our Exevutive Team"
+#PROJECT_PAGES
+  post: "Posted on:"
+  descrp: "Description:"
+  titlep: "Projects"
+  subjectp: "Here you can see all the projects in progress, you can inspire yourself as you can inspire others, the first step is here!"
+#ABOUTPAGE
+  goal: "What Is Our Goal?"
+  help: "Help the Planet"
+  share: "Share Ideas"
+  tip: "Tips"
+  help1: "Bring our part to the ecological transition, by helping everyone to know the flora that grows near them"
+  share1: "We share the projects initiated by the community to transform their grass into a beautiful meadow"
+  tip1: "We share the projects initiated by the community to transform their grass into a beautiful meadow"

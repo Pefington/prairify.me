@@ -5,6 +5,20 @@ fr:
   paragraph: "Regardez quelles espèces de plantes vous pourriez cultiver là où vous habitez !"
   our: "Les"
   projec: "de nos jardiniers en herbe"
-  budding: 'projets'
+  budding: "projets"
   #TEAMPAGE
-  teamp: "Notre merveilleurse équipe qui a permis se projet realisable."
+  teamp: "La merveilleuse équipe sans laquelle ce projet n'aurait pas pu aboutir."
+  titlep: "L'Equipe Prairify "
+  #PROJECT_PAGES
+  post: "Postée le :"
+  descrp: "Description :"
+  titlep: "Projets"
+  subjectp: 
+  #ABOUTPAGE
+  goal: "Notre but ?"
+  help: "Aidez la planète"
+  share: "Partager des idées innovantes"
+  tip: "Conseils"
+  help1: "Ammener notre pierre à l'édifice dans cette transition écologique, en vous informant sur les plantes effectives de vos régions"
+  share1: "Nous partageons les projets de la communauté afin de vous aider a construire de magnifiques jardins"
+  tip1: "De nombreux conseils sur la mise en oeuvre et l'entretient de vos espaces verts "
