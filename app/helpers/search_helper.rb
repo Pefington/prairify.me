@@ -10,49 +10,22 @@ module SearchHelper
       if !place_record['matches'].nil?
         place_name = place_record['matches'].join(' ')
       elsif !place_record['display_name'].nil?
-        place_name = place_record['display_name'].join(' ')
+        place_name = place_record['display_name']
       elsif !place_record['display_name_autocomplete'].nil?
-        place_name = place_record['display_name_autocomplete'].join(' ')
+        place_name = place_record['display_name_autocomplete']
       elsif !place_record['slug'].nil?
-        place_name = place_record['slug'].join(' ')
+        place_name = place_record['slug']
       elsif !place_record['record']['matches'].nil?
-        place_name = place_record['record']['matches'].join(' ')
+        place_name = place_record['record']['matches']
       elsif !place_record['record']['display_name'].nil?
-        place_name = place_record['record']['display_name'].join(' ')
+        place_name = place_record['record']['display_name']
       elsif !place_record['record']['display_name_autocomplete'].nil?
-        place_name = place_record['record']['display_name_autocomplete'].join(' ')
+        place_name = place_record['record']['display_name_autocomplete']
       elsif !place_record['record']['slug'].nil?
-        place_name = place_record['record']['slug'].join(' ')
+        place_name = place_record['record']['slug']
       else
         nil
       end
-      return [place_name, place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil?
-      nil
-    else
-      place_url = "https://api.inaturalist.org/v1/search?q=#{place}&per_page=1"
-      if HTTParty.get(place_url)['total_results'] != 0
-        place_record = HTTParty.get(place_url)['results'][0]
-        puts 'place_record'
-        puts place_record
-        if !place_record['matches'].nil?
-          place_name = place_record['matches'].join(' ')
-        elsif !place_record['display_name'].nil?
-          place_name = place_record['display_name']
-        elsif !place_record['display_name_autocomplete'].nil?
-          place_name = place_record['display_name_autocomplete']
-        elsif !place_record['slug'].nil?
-          place_name = place_record['slug']
-        elsif !place_record['record']['matches'].nil?
-          place_name = place_record['record']['matches']
-        elsif !place_record['record']['display_name'].nil?
-          place_name = place_record['record']['display_name']
-        elsif !place_record['record']['display_name_autocomplete'].nil?
-          place_name = place_record['record']['display_name_autocomplete']
-        elsif !place_record['record']['slug'].nil?
-          place_name = place_record['record']['slug']
-        else
-          nil
-        end
         return [place_name, place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil? && !place_name.nil?
         nil
       else
