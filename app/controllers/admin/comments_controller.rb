@@ -1,6 +1,7 @@
 class Admin::CommentsController < Admin::AdminController
   def index
-    @comments = Comment.order(id: :asc).page(params[:page])
+    @q = Comment.ransack(params[:q])
+    @comments = @q.result(distinct: true).order(id: :asc).page(params[:page])
   end
 
   def edit

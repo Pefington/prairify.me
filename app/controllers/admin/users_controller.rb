@@ -1,6 +1,7 @@
 class Admin::UsersController < Admin::AdminController
   def index
-    @users = User.order(id: :asc).page(params[:page])
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true).order(id: :asc).page(params[:page])
   end
 
   def edit

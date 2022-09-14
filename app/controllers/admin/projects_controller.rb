@@ -1,6 +1,7 @@
 class Admin::ProjectsController < Admin::AdminController
   def index
-    @projects = Project.order(id: :asc).page(params[:page])
+    @q = Project.ransack(params[:q])
+    @projects = @q.result(distinct: true).order(id: :asc).page(params[:page])
   end
 
   def edit
