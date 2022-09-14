@@ -12,7 +12,7 @@ class SelectedPlantsController < ApplicationController
   end
 
   def destroy
-    SelectedPlant.where(user_id: current_user.id, inaturalist_id: params[:id]).destroy_all
+    SelectedPlant.find_by(user_id: current_user.id, inaturalist_id: params[:id]).destroy
     flash.now[:success] = 'Plant was successfully removed.'
   end
 
