@@ -1,14 +1,10 @@
 module SearchHelper
   def get_place(place)
     place_url = "https://api.inaturalist.org/v1/search?q=#{place}&per_page=1"
-    puts place_url
     if HTTParty.get(place_url)['total_results'] != 0
       place_record = HTTParty.get(place_url)['results'][0]
-      puts place_record
-      puts place_record['matches']
-      puts place_record['matches'].join(' ')
-      puts place_record['record']['id']
-      [place_record['matches'].join(' '), place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil?
+      return [place_record['matches'].join(' '), place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil?
+      return nil
     else
       nil
     end
@@ -24,10 +20,13 @@ module SearchHelper
 
   def get_data(place)
     place_id = get_place_id(place)
+    puts place_id
     return nil if place_id.nil?
 
     obs_url = "https://api.inaturalist.org/v1/observations/species_counts?identified=true&taxon_is_active=true&place_id=#{place_id}&iconic_taxa=Plantae&identifications=most_agree"
+    puts obs_url
     observations = HTTParty.get(obs_url)['results']
+    puts observations
     results = []
     observations.each do |obs|
       hash_data = {}
@@ -41,6 +40,7 @@ module SearchHelper
       hash_data[:picture_url] = obs['taxon']['default_photo']['medium_url']
       results.push(hash_data)
     end
+    puts results
     results
   end
 
