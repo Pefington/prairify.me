@@ -5,6 +5,9 @@ module SearchHelper
     if HTTParty.get(place_url)['total_results'] != 0
       place_record = HTTParty.get(place_url)['results'][0]
       puts place_record
+      puts place_record['matches']
+      puts place_record['matches'].join(' ')
+      puts place_record['record']['id']
       [place_record['matches'].join(' '), place_record['record']['id']] if !place_record.nil? && !place_record['display_name'].nil?
     else
       nil
