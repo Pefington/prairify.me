@@ -19,6 +19,7 @@ fr:
   noupdate: "Désolé ! aucune mise à jour pour le moment !"
   commentp: "Commentaire(s)"
   nocommentp: "Désolé ! Aucun commentaire pour le moment !"
+  dscpr: "Montre nous les avancées de ton jardin!"
   #ABOUTPAGE
   goal: "Notre"
   goal1: "But?"
@@ -30,13 +31,24 @@ fr:
   tip1: "De nombreux conseils sur la mise en oeuvre et l'entretient de vos espaces verts "
 #SIGN_UP
   signup: "Inscription"
+  signin: "Connecte-toi"
   signor: "ou connecte toi avec"
   alre: "Tu as déjà un compte chez nous?"
+  alre1: "Tu n'as pas encore de compte chez nous?"
+  forgo: "Tu as oublié ton mot de passe?"
 #CONTACT_PAGES
-  contacttitle1: "Contactez nosu pour"
+  contacttitle1: "Contactez nous pour"
   contacttitle2: "Plus d'informations"
   followcontact: "Suivez-nous"
   titlec: "Que veux-tu nous demander ?"
   namec: "Nom complet"
   emailc: "Adresse e-mail"
+
+#FAVORITES_PAGE
+  ftitle: "Vous trouverez ici tous vos projets favoris :"
+  fsubject: "Vous n'avez actuellement aucun(s) favori(s)..."
+  fparagraph: "Inspirez-vous en parcourant nos différents projets !"
+  ftitle1: "FAVORIS"
+  subjectf:  "Vous n'avez actuellement aucun() favori(s)..."
+  paraf: "Inspirez-vous en parcourant nos différents projets !"
 

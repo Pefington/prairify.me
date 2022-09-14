@@ -1,7 +1,7 @@
 <section class="bg-white w-full max-w-md">
   <div class="container flex flex-col items-center justify-center px-6 mx-auto">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "w-full max-w-md"}) do |f| %>
-      <h1 class="mt-4 font-bold text-4xl text-center">Sign In</h1>
+      <h1 class="mt-4 font-bold text-4xl text-center"><%=t'signin'%></h1>
       <div class="relative flex items-center mt-8">
         <span class="absolute">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

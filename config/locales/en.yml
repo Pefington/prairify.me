@@ -51,6 +51,8 @@ en:
   noupdatep: "Sorry, their is no update for the moment !"
   commentp: "Comments"
   nocommentp: "Sorry, their is no comment for the moment !"
+  dscpr: "What does your lawn look like now?"
+  er1: "prohibited this project update from being saved:"
 #ABOUTPAGE
   goal: "What Is"
   goal1: "Our Goal ?"
@@ -62,9 +64,11 @@ en:
   tip1: "We share the projects initiated by the community to transform their grass into a beautiful meadow"
 #SIGN_UP
   signup: "Sign Up"
+  signin: "Sign In"
   signor: "or sign with"
   alre: "Already have an account?"
-
+  alre1: "Don't have an account yet?"
+  forgo: "Forgot your password?"
 #CONTACT_PAGES
   contacttitle1: "Contact us for"
   contacttitle2: "More informations"
@@ -72,3 +76,14 @@ en:
   titlec: "What do you want to ask ?"
   namec: "Full name"
   emailc: "Email adress"
+
+#FAVORITES_PAGE
+  ftitle: "Here you will find all your favorite projects:"
+  fsubject: "You currently don't have any favourites..."
+  fparagraph: "Get some inspiration by browsing our different projects!"
+  ftitle1: "FAVORITES"
+  subjectf: "You currently don't have any favourites..."
+  paraf: "Get some inspiration by browsing our different projects!"
+
+
+
