@@ -15,11 +15,11 @@ number_of_projects.times do |index|
   Project.create!(user: users.sample,
                   name: Faker::Lorem.word,
                   description: Faker::Lorem.sentence(word_count: 10),
-                  begin: Faker::Date.between(from: Date.today, to: '2022-12-31'),
+                  begin: Faker::Date.between(from: Time.zone.today, to: '2022-12-31'),
                   finish: Faker::Date.between(from: '2023-01-01', to: '2023-12-31'),
                   place_name: Faker::Address.city,
                   country: Faker::Address.country)
-  file = URI.open(gardens[index].urls.regular)
+  file = URI.parse(gardens[index].urls.regular).open
   Project.last.photos.attach(io: file, filename: 'garden-image.jpg')
 end
 
@@ -40,7 +40,7 @@ end
 10.times do |index|
   ProjectUpdate.create!(project: projects.sample, title: Faker::Lorem.word,
                         description: Faker::Lorem.sentence(word_count: 10))
-  file = URI.open(gardens[number_of_projects + index].urls.regular)
+  file = URI.parse(gardens[number_of_projects + index].urls.regular).open
   ProjectUpdate.last.photo.attach(io: file, filename: 'garden-image.jpg')
 end
 
