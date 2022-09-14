@@ -14,7 +14,11 @@ object-cover object-center", alt: "A field photography of
   "
 >
   <h2 class="flex h-14 items-center text-center text-xl">
-    <%= @plant[:common_name] %>
+    <%if @plant[:common_name].nil?%>
+      <%= @plant[:scientific_name]%>
+    <%else%>
+      <%= @plant[:common_name] %>
+    <%end%>
   </h2>
   <p>-</p>
   <p class="font-semibold"><%= @plant[:scientific_name] %></p>
