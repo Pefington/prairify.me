@@ -4,6 +4,6 @@ module StaticPagesHelper
   end
 
   def latest_projects
-    Project.all.reverse
+    Project.all.reverse.first(8)
   end
 end

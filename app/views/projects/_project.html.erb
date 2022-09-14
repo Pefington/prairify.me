@@ -1,3 +1,4 @@
+<% if action_name != 'home' %>
 <section class="flex flex-col justify-center w-full max-h-[500px]">
   <div id="<%= dom_id project %>" class="flex justify-center overflow-hidden bg-white rounded-lg shadow-lg m-4 h-[500px]">
     <% if project.photos.attached?%>
@@ -74,3 +75,38 @@
     <% end %>
   </div>
 </section>
+<% end %>
+
+<% if action_name == 'home' %>
+  <div
+        class="
+          w-full
+          rounded-md
+          bg-white
+          p-8
+          shadow-lg
+          md:hidden
+          lg:block
+        "
+      >
+    <% if project.photos.attached?%>
+      <% project.photos.each do |photo|%>
+        <%= image_tag photo, class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
+      <%end%>
+    <%end%>
+    <div class="-mx-2 mt-6 flex items-center">
+      <%= image_tag 'https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+      class:"mx-2 h-14 w-14 rounded-full object-cover" %>
+      <div class="mx-2">
+        <p class="text-skin-base text-xl font-semibold drop-shadow">
+          <% if project.user.username? %>
+            <%= project.user.username %>
+          <% else%>
+            Annonymous
+          <% end %>
+          </p>
+        <p class="text-skin-base text-sm italic"><%= project.created_at.strftime("%d/%m/%Y") %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
