@@ -22,7 +22,7 @@
     <%= vite_javascript_tag 'application', 'admin' %>
 
   </head>
-  <body class="flex">
+  <body class="flex flex-col lg:flex-row">
     <%= render 'layouts/admin/sidebar' %>
     <main class="flex flex-col bg-gray-100 w-screen">
     <%= render 'shared/flashes' %>

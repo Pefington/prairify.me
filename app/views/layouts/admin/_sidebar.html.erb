@@ -1,168 +1,134 @@
-<header x-show="open" @click.outside="open = false">
-
-  <div
-    class="
-      flex
-      h-screen
-      w-64
-      flex-col
-      border-r
-      bg-white
-      px-2
-      py-8
-      dark:border-gray-700
-      dark:bg-gray-900
-    "
-  >
-    <h1 class="text-3xl font-semibold text-gray-800 dark:text-white">Prairify</h1>
-    <div class="relative mt-6">
-      <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-        <svg class="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></path>
-        </svg>
-      </span>
-      <input
-        type="text"
-        class="
-          w-full
-          rounded-md
-          border
-          bg-white
-          py-2
-          pl-10
-          pr-4
-          text-gray-700
-          focus:border-blue-400
-          focus:outline-none
-          focus:ring
-          focus:ring-blue-300
-          focus:ring-opacity-40
-          dark:border-gray-600
-          dark:bg-gray-900
-          dark:text-gray-300
-          dark:focus:border-blue-300
-        "
-        placeholder="Search"
-      />
-    </div>
-    <div class="mt-6 flex flex-1 flex-col justify-between">
-      <nav>
-        <%= link_to admin_root_path, class: "flex items-center px-4 py-2 mt-2
-        text-gray-600 transition-colors duration-300 transform rounded-md
-        dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700
-        dark:hover:text-gray-200 hover:text-gray-700" do %>
-          <svg
-            class="h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="#0092E4"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M10,13H3a1,1,0,0,0-1,1v7a1,1,0,0,0,1,1h7a1,1,0,0,0,1-1V14A1,1,0,0,0,10,13ZM9,20H4V15H9ZM21,2H14a1,1,0,0,0-1,1v7a1,1,0,0,0,1,1h7a1,1,0,0,0,1-1V3A1,1,0,0,0,21,2ZM20,9H15V4h5Zm1,4H14a1,1,0,0,0-1,1v7a1,1,0,0,0,1,1h7a1,1,0,0,0,1-1V14A1,1,0,0,0,21,13Zm-1,7H15V15h5ZM10,2H3A1,1,0,0,0,2,3v7a1,1,0,0,0,1,1h7a1,1,0,0,0,1-1V3A1,1,0,0,0,10,2ZM9,9H4V4H9Z"
-            />
-          </svg>
-          <span class="mx-4 font-medium">Dashboard</span>
-        <% end %>
-        <%= link_to admin_users_path, class: "flex items-center px-4
-        py-2 mt-2 text-gray-600 transition-colors duration-300 transform
-        rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700
-        dark:hover:text-gray-200 hover:text-gray-700" do %>
-          <svg
-            class="h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="#0092E4"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12.3,12.22A4.92,4.92,0,0,0,14,8.5a5,5,0,0,0-10,0,4.92,4.92,0,0,0,1.7,3.72A8,8,0,0,0,1,19.5a1,1,0,0,0,2,0,6,6,0,0,1,12,0,1,1,0,0,0,2,0A8,8,0,0,0,12.3,12.22ZM9,11.5a3,3,0,1,1,3-3A3,3,0,0,1,9,11.5Zm9.74.32A5,5,0,0,0,15,3.5a1,1,0,0,0,0,2,3,3,0,0,1,3,3,3,3,0,0,1-1.5,2.59,1,1,0,0,0-.5.84,1,1,0,0,0,.45.86l.39.26.13.07a7,7,0,0,1,4,6.38,1,1,0,0,0,2,0A9,9,0,0,0,18.74,11.82Z"
-            />
-          </svg>
-          <span class="mx-4 font-medium">Users</span>
-        <% end %>
-        <%= link_to admin_projects_path, class: "flex items-center px-4
-        py-2 mt-2 text-gray-600 transition-colors duration-300 transform
-        rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700
-        dark:hover:text-gray-200 hover:text-gray-700" do %>
-          <svg
-            class="h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="#0092E4"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9,10h1a1,1,0,0,0,0-2H9a1,1,0,0,0,0,2Zm0,2a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2ZM20,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0A.88.88,0,0,0,13.05,2H7A3,3,0,0,0,4,5V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V9S20,9,20,8.94ZM14,5.41,16.59,8H15a1,1,0,0,1-1-1ZM18,19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4h5V7a3,3,0,0,0,3,3h3Zm-3-3H9a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2Z"
-            />
-          </svg>
-          <span class="mx-4 font-medium">Projects</span>
-        <% end %>
-        <%= link_to admin_comments_path, class: "flex items-center px-4
-        py-2 mt-2 text-gray-600 transition-colors duration-300 transform
-        rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700
-        dark:hover:text-gray-200 hover:text-gray-700" do %>
-          <svg
-            class="h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="#0092E4"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13,11H7a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2Zm4-4H7A1,1,0,0,0,7,9H17a1,1,0,0,0,0-2Zm2-5H5A3,3,0,0,0,2,5V15a3,3,0,0,0,3,3H16.59l3.7,3.71A1,1,0,0,0,21,22a.84.84,0,0,0,.38-.08A1,1,0,0,0,22,21V5A3,3,0,0,0,19,2Zm1,16.59-2.29-2.3A1,1,0,0,0,17,16H5a1,1,0,0,1-1-1V5A1,1,0,0,1,5,4H19a1,1,0,0,1,1,1Z"
-            />
-          </svg>
-          <span class="mx-4 font-medium">Comments</span>
-        <% end %>
-        <hr class="my-6 border-gray-200 dark:border-gray-600"/>
-        <%= link_to root_path, class: "w-full flex items-center px-4 py-2 mt-2
-        text-gray-600 transition-colors duration-300 transform rounded-md
-        dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700
-        dark:hover:text-gray-200 hover:text-gray-700" do %>
-          <svg
-            class="h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="#0092E4"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17,9.5H7.41l1.3-1.29A1,1,0,0,0,7.29,6.79l-3,3a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l3,3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L7.41,11.5H17a1,1,0,0,1,1,1v4a1,1,0,0,0,2,0v-4A3,3,0,0,0,17,9.5Z"
-            />
-          </svg>
-          <span class="mx-4 font-medium">Website</span>
-        <% end %>
-        <%= button_to destroy_user_session_path, method: :delete, class:
-        "w-full flex items-center px-4 py-2 mt-2 text-gray-600 transition-colors
-        duration-300 transform rounded-md dark:text-gray-400 hover:bg-gray-200
-        dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700" do %>
-          <svg
-            class="h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="#0092E4"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4,12a1,1,0,0,0,1,1h7.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76,1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L12.59,11H5A1,1,0,0,0,4,12ZM17,2H7A3,3,0,0,0,4,5V8A1,1,0,0,0,6,8V5A1,1,0,0,1,7,4H17a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V16a1,1,0,0,0-2,0v3a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V5A3,3,0,0,0,17,2Z"
-            />
-          </svg>
-          <span class="mx-4 font-medium">Logout</span>
-        <% end %>
-      </nav>
-      <div class="-mx-2 flex items-center px-4">
-        <img
-          class="mx-2 h-9 w-9 rounded-full object-cover"
-          src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-          alt="avatar"
+<header
+  class="lg:sticky lg:top-0 flex lg:h-screen lg:w-64 flex-col border-r bg-white px-2 py-8   w-full text-center z-50"
+>
+  <h1 class="text-3xl text-gray-800">Prairify</h1>
+  <div class="relative mt-6">
+    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+      <svg class="h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+    <input
+      type="text"
+      class="w-full rounded-md border bg-white py-2 pl-10 pr-4 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"
+      placeholder="Search"
+    />
+  </div>
+  <div class="mt-6 flex flex-1 flex-col justify-between">
+    <nav class="flex flex-wrap lg:flex-col justify-center">
+      <%= link_to admin_root_path, class: "flex items-center px-4 py-2 mt-2
+      text-gray-600 transition-colors duration-300 transform rounded-md
+       hover:bg-gray-200
+       hover:text-gray-700" do %>
+      <svg
+        class="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="#0092E4"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M10,13H3a1,1,0,0,0-1,1v7a1,1,0,0,0,1,1h7a1,1,0,0,0,1-1V14A1,1,0,0,0,10,13ZM9,20H4V15H9ZM21,2H14a1,1,0,0,0-1,1v7a1,1,0,0,0,1,1h7a1,1,0,0,0,1-1V3A1,1,0,0,0,21,2ZM20,9H15V4h5Zm1,4H14a1,1,0,0,0-1,1v7a1,1,0,0,0,1,1h7a1,1,0,0,0,1-1V14A1,1,0,0,0,21,13Zm-1,7H15V15h5ZM10,2H3A1,1,0,0,0,2,3v7a1,1,0,0,0,1,1h7a1,1,0,0,0,1-1V3A1,1,0,0,0,10,2ZM9,9H4V4H9Z"
         />
-        <h4 class="mx-2 font-medium text-gray-800 hover:underline dark:text-gray-200">
-          <%= current_user.username %>
-        </h4>
-      </div>
+      </svg>
+      <span class="mx-4 font-medium">Dashboard</span>
+      <% end %> <%= link_to admin_users_path, class: "flex items-center px-4
+      py-2 mt-2 text-gray-600 transition-colors duration-300 transform
+      rounded-md  hover:bg-gray-200
+       hover:text-gray-700" do %>
+      <svg
+        class="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="#0092E4"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12.3,12.22A4.92,4.92,0,0,0,14,8.5a5,5,0,0,0-10,0,4.92,4.92,0,0,0,1.7,3.72A8,8,0,0,0,1,19.5a1,1,0,0,0,2,0,6,6,0,0,1,12,0,1,1,0,0,0,2,0A8,8,0,0,0,12.3,12.22ZM9,11.5a3,3,0,1,1,3-3A3,3,0,0,1,9,11.5Zm9.74.32A5,5,0,0,0,15,3.5a1,1,0,0,0,0,2,3,3,0,0,1,3,3,3,3,0,0,1-1.5,2.59,1,1,0,0,0-.5.84,1,1,0,0,0,.45.86l.39.26.13.07a7,7,0,0,1,4,6.38,1,1,0,0,0,2,0A9,9,0,0,0,18.74,11.82Z"
+        />
+      </svg>
+      <span class="mx-4 font-medium">Users</span>
+      <% end %> <%= link_to admin_projects_path, class: "flex items-center px-4
+      py-2 mt-2 text-gray-600 transition-colors duration-300 transform
+      rounded-md  hover:bg-gray-200
+       hover:text-gray-700" do %>
+      <svg
+        class="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="#0092E4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9,10h1a1,1,0,0,0,0-2H9a1,1,0,0,0,0,2Zm0,2a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2ZM20,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0A.88.88,0,0,0,13.05,2H7A3,3,0,0,0,4,5V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V9S20,9,20,8.94ZM14,5.41,16.59,8H15a1,1,0,0,1-1-1ZM18,19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4h5V7a3,3,0,0,0,3,3h3Zm-3-3H9a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2Z"
+        />
+      </svg>
+      <span class="mx-4 font-medium">Projects</span>
+      <% end %> <%= link_to admin_comments_path, class: "flex items-center px-4
+      py-2 mt-2 text-gray-600 transition-colors duration-300 transform
+      rounded-md  hover:bg-gray-200
+       hover:text-gray-700" do %>
+      <svg
+        class="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="#0092E4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13,11H7a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2Zm4-4H7A1,1,0,0,0,7,9H17a1,1,0,0,0,0-2Zm2-5H5A3,3,0,0,0,2,5V15a3,3,0,0,0,3,3H16.59l3.7,3.71A1,1,0,0,0,21,22a.84.84,0,0,0,.38-.08A1,1,0,0,0,22,21V5A3,3,0,0,0,19,2Zm1,16.59-2.29-2.3A1,1,0,0,0,17,16H5a1,1,0,0,1-1-1V5A1,1,0,0,1,5,4H19a1,1,0,0,1,1,1Z"
+        />
+      </svg>
+      <span class="mx-4 font-medium">Comments</span>
+      <% end %>
+      <hr class="my-6 border-gray-200" />
+      <%= link_to root_path, class: "flex items-center px-4 py-2 mt-2
+      text-gray-600 transition-colors duration-300 transform rounded-md
+       hover:bg-gray-200
+       hover:text-gray-700" do %>
+      <svg
+        class="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="#0092E4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M17,9.5H7.41l1.3-1.29A1,1,0,0,0,7.29,6.79l-3,3a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l3,3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L7.41,11.5H17a1,1,0,0,1,1,1v4a1,1,0,0,0,2,0v-4A3,3,0,0,0,17,9.5Z"
+        />
+      </svg>
+      <span class="mx-4 font-medium">Website</span>
+      <% end %> <%= button_to destroy_user_session_path, method: :delete, class:
+      "w-full flex items-center px-4 py-2 mt-2 text-gray-600 transition-colors
+      duration-300 transform rounded-md  hover:bg-gray-200
+        hover:text-gray-700" do %>
+      <svg
+        class="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="#0092E4"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4,12a1,1,0,0,0,1,1h7.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76,1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L12.59,11H5A1,1,0,0,0,4,12ZM17,2H7A3,3,0,0,0,4,5V8A1,1,0,0,0,6,8V5A1,1,0,0,1,7,4H17a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V16a1,1,0,0,0-2,0v3a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V5A3,3,0,0,0,17,2Z"
+        />
+      </svg>
+      <span class="mx-4 font-medium">Logout</span>
+      <% end %>
+    </nav>
+    <div class="-mx-2 flex items-center px-4 justify-center mt-4 lg:flex-col">
+      <img
+        class="mx-2 h-9 w-9 rounded-full object-cover"
+        src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+        alt="avatar"
+      />
+      <h4
+        class="m-2 text-gray-800 hover:underline"
+      >
+        <%= current_user.email %>
+      </h4>
     </div>
   </div>
 </header>
