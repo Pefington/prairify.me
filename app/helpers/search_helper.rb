@@ -11,7 +11,26 @@ module SearchHelper
       puts place_record['matches'].join(' ')
       puts "place_record['record']['id']"
       puts place_record['record']['id']
-      return [place_record['matches'].join(' '), place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil?
+      if !place_record['matches'].nil?
+        place_name = place_record['matches'].join(' ')
+      elsif !place_record['display_name'].nil?
+        place_name = place_record['display_name'].join(' ')
+      elsif !place_record['display_name_autocomplete'].nil?
+        place_name = place_record['display_name_autocomplete'].join(' ')
+      elsif !place_record['slug'].nil?
+        place_name = place_record['slug'].join(' ')
+      elsif !place_record['record']['matches'].nil?
+        place_name = place_record['record']['matches'].join(' ')
+      elsif !place_record['record']['display_name'].nil?
+        place_name = place_record['record']['display_name'].join(' ')
+      elsif !place_record['record']['display_name_autocomplete'].nil?
+        place_name = place_record['record']['display_name_autocomplete'].join(' ')
+      elsif !place_record['record']['slug'].nil?
+        place_name = place_record['record']['slug'].join(' ')
+      else
+        nil
+      end
+      return [place_name, place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil?
       nil
     else
       place_url = "https://api.inaturalist.org/v1/search?q=#{place}&per_page=1"
@@ -23,7 +42,26 @@ module SearchHelper
         puts place_record['matches'].join(' ')
         puts "place_record['record']['id']"
         puts place_record['record']['id']
-        return [place_record['matches'].join(' '), place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil?
+        if !place_record['matches'].nil?
+          place_name = place_record['matches'].join(' ')
+        elsif !place_record['display_name'].nil?
+          place_name = place_record['display_name'].join(' ')
+        elsif !place_record['display_name_autocomplete'].nil?
+          place_name = place_record['display_name_autocomplete'].join(' ')
+        elsif !place_record['slug'].nil?
+          place_name = place_record['slug'].join(' ')
+        elsif !place_record['record']['matches'].nil?
+          place_name = place_record['record']['matches'].join(' ')
+        elsif !place_record['record']['display_name'].nil?
+          place_name = place_record['record']['display_name'].join(' ')
+        elsif !place_record['record']['display_name_autocomplete'].nil?
+          place_name = place_record['record']['display_name_autocomplete'].join(' ')
+        elsif !place_record['record']['slug'].nil?
+          place_name = place_record['record']['slug'].join(' ')
+        else
+          nil
+        end
+        return [place_name, place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil? && !place_name.nil?
         nil
       else
         nil

@@ -11,8 +11,8 @@ class SearchController < ApplicationController
       @place = helpers.get_place_name(helpers.usable_url(params[:search]))
       @local_plants = helpers.get_data(helpers.usable_url(params[:search]))
     end
-    @hits = @local_plants.count if !@hits.nil?
-    @hits = [] if @hits.nil?
+    @hits = @local_plants.count if !@local_plants.nil?
+    @hits = [] if @local_plants.nil?
     puts '@hits'    
     puts @hits    
     if current_user
