@@ -17,6 +17,16 @@ RSpec.describe User, type: :model do
     describe '#password' do
       it { expect(@user).to validate_length_of(:password).is_at_least(6) }
     end
+    
+    it "should return a string" do
+      expect(@user.username).to be_a(String)
+    end
+    it "should return a string" do
+      expect(@user.password).to be_a(String)
+    end
+    it "should return a string" do
+      expect(@user.email).to be_a(String)
+    end
 
     context 'associations' do
       describe '#projects' do
@@ -30,3 +40,4 @@ RSpec.describe User, type: :model do
     end
   end
 end
+

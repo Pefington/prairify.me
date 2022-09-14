@@ -13,7 +13,12 @@ RSpec.describe Project, type: :model do
     it 'is valid with valid attributes' do
       expect(@project).to be_a(Project)
     end
-
+    it "should return a string" do
+      expect(@project.name).to be_a(String)
+    end
+    it "should return a string" do
+      expect(@project.description).to be_a(String)
+    end
     context 'associations' do
       describe '#projects' do
         it { expect(@project).to have_many(:comments) }
