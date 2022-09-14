@@ -18,6 +18,13 @@
         </p>
       <%end%>
 
+      <% if project.country != nil%>
+        <p class="my-3">
+          <h1>Country:</h1>
+          <%= project.country %>
+        </p>
+      <%end%>
+
     <% if action_name == "show" %>
       <% if project.begin != nil%>
         <p class="my-3">

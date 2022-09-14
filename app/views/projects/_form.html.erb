@@ -28,6 +28,11 @@
       </div>
 
       <div class="relative flex items-center mt-4">
+        <%= form.label :country, class:"hidden" %>
+        <%= form.text_field :country, placeholder: "Country", class:"form-field indent-0" %>
+      </div>
+
+      <div class="relative flex items-center mt-4">
         <h3 class="mr-3">When do you want to begin your project?</h3>
         <%= form.label :begin, class:"hidden" %>
         <%= form.datetime_field :begin, class:"form-field indent-0 text-gray-500" %>
