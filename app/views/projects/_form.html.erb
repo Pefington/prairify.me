@@ -23,8 +23,13 @@
       </div>
 
       <div class="relative flex items-center mt-4">
-        <%= form.label :place_id, class:"hidden" %>
-        <%= form.number_field :place_id, placeholder: "Location", class:"form-field indent-0" %>
+        <%= form.label :place_name, class:"hidden" %>
+        <%= form.text_field :place_name, placeholder: "Location", class:"form-field indent-0" %>
+      </div>
+
+      <div class="relative flex items-center mt-4">
+        <%= form.label :country, class:"hidden" %>
+        <%= form.text_field :country, placeholder: "Country", class:"form-field indent-0" %>
       </div>
 
       <div class="relative flex items-center mt-4">

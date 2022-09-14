@@ -90,7 +90,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_161148) do
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "place_id"
+    t.string "place_name"
+    t.string "country"
     t.datetime "begin"
     t.datetime "finish"
     t.bigint "user_id", null: false

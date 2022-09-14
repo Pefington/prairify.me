@@ -11,10 +11,17 @@
 
         <p class="my-3"><%= project.description %></p>
 
-      <% if project.place_id != nil%>
+      <% if project.place_name != nil%>
         <p class="my-3">
           <h1>Place:</h1>
-          <%= project.place_id %>
+          <%= project.place_name %>
+        </p>
+      <%end%>
+
+      <% if project.country != nil%>
+        <p class="my-3">
+          <h1>Country:</h1>
+          <%= project.country %>
         </p>
       <%end%>
 
