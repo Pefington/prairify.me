@@ -3,19 +3,20 @@ require 'unsplash'
 
 User.create(email: 'admin@admin.com', password: 'adminpassword', role: User.roles[:admin])
 
-10.times do 
-  User.create!(email: Faker::Internet.safe_email, password: Faker::Internet.password(min_length: 6), username: Faker::Name.first_name)
+10.times do
+  User.create!(email: Faker::Internet.safe_email, password: Faker::Internet.password(min_length: 6),
+               username: Faker::Name.first_name)
 end
 
 gardens = Unsplash::Photo.search('garden', 1, 20)
 users = User.all
 number_of_projects = 5
 number_of_projects.times do |index|
-  Project.create!(user: users.sample, 
-                  name:Faker::Lorem.word, 
-                  description: Faker::Lorem.sentence(word_count: 10) ,
+  Project.create!(user: users.sample,
+                  name: Faker::Lorem.word,
+                  description: Faker::Lorem.sentence(word_count: 10),
                   begin: Faker::Date.between(from: Date.today, to: '2022-12-31'),
-                  finish:Faker::Date.between(from: '2023-01-01', to: '2023-12-31'),
+                  finish: Faker::Date.between(from: '2023-01-01', to: '2023-12-31'),
                   place_name: Faker::Address.city,
                   country: Faker::Address.country)
   file = URI.open(gardens[index].urls.regular)
@@ -23,12 +24,12 @@ number_of_projects.times do |index|
 end
 
 projects = Project.all
-plants = [61905, 51876, 47853, 53438, 47603, 50829, 47561, 48177, 126844, 48891, 60001]
+plants = [61_905, 51_876, 47_853, 53_438, 47_603, 50_829, 47_561, 48_177, 126_844, 48_891, 60_001]
 30.times do
-  Plant.create!(inaturalist_id: plants.sample, project: projects.sample)  
+  Plant.create!(inaturalist_id: plants.sample, project: projects.sample)
 end
 
-50.times do 
+50.times do
   Like.create(user: users.sample, project: projects.sample)
 end
 
@@ -37,12 +38,12 @@ end
 end
 
 10.times do |index|
-  ProjectUpdate.create!(project: projects.sample, title:Faker::Lorem.word, description:Faker::Lorem.sentence(word_count: 10))
+  ProjectUpdate.create!(project: projects.sample, title: Faker::Lorem.word,
+                        description: Faker::Lorem.sentence(word_count: 10))
   file = URI.open(gardens[number_of_projects + index].urls.regular)
   ProjectUpdate.last.photo.attach(io: file, filename: 'garden-image.jpg')
 end
 
-50.times do 
+50.times do
   Comment.create!(project: projects.sample, user: users.sample, content: Faker::Lorem.sentence(word_count: 5))
 end
-
