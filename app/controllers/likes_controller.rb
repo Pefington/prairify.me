@@ -17,5 +17,4 @@ class LikesController < ApplicationController
       flash.now[:alert] = 'Like was not deleted due to an error.'
     end
   end
-
 end

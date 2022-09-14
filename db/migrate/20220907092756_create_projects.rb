@@ -8,7 +8,7 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.datetime :begin
       t.datetime :finish
       t.belongs_to :user, foreign_key: true, null: false
-      
+
       t.timestamps
     end
   end
