@@ -7,14 +7,14 @@
     <%= render @project_updates%>
     <hr class="my-8">
   <%else%>
-    <p> Sorry, their is no update for the moment !</p>
+    <p> <%=t 'noupdatep'%></p>
   <%end%>
   <% if @comments != nil%>
-    <h1 class="mt-4 font-bold text-4xl text-center">Comments</h1>
+    <h1 class="mt-4 font-bold text-4xl text-center"><%=t 'commentp'%></h1>
     <%= render @comments%>
     <hr class="my-8">
   <%else%>
-    <p> Sorry, their is no comment for the moment !</p>
+    <p> <%=t 'nocommentp'%></p>
   <%end%>
 
 

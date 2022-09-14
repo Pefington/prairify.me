@@ -15,6 +15,10 @@ fr:
   titlep: "Projets"
   subjectp: "Ici vous pouvez voir tous les projets en cours, vous pouvez vous inspirer comme vous pouvez inspirer les autres, la première étape est là "
   newp: "Nouveau projet"
+  updatep: "Mise à jour des projets"
+  noupdate: "Désolé ! aucune mise à jour pour le moment !"
+  commentp: "Commentaire(s)"
+  nocommentp: "Désolé ! Aucun commentaire pour le moment !"
   #ABOUTPAGE
   goal: "Notre"
   goal1: "But?"
@@ -24,3 +28,5 @@ fr:
   help1: "Ammener votre pierre à l'édifice dans cette transition écologique, en vous informant sur les plantes effectives de vos régions"
   share1: "Nous partageons les projets de la communauté afin de vous aider a construire de magnifiques jardins"
   tip1: "De nombreux conseils sur la mise en oeuvre et l'entretient de vos espaces verts "
+#SIGN_UP
+  signup: "Inscription"

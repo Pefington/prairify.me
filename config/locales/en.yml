@@ -46,7 +46,11 @@ en:
   descrp: "Description:"
   titlep: "Projects"
   subjectp: "Here you can see all the projects in progress, you can inspire yourself as you can inspire others, the first step is here!"
-  newp: " New project"
+  newp: "New project"
+  updatep: "Projects update"
+  noupdatep: "Sorry, their is no update for the moment !"
+  commentp: "Comments"
+  nocommentp: "Sorry, their is no comment for the moment !"
 #ABOUTPAGE
   goal: "What Is"
   goal1: "Our Goal ?"
@@ -56,3 +60,5 @@ en:
   help1: "Bring our part to the ecological transition, by helping everyone to know the flora that grows near them"
   share1: "We share the projects initiated by the community to transform their grass into a beautiful meadow"
   tip1: "We share the projects initiated by the community to transform their grass into a beautiful meadow"
+#SIGN_UP
+  signup: "Sign Up"
