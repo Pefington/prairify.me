@@ -41,10 +41,10 @@
       <%end%>
     <%end%>
     </div>
-    <div x-data="{ liked: <%= liked?(project)[0] %>, likesCount: <%=number_of_likes(project)%> }" class="flex absolute bottom-0 right-0 mr-2">
-      <%if user_signed_in?%>
-          <div x-cloak x-show="liked" transition @click="liked = !liked, likesCount--">
-            <%= button_to like_path(liked?(project)[1]), method: :delete, class:"bg-blue-500 text-white text-sm active:bg-cyan-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-cyan-400 outline-none focus:outline-none ease-linear transition-all duration-150", remote: :true do%>
+    <%if user_signed_in?%>
+      <div x-data="{ liked: <%= liked?(project)[0] %>, likesCount: <%=number_of_likes(project)%>, favourited: <%= favourite?(project)[0]%> }" class="flex absolute bottom-0 right-0 mr-2">
+          <div x-cloak x-show="liked" transition.duration.500ms @click="liked = !liked, likesCount--">
+            <%= button_to like_path(project), method: :delete, class:"bg-blue-500 text-white text-sm active:bg-cyan-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-cyan-400 outline-none focus:outline-none ease-linear transition-all duration-150", remote: :true do%>
                 <i class="fa-solid fa-thumbs-up"></i>
                 <span x-text="likesCount"></span>
             <%end%>
@@ -55,18 +55,19 @@
                 <span x-text="likesCount"></span>
             <%end%>
           </div>
-        <% if favourite?(project)[0]%>
-          <%= button_to favourite_path(favourite?(project)[1]), method: :delete, class:"bg-pink-500 text-white text-sm active:bg-pink-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-pink-400 outline-none focus:outline-none ease-linear transition-all duration-150",remote: :true do%>
-            <i class="fas fa-heart"></i>
-          <%end%>
-        <%else%>
-          <%= button_to favourites_path, method: :post, params: {project_id: project}, class:"bg-gray-500 text-white text-sm active:bg-gray-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-pink-400 outline-none focus:outline-none ease-linear transition-all duration-150",remote: :true do%>
-            <i class="fas fa-heart"></i>
-          <%end%>
-        <%end%>
-      <%end%>
+          <div x-cloak x-show="favourited" transition @click="favourited = !favourited">
+            <%= button_to favourite_path(project), method: :delete, class:"bg-pink-500 text-white text-sm active:bg-pink-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-pink-400 outline-none focus:outline-none ease-linear transition-all duration-150",remote: :true do%>
+              <i class="fas fa-heart"></i>
+            <%end%>
+          </div>
+          <div x-cloak x-show="!favourited" transition @click="favourited = !favourited">
+            <%= button_to favourites_path, method: :post, params: {project_id: project}, class:"bg-gray-500 text-white text-sm active:bg-gray-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-pink-400 outline-none focus:outline-none ease-linear transition-all duration-150",remote: :true do%>
+              <i class="fas fa-heart"></i>
+            <%end%>
+          </div>
+        </div>
       </div>
-    </div>
+    <%end%>
   </div>
 
   <div class="flex justify-end">

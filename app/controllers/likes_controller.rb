@@ -3,7 +3,6 @@ class LikesController < ApplicationController
 
   def create
     @like = Like.new(project_id: params[:project_id], user_id: current_user.id)
-    # redirect_back(fallback_location: root_path)
     if @like.save
       flash.now[:success] = 'Like was successfully selected.'
     else
@@ -12,8 +11,11 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    Like.destroy(params[:id])
-    flash.now[:success] = 'Like was successfully removed.'
+    if Like.destroy(helpers.liked?(Project.find(params[:id]))[1])
+      flash.now[:success] = 'Like was successfully removed.'
+    else
+      flash.now[:alert] = 'Like was not deleted due to an error.'
+    end
   end
 
 end
