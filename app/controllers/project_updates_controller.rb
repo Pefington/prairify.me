@@ -2,10 +2,6 @@ class ProjectUpdatesController < ApplicationController
   before_action :set_project_update, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
 
-  def index
-    @project_updates = @project.project_updates
-  end
-
   def new
     @project_update = ProjectUpdate.new
     @project = Project.find(params[:project_id])

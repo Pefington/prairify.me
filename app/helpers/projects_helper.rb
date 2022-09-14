@@ -41,15 +41,15 @@ module ProjectsHelper
     when 'recent'
       Project.all.reverse
     when 'most_liked'
-      hash = sort_likes.sort_by { |_k, v| -v }
+      hash = group_likes_by_project.sort_by { |_k, v| -v }
       create_right_order_of_display(hash)
     when 'least_liked'
-      hash = sort_likes.sort_by { |_k, v| v }
+      hash = group_likes_by_project.sort_by { |_k, v| v }
       create_right_order_of_display(hash)
     end
   end
 
-  def sort_likes
+  def group_likes_by_project
     likes = Like.all
     hash = {}
     Project.all.length.times do |index|
@@ -64,7 +64,7 @@ module ProjectsHelper
   def create_right_order_of_display(hash)
     result = []
     hash.each_with_index do |_like, index|
-      result.push(Project.find_by(id: hash[index][0]))
+      result.push(Project.find( hash[index][0]))
     end
     result
   end
