@@ -1,5 +1,5 @@
 class ProjectUpdatesController < ApplicationController
-  before_action :set_project_update, only: %i[ show edit update destroy ]
+  before_action :set_project_update, only: %i[destroy]
   before_action :authenticate_user!
 
   def new
@@ -10,9 +10,9 @@ class ProjectUpdatesController < ApplicationController
   def create
     @project_update = ProjectUpdate.new(project_update_params)
     @project = Project.find(params[:project_update][:project_id])
-    @project_update.update(project_id:@project.id)
+    @project_update.update(project_id: @project.id)
     if @project_update.save
-      redirect_to @project, notice: "Project update was successfully created."
+      redirect_to @project, notice: 'Project update was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -20,16 +20,16 @@ class ProjectUpdatesController < ApplicationController
 
   def destroy
     @project_update.destroy
-    redirect_to project_updates_url, notice: "Project update was successfully destroyed."
+    redirect_to project_updates_url, notice: 'Project update was successfully destroyed.'
   end
 
   private
-    def set_project_update
-      @project_update = ProjectUpdate.find(params[:id])
-    end
 
-    def project_update_params
-      params.require(:project_update).permit(:title, :description, :project_id, :photo)
-    end
+  def set_project_update
+    @project_update = ProjectUpdate.find(params[:id])
+  end
 
+  def project_update_params
+    params.require(:project_update).permit(:title, :description, :project_id, :photo)
+  end
 end
