@@ -46,8 +46,10 @@ en:
   descrp: "Description:"
   titlep: "Projects"
   subjectp: "Here you can see all the projects in progress, you can inspire yourself as you can inspire others, the first step is here!"
+  newp: " New project"
 #ABOUTPAGE
-  goal: "What Is Our Goal?"
+  goal: "What Is"
+  goal1: "Our Goal ?"
   help: "Help the Planet"
   share: "Share Ideas"
   tip: "Tips"

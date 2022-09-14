@@ -3,7 +3,7 @@
   <hr class="my-8">
 
   <% if @project_updates != nil%>
-    <h1 class="mt-4 font-bold text-4xl text-center">Updates</h1>
+    <h1 class="mt-4 font-bold text-4xl text-center"><%=t 'updatep'%></h1>
     <%= render @project_updates%>
     <hr class="my-8">
   <%else%>

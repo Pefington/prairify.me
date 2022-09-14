@@ -13,12 +13,14 @@ fr:
   post: "Postée le :"
   descrp: "Description :"
   titlep: "Projets"
-  subjectp: 
+  subjectp: "Ici vous pouvez voir tous les projets en cours, vous pouvez vous inspirer comme vous pouvez inspirer les autres, la première étape est là "
+  newp: "Nouveau projet"
   #ABOUTPAGE
-  goal: "Notre but ?"
+  goal: "Notre"
+  goal1: "But?"
   help: "Aidez la planète"
   share: "Partager des idées innovantes"
   tip: "Conseils"
-  help1: "Ammener notre pierre à l'édifice dans cette transition écologique, en vous informant sur les plantes effectives de vos régions"
+  help1: "Ammener votre pierre à l'édifice dans cette transition écologique, en vous informant sur les plantes effectives de vos régions"
   share1: "Nous partageons les projets de la communauté afin de vous aider a construire de magnifiques jardins"
   tip1: "De nombreux conseils sur la mise en oeuvre et l'entretient de vos espaces verts "
