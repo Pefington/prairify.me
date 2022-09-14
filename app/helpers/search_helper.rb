@@ -1,9 +1,9 @@
 module SearchHelper
   def get_place(place)
     place_url = "https://api.inaturalist.org/v1/search?q=#{place}&sources=places&per_page=1"
-    puts 'place_url'
-    puts place_url
     if HTTParty.get(place_url)['total_results'] != 0
+      puts 'place_url'
+      puts place_url
       place_record = HTTParty.get(place_url)['results'][0]
       puts 'place_record'
       puts place_record
@@ -26,11 +26,15 @@ module SearchHelper
       else
         nil
       end
-      return [place_name, place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil?
+      puts 'place_name'
+      puts place_name
+      return [place_name, place_record['record']['id']] if !place_record['record']['id'].nil? && !place_name.nil?
       nil
     else
       place_url = "https://api.inaturalist.org/v1/search?q=#{place}&per_page=1"
       if HTTParty.get(place_url)['total_results'] != 0
+        puts 'place_url'
+        puts place_url
         place_record = HTTParty.get(place_url)['results'][0]
         puts 'place_record'
         puts place_record
@@ -53,7 +57,9 @@ module SearchHelper
         else
           nil
         end
-        return [place_name, place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil? && !place_name.nil?
+        puts 'place_name'
+        puts place_name
+        return [place_name, place_record['record']['id']] if !place_record['record']['id'].nil? && !place_name.nil?
         nil
       else
         nil
@@ -99,6 +105,8 @@ module SearchHelper
   end
 
   def usable_url(str)
+    puts 'str'
+    puts str
     str = str.gsub(/[!@%&"]/, '').gsub('-', ' ')
     puts 'ERB::Util.url_encode(str)'
     puts ERB::Util.url_encode(str)
