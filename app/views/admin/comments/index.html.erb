@@ -23,8 +23,10 @@
           <%= f.text_field :content_cont,
         autofocus: true, placeholder: "Search...", class: "form-field mt-0
         indent-6" %>
-                <%= f.submit class: "ml-4 px-8 py-3 rounded-md bg-[#0092E4] text-white cursor-pointer" %>
-        <%= link_to "Clear", request.path, class: "ml-4 px-8 py-3 rounded-md bg-gray-400 text-white" %>
+          <%= f.submit class: "ml-4 px-8 py-3 rounded-md bg-[#0092E4]
+        text-white cursor-pointer" %>
+          <%= link_to "Clear", request.path, class:
+        "ml-4 px-8 py-3 rounded-md bg-gray-400 text-white" %>
         </div>
       <% end %>
     </div>
