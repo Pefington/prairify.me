@@ -1,7 +1,9 @@
 module SearchHelper
   def get_place(place)
     place_url = "https://api.inaturalist.org/v1/search?q=#{place}&sources=places&per_page=1"
+    puts place_url
     place_record = HTTParty.get(place_url)['results'][0]['record']
+    puts place_record
     [place_record['display_name'], place_record['id']] if !place_record.nil? && !place_record['display_name'].nil?
   end
 
