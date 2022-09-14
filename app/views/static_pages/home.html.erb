@@ -32,6 +32,7 @@
         We can help you change your purely decorative piece of grass into a very
         useful meadow welcoming a diversified fauna and flora!
       </p>
+
       <div class="m-8 text-center">
         <div class="w-full">
           <%= link_to "Join us", new_user_registration_path, class: "btn-muted" %>
@@ -50,7 +51,8 @@
     </div>
   </section>
 <%end%>
-
+<%= link_to_unless_current "fr", locale: :fr, class: "btn-muted" %>
+<%= link_to_unless_current "en", locale: :en, class: "btn-muted" %>
 <section class="relative mt-8 flex w-9/12">
   <div class="flex flex-col justify-center">
     <h1
