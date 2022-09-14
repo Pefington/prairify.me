@@ -13,7 +13,7 @@ class LikesController < ApplicationController
 
   def destroy
     Like.destroy(params[:id])
-    redirect_back(fallback_location: root_path)
+    flash.now[:success] = 'Like was successfully removed.'
   end
 
 end

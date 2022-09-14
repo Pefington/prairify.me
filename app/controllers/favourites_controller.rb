@@ -11,6 +11,6 @@ class FavouritesController < ApplicationController
 
   def destroy
     Favourite.destroy(params[:id])
-    redirect_back(fallback_location: root_path)
+    flash.now[:success] = 'Favourite was successfully removed.'
   end
 end
