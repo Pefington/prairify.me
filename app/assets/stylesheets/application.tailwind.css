@@ -34,10 +34,6 @@
     @apply font-Cantarell text-skin-base;
   }
 
-  p {
-    @apply font-semibold;
-  }
-
   h1,
   h2,
   h3,
