@@ -7,10 +7,6 @@ module SearchHelper
       place_record = HTTParty.get(place_url)['results'][0]
       puts 'place_record'
       puts place_record
-      puts "place_record['matches'].join(' ')"
-      puts place_record['matches'].join(' ')
-      puts "place_record['record']['id']"
-      puts place_record['record']['id']
       if !place_record['matches'].nil?
         place_name = place_record['matches'].join(' ')
       elsif !place_record['display_name'].nil?
@@ -38,14 +34,7 @@ module SearchHelper
         place_record = HTTParty.get(place_url)['results'][0]
         puts 'place_record'
         puts place_record
-        puts "place_record['matches'].join(' ')"
-        puts place_record['matches'].join(' ')
-        puts "place_record['record']['id']"
-        puts place_record['record']['id']
         if !place_record['matches'].nil?
-          puts '$' *50
-          puts place_record['matches']
-          puts place_record['matches'].join(' ')
           place_name = place_record['matches'].join(' ')
         elsif !place_record['display_name'].nil?
           place_name = place_record['display_name'].join(' ')
