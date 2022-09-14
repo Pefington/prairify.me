@@ -19,6 +19,10 @@ gem 'puma', '~> 5.0'
 # ~ means gem we added for the project #
 ########################################
 
+# https://github.com/activerecord-hackery/ransack
+# Object-based searching
+gem 'ransack'
+
 # https://github.com/ankane/groupdate
 # The simplest way to group temporal data
 gem 'groupdate'
