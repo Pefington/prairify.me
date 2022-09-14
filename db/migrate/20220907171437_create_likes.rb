@@ -5,5 +5,5 @@ class CreateLikes < ActiveRecord::Migration[7.0]
       t.belongs_to :project, foreign_key: true, null: false
       t.timestamps
     end
-  end  
+  end
 end

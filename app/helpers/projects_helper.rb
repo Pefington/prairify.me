@@ -64,7 +64,7 @@ module ProjectsHelper
   def create_right_order_of_display(hash)
     result = []
     hash.each_with_index do |_like, index|
-      result.push(Project.find( hash[index][0]))
+      result.push(Project.find(hash[index][0]))
     end
     result
   end
