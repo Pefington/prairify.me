@@ -62,3 +62,12 @@ en:
   tip1: "We share the projects initiated by the community to transform their grass into a beautiful meadow"
 #SIGN_UP
   signup: "Sign Up"
+  signor: "or sign with"
+  alre: "Already have an account?"
+
+#CONTACT_PAGES
+  contacttitle1: "Contact us for"
+  contacttitle2: "More informations"
+  followcontact: "Follow us"
+  titlec: "What do you want to ask ?"
+  namec: "Full name"

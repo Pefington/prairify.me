@@ -30,3 +30,11 @@ fr:
   tip1: "De nombreux conseils sur la mise en oeuvre et l'entretient de vos espaces verts "
 #SIGN_UP
   signup: "Inscription"
+  signor: "ou connecte toi avec"
+  alre: "Tu as déjà un compte chez nous?"
+#CONTACT_PAGES
+  contacttitle1: "Contactez nosu pour"
+  contacttitle2: "Plus d'informations"
+  followcontact: "Suivez-nous"
+  titlec: "Que veux-tu nous demander ?"
+  namec: "Nom complet"
