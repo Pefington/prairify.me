@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @projects = helpers.latest_projects
   end
 
   def team
