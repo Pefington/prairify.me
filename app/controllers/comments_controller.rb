@@ -2,10 +2,6 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
 
-  def index
-    @comments = @project.comments
-  end
-
   def new
     @comment = Comment.new
     @project = Project.find(params[:project_id])

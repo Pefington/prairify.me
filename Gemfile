@@ -122,3 +122,6 @@ group :development, :test do
   gem 'rails-controller-testing'
 
 end
+group :test do
+  gem "nyan-cat-formatter"
+end

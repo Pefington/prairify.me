@@ -8,9 +8,6 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favourites, dependent: :destroy
 
-  validates :password,
-            length: { minimum: 6 }
-
   after_create :welcome_send
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
