@@ -37,19 +37,19 @@ module SearchHelper
         if !place_record['matches'].nil?
           place_name = place_record['matches'].join(' ')
         elsif !place_record['display_name'].nil?
-          place_name = place_record['display_name'].join(' ')
+          place_name = place_record['display_name']
         elsif !place_record['display_name_autocomplete'].nil?
-          place_name = place_record['display_name_autocomplete'].join(' ')
+          place_name = place_record['display_name_autocomplete']
         elsif !place_record['slug'].nil?
-          place_name = place_record['slug'].join(' ')
+          place_name = place_record['slug']
         elsif !place_record['record']['matches'].nil?
-          place_name = place_record['record']['matches'].join(' ')
+          place_name = place_record['record']['matches']
         elsif !place_record['record']['display_name'].nil?
-          place_name = place_record['record']['display_name'].join(' ')
+          place_name = place_record['record']['display_name']
         elsif !place_record['record']['display_name_autocomplete'].nil?
-          place_name = place_record['record']['display_name_autocomplete'].join(' ')
+          place_name = place_record['record']['display_name_autocomplete']
         elsif !place_record['record']['slug'].nil?
-          place_name = place_record['record']['slug'].join(' ')
+          place_name = place_record['record']['slug']
         else
           nil
         end
