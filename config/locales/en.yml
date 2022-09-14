@@ -29,5 +29,14 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
+en: 
+  #HOMEPAGE
   title: "You want to make your first step to a better world?"
+  subject: " We can help you change your purely decorative piece of grass into a very
+        useful meadow welcoming a diversified fauna and flora!"
+  paragraph: "Look what plant species you could grow where you live!"
+  our: "Our"
+  budding: "budding gardeners" 
+  projec: "projects"
+#TEAMPAGE
+  teamp: "Here is the wonderful team who made this project happen."

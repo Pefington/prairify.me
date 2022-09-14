@@ -1,2 +1,10 @@
-fr: 
-  title: "Veux tu faire tes premiers pas dans un monde meilleur "
+fr:
+  #HOMEPAGE
+  title: "Veux tu faire tes premiers pas dans un monde meilleur ? "
+  subject: "Nous allons vous aider a changer votre gazon (très moche) en une parfaite prairie favorable à la biodiversité"
+  paragraph: "Regardez quelles espèces de plantes vous pourriez cultiver là où vous habitez !"
+  our: "Les"
+  projec: "de nos jardiniers en herbe"
+  budding: 'projets'
+  #TEAMPAGE
+  teamp: "Notre merveilleurse équipe qui a permis se projet realisable."

@@ -29,8 +29,7 @@
           md:text-xl
         "
       >
-        We can help you change your purely decorative piece of grass into a very
-        useful meadow welcoming a diversified fauna and flora!
+        <%=t'subject'%>
       </p>
 
       <div class="m-8 text-center">
@@ -38,7 +37,7 @@
           <%= link_to "Join us", new_user_registration_path, class: "btn-muted" %>
         </div>
       </div>
-      <h1 class="mb-3">Look what species you could grow where you live!</h1>
+      <h1 class="mb-3"><%= t 'paragraph' %></h1>
       <div class="flex items-center justify-center">
         <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9 mr-2 sm:mr-6 -ml-6 mt-2 hover:bg-white/50 hover:rounded-full">
@@ -51,8 +50,7 @@
     </div>
   </section>
 <%end%>
-<%= link_to_unless_current "fr", locale: :fr, class: "btn-muted" %>
-<%= link_to_unless_current "en", locale: :en, class: "btn-muted" %>
+
 <section class="relative mt-8 flex w-9/12">
   <div class="flex flex-col justify-center">
     <h1
@@ -65,10 +63,10 @@
         xl:text-4xl
       "
     >
-      Our
-      <span class="text-skin-title">budding gardeners</span>
+      <%= t'our'%>
+      <span class="text-skin-title"><%= t('budding')%></span>
       <br>
-      projects
+      <%=t'projec'%>
     </h1>
 
     <div
