@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Project, type: :model do
   before do
-    @project = FactoryBot.create(:project)
+    @project = create(:project)
   end
 
   context 'validation' do
@@ -11,14 +11,17 @@ RSpec.describe Project, type: :model do
     end
 
     it 'is valid with valid attributes' do
-      expect(@project).to be_a(Project)
+      expect(@project).to be_a(described_class)
     end
-    it "should return a string" do
+
+    it 'returns a string' do
       expect(@project.name).to be_a(String)
     end
-    it "should return a string" do
+
+    it 'returns a string' do
       expect(@project.description).to be_a(String)
     end
+
     context 'associations' do
       describe '#projects' do
         it { expect(@project).to have_many(:comments) }

@@ -12,94 +12,91 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/selected_plants", type: :request do
-  
+RSpec.describe '/selected_plants', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # SelectedPlant. As you add validations to SelectedPlant, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    skip('Add a hash of attributes valid for your model')
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    skip('Add a hash of attributes invalid for your model')
+  end
 
-  describe "GET /index" do
-    it "renders a successful response" do
+  describe 'GET /index' do
+    it 'renders a successful response' do
       SelectedPlant.create! valid_attributes
       get selected_plants_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
+  describe 'GET /show' do
+    it 'renders a successful response' do
       selected_plant = SelectedPlant.create! valid_attributes
       get selected_plant_url(selected_plant)
       expect(response).to be_successful
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
+  describe 'GET /new' do
+    it 'renders a successful response' do
       get new_selected_plant_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
+  describe 'GET /edit' do
+    it 'renders a successful response' do
       selected_plant = SelectedPlant.create! valid_attributes
       get edit_selected_plant_url(selected_plant)
       expect(response).to be_successful
     end
   end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new SelectedPlant" do
-        expect {
+  describe 'POST /create' do
+    context 'with valid parameters' do
+      it 'creates a new SelectedPlant' do
+        expect do
           post selected_plants_url, params: { selected_plant: valid_attributes }
-        }.to change(SelectedPlant, :count).by(1)
+        end.to change(SelectedPlant, :count).by(1)
       end
 
-      it "redirects to the created selected_plant" do
+      it 'redirects to the created selected_plant' do
         post selected_plants_url, params: { selected_plant: valid_attributes }
         expect(response).to redirect_to(selected_plant_url(SelectedPlant.last))
       end
     end
 
-    context "with invalid parameters" do
-      it "does not create a new SelectedPlant" do
-        expect {
+    context 'with invalid parameters' do
+      it 'does not create a new SelectedPlant' do
+        expect do
           post selected_plants_url, params: { selected_plant: invalid_attributes }
-        }.to change(SelectedPlant, :count).by(0)
+        end.not_to change(SelectedPlant, :count)
       end
 
-    
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
         post selected_plants_url, params: { selected_plant: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
-    
     end
   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+  describe 'PATCH /update' do
+    context 'with valid parameters' do
+      let(:new_attributes) do
+        skip('Add a hash of attributes valid for your model')
+      end
 
-      it "updates the requested selected_plant" do
+      it 'updates the requested selected_plant' do
         selected_plant = SelectedPlant.create! valid_attributes
         patch selected_plant_url(selected_plant), params: { selected_plant: new_attributes }
         selected_plant.reload
-        skip("Add assertions for updated state")
+        skip('Add assertions for updated state')
       end
 
-      it "redirects to the selected_plant" do
+      it 'redirects to the selected_plant' do
         selected_plant = SelectedPlant.create! valid_attributes
         patch selected_plant_url(selected_plant), params: { selected_plant: new_attributes }
         selected_plant.reload
@@ -107,26 +104,24 @@ RSpec.describe "/selected_plants", type: :request do
       end
     end
 
-    context "with invalid parameters" do
-    
+    context 'with invalid parameters' do
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
         selected_plant = SelectedPlant.create! valid_attributes
         patch selected_plant_url(selected_plant), params: { selected_plant: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
-    
     end
   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested selected_plant" do
+  describe 'DELETE /destroy' do
+    it 'destroys the requested selected_plant' do
       selected_plant = SelectedPlant.create! valid_attributes
-      expect {
+      expect do
         delete selected_plant_url(selected_plant)
-      }.to change(SelectedPlant, :count).by(-1)
+      end.to change(SelectedPlant, :count).by(-1)
     end
 
-    it "redirects to the selected_plants list" do
+    it 'redirects to the selected_plants list' do
       selected_plant = SelectedPlant.create! valid_attributes
       delete selected_plant_url(selected_plant)
       expect(response).to redirect_to(selected_plants_url)
