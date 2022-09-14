@@ -1,13 +1,23 @@
 module ProjectsHelper
+  def transfer_plants(project)
+    selected_plants = SelectedPlant.where(user_id: current_user.id)
+    selected_plants.each do |pick|
+      Plant.create(inaturalist_id: pick.inaturalist_id, project_id: project.id)
+    end
+    SelectedPlant.where(user_id: current_user.id).destroy_all
+  end
+
   def liked?(project)
     like = project.likes.find_by(user_id: current_user.id)
-    return [true, like.id] if like != nil
+    return [true, like.id] unless like.nil?
+
     [false, 0]
   end
 
   def favourite?(project)
     favourite = project.favourites.find_by(user_id: current_user.id)
-    return [true, favourite.id] if favourite != nil
+    return [true, favourite.id] unless favourite.nil?
+
     [false, 0]
   end
 
@@ -27,14 +37,14 @@ module ProjectsHelper
   def project_sorted_by(argument)
     case argument
     when 'ancient' || ''
-      return Project.all
+      Project.all
     when 'recent'
-      return Project.all.reverse
+      Project.all.reverse
     when 'most_liked'
-      hash = sort_likes.sort_by {|k, v| -v}
+      hash = sort_likes.sort_by { |_k, v| -v }
       create_right_order_of_display(hash)
     when 'least_liked'
-      hash = sort_likes.sort_by {|k, v| v}
+      hash = sort_likes.sort_by { |_k, v| v }
       create_right_order_of_display(hash)
     end
   end
@@ -53,8 +63,8 @@ module ProjectsHelper
 
   def create_right_order_of_display(hash)
     result = []
-    hash.each_with_index do |like, index|
-      result.push(Project.find_by(id:hash[index][0]))
+    hash.each_with_index do |_like, index|
+      result.push(Project.find_by(id: hash[index][0]))
     end
     result
   end

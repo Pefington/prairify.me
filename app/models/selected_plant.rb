@@ -3,5 +3,5 @@ class SelectedPlant < ApplicationRecord
   validates :inaturalist_id, presence: true
   validates :inaturalist_id, uniqueness: { scope: :user }
   validates :user, presence: true
-  
+
 end

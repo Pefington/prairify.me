@@ -36,8 +36,7 @@ module SearchHelper
   end
 
   def usable_url(str)
-    str = str.gsub(/[!@%&"]/,'').gsub('-', ' ')
+    str = str.gsub(/[!@%&"]/, '').gsub('-', ' ')
     ERB::Util.url_encode(str)
   end
-
 end

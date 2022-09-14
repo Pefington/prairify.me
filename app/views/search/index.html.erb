@@ -1,49 +1,60 @@
-<% if @local_plants == nil %>
-
-  <p>Sorry, couldn't find any plant for "<strong><%=params[:search]%></strong>" please try again.</p>
-
-<% else %>
-
-  <% if current_user %>
-    <section class="flex flex-col items-center justify-evenly space-y-8">
-      <h3 class="text-xl">Happy with the selected plants?</h3>
-      <%= link_to 'New project', new_project_path, class: "btn-muted",
-  params:[@plants] %>
+<div x-data="{ selectedCount: <%= @selected_plants.count %> }">
+  <% if @local_plants == nil %>
+    <p>
+      No result. You could try a wider area (district, county, département...)
+    </p>
+  <% else %>
+    <section class="flex flex-col items-center justify-between text-center">
+      <p class="text-xl"><%= @hits %>
+        results for
+        <%= @place %></p>
+      <% if current_user %>
+        <h3 class="mt-8 text-xl">
+          <span x-text="selectedCount"></span>
+          out of 12 plants selected.
+        </h3>
+        <%= link_to 'Add them to a new project!', new_project_path, class:
+    "btn-muted", params:[@plants] %>
+        <div @click="eliminated = false, selected = false, selectedCount = 0">
+          <%= button_to 'Reset Selection', selected_plants_reset_path, method:
+      :reset, remote: :true, class: "btn-warning my-8" %>
+        </div>
+      <% else %>
+        <p class="flex flex-col text-2xl sm:flex-row sm:items-center">
+          <%= link_to "Join us", new_user_registration_path, class: "btn-muted" %>
+          to start a project!
+        </p>
+      <% end %>
     </section>
-
+    <section class="flex h-min w-full flex-wrap justify-evenly p-5 sm:p-10">
+      <% @local_plants.each do | plant | %>
+        <article
+          x-data="{
+            eliminated : false,
+            selected : <%= @selected_plants.include?(plant[:id]) %>
+          }"
+          x-transition
+          x-transition.duration.500ms
+          x-cloak
+          x-show="!eliminated"
+          class="
+            mb-12
+            flex
+            w-full
+            max-w-sm
+            flex-col
+            items-center
+            rounded-lg
+            bg-white
+            pb-4
+            shadow-lg
+            sm:mx-4
+          "
+        >
+          <% @plant = plant %>
+          <%= render 'shared/plant' %>
+        </article>
+      <% end %>
+    </section>
   <% end %>
-
-  <div class="flex flex-col items-center space-y-4 text-center">
-    <h2 class="text-xl cursor-pointer">Results for:</h2>
-    <p><%= @place %></p>
-    <p>-</p>
-  </div>
-
-  <div class="w-full p-5 sm:p-10 flex flex-wrap justify-evenly h-min">
-    <% @local_plants.each do | plant | %>
-      <article
-        x-data="{ shown : true }"
-        x-transition.duration.500ms
-        x-cloak
-        x-show="shown"
-        x-transition
-        class="
-          mb-12
-          mx-4
-          flex
-          w-full
-          max-w-sm
-          flex-col
-          items-center
-          rounded-lg
-          bg-white
-          shadow-lg
-        "
-      >
-        <% @plant = plant %>
-        <%= render 'layouts/plant' %>
-      </article>
-    <% end %>
-  </div>
-
-<% end %>
+</div>

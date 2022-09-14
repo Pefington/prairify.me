@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :selected_plants
+  post '/selected_plants/reset', to: 'selected_plants#reset'
   resources :project_updates
   root 'static_pages#home'
   devise_for :users, controllers: {
