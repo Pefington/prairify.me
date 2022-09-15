@@ -1,4 +1,19 @@
 fr:
+
+ 
+#NAVBAR_BTN
+  homebtn: "Acceuil"
+  aboutbtn: "A propos"
+  teambtn: "Equipe"
+  contactbtn: "Contact"
+  projectbtn: "Projets"
+  registerbtn: "Inscription"
+  signinbtn: "Se connecter"
+  signoutbtn: "Se déconnecter"
+  favoritebtn: "Mes Favoris"
+  myprofilebtn: "Mon Profil"
+  search: "Rechercher"
+
   #HOMEPAGE
   title: "Veux tu faire tes premiers pas dans un monde meilleur ? "
   subject: "Nous allons vous aider a changer votre gazon (très moche) en une parfaite prairie favorable à la biodiversité"

@@ -30,7 +30,20 @@
 # available at https://guides.rubyonrails.org/I18n.html.
 
 en: 
-  #HOMEPAGE
+
+#NAVBAR_BTN
+  homebtn: "Home"
+  aboutbtn: "A propos"
+  teambtn: "Team"
+  contactbtn: "Contact"
+  projectbtn: "Projects"
+  registerbtn: "Register"
+  signinbtn: "Sign in"
+  signoutbtn: "Sign Out"
+  favoritebtn: "My Favorites"
+  myprofilebtn: "My Profile"
+  search: "Search"
+#HOMEPAGE
   title: "You want to make your first step to a better world?"
   subject: " We can help you change your purely decorative piece of grass into a very
         useful meadow welcoming a diversified fauna and flora!"
