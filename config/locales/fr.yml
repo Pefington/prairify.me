@@ -135,6 +135,13 @@ fr:
   allpr1: "Voici la liste de tout les projets"
   pays: "Pays"
   modip: "Modifie le projet"
+  searcc: "Recherche les commentaires"
+  searcc1: "Recherche les commentaires par contenu"
+  allco: "Tout les commentaires"
+  allco1: "Voici la liste de tout les commentaires"
+  contento: "contenu"
+  postby: "posté par"
+
 #REGISTRATION/SIGNUP_PAGE
 
   holdermail: "Adresse e-mail"

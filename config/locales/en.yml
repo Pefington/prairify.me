@@ -164,6 +164,11 @@ en:
   allpr1: "This is a list of all projects"
   pays: "Country"
   modip: "Edit Project"
+  searcc1: "Search comments by content"
+  allco: "All Comments"
+  allco1: "This is a list of all created comments"
+  contento: "content"
+  postby: "posted by"
   
 #REGISTRATION_PAGE
 
