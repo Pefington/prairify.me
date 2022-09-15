@@ -3,6 +3,7 @@
     <p>
       <%=t 'noresultsearch'%>
     </p>
+    <%= render 'shared/search_bar'%>
   <% else %>
     <section class="flex flex-col items-center justify-between text-center">
       <p class="text-xl"><%= @hits %>
