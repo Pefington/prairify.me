@@ -1,0 +1,123 @@
+<section class="flex h-full w-full flex-col justify-center">
+  <div class="container mx-auto flex flex-col items-center justify-center px-6">
+    <%= form_with(model: [:admin, @user], html: { method: :post, class:
+    "bg-white rounded-lg m-8 p-8 w-full max-w-md" }) do |f| %>
+      <h2 class="mb-2 text-2xl font-bold text-gray-900">Create account</h2>
+      <div class="relative mt-8 flex items-center">
+        <span class="absolute">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mx-3 h-6 w-6 text-gray-300"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            />
+          </svg>
+        </span>
+        <%= f.label :email, class: "hidden" %>
+        <%= f.email_field :email,
+      autofocus: true, placeholder: "Email address", class: "block w-full py-3
+      text-gray-700 bg-white border rounded-md px-11 focus:border-blue-400
+      focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40",
+      autocomplete: "email" %>
+      </div>
+      <div class="relative mt-4 flex items-center">
+        <span class="absolute">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mx-3 h-6 w-6 text-gray-300"
+            fill="#D1D5DB"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.71,12.71a6,6,0,1,0-7.42,0,10,10,0,0,0-6.22,8.18,1,1,0,0,0,2,.22,8,8,0,0,1,15.9,0,1,1,0,0,0,1,.89h.11a1,1,0,0,0,.88-1.1A10,10,0,0,0,15.71,12.71ZM12,12a4,4,0,1,1,4-4A4,4,0,0,1,12,12Z"
+            />
+          </svg>
+        </span>
+        <%= f.label :username, class: "hidden" %>
+        <%= f.text_field :username,
+      placeholder: "Username", class:"block w-full px-10 py-3 text-gray-700
+      bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300
+      focus:outline-none focus:ring focus:ring-opacity-40", autocomplete:
+      "username" %>
+      </div>
+      <div class="relative mt-4 flex items-center">
+        <span class="absolute">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mx-3 h-7 w-7 text-gray-300"
+            fill="#D1D5DB"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21,10.5H20v-1a1,1,0,0,0-2,0v1H17a1,1,0,0,0,0,2h1v1a1,1,0,0,0,2,0v-1h1a1,1,0,0,0,0-2Zm-7.7,1.72A4.92,4.92,0,0,0,15,8.5a5,5,0,0,0-10,0,4.92,4.92,0,0,0,1.7,3.72A8,8,0,0,0,2,19.5a1,1,0,0,0,2,0,6,6,0,0,1,12,0,1,1,0,0,0,2,0A8,8,0,0,0,13.3,12.22ZM10,11.5a3,3,0,1,1,3-3A3,3,0,0,1,10,11.5Z"
+            />
+          </svg>
+        </span>
+        <%= f.label :role, class: "hidden" %>
+        <%= f.select(:role,
+      User.pluck(:role).uniq, {prompt:true}, {class: "block w-full py-3
+      text-gray-700 bg-white border rounded-md px-11 focus:border-blue-400
+      focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"}) %>
+      </div>
+      <div class="relative mt-4 flex items-center">
+        <span class="absolute">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mx-3 h-6 w-6 text-gray-300"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+            />
+          </svg>
+        </span>
+        <%= f.label :password, class: "hidden" %>
+        <%= f.password_field :password,
+      placeholder: "Password", class:"block w-full px-10 py-3 text-gray-700
+      bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300
+      focus:outline-none focus:ring focus:ring-opacity-40", autocomplete:
+      "new-password" %>
+      </div>
+      <div class="relative mt-4 flex items-center">
+        <span class="absolute">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mx-3 h-6 w-6 text-gray-300"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+            />
+          </svg>
+        </span>
+        <%= f.label :password_confirmation, class: "hidden" %><br/>
+        <%= f.password_field :password_confirmation, placeholder: "Password
+      confirmation", class:"block w-full px-10 py-3 text-gray-700 bg-white
+      border rounded-md focus:border-blue-400 focus:ring-blue-300
+      focus:outline-none focus:ring focus:ring-opacity-40", autocomplete:
+      "new-password" %>
+      </div>
+      <div class="mt-6">
+        <%= f.submit "Create account", class: "w-full btn m-0" %>
+      </div>
+      <div class="mt-4 flex justify-center"><%= link_to "Back", :back %></div>
+    <% end %>
+  </div>
+</section>

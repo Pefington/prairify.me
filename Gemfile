@@ -15,9 +15,28 @@ gem 'pg', '~> 1.1'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
+# Gem for translate
+gem 'rails-i18n'
+gem 'devise-i18n'
 ########################################
 # ~ means gem we added for the project #
 ########################################
+
+# https://github.com/activerecord-hackery/ransack
+# Object-based searching
+gem 'ransack'
+
+# https://github.com/ankane/groupdate
+# The simplest way to group temporal data
+gem 'groupdate'
+
+# https://github.com/ankane/chartkick
+# Create beautiful JavaScript charts with one line of Ruby
+gem 'chartkick'
+
+# https://github.com/kaminari/kaminari
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari', '~> 1.2.2'
 
 # ~ Vite [https://github.com/ElMassimo/vite_ruby#readme]
 # Replaces rails crappy front end assets management
