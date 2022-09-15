@@ -1,13 +1,13 @@
 <section class="w-full md:w-2/3 flex flex-col text-center">
-  <h1 class="mt-4 font-bold text-4xl text-center">Updates</h1>
+  <h1 class="mt-4 font-bold text-4xl text-center"><%=t 'ftitle1'%></h1>
   <hr class="mx-4 my-8">
-  <p class="text-center my-8">Here you will find all your favorite projects :</p>
+  <p class="text-center my-8"><%=t 'ftitle'%></p>
 
   <% if @projects.empty? %>
     <section class="bg-white rounded-lg shadow-lg m-4">
-      <p>You currently don't have any favourites...</p><br>
-      <h2>Get some inspiration by browsing our different projects!</h2><br>
-      <%= button_to 'Browse projects', projects_path, method: :get, class:'btn-muted' %>
+      <p><%=t 'subjectf'%></p><br>
+      <h2><%=t 'paraf'%></h2><br>
+      <%= button_to t('btnshowproject'), projects_path, method: :get, class:'btn-muted' %>
     </section>
   <% else %>
     <section

@@ -1,28 +1,28 @@
 <div x-data="{ selectedCount: <%= @selected_plants.count %> }">
   <% if @local_plants == nil %>
     <p>
-      No result. You could try a wider area (district, county, region...)
+      <%=t 'noresultsearch'%>
     </p>
     <%= render 'shared/search_bar'%>
   <% else %>
     <section class="flex flex-col items-center justify-between text-center">
       <p class="text-xl"><%= @hits %>
-        results for
+       <%=t'textsearch1'%>
         <%= @place %></p>
       <% if current_user %>
         <h3 class="mt-8 text-xl">
           <span x-text="selectedCount"></span>
-          out of 12 plants selected.
+          <%=t 'textsearch2'%>
         </h3>
-        <%= link_to 'Add them to a new project!', new_project_path, class:
+        <%= link_to t('addplant'), new_project_path, class:
     "btn-muted", params:[@plants] %>
         <div @click="eliminated = false, selected = false, selectedCount = 0">
-          <%= button_to 'Reset Selection', selected_plants_reset_path, method:
+          <%= button_to t('resetselect'), selected_plants_reset_path, method:
       :reset, remote: :true, class: "btn-warning my-8" %>
         </div>
       <% else %>
         <p class="flex flex-col text-2xl sm:flex-row sm:items-center">
-          <%= link_to "Join us", new_user_registration_path, class: "btn-muted" %>
+          <%= link_to t('joinhomebtn'), new_user_registration_path, class: "btn-muted" %>
           to start a project!
         </p>
       <% end %>

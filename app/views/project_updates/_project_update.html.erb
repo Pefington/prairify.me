@@ -14,11 +14,11 @@
     <div class="w-1/2 p-4 md:p-4 flex flex-col justify-center">
       <h1 class="text-2xl font-bold"><%= project_update.title %></h1>
       <p class="my-3">
-        <h1>Description:</h1>
+        <h1><%=t 'descrp'%></h1>
         <%= project_update.description %>
       </p>
       <p class="my-3">
-        <h1>Posted on:</h1>
+        <h1><%=t'post'%></h1>
         <%= project_update.created_at.strftime("%d/%m/%Y, at %I:%M%p") %>
       </p>
     </div>

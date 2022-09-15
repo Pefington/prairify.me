@@ -2,7 +2,7 @@
   <div class="container mx-auto flex flex-col items-center justify-center px-6">
     <%= form_with(model: [:admin, @user], html: { method: :put, class: "bg-white
     rounded-lg m-8 p-8 w-full max-w-md" }) do |f| %>
-      <h2 class="mb-2 text-2xl font-bold text-gray-900">Edit User</h2>
+      <h2 class="mb-2 text-2xl font-bold text-gray-900"><%=t'modiu'%></h2>
       <div class="relative mt-8 flex items-center">
         <span class="absolute">
           <svg
@@ -42,7 +42,7 @@
         </span>
         <%= f.label :username, class: "hidden" %>
         <%= f.text_field :username,
-      placeholder: "Username", class:"block w-full px-10 py-3 text-gray-700
+      placeholder: t('holdername'), class:"block w-full px-10 py-3 text-gray-700
       bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300
       focus:outline-none focus:ring focus:ring-opacity-40", autocomplete:
       "username" %>
@@ -66,8 +66,8 @@
       text-gray-700 bg-white border rounded-md px-11 focus:border-blue-400
       focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"}) %>
       </div>
-      <div class="mt-6"><%= f.submit "Update", class: "w-full btn m-0" %></div>
-      <div class="mt-4 flex justify-center"><%= link_to "Back", :back %></div>
+      <div class="mt-6"><%= f.submit t('upt'), class: "w-full btn m-0" %></div>
+      <div class="mt-4 flex justify-center"><%= link_to t('bretour'), :back %></div>
     <% end %>
   </div>
 </section>

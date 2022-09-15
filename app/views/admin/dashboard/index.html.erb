@@ -3,18 +3,17 @@
     <div class="mx-8 mt-8 rounded-lg bg-white p-4 shadow sm:p-6 xl:p-8">
       <%= area_chart User.group_by_day(:created_at, range:
       1.month.ago..Time.now, day_start: 0).count, colors: ['#0092E4'], title:
-      'Number of Daily Registered Users', dataset: { borderWidth: 3 }, download:
-      true, empty: 'No data', points: false, xtitle: 'Day', ytitle: 'Number of
-      Users' %>
+      t('num1'), dataset: { borderWidth: 3 }, download:
+      true, empty: 'No data', points: false, xtitle: t('dy'), ytitle: t('nb') %>
     </div>
     <div class="mx-8 mt-8 rounded-lg bg-white p-4 shadow sm:p-6 xl:p-8">
       <div class="mb-4 flex items-center justify-between">
         <div>
           <h2 class="mb-2 text-xl font-bold text-gray-900">
-            Latest Registered Users
+            <%=t'tyl'%>
           </h2>
           <span class="text-base font-normal text-gray-500"
-            >This is a list of latest registered users</span
+            ><%=t'tyl1'%></span
           >
         </div>
         <div class="flex-shrink-0">
@@ -39,7 +38,7 @@
                       scope="col"
                       class="p-4 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
                     >
-                      Username
+                      <%=t'nameprofil'%>
                     </th>
                     <th
                       scope="col"
@@ -87,7 +86,7 @@
               ><%= @users_week %></span
             >
             <h2 class="text-base font-normal text-gray-500">
-              User signups this week
+              <%=t'wk1'%>
             </h2>
           </div>
         </div>
@@ -102,7 +101,7 @@
               ><%= @users_month %></span
             >
             <h2 class="text-base font-normal text-gray-500">
-              User signups this month
+              <%=t'mth1'%>
             </h2>
           </div>
         </div>
@@ -113,18 +112,17 @@
     <div class="mx-8 mt-8 rounded-lg bg-white p-4 shadow sm:p-6 xl:p-8">
       <%= area_chart Project.group_by_day(:created_at, range:
       1.month.ago..Time.now, day_start: 0).count, colors: ['#0092E4'], title:
-      'Number of Daily Created Project', dataset: { borderWidth: 3 }, download:
-      true, empty: 'No data', points: false, xtitle: 'Day', ytitle: 'Number of
-      Projects' %>
+      t('num2'), dataset: { borderWidth: 3 }, download:
+      true, empty: 'No data', points: false, xtitle: t('dy'), ytitle: t('nb1') %>
     </div>
     <div class="mx-8 mt-8 rounded-lg bg-white p-4 shadow sm:p-6 xl:p-8">
       <div class="mb-4 flex items-center justify-between">
         <div>
           <h2 class="mb-2 text-xl font-bold text-gray-900">
-            Latest Created Projects
+            <%=t'tym'%>
           </h2>
           <span class="text-base font-normal text-gray-500"
-            >This is a list of latest created projects</span
+            ><%=t'tym1'%></span
           >
         </div>
         <div class="flex-shrink-0">
@@ -149,7 +147,7 @@
                       scope="col"
                       class="p-4 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
                     >
-                      Name
+                      <%=t'nam'%>
                     </th>
                     <th
                       scope="col"
@@ -197,7 +195,7 @@
               ><%= @projects_week %></span
             >
             <h2 class="text-base font-normal text-gray-500">
-              Projects created this week
+              <%=t'wk2'%>
             </h2>
           </div>
         </div>
@@ -212,7 +210,7 @@
               ><%= @projects_month %></span
             >
             <h2 class="text-base font-normal text-gray-500">
-              Projects created this month
+             <%=t'mth2'%>
             </h2>
           </div>
         </div>
