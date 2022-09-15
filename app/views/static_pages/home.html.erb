@@ -40,18 +40,53 @@
       <h1 class="mb-3"><%= t 'paragraph' %></h1>
       <div class="flex items-center justify-center">
         <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9 mr-2 sm:mr-6 -ml-6 mt-2 hover:bg-white/50 hover:rounded-full">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="
+              w-9
+              h-9
+              mr-2
+              sm:mr-6
+              -ml-6
+              mt-2
+              hover:bg-white/50
+              hover:rounded-full
+            "
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+            />
           </svg>
-        <%end%>
+        <% end %>
         <%= render 'shared/search_bar' %>
       </div>
     </div>
   </section>
+<<<<<<< HEAD
 <%end%>
 
 <section class="relative mt-8 flex w-9/12">
+=======
+<% end %>
+<section
+  x-data="{
+        activeSlide: 1,
+        slides: Array.from({ length: <%= @projects.count %> }, (_, i) => i + 1)
+      }"
+  class="relative mt-8 flex w-9/12"
+>
+>>>>>>> 11bcb20df508e1b3881ea8c8f3249585fecd2215
   <div class="flex flex-col justify-center">
     <h1
       class="
@@ -82,102 +117,13 @@
         2xl:grid-cols-4
       "
     >
-      <div class="w-full rounded-md bg-white p-8 shadow-lg">
-        <%= image_tag 'https://i.pinimg.com/564x/9a/60/03/9a6003c3b3d27e10ec8d51c5f250b652.jpg',
-        class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
-        <div class="-mx-2 mt-6 flex items-center">
-          <%= image_tag 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
-          class:"mx-2 h-14 w-14 rounded-full object-cover" %>
-          <div class="mx-2">
-            <p class="text-skin-base text-xl font-semibold drop-shadow">
-              Author
-            </p>
-            <p class="text-skin-base text-sm italic">Publication date</p>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="
-          w-full
-          rounded-md
-          bg-white
-          p-8
-          shadow-lg
-          md:hidden
-          lg:block
-        "
-      >
-        <%= image_tag 'https://i.pinimg.com/564x/08/09/8b/08098bd66d4cc91b44c9ca74ea94f5eb.jpg',
-        class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
-        <div class="-mx-2 mt-6 flex items-center">
-          <%= image_tag 'https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-          class:"mx-2 h-14 w-14 rounded-full object-cover" %>
-          <div class="mx-2">
-            <p class="text-skin-base text-xl font-semibold drop-shadow">
-              Author
-            </p>
-            <p class="text-skin-base text-sm italic">Publication date</p>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="
-          w-full
-          rounded-md
-          bg-white
-          p-8
-          shadow-lg
-          md:hidden
-          lg:block
-        "
-      >
-        <%= image_tag 'https://i.pinimg.com/564x/5f/a5/53/5fa55385fb08f84d467ded5d0c4cdf41.jpg',
-        class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
-
-        <div class="-mx-2 mt-6 flex items-center">
-          <%= image_tag 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-          class:"mx-2 h-14 w-14 rounded-full object-cover" %>
-          <div class="mx-2">
-            <p class="text-skin-base text-xl font-semibold drop-shadow">
-              Author
-            </p>
-            <p class="text-skin-base text-sm italic">Publication date</p>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="
-          w-full
-          rounded-md
-          bg-white
-          p-8
-          shadow-lg
-          md:hidden
-          lg:block
-        "
-      >
-        <%= image_tag 'https://i.pinimg.com/236x/b4/39/0b/b4390ba3eebed650899f09d3751da4b3.jpg',
-        class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
-
-        <div class="-mx-2 mt-6 flex items-center">
-          <%= image_tag 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29tYW4lMjBmYWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
-          class:"mx-2 h-14 w-14 rounded-full object-cover" %>
-          <div class="mx-2">
-            <p class="text-skin-base text-xl font-semibold drop-shadow">
-              Author
-            </p>
-            <p class="text-skin-base text-sm italic">Publication date</p>
-          </div>
-        </div>
-      </div>
+      <%= render @projects %>
 
     </div>
 
     <div class="mt-12 hidden items-center md:flex">
       <button
+        @click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1"
         class="
           rounded-full
           border
@@ -186,7 +132,6 @@
           transition-colors
           duration-300
           hover:bg-gray-100
-          rtl:-scale-x-100
         "
       >
         <svg
@@ -202,6 +147,7 @@
       </button>
 
       <button
+        @click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1"
         class="
           rounded-full
           border
@@ -210,7 +156,6 @@
           transition-colors
           duration-300
           hover:bg-gray-100
-          rtl:-scale-x-100
           lg:mx-6
         "
       >

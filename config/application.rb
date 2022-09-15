@@ -22,7 +22,6 @@ module PrairifyMe
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-    config.i18n.default_locale = :en
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -32,6 +31,9 @@ module PrairifyMe
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
+    config.i18n.available_locales = %i[en fr]
+    config.i18n.default_locale = :en
+
     config.generators.system_tests = nil
   end
 end
