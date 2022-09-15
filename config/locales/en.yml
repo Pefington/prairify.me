@@ -107,6 +107,7 @@ en:
   titlec: "What do you want to ask ?"
   namec: "Full name"
   emailc: "Email adress"
+  btncontact: "Get in touch"
 
 #FAVORITES_PAGE
   ftitle: "Here you will find all your favourite projects:"
@@ -115,6 +116,7 @@ en:
   ftitle1: "FAVOURITES"
   subjectf: "You currently don't have any favourites..."
   paraf: "Get some inspiration by browsing our different projects!"
+  btnshowproject: "Browse projects"
 
 
 #PROFILE_PAGE
@@ -164,6 +166,7 @@ en:
   allpr1: "This is a list of all projects"
   pays: "Country"
   modip: "Edit Project"
+  searcc: "Search comments"
   searcc1: "Search comments by content"
   allco: "All Comments"
   allco1: "This is a list of all created comments"
@@ -187,3 +190,6 @@ en:
   noresultearch: "No result. You could try a wider area (district, county, département...)"
   textsearch1: "Results for"
   textsearch2: "out of 12 plants selected."
+  addplant: "Add them to a new project!"
+  resetselect: "Reset selection"
+  moreplant: "More about %{@plant[:scientific_name]}"

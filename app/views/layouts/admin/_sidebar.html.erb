@@ -1,61 +1,6 @@
 <header 
-x-data="{ locale: '<%= I18n.locale.to_s %>' }"
 class="flex flex-col lg:flex-row"
 >
-<div
-    x-cloak
-    x-show="locale === 'en'"
-    @click="locale = 'fr'"
-    transition
-    class="
-      absolute
-      opacity-50
-      hover:opacity-100
-      left-4
-      top-4
-      z-50
-      cursor-pointer
-      transition-opacity
-      duration-300
-    "
-  >
-    <%= link_to locale: 'fr' do %>
-      <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg",
-    alt: "Passer au Français",
-    class: "h-6",
-    scrset: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg 1x,
-    https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg 2x",
-    decoding: "async" %>
-    <% end %>
-  </div>
-
-  <div
-    x-cloak
-    x-show="locale === 'fr'"
-    @click="locale = 'en'"
-    transition
-    class="
-      absolute
-      opacity-50
-      hover:opacity-100
-      left-4
-      top-8
-      z-50
-      cursor-pointer
-      transition-opacity
-      duration-300
-    "
-  >
-    <%= link_to locale: 'en' do %>
-      <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg",
-    alt: "Switch to English",
-    class: "h-6",
-    scrset: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg 1x,
-    https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg 2x",
-    decoding: "async" %>
-    <% end %>
-  </div>
-
   <button class="lg:hidden flex justify-end" @click="open = ! open">
     <svg
       class="h-12 w-12 py-2 px-2"

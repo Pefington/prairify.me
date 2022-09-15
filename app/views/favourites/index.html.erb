@@ -7,7 +7,7 @@
   <section class="bg-white rounded-lg shadow-lg m-4">
     <p><%=t 'subjectf'%></p><br>
     <h2><%=t 'paraf'%></h2><br>
-    <%= button_to 'Browse projects', projects_path, method: :get, class:'btn-muted'%>
+    <%= button_to t('btnshowproject'), projects_path, method: :get, class:'btn-muted'%>
   </section>
   <%else%>
   <section class="p-5 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 h-min">
