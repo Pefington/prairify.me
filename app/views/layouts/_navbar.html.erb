@@ -10,14 +10,13 @@
     class="
       absolute
       opacity-50
-      hover:opacity-100
+
       left-4
       top-8
       z-50
       cursor-pointer
       transition-opacity
-      duration-300
-    "
+      duration-300"
   >
     <%= link_to locale: 'fr' do %>
       <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg",
@@ -37,14 +36,13 @@
     class="
       absolute
       opacity-50
-      hover:opacity-100
+
       left-4
       top-8
       z-50
       cursor-pointer
       transition-opacity
-      duration-300
-    "
+      duration-300"
   >
     <%= link_to locale: 'en' do %>
       <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg",
@@ -65,8 +63,7 @@
             items-center
             justify-between
             bg-skin-back-nav
-            text-skin-inverted
-          "
+            text-skin-inverted"
         >
           <div>
             <%= link_to root_path do %>
@@ -74,8 +71,8 @@
             <% end %>
           </div>
 
-          <div class="text-xl text-skin-inverted hover:text-gray-700">
-            <%= link_to "Prairify", root_path, class: "font-FjallaOne text-2xl transition-colors duration-300 transform lg:text-3xl rounded-md px-3 py-2 focus:bg-skin-button-accent-hover drop-shadow-md" %>
+          <div class="text-xl text-skin-inverted ">
+            <%= link_to "Prairify", root_path, class: "font-FjallaOne text-2xl transition-colors duration-300 transform lg:text-3xl rounded-md px-3 py-2 drop-shadow-md" %>
 
           </div>
 
@@ -85,12 +82,10 @@
               @click="isOpen = !isOpen"
               type="button"
               class="
-                focus:outline-none
+
                 rounded-md
                 px-3
-                py-2
-                focus:bg-skin-button-accent-hover
-              "
+                py-2"
               aria-label="toggle menu"
             >
               <svg
@@ -143,16 +138,15 @@
             lg:opacity-100
             lg:translate-x-0
             lg:flex
-            lg:items-center
-          "
+            lg:items-center"
         >
           <div class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
-            <%= link_to "Home", root_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
-            <%= link_to "Team", team_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
-            <%= link_to "About", about_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
-            <%= link_to "Contact", contact_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
+            <%= link_to "Home", root_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
+            <%= link_to "Team", team_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
+            <%= link_to "About", about_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
+            <%= link_to "Contact", contact_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
             <% if user_signed_in? %>
-              <%= link_to "Projects", projects_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
+              <%= link_to "Projects", projects_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
             <% end %>
             <div class="flex flex-row">
               <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
@@ -162,7 +156,7 @@
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-9 h-9 mx-4 mt-3 hover:text-gray-700 drop-shadow-md"
+                  class="w-9 h-9 mx-4 mt-3  drop-shadow-md"
                 >
                   <path
                     stroke-linecap="round"
@@ -189,12 +183,11 @@
                   w-full
                   flex
                   items-center
-                  focus:outline-none
-                  focus:bg-skin-button-accent-hover
+
+
                   rounded-md
                   px-2
-                  py-3
-                "
+                  py-3"
                 aria-label="toggle profile dropdown"
               >
                 <div class="w-8 h-8 overflow-hidden border-2 rounded-full">
@@ -204,7 +197,15 @@
                     alt="avatar"
                   >
                 </div>
-                <h3 class="mx-2 lg:hidden text-skin-inverted lg:hover:text-gray-700">NOM DE PROFIL</h3>
+
+                <% if @profile %>
+                  <% if @profile.username %>
+                    <h3 class="mx-2 lg:hidden text-skin-inverted "><%= @profile.username %></h3>
+                  <% else %>
+                    <h3 class="mx-2 lg:hidden text-skin-inverted "><%= @profile.email %></h3>
+                  <% end %>
+                <% end %>
+
               </button>
             </div>
 
@@ -224,9 +225,7 @@
                 py-1
                 shadow-lg
                 ring-1
-                ring-opacity-5
-                focus:outline-none
-              "
+                ring-opacity-5"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="user-menu-button"
@@ -234,12 +233,12 @@
             >
               <% if current_user %>
                 <%= link_to "Admin", admin_root_path, class: "block px-4 py-2 text-sm" if current_user.admin? %>
-                <%= link_to "My profile", profile_path, class: "block px-4 py-2 text-sm hover:text-gray-700 focus:bg-skin-button-accent-hover rounded-md" %>
-                <%= link_to "Favourites", favourites_path, class: "block px-4 py-2 text-sm hover:text-gray-700 focus:bg-skin-button-accent-hover rounded-md" %>
-                <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm hover:text-gray-700 focus:bg-skin-button-accent-hover rounded-md" %>
+                <%= link_to "My profile", profile_path, class: "block px-4 py-2 text-sm  rounded-md" %>
+                <%= link_to "Favourites", favourites_path, class: "block px-4 py-2 text-sm  rounded-md" %>
+                <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm  rounded-md" %>
               <% else %>
-                <%= link_to "Login", user_session_path, class: "block px-4 py-2 text-sm hover:text-gray-700 focus:bg-skin-button-accent-hover rounded-md" %>
-                <%= link_to "Register", new_user_registration_path, method: :get, class: "block px-4 py-2 text-sm hover:text-gray-700 focus:bg-skin-button-accent-hover rounded-md" %>
+                <%= link_to "Login", user_session_path, class: "block px-4 py-2 text-sm  rounded-md" %>
+                <%= link_to "Register", new_user_registration_path, method: :get, class: "block px-4 py-2 text-sm  rounded-md" %>
               <% end %>
             </div>
           </div>

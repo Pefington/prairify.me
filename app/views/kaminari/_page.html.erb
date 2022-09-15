@@ -9,8 +9,8 @@
     bg-white
     rounded-md
     sm:inline
-    hover:bg-blue-400
-    hover:text-white<%= ' current' if page.current? %>
+
+     ' current' if page.current? %>
   "
 >
   <%= link_to_unless page.current?, page, url, {remote: remote, rel: page.rel} %>

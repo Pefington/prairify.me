@@ -6,15 +6,12 @@
       <div class="my-5">
         <%= form.label :name %>
         <%= form.text_field :name, class: "w-full mt-1
-      py-3 text-gray-700 bg-white border rounded-md focus:border-blue-400
-      focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" %>
+      py-3 text-gray-700 bg-white border rounded-md" %>
       </div>
       <div class="my-5">
         <%= form.label :description %>
         <%= form.text_area :description, rows: 4,
-      class: "w-full mt-1 py-3 text-gray-700 bg-white border rounded-md
-      focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring
-      focus:ring-opacity-40" %>
+      class: "w-full mt-1 py-3 text-gray-700 bg-white border rounded-md" %>
       </div>
       <div class="mt-6"><%= form.submit "Update", class: "btn w-full m-0" %></div>
       <div class="mt-4 flex justify-center"><%= link_to "Back", :back %></div>
