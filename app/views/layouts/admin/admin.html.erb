@@ -22,9 +22,17 @@
     <%= vite_javascript_tag 'application', 'admin' %>
 
   </head>
-  <body class="flex flex-col lg:flex-row">
+  <body class="flex flex-col lg:flex-row" x-data="{ open: true, timeout: null}"
+    @resize.window="
+    width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    if (width > 1024) {
+     open = true
+    } else if (width < 1024) {
+      open = false
+    }
+    ">
     <%= render 'layouts/admin/sidebar' %>
-    <main class="flex flex-col bg-gray-100 w-screen">
+    <main class="flex flex-col bg-gray-100 w-full">
       <%= render 'shared/flashes' %>
       <%= yield %>
     </main>

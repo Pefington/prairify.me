@@ -1,82 +1,38 @@
-<header
- x-data="{ locale: '<%= I18n.locale.to_s %>' }"
-  
->
- <div
-    x-cloak
-    x-show="locale === 'en'"
-    @click="locale = 'fr'"
-    transition
-    class="
-      absolute
-      opacity-50
-      hover:opacity-100
-      left-4
-      top-8
-      z-50
-      cursor-pointer
-      transition-opacity
-      duration-300
-    "
-  >
- <%= link_to locale: 'fr' do %>
-      <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg",
-    alt: "Passer au Français",
-    class: "h-6",
-    scrset: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg 1x,
-    https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg 2x",
-    decoding: "async" %>
-    <% end %>
-  </div>
-
+<header class="flex flex-col lg:flex-row">
+  <button class="lg:hidden flex justify-end" @click="open = ! open">
+    <svg
+      class="h-12 w-12 py-2 px-2"
+      viewBox="0 0 24 24"
+      fill="#0092E4"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3,8H21a1,1,0,0,0,0-2H3A1,1,0,0,0,3,8Zm18,8H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Zm0-5H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z"
+      ></path>
+    </svg>
+  </button>
   <div
-    x-cloak
-    x-show="locale === 'fr'"
-    @click="locale = 'en'"
-    transition
     class="
-      absolute
-      opacity-50
-      hover:opacity-100
-      left-4
-      top-8
+      py-4
+      flex
+      flex-1
+      flex-col
+      lg:sticky
+      lg:top-0
+      lg:h-screen
+      lg:w-64
+      border-r
+      bg-white
+      px-2
+      w-full
+      text-center
       z-50
-      cursor-pointer
-      transition-opacity
-      duration-300
     "
+    x-show="open"
+    @click="open = !open"
   >
-    <%= link_to locale: 'en' do %>
-      <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg",
-    alt: "Switch to English",
-    class: "h-6",
-    scrset: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg 1x,
-    https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg 2x",
-    decoding: "async" %>
-    <% end %>
-  </div>
-
-  <div
-  class="
-  
-    lg:sticky
-    lg:top-0
-    flex
-    lg:h-screen
-    lg:w-64
-    flex-col
-    border-r
-    bg-white
-    px-2
-    py-8
-    w-full
-    text-center
-    x-cloak
-   "
-
-  <h1 class="text-3xl text-gray-800">Prairify</h1>
-  <div class="mt-6 flex flex-1 flex-col justify-between">
-    <nav class="flex flex-wrap lg:flex-col justify-center">
+    <h1 class="text-3xl text-gray-800">Prairify</h1>
+    <nav class="flex flex-wrap lg:flex-col justify-center mt-4">
       <%= link_to admin_root_path, class: "flex items-center px-4 py-2 mt-2
       text-gray-600 transition-colors duration-300 transform rounded-md
        hover:bg-gray-200
@@ -177,15 +133,5 @@
         <span class="mx-2 font-medium">Logout</span>
       <% end %>
     </nav>
-    <div class="-mx-2 flex items-center px-4 justify-center mt-4 lg:flex-col">
-      <img
-        class="mx-2 h-9 w-9 rounded-full object-cover"
-        src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-        alt="avatar"
-      />
-      <h4 class="m-2 text-gray-800 hover:underline">
-        <%= current_user.email %>
-      </h4>
-    </div>
   </div>
 </header>
