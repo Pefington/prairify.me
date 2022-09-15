@@ -4,28 +4,18 @@ module SearchHelper
     if HTTParty.get(place_url)['total_results'] == 0
       place_url = "https://api.inaturalist.org/v1/search?q=#{place}&per_page=1"
       if HTTParty.get(place_url)['total_results'] != 0
-        puts 'place_url'
-        puts place_url
         place_record = HTTParty.get(place_url)['results'][0]
-        puts 'place_record'
-        puts place_record
         place_name = find_place_name_in_inat(place_record)
-        puts 'place_name'
-        puts place_name
-        return [place_name, place_record['record']['id']] if !place_record['record']['id'].nil? && !place_name.nil?
+        place_id = place_record['record']['id']
+        return [place_name, place_id] if !place_id.nil? && !place_name.nil?
 
         nil
       end
     else
-      puts 'place_url'
-      puts place_url
       place_record = HTTParty.get(place_url)['results'][0]
-      puts 'place_record'
-      puts place_record
       place_name = find_place_name_in_inat(place_record)
-      puts 'place_name'
-      puts place_name
-      return [place_name, place_record['record']['id']] if !place_record['record']['id'].nil? && !place_name.nil?
+      place_id = place_record['record']['id']
+      return [place_name, place_id] if !place_id.nil? && !place_name.nil?
 
       nil
     end
@@ -33,13 +23,11 @@ module SearchHelper
 
   def get_data(place_id)
     return nil if place_id.nil?
+
     obs_url = "https://api.inaturalist.org/v1/observations/species_counts?identified=true&taxon_is_active=true&place_id=#{place_id}&iconic_taxa=Plantae&identifications=most_agree"
-    puts 'obs_url'
-    puts obs_url
     return nil if HTTParty.get(obs_url)['error'] == 'Error'
+
     observations = HTTParty.get(obs_url)['results']
-    puts 'observations'
-    puts observations
     results = []
     observations.each do |obs|
       hash_data = {}
@@ -56,17 +44,11 @@ module SearchHelper
       end
       results.push(hash_data)
     end
-    puts 'results'
-    puts results
     results
   end
 
   def usable_url(str)
-    puts 'str'
-    puts str
     str = str.gsub(/[!@%&"]/, '').gsub('-', ' ')
-    puts 'ERB::Util.url_encode(str)'
-    puts ERB::Util.url_encode(str)
     ERB::Util.url_encode(str)
   end
 
@@ -94,24 +76,17 @@ module SearchHelper
     end
   end
 
-  def get_place_name_with_loc(coord)
+  def get_place_with_loc(coord)
     long = coord.split(',')[0]
     lat = coord.split(',')[1]
     place_url = "https://api.inaturalist.org/v1/places/nearby?nelat=#{long}&nelng=#{lat}&swlat=#{long}&swlng=#{lat}"
-    puts place_url
-    puts 
     if !HTTParty.get(place_url)['results']['community'].last.nil?
       inat_result = HTTParty.get(place_url)['results']['community'].last
     elsif !HTTParty.get(place_url)['results']['standard'].last.nil?
       inat_result = HTTParty.get(place_url)['results']['standard'].last
-    else 
-      nil
     end
-    puts inat_result
     place_name = find_place_name_in_inat(inat_result)
-    puts place_name
     place_id = inat_result['id']
-    puts place_id
     [place_name, place_id] if !place_id.nil? && !place_name.nil?
   end
 end
