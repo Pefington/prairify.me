@@ -1,6 +1,7 @@
 class SearchController < ApplicationController
   def index
     if params[:search] == 'geoloc'
+      puts request.location.inspect
       @place = helpers.get_place_name(helpers.usable_url(request.location.region)) if !request.location.region.nil?
       puts "@place"
       puts @place

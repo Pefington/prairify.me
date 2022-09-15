@@ -54,14 +54,14 @@ module SearchHelper
     results = []
     observations.each do |obs|
       hash_data = {}
-      hash_data[:id] = obs['taxon']['id']
+      hash_data[:id] = obs['taxon']['id'] if !obs['taxon']['id'].nil?
       unless obs['taxon']['preferred_common_name'].nil?
         hash_data[:common_name] =
           obs['taxon']['preferred_common_name'].capitalize
       end
-      hash_data[:scientific_name] = obs['taxon']['name']
-      hash_data[:wiki] = obs['taxon']['wikipedia_url']
-      hash_data[:picture_url] = obs['taxon']['default_photo']['medium_url']
+      hash_data[:scientific_name] = obs['taxon']['name'] if !obs['taxon']['name'].nil?
+      hash_data[:wiki] = obs['taxon']['wikipedia_url'] if !obs['taxon']['wikipedia_url'].nil?
+      hash_data[:picture_url] = obs['taxon']['default_photo']['medium_url'] if !obs['taxon']['default_photo']['medium_url'].nil?
       results.push(hash_data)
     end
     puts 'results'
