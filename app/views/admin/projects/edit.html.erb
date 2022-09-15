@@ -2,9 +2,9 @@
   <div class="container mx-auto flex flex-col items-center justify-center px-6">
     <%= form_with(model: [:admin, @project], class: "bg-white rounded-lg m-8 p-8
     w-full max-w-md") do |form| %>
-      <h2 class="mb-2 text-2xl font-bold text-gray-900">Edit Project</h2>
+      <h2 class="mb-2 text-2xl font-bold text-gray-900"><%=t'modip'%></h2>
       <div class="my-5">
-        <%= form.label :name %>
+        <%= form.label t('nam') %>
         <%= form.text_field :name, class: "w-full mt-1
       py-3 text-gray-700 bg-white border rounded-md" %>
       </div>
@@ -13,8 +13,8 @@
         <%= form.text_area :description, rows: 4,
       class: "w-full mt-1 py-3 text-gray-700 bg-white border rounded-md" %>
       </div>
-      <div class="mt-6"><%= form.submit "Update", class: "btn w-full m-0" %></div>
-      <div class="mt-4 flex justify-center"><%= link_to "Back", :back %></div>
+      <div class="mt-6"><%= form.submit t('upt'), class: "btn w-full m-0" %></div>
+      <div class="mt-4 flex justify-center"><%= link_to t('bretour'), :back %></div>
     <% end %>
   </div>
 </section>

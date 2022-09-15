@@ -2,7 +2,7 @@
   <div class="container mx-auto flex flex-col items-center justify-center px-6">
     <%= form_for(resource, as: resource_name, url:
     registration_path(resource_name), html: {class: "w-full max-w-md"}) do |f| %>
-      <h1 class="mt-4 text-center text-4xl font-bold">Sign Up</h1>
+      <h1 class="mt-4 text-center text-4xl font-bold"><%=t'signup'%></h1>
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="relative mt-8 flex items-center">
         <span class="absolute">
@@ -23,7 +23,7 @@
         </span>
         <%= f.label :email, class: "hidden" %>
         <%= f.email_field :email,
-      autofocus: true, placeholder: "Email address", class: "form-field
+      autofocus: true, placeholder: t('holdermail'), class: "form-field
       indent-6", autocomplete: "email" %>
       </div>
       <div class="mt-3 mb-1">
@@ -50,9 +50,7 @@
           </svg>
         </span>
         <%= f.label :password, class: "hidden" %>
-        <%= f.password_field :password,
-      placeholder: "Password", class:"form-field indent-6 mt-0", autocomplete:
-      "new-password" %>
+        <%= f.password_field :password, placeholder: t('holderpassword'), class:"form-field indent-6", autocomplete: "new-password" %>
       </div>
       <div class="relative mt-4 flex items-center">
         <span class="absolute">
@@ -71,13 +69,12 @@
             />
           </svg>
         </span>
-        <%= f.label :password_confirmation, class: "hidden" %><br/>
-        <%= f.password_field :password_confirmation, placeholder: "Password
-      confirmation", class:"form-field indent-6", autocomplete: "new-password" %>
+        <%= f.label :password_confirmation, class: "hidden" %><br />
+        <%= f.password_field :password_confirmation, placeholder: t('holderconfirmpassword'), class:"form-field indent-6", autocomplete: "new-password" %>
       </div>
       <div class="mt-6">
-        <%= f.submit "Sign up", class: "w-full btn m-0" %>
-       </div>
+        <%= f.submit t('signupbtn'), class: "w-full btn m-0" %>
+      </div>
     <% end %>
     <%= render "devise/shared/links" %>
   </div>
