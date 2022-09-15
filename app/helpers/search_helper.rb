@@ -8,7 +8,6 @@ module SearchHelper
         place_name = find_place_name_in_inat(place_record)
         place_id = place_record['record']['id']
         return [place_name, place_id] if !place_id.nil? && !place_name.nil?
-
         nil
       end
     else
@@ -16,7 +15,6 @@ module SearchHelper
       place_name = find_place_name_in_inat(place_record)
       place_id = place_record['record']['id']
       return [place_name, place_id] if !place_id.nil? && !place_name.nil?
-
       nil
     end
   end
