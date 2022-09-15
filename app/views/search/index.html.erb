@@ -3,6 +3,7 @@
     <p>
       No result. You could try a wider area (district, county, region...)
     </p>
+    <%= render 'shared/search_bar'%>
   <% else %>
     <section class="flex flex-col items-center justify-between text-center">
       <p class="text-xl"><%= @hits %>
