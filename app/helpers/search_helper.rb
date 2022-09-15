@@ -7,25 +7,7 @@ module SearchHelper
       place_record = HTTParty.get(place_url)['results'][0]
       puts 'place_record'
       puts place_record
-      if !place_record['matches'].nil?
-        place_name = place_record['matches'].join(' ')
-      elsif !place_record['display_name'].nil?
-        place_name = place_record['display_name']
-      elsif !place_record['display_name_autocomplete'].nil?
-        place_name = place_record['display_name_autocomplete']
-      elsif !place_record['slug'].nil?
-        place_name = place_record['slug']
-      elsif !place_record['record']['matches'].nil?
-        place_name = place_record['record']['matches'].join(' ')
-      elsif !place_record['record']['display_name'].nil?
-        place_name = place_record['record']['display_name']
-      elsif !place_record['record']['display_name_autocomplete'].nil?
-        place_name = place_record['record']['display_name_autocomplete']
-      elsif !place_record['record']['slug'].nil?
-        place_name = place_record['record']['slug']
-      else
-        nil
-      end
+      place_name = find_place_name_in_inat(place_record)
       puts 'place_name'
       puts place_name
       return [place_name, place_record['record']['id']] if !place_record['record']['id'].nil? && !place_name.nil?
@@ -38,25 +20,7 @@ module SearchHelper
         place_record = HTTParty.get(place_url)['results'][0]
         puts 'place_record'
         puts place_record
-        if !place_record['matches'].nil?
-          place_name = place_record['matches'].join(' ')
-        elsif !place_record['display_name'].nil?
-          place_name = place_record['display_name']
-        elsif !place_record['display_name_autocomplete'].nil?
-          place_name = place_record['display_name_autocomplete']
-        elsif !place_record['slug'].nil?
-          place_name = place_record['slug']
-        elsif !place_record['record']['matches'].nil?
-          place_name = place_record['record']['matches'].join(' ')
-        elsif !place_record['record']['display_name'].nil?
-          place_name = place_record['record']['display_name']
-        elsif !place_record['record']['display_name_autocomplete'].nil?
-          place_name = place_record['record']['display_name_autocomplete']
-        elsif !place_record['record']['slug'].nil?
-          place_name = place_record['record']['slug']
-        else
-          nil
-        end
+        place_name = find_place_name_in_inat(place_record)
         puts 'place_name'
         puts place_name
         return [place_name, place_record['record']['id']] if !place_record['record']['id'].nil? && !place_name.nil?
@@ -111,5 +75,27 @@ module SearchHelper
     puts 'ERB::Util.url_encode(str)'
     puts ERB::Util.url_encode(str)
     ERB::Util.url_encode(str)
+  end
+
+  def find_place_name_in_inat(place_record)
+    if !place_record['matches'].nil?
+      place_record['matches'].join(' ')
+    elsif !place_record['display_name'].nil?
+      place_record['display_name']
+    elsif !place_record['display_name_autocomplete'].nil?
+      place_record['display_name_autocomplete']
+    elsif !place_record['slug'].nil?
+      place_record['slug']
+    elsif !place_record['record']['matches'].nil?
+      place_record['record']['matches'].join(' ')
+    elsif !place_record['record']['display_name'].nil?
+      place_record['record']['display_name']
+    elsif !place_record['record']['display_name_autocomplete'].nil?
+      place_record['record']['display_name_autocomplete']
+    elsif !place_record['record']['slug'].nil?
+      place_record['record']['slug']
+    else
+      nil
+    end
   end
 end
