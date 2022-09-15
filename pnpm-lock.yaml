@@ -3,6 +3,8 @@ lockfileVersion: 5.4
 specifiers:
   '@alpinejs/intersect': ^3.10.3
   alpinejs: ^3.10.3
+  chart.js: ^3.9.1
+  chartkick: ^4.2.0
   prettier: ^2.7.1
   prettier-plugin-tailwindcss: ^0.1.13
   vite: ^3.0.0
@@ -12,6 +14,8 @@ specifiers:
 dependencies:
   '@alpinejs/intersect': 3.10.3
   alpinejs: 3.10.3
+  chart.js: 3.9.1
+  chartkick: 4.2.0
 
 devDependencies:
   prettier: 2.7.1
@@ -78,6 +82,35 @@ packages:
     dependencies:
       fill-range: 7.0.1
     dev: true
+
+  /chart.js/3.9.1:
+    resolution: {integrity: sha512-Ro2JbLmvg83gXF5F4sniaQ+lTbSv18E+TIf2cOeiH1Iqd2PGFOtem+DUufMZsCJwFE7ywPOpfXFBwRTGq7dh6w==}
+    dev: false
+
+  /chartjs-adapter-date-fns/2.0.0_chart.js@3.9.1:
+    resolution: {integrity: sha512-rmZINGLe+9IiiEB0kb57vH3UugAtYw33anRiw5kS2Tu87agpetDDoouquycWc9pRsKtQo5j+vLsYHyr8etAvFw==}
+    requiresBuild: true
+    peerDependencies:
+      chart.js: ^3.0.0
+    dependencies:
+      chart.js: 3.9.1
+    dev: false
+    optional: true
+
+  /chartkick/4.2.0:
+    resolution: {integrity: sha512-7yYZyxeFhOh/LA7gc1VwDFgc6t4ZM9RrbBjgb4dJoFukk2+94QkK0yulYI2OUH1cjcfrf1qmj04FkjZx7kZDeg==}
+    optionalDependencies:
+      chart.js: 3.9.1
+      chartjs-adapter-date-fns: 2.0.0_chart.js@3.9.1
+      date-fns: 2.29.3
+    dev: false
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /debug/4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
