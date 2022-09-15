@@ -1,19 +1,25 @@
 module SearchHelper
   def get_place(place)
     place_url = "https://api.inaturalist.org/v1/search?q=#{place}&sources=places&per_page=1"
-    if HTTParty.get(place_url)['total_results'] != 0
-      place_record = HTTParty.get(place_url)['results'][0]
-      return [place_record['matches'].join(' '), place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil?
-      nil
-    else
+    if (HTTParty.get(place_url)['total_results']).zero?
       place_url = "https://api.inaturalist.org/v1/search?q=#{place}&per_page=1"
       if HTTParty.get(place_url)['total_results'] != 0
         place_record = HTTParty.get(place_url)['results'][0]
-        return [place_record['matches'].join(' '), place_record['record']['id']] if !place_record.nil? && !place_record['matches'].nil?
-        nil
-      else
+        if !place_record.nil? && !place_record['matches'].nil?
+          return [place_record['matches'].join(' '),
+                  place_record['record']['id']]
+        end
+
         nil
       end
+    else
+      place_record = HTTParty.get(place_url)['results'][0]
+      if !place_record.nil? && !place_record['matches'].nil?
+        return [place_record['matches'].join(' '),
+                place_record['record']['id']]
+      end
+
+      nil
     end
   end
 
