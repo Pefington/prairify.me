@@ -15,6 +15,9 @@ gem 'pg', '~> 1.1'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
+# Gem for translate
+gem 'rails-i18n'
+gem 'devise-i18n'
 ########################################
 # ~ means gem we added for the project #
 ########################################
