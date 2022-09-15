@@ -1,14 +1,18 @@
 class User < ApplicationRecord
+  after_initialize :set_default_role, if: :new_record?
+  after_create :welcome_send
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
-  after_initialize :set_default_role, if: :new_record?
+
   has_many :projects, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :favourites, dependent: :destroy
 
-  after_create :welcome_send
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end

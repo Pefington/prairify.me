@@ -5,11 +5,12 @@
       <span class="text-base text-gray-500"><%=t'searcc1'%></span>
     </div>
     <div class="flex flex-col items-center justify-start">
-      <%= search_form_for @q, url: :admin_comments, class: "w-full" do |f| %>
-        <div class="mt-4 flex items-center">
+      <%= search_form_for @q, url: :admin_comments, class: "w-full flex flex-col
+      lg:flex-row " do |f| %>
+        <div class="mt-4 flex flex-col lg:w-full lg:flex-row lg:items-center">
           <span class="absolute">
             <svg
-              class="mx-3 h-6 w-6"
+              class="mx-3 my-3 h-6 w-6 lg:my-0"
               viewBox="0 0 24 24"
               fill="#0092E4"
               xmlns="http://www.w3.org/2000/svg"
@@ -23,10 +24,12 @@
           <%= f.text_field :content_cont,
         autofocus: true, placeholder: t('rsherch'), class: "form-field mt-0
         indent-6" %>
-          <%= f.submit class: "ml-4 px-8 py-3 rounded-md bg-[#0092E4]
+        </div>
+        <div class="mt-4 flex flex-row">
+          <%= f.submit class: "lg:ml-4 mr-2 px-8 py-3 rounded-md bg-[#0092E4]
         text-white cursor-pointer" %>
           <%= link_to "Clear", request.path, class:
-        "ml-4 px-8 py-3 rounded-md bg-gray-400 text-white" %>
+        "px-8 py-3 rounded-md bg-gray-400 text-white" %>
         </div>
       <% end %>
     </div>

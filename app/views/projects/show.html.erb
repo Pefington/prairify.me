@@ -2,16 +2,17 @@
   <%= render @project %>
   <hr class="my-8">
 
-  <% if @project_updates != nil%>
+  <% if @project_updates != nil %>
     <h1 class="mt-4 font-bold text-4xl text-center"><%=t 'updatep'%></h1>
-    <%= render @project_updates%>
+    <%= render @project_updates %>
     <hr class="my-8">
-  <%else%>
-    <p> <%=t 'noupdatep'%></p>
-  <%end%>
-  <% if @comments != nil%>
+  <% else %>
+    <p>
+      <%=t 'noupdatep'%></p>
+  <% end %>
+  <% if @comments != nil %>
     <h1 class="mt-4 font-bold text-4xl text-center"><%=t 'commentp'%></h1>
-    <%= render @comments%>
+    <%= render @comments %>
     <hr class="my-8">
   <%else%>
     <p> <%=t 'nocommentp'%></p>
@@ -19,14 +20,14 @@
 
 
   <div class="w-full flex flex-wrap justify-center text-center">
-    <%if @project.user == current_user%>
+    <% if @project.user == current_user %>
       <%= link_to 'Back to projects', projects_path, class: "btn-muted" %>
       <%= link_to 'Edit this project', edit_project_path(@project), class: "btn" %>
       <%= button_to 'Add an update', new_project_project_update_path(@project), method: :get, class: "btn" %>
       <%= button_to 'Destroy this project', project_path(@project), method: :delete, class: "btn-warning" %>
-    <%else%>
-    <%= link_to 'Back to projects', projects_path, class: "btn-muted" %>
-    <%= button_to 'Add a comment', new_project_comment_path(@project), method: :get, class: "btn" %>
-    <%end%>
+    <% else %>
+      <%= link_to 'Back to projects', projects_path, class: "btn-muted" %>
+      <%= button_to 'Add a comment', new_project_comment_path(@project), method: :get, class: "btn" %>
+    <% end %>
   </div>
 </section>
