@@ -16,7 +16,7 @@
   >
     <div class="h-5/6 max-w-xl rounded-lg bg-white/50 p-6 text-center">
       <h2 class="mb-2 font-semibold text-2xl">
-       <%=t'title' %>
+        <%= t'title' %>
       </h2>
       <br>
       <p
@@ -85,92 +85,65 @@
       }"
   class="relative mt-8 flex flex-col justify-center w-9/12"
 >
-    <h1
+  <h1
+    class="
+      text-2xl
+      font-semibold
+      capitalize
+      text-skin-base
+      lg:text-3xl
+      xl:text-4xl
+    "
+  >
+    Our
+    <span class="text-skin-title">budding gardeners</span>
+    <br>
+    projects
+  </h1>
+
+  <div
+    class="
+      mt-8
+      p-8
+      w-full
+      flex
+      flex-col-6
+      justify-center
+      items-center
+      relative
+    "
+  >
+
+    <button
+      @click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1"
       class="
-        text-2xl
-        font-semibold
-        capitalize
         text-skin-base
-        lg:text-3xl
-        xl:text-4xl
+        transition-colors
+        duration-300
+        hover:text-gray-400
+        absolute
+        left-0
+        inset-y-0
       "
     >
-      Our
-      <span class="text-skin-title">budding gardeners</span>
-      <br>
-      projects
-    </h1>
+      <i class="fa-solid fa-circle-chevron-left fa-3x"></i>
+    </button>
 
-    <div
+    <%= render @projects %>
+
+    <button
+      @click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1"
       class="
-        mt-8
-        p-8
-        w-full
-        flex
-        flex-col-6
-        justify-center
-        items-center
-        relative
+        text-skin-base
+        transition-colors
+        duration-300
+        hover:text-gray-400
+        absolute
+        right-0
+        inset-y-0
       "
     >
-
-      <button
-        @click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1"
-        class="
-          text-skin-base
-          transition-colors
-          duration-300
-          hover:text-gray-400
-          absolute
-          left-0
-          inset-y-0
-        "
-      >
-        <i class="fa-solid fa-circle-chevron-left fa-3x"></i>
-      </button>
-
-      <% @projects.each do |project| %>
-        <div
-          x-cloak
-          x-transition
-          x-show="activeSlide == <%= project.id %>"
-          class=" w-2/3 rounded-md bg-white p-8 shadow-lg md:hidden lg:block "
-        >
-          <% if project.photos.attached? %>
-            <% project.photos.each do |photo| %>
-              <%= image_tag photo, class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
-            <% end %>
-          <% end %>
-          <div class="-mx-2 mt-6 flex items-center">
-            <%= image_tag 'https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-            class:"mx-2 h-14 w-14 rounded-full object-cover" %>
-            <div class="mx-2">
-              <p class="text-skin-base text-xl font-semibold drop-shadow">
-                <% if project.user.username? %>
-                  <%= project.user.username %>
-                <% else %>
-                  Annonymous
-                <% end %>
-              </p>
-              <p class="text-skin-base text-sm italic"><%= project.created_at.strftime("%d/%m/%Y") %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
-
-      <button
-        @click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1"
-        class="
-          text-skin-base
-          transition-colors
-          duration-300
-          hover:text-gray-400
-          absolute
-          right-0
-          inset-y-0
-        "
-      >
-        <i class="fa-solid fa-circle-chevron-right fa-3x"></i>
-      </button>
-    </div>
+      <i class="fa-solid fa-circle-chevron-right fa-3x"></i>
+    </button>
+  </div>
 </section>
