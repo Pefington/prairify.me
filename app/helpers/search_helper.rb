@@ -95,14 +95,18 @@ module SearchHelper
   end
 
   def get_place_name_with_loc(coord)
-    puts coord
     long = coord.split(',')[0]
-    puts long
     lat = coord.split(',')[1]
-    puts lat
     place_url = "https://api.inaturalist.org/v1/places/nearby?nelat=#{long}&nelng=#{lat}&swlat=#{long}&swlng=#{lat}"
     puts place_url
-    inat_result = HTTParty.get(place_url)['results']['community'][0]
+    puts 
+    if !HTTParty.get(place_url)['results']['community'].last.nil?
+      inat_result = HTTParty.get(place_url)['results']['community'].last
+    elsif !HTTParty.get(place_url)['results']['standard'].last.nil?
+      inat_result = HTTParty.get(place_url)['results']['standard'].last
+    else 
+      nil
+    end
     puts inat_result
     place_name = find_place_name_in_inat(inat_result)
     puts place_name
