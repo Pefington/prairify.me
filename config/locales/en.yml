@@ -130,7 +130,7 @@ en:
   mth1: "User signups this month"
   wk2: "Projects created this week"
   mth2: "Projects created this month"
-
+  dy: "Day"
 #REGISTRATION_PAGE
 
   holdermail: "Email adress"
