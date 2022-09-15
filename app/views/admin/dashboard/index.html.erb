@@ -131,7 +131,7 @@
     <div class="mx-8 mt-8 rounded-lg bg-white p-4 shadow sm:p-6 xl:p-8">
       <%= area_chart Project.group_by_day(:created_at, range:
       1.month.ago..Time.now, day_start: 0).count, colors: ['#0092E4'], title:
-      'Number of Daily Created Project', dataset: { borderWidth: 3 }, download:
+      t('num2'), dataset: { borderWidth: 3 }, download:
       true, empty: 'No data', points: false, xtitle: t('dy'), ytitle: t('nb1') %>
     </div>
     <div class="mx-8 mt-8 rounded-lg bg-white p-4 shadow sm:p-6 xl:p-8">
@@ -166,7 +166,7 @@
                       scope="col"
                       class="p-4 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
                     >
-                      Name
+                      <%=t'nam'%>
                     </th>
                     <th
                       scope="col"
