@@ -47,6 +47,7 @@ module SearchHelper
     obs_url = "https://api.inaturalist.org/v1/observations/species_counts?identified=true&taxon_is_active=true&place_id=#{place_id}&iconic_taxa=Plantae&identifications=most_agree"
     puts 'obs_url'
     puts obs_url
+    return nil if HTTParty.get(obs_url)['error'] == 'Error'
     observations = HTTParty.get(obs_url)['results']
     puts 'observations'
     puts observations
