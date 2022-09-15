@@ -4,6 +4,8 @@ class SearchController < ApplicationController
       puts request.location.inspect
       puts 'request.location.data'
       puts request.location.data unless request.location.data.nil?
+      puts 'request.location.data[loc]'
+      puts request.location.data['loc'] unless request.location.data['loc'].nil?
       puts "request.location['@data']"
       puts request.location['@data'] unless request.location['@data'].nil?
 
