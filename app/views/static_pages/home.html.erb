@@ -78,6 +78,9 @@
 <section
   x-data="{
         activeSlide: 1,
+        activeSlide: 2,
+        activeSlide: 3,
+        activeSlide: 4,
         slides: Array.from({ length: <%= @projects.count %> }, (_, i) => i + 1)
       }"
   class="relative mt-8 flex flex-col justify-center w-9/12"
@@ -101,8 +104,12 @@
     <div
       class="
         mt-8
+        p-8
         w-full
         flex
+        flex-col-6
+        justify-center
+        items-center
         relative
       "
     >
@@ -122,7 +129,34 @@
         <i class="fa-solid fa-circle-chevron-left fa-3x"></i>
       </button>
 
-      <%= render @projects %>
+      <% @projects.each do |project| %>
+        <div
+          x-cloak
+          x-transition
+          x-show="activeSlide == <%= project.id %>"
+          class=" w-full rounded-md bg-white p-8 shadow-lg md:hidden lg:block "
+        >
+          <% if project.photos.attached? %>
+            <% project.photos.each do |photo| %>
+              <%= image_tag photo, class:"h-72 w-full mb-4 rounded-lg object-cover object-center" %>
+            <% end %>
+          <% end %>
+          <div class="-mx-2 mt-6 flex items-center">
+            <%= image_tag 'https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+            class:"mx-2 h-14 w-14 rounded-full object-cover" %>
+            <div class="mx-2">
+              <p class="text-skin-base text-xl font-semibold drop-shadow">
+                <% if project.user.username? %>
+                  <%= project.user.username %>
+                <% else %>
+                  Annonymous
+                <% end %>
+              </p>
+              <p class="text-skin-base text-sm italic"><%= project.created_at.strftime("%d/%m/%Y") %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
 
       <button
         @click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1"
