@@ -3,6 +3,13 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   scope '(:locale)', locale: /en|fr/ do
+    namespace :admin do
+      root 'dashboard#index'
+      resources :projects, only: %i[index edit update destroy]
+      resources :users, only: %i[index new edit update create destroy]
+      resources :comments, only: %i[index edit update destroy]
+    end
+    resources :project_updates
     root 'static_pages#home'
     post '/selected_plants/reset', to: 'selected_plants#reset'
     devise_for :users, skip: :omniauth_callbacks, controllers: {
