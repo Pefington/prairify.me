@@ -56,7 +56,7 @@
         </div>
         <% if user_signed_in? %>
           <div
-            x-data="{ liked: <%= liked?(project)[0] %>, likesCount: <%=number_of_likes(project)%>, favourited: <%= favourite?  (project)[0]%> }"
+            x-data="{ liked: <%= liked?(project)[0] %>, likesCount: <%=number_of_likes(project)%>, favourited: <%= favourite?(project)[0]%> }"
             class="flex absolute bottom-0 right-0 mr-2"
           >
             <div x-cloak x-show="liked" @click="liked = !liked, likesCount--">
