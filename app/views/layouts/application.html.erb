@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= vite_client_tag %>
     <%= vite_javascript_tag 'application' %>
+    <link rel="icon" type="image/png" href="<%= vite_asset_path 'images/logo.png' %>" />
   </head>
   <body class="flex flex-col items-center h-full min-h-screen">
     <%= render 'layouts/navbar' %>
