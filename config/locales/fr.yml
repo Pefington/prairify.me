@@ -10,7 +10,6 @@ fr:
   signoutbtn: "Se déconnecter"
   favoritebtn: "Mes Favoris"
   myprofilebtn: "Mon Profil"
- 
 
 #HOMEPAGE
   title: "Veux tu faire tes premiers pas dans un monde meilleur ? "
@@ -37,7 +36,22 @@ fr:
   commentp: "Commentaire(s)"
   nocommentp: "Désolé ! Aucun commentaire pour le moment !"
   dscpr: "Montre nous les avancées de ton jardin!"
-
+  mostancient: "Trier par: Plus anciens"
+  mostrecent: "Trier par: Plus récents"
+  mostlike: "Trier par: Plus likés"
+  leastlike: "Trier par: Moins likés"
+  showbtn: "Afficher le projet"
+  placep: "Ville:"
+  finishp: "Fin:"
+  beginp: "Début:"
+  countryp: "Pays:"
+  btnbackp: "Retour aux projets"
+  holderlocationp: "Ville"
+  holdercountryp: "Pays"
+  holdernamep: "Nom"
+  subject1p: "Quand souhaitez-vous démarrer votre projet ?"
+  subject2p: "A quoi ressemble votre pelouse maintenant ?"
+  subject3p: "Quand voulez-vous terminer votre projet ?"
 #ABOUTPAGE
 
   goal: "Notre"
@@ -105,6 +119,15 @@ fr:
   mth2: "Projets créés ce moi-ci"
   dy: "Jour"
   nam: "Nom"
+  modiu: "Modifie l'utilisateur"
+  upt: "Modifie"
+  bretour: "Retour"
+  searchu: "Recherche l'utilisateur"
+  searchu1: "Recherche l'utilisateur avec l'adresse email"
+  alluse: "Tout les utilisateurs"
+  alluse1: "Voici la liste de tout les utilisateurs"
+  rsherch: "Recherche..."
+  creat: "Crée le"
 #REGISTRATION/SIGNUP_PAGE
 
   holdermail: "Adresse e-mail"
