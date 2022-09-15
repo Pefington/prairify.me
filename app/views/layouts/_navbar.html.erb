@@ -1,6 +1,6 @@
 <header
   x-data="{ locale: '<%= I18n.locale.to_s %>' }"
-  class="w-full bg-skin-back-nav text-skin-inverted relative"
+  class="w-full   relative"
 >
   <div
     x-cloak
@@ -54,7 +54,7 @@
     <% end %>
   </div>
 
-  <nav x-data="{ isOpen: false }" class="relative bg-skin-back-nav">
+  <nav x-data="{ isOpen: false }" class="relative ">
     <div class="container px-6 py-4 mx-auto">
       <div class="lg:flex lg:items-center lg:justify-between">
         <div
@@ -62,8 +62,8 @@
             flex
             items-center
             justify-between
-            bg-skin-back-nav
-            text-skin-inverted"
+
+            "
         >
           <div>
             <%= link_to root_path do %>
@@ -71,7 +71,7 @@
             <% end %>
           </div>
 
-          <div class="text-xl text-skin-inverted ">
+          <div class="text-xl  ">
             <%= link_to "Prairify", root_path, class: "font-FjallaOne text-2xl transition-colors duration-300 transform lg:text-3xl rounded-md px-3 py-2 drop-shadow-md" %>
 
           </div>
@@ -118,8 +118,8 @@
           x-cloak
           :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
           class="
-            bg-skin-back-nav
-            text-skin-inverted
+
+
             absolute
             inset-x-0
             z-20
@@ -141,7 +141,7 @@
             lg:items-center"
         >
           <div class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
-            <%= link_to t('homebtn'), root_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
+            <%= link_to t('homebtn'), root_path, class: "btn btn-base mx-3 mt-2 lg:mt-0" %>
             <%= link_to t('teambtn'), team_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
             <%= link_to t('aboutbtn'), about_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
             <%= link_to t('contactbtn'), contact_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
@@ -200,9 +200,9 @@
 
                 <% if @profile %>
                   <% if @profile.username %>
-                    <h3 class="mx-2 lg:hidden text-skin-inverted "><%= @profile.username %></h3>
+                    <h3 class="mx-2 lg:hidden  "><%= @profile.username %></h3>
                   <% else %>
-                    <h3 class="mx-2 lg:hidden text-skin-inverted "><%= @profile.email %></h3>
+                    <h3 class="mx-2 lg:hidden  "><%= @profile.email %></h3>
                   <% end %>
                 <% end %>
 
@@ -214,7 +214,7 @@
               x-on:click.outside="isOpen = false"
               x-show="isOpen"
               class="
-                bg-skin-back-nav
+
                 z-10
                 absolute
                 right-0

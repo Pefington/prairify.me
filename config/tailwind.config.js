@@ -14,34 +14,42 @@ module.exports = {
         Cantarell: ["Cantarell", ...defaultTheme.fontFamily.sans],
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
-      textColor: {
-        skin: {
-          base: "var(--color-text-base)",
-          muted: "var(--color-text-muted)",
-          inverted: "var(--color-text-inverted)",
-          title: "var(--color-text-title)",
-        },
-      },
-      backgroundColor: {
-        skin: {
-          "back-nav": "var(--color-back-nav)",
-          "accent": "var(--color-back-accent)",
-          "button-accent": "var(--color-button-accent)",
-          "button-accent-hover": "var(--color-button-accent-hover)",
-          "button-muted": "var(--color-button-muted)",
-          "button-muted-hover": "var(--color-button-muted-hover)",
-          "button-warning": "var(--color-button-warning)",
-          "button-warning-hover": "var(--color-button-warning-hover)",
-        },
-      },
       backgroundImage: {
         "google-signin": "url('images/btn_google_signin_dark_normal_web.png')",
       },
-      borderColor: {
-        skin: {
-          base: "var(--color-border-base)",
+      colors: {
+        base: {
+          standard: "#f0f",
+          hover: "#E8E8E8",
+          focus: "#BDBDBD",
+          active: "#DADADA",
+          disabled: "#E0E0E0",
+          placeholder: "#9E9E9E"
         },
-      },
+        inverse: {
+          standard: "#000",
+          hover: "#000",
+          focus: "#000",
+          active: "#000",
+          disabled: "#000",
+          placeholder: "#000"
+        },
+        accent: {
+          standard: "#f0f",
+          hover: "#E8E8E8",
+          focus: "#BDBDBD",
+          active: "#DADADA",
+          disabled: "#E0E0E0",
+          placeholder: "#9E9E9E"
+        },
+        soft: {
+          standard: "#f0f",
+          hover: "#E8E8E8",
+          focus: "#BDBDBD",
+          active: "#DADADA",
+          disabled: "#E0E0E0",
+          placeholder: "#9E9E9E"
+          
     },
   },
   variants: {
