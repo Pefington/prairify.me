@@ -17,19 +17,19 @@
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <div class="flex mt-4">
-    <span class="mr-1"><%=t'alre1'%></span><%= link_to "Sign up", new_registration_path(resource_name), class: "link" %>
+    <span class="mr-1"><%=t'alre1'%></span><%= link_to t('registerbtn'), new_registration_path(resource_name), class: "link" %>
   </div>
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   <div class="flex mt-2">
-    <span class="mr-1"><%=t'forgo'%></span><%= link_to "Click here", new_password_path(resource_name), class: "link" %>
+    <span class="mr-1"><%=t'forgo'%></span><%= link_to t('clickhere'), new_password_path(resource_name), class: "link" %>
   </div>
 <% end %>
 
 <%- if controller_name != 'sessions' %>
   <div class="flex mt-4">
-    <span class="mr-1"><%=t'alre'%></span><%= link_to "Log in", new_session_path(resource_name), class: "link" %>
+    <span class="mr-1"><%=t'alre'%></span><%= link_to t('signinbtn'), new_session_path(resource_name), class: "link" %>
   </div>
 <% end %>
 

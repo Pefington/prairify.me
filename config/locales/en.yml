@@ -40,9 +40,9 @@ en:
   registerbtn: "Register"
   signinbtn: "Sign in"
   signoutbtn: "Sign Out"
-  favoritebtn: "My Favorites"
+  favoritebtn: "My Favourites"
   myprofilebtn: "My Profile"
-  search: "Search"
+  
 #HOMEPAGE
   title: "You want to make your first step to a better world?"
   subject: " We can help you change your purely decorative piece of grass into a very
@@ -51,6 +51,7 @@ en:
   our: "Our"
   budding: "budding gardeners" 
   projec: "projects"
+  joinhomebtn: "Join us"
 #TEAMPAGE
   teamp: "Here is the wonderful team who made this project happen."
   titlep: "Our Exevutive Team"
@@ -91,10 +92,10 @@ en:
   emailc: "Email adress"
 
 #FAVORITES_PAGE
-  ftitle: "Here you will find all your favorite projects:"
+  ftitle: "Here you will find all your favourite projects:"
   fsubject: "You currently don't have any favourites..."
   fparagraph: "Get some inspiration by browsing our different projects!"
-  ftitle1: "FAVORITES"
+  ftitle1: "FAVOURITES"
   subjectf: "You currently don't have any favourites..."
   paraf: "Get some inspiration by browsing our different projects!"
 
@@ -106,3 +107,32 @@ en:
   subjectprofil: "Here you can modify your profile and see all your current or completed projects. Welcome to Prairify, you are already on the path to change!"
   projectprofil: "Project(s)"
   btnprofil: "Edit"
+
+
+
+#ADMIN
+  num1: "Number of Daily Registered Users"
+  num2: "Number of Daily Created Project"
+  tyl: "Latest Registered Users"
+  tym: "Latest Created Projects"
+  tyl1: "This is a list of latest registered users"
+  tym1: "This is a list of latest created projects"
+  vieall: "View all"
+  nb: "Number of Users"
+  nb1: "Number of Projects"
+  ds0: "Dashboard"
+  uso: "Users"
+  projectadmin: "Projects"
+  comments1: "Comments"
+  websi: "Website"
+  logout1: "Logout"
+
+#REGISTRATION_PAGE
+
+  holdermail: "Email adress"
+  holderpassword: "Password"
+  holderconfirmpassword: "Password confirmation"
+  holdersearch: "Search"
+  signupbtn: "Sign up"
+  clickhere: "Click here"
+  holdername: "Username"
