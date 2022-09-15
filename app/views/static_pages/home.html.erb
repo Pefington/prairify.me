@@ -16,7 +16,7 @@
   >
     <div class="h-5/6 max-w-xl rounded-lg bg-white/50 p-6 text-center">
       <h2 class="mb-2 font-semibold text-2xl">
-        You want to make your first step to a better world?
+       <%=t'title' %>
       </h2>
       <br>
       <p
@@ -29,9 +29,9 @@
           md:text-xl
         "
       >
-        We can help you change your purely decorative piece of grass into a
-        very useful meadow welcoming a diversified fauna and flora!
+        <%= t 'hero' %>
       </p>
+
       <div class="m-8 text-center">
         <div class="w-full">
           <%= link_to "Join us", new_user_registration_path, class: "btn-muted" %>
@@ -74,7 +74,6 @@
     </div>
   </section>
 <% end %>
-
 <section
   x-data="{
         activeSlide: 1,
