@@ -1,6 +1,6 @@
 <header 
 x-data="{ locale: '<%= I18n.locale.to_s %>' }"
-class="
+class=""
 >
 <div
     x-cloak
@@ -13,6 +13,7 @@ class="
       hover:opacity-100
       left-4
       top-4
+      z-50
       cursor-pointer
       transition-opacity
       duration-300
@@ -21,7 +22,7 @@ class="
     <%= link_to locale: 'fr' do %>
       <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg",
     alt: "Passer au Français",
-    class: "h-5",
+    class: "h-6",
     scrset: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg 1x,
     https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg 2x",
     decoding: "async" %>
@@ -39,6 +40,7 @@ class="
       hover:opacity-100
       left-4
       top-8
+      z-50
       cursor-pointer
       transition-opacity
       duration-300
@@ -47,7 +49,7 @@ class="
     <%= link_to locale: 'en' do %>
       <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg",
     alt: "Switch to English",
-    class: "h-5",
+    class: "h-6",
     scrset: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg 1x,
     https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg 2x",
     decoding: "async" %>
@@ -83,7 +85,7 @@ class="
       px-2
       w-full
       text-center
-      z-50
+      
     "
     x-show="open"
     @click="open = !open"
