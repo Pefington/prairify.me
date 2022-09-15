@@ -1,4 +1,61 @@
-<header class="w-full bg-skin-back-nav text-skin-inverted">
+<header
+  x-data="{ locale: '<%= I18n.locale.to_s %>' }"
+  class="w-full bg-skin-back-nav text-skin-inverted relative"
+>
+  <div
+    x-cloak
+    x-show="locale === 'en'"
+    @click="locale = 'fr'"
+    transition
+    class="
+      absolute
+      opacity-50
+      hover:opacity-100
+      left-4
+      top-8
+      z-50
+      cursor-pointer
+      transition-opacity
+      duration-300
+    "
+  >
+    <%= link_to locale: 'fr' do %>
+      <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg",
+    alt: "Passer au Français",
+    class: "h-6",
+    scrset: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg 1x,
+    https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg 2x",
+    decoding: "async" %>
+    <% end %>
+  </div>
+
+  <div
+    x-cloak
+    x-show="locale === 'fr'"
+    @click="locale = 'en'"
+    transition
+    class="
+      absolute
+      opacity-50
+      hover:opacity-100
+      left-4
+      top-8
+      z-50
+      cursor-pointer
+      transition-opacity
+      duration-300
+    "
+  >
+    <%= link_to locale: 'en' do %>
+      <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg",
+    alt: "Switch to English",
+    class: "h-6",
+    scrset: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg 1x,
+    https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg 2x",
+    decoding: "async" %>
+    <% end %>
+  </div>
+
   <nav x-data="{ isOpen: false }" class="relative bg-skin-back-nav">
     <div class="container px-6 py-4 mx-auto">
       <div class="lg:flex lg:items-center lg:justify-between">
@@ -13,12 +70,13 @@
         >
           <div>
             <%= link_to root_path do %>
-            <%= vite_image_tag 'images/logo.png', class: "mx-4 h-16" %>
+              <%= vite_image_tag 'images/logo.png', class: "mx-4 h-16" %>
             <% end %>
           </div>
 
-          <div class="text-xl font-semibold text-skin-inverted hover:text-gray-700">
-            <%= link_to "Prairify", root_path, class: "font-FjallaOne text-2xl font-bold transition-colors duration-300 transform lg:text-3xl rounded-md px-3 py-2 focus:bg-skin-button-accent-hover drop-shadow-md" %>
+          <div class="text-xl text-skin-inverted hover:text-gray-700">
+            <%= link_to "Prairify", root_path, class: "font-FjallaOne text-2xl transition-colors duration-300 transform lg:text-3xl rounded-md px-3 py-2 focus:bg-skin-button-accent-hover drop-shadow-md" %>
+
           </div>
 
           <div class="flex lg:hidden">
@@ -93,18 +151,34 @@
             <%= link_to "Team", team_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
             <%= link_to "About", about_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
             <%= link_to "Contact", contact_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
-            <% if user_signed_in?%>
-                <%= link_to "Projects", projects_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
+            <% if user_signed_in? %>
+              <%= link_to "Projects", projects_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" %>
             <% end %>
             <div class="flex flex-row">
               <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9 mx-4 mt-3 hover:text-gray-700 drop-shadow-md"> 
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-9 h-9 mx-4 mt-3 hover:text-gray-700 drop-shadow-md"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
                 </svg>
-              <%end%>
-              <%= render "shared/search_bar" %>
+              <% end %>
             </div>
+            <%= render "shared/search_bar" %>
+          </div>
 
           <div x-data="{isOpen: false}" class="relative">
             <div class="lg:pl-6 my-6 lg:my-0">
@@ -133,7 +207,7 @@
                 <h3 class="mx-2 lg:hidden text-skin-inverted lg:hover:text-gray-700">NOM DE PROFIL</h3>
               </button>
             </div>
-            
+
             <div
               x-cloak
               x-on:click.outside="isOpen = false"
