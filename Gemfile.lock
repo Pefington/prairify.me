@@ -68,8 +68,8 @@ GEM
       tzinfo (~> 2.0)
     ast (2.4.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.629.0)
-    aws-sdk-core (3.146.0)
+    aws-partitions (1.630.0)
+    aws-sdk-core (3.147.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.525.0)
       aws-sigv4 (~> 1.1)
@@ -154,7 +154,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
-    loofah (2.18.0)
+    loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -376,8 +376,8 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   rails-controller-testing
-  ransack
   rails-i18n
+  ransack
   rspec-rails (~> 6.0.0.rc1)
   rubocop
   rubocop-faker
@@ -394,4 +394,4 @@ RUBY VERSION
    ruby 3.0.4p208
 
 BUNDLED WITH
-   2.3.21
+   2.2.33

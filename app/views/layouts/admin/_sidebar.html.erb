@@ -1,5 +1,64 @@
 <header
+ x-data="{ locale: '<%= I18n.locale.to_s %>' }"
+  
+>
+ <div
+    x-cloak
+    x-show="locale === 'en'"
+    @click="locale = 'fr'"
+    transition
+    class="
+      absolute
+      opacity-50
+      hover:opacity-100
+      left-4
+      top-8
+      z-50
+      cursor-pointer
+      transition-opacity
+      duration-300
+    "
+  >
+ <%= link_to locale: 'fr' do %>
+      <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg",
+    alt: "Passer au Français",
+    class: "h-6",
+    scrset: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg 1x,
+    https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg 2x",
+    decoding: "async" %>
+    <% end %>
+  </div>
+
+  <div
+    x-cloak
+    x-show="locale === 'fr'"
+    @click="locale = 'en'"
+    transition
+    class="
+      absolute
+      opacity-50
+      hover:opacity-100
+      left-4
+      top-8
+      z-50
+      cursor-pointer
+      transition-opacity
+      duration-300
+    "
+  >
+    <%= link_to locale: 'en' do %>
+      <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg",
+    alt: "Switch to English",
+    class: "h-6",
+    scrset: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg 1x,
+    https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg 2x",
+    decoding: "async" %>
+    <% end %>
+  </div>
+
+  <div
   class="
+  
     lg:sticky
     lg:top-0
     flex
@@ -12,9 +71,9 @@
     py-8
     w-full
     text-center
-    z-50
-  "
->
+    x-cloak
+   "
+
   <h1 class="text-3xl text-gray-800">Prairify</h1>
   <div class="mt-6 flex flex-1 flex-col justify-between">
     <nav class="flex flex-wrap lg:flex-col justify-center">
