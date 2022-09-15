@@ -7,7 +7,7 @@ class SearchController < ApplicationController
       puts "request.location['@data']"
       puts request.location['@data'] unless request.location['@data'].nil?
 
-      @place_name_and_id = helpers.get_place_name_with_loc(request.location.loc) unless request.location.loc.nil?
+      @place_name_and_id = helpers.get_place_name_with_loc(request.location.data['loc']) unless request.location.data['loc'].nil?
       puts '@place_name_and_id'
       puts @place_name_and_id
       @place = @place_name_and_id[0]
