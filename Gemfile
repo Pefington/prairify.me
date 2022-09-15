@@ -17,7 +17,7 @@ gem 'puma', '~> 5.0'
 
 # Gem for translate
 gem 'rails-i18n'
-
+gem 'devise-i18n'
 ########################################
 # ~ means gem we added for the project #
 ########################################
