@@ -54,3 +54,8 @@ fr:
 
 #PROFILE_PAGE
   profiltitle: "Mon Profil"
+  nameprofil: "Pseudonyme"
+  emailprofil: "Adresse e-mail"
+  subjectprofil: "Ici, vous pouvez modifier votre profil et voir tous vos projets en cours ou terminés. Bienvenue chez Prairify, vous êtes déjà sur la voie du changement !"
+  projectprofil: "Projet(s)"
+  btnprofil: "Editer"

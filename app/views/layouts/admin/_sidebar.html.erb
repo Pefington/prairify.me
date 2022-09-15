@@ -1,4 +1,7 @@
-<header class="flex flex-col lg:flex-row">
+<header 
+class="flex flex-col lg:flex-row"
+x-data="{ locale: '<%= I18n.locale.to_s %>' }"
+>
   <button class="lg:hidden flex justify-end" @click="open = ! open">
     <svg
       class="h-12 w-12 py-2 px-2"
@@ -6,6 +9,8 @@
       fill="#0092E4"
       xmlns="http://www.w3.org/2000/svg"
     >
+
+
       <path
         d="M3,8H21a1,1,0,0,0,0-2H3A1,1,0,0,0,3,8Zm18,8H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Zm0-5H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z"
       ></path>
@@ -31,6 +36,8 @@
     x-show="open"
     @click="open = !open"
   >
+
+  
     <h1 class="text-3xl text-gray-800">Prairify</h1>
     <nav class="flex flex-wrap lg:flex-col justify-center mt-4">
       <%= link_to admin_root_path, class: "flex items-center px-4 py-2 mt-2

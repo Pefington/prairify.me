@@ -88,4 +88,8 @@ en:
 
 #PROFILE_PAGE
   profiltitle: "My Profile"
-
+  nameprofil: "Username"
+  emailprofil: "Email adress"
+  subjectprofil: "Here you can modify your profile and see all your current or completed projects. Welcome to Prairify, you are already on the path to change!"
+  projectprofil: "Project(s)"
+  btnprofil: "Edit"
