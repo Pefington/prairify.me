@@ -37,9 +37,10 @@
 </section>
 <section class="w-4/5">
   <hr class="my-8">
-  <div class="mb-5 mt-4 text-center">
+  <div class="mb-5 mt-4 text-center flex justify-center">
     <h2 class="text-2xl">My Project(s) :
     </h2>
   </div>
   <%= render @projects %>
+  <%= link_to "New project", new_project_path, class: "btn-muted w-30" %>
 </section>
