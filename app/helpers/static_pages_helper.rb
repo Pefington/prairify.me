@@ -4,6 +4,7 @@ module StaticPagesHelper
   end
 
   def latest_projects
-    Project.all.reverse.first(8)
+    projects = Project.joins(:photos_attachments)
+    projects.reverse.first([projects.count, 8].min)
   end
 end
