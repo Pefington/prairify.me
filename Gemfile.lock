@@ -376,8 +376,8 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   rails-controller-testing
-  ransack
   rails-i18n
+  ransack
   rspec-rails (~> 6.0.0.rc1)
   rubocop
   rubocop-faker
