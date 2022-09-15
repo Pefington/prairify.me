@@ -27,7 +27,7 @@
 #   "true": "foo"
 #
 # To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
+# available at https://guides.rubyonrails.org/I18n.html.
 
 en:
   hero: "We can help you change your purely decorative piece of grass into a very useful meadow welcoming a diversified fauna and flora!"
