@@ -1,6 +1,6 @@
 fr:
 #NAVBAR_BTN
-  homebtn: "Acceuil"
+  homebtn: "Accueil"
   aboutbtn: "A propos"
   teambtn: "Equipe"
   contactbtn: "Contact"
@@ -52,6 +52,7 @@ fr:
   subject1p: "Quand souhaitez-vous démarrer votre projet ?"
   subject2p: "A quoi ressemble votre pelouse maintenant ?"
   subject3p: "Quand voulez-vous terminer votre projet ?"
+  createprojectbtn: "Créer un projet"
 #ABOUTPAGE
 
   goal: "Notre"
@@ -128,6 +129,12 @@ fr:
   alluse1: "Voici la liste de tout les utilisateurs"
   rsherch: "Recherche..."
   creat: "Crée le"
+  searchp1: "Recherche le projet"
+  searchp2: "Recherche le projet avec le nom"
+  allpr: "Tout les projets"
+  allpr1: "Voici la liste de tout les projets"
+  pays: "Pays"
+  modip: "Modifie le projet"
 #REGISTRATION/SIGNUP_PAGE
 
   holdermail: "Adresse e-mail"

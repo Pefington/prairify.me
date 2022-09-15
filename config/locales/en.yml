@@ -83,7 +83,7 @@ en:
   subject1p: "When do you want to begin your project?"
   subject2p: "What does your lawn look like now?"
   subject3p: "When do you want to end your project?"
-
+  createprojectbtn: "Create a project"
 #ABOUTPAGE
   goal: "What Is"
   goal1: "Our Goal ?"
@@ -162,6 +162,9 @@ en:
   searchp2: "Search projects by name"
   allpr: "All projects"
   allpr1: "This is a list of all projects"
+  pays: "Country"
+  modip: "Edit Project"
+  
 #REGISTRATION_PAGE
 
   holdermail: "Email adress"
