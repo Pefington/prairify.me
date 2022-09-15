@@ -126,6 +126,10 @@ en:
   comments1: "Comments"
   websi: "Website"
   logout1: "Logout"
+  wk1: "User signups this week"
+  mth1: "User signups this month"
+  wk2: "Projects created this week"
+  mth2: "Projects created this month"
 
 #REGISTRATION_PAGE
 

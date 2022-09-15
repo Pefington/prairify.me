@@ -99,8 +99,10 @@ fr:
   comments1: "Commentaires"
   websi: "Site internet"
   logout1: "Deconnexion"
-  wk1: "Utilisateur inscrit cette semaine"
-  mth1: "Utilisateur ins"
+  wk1: "Utilisateurs inscrits cette semaine"
+  mth1: "Utilisateurs inscrits ce mois-ci"
+  wk2: "Projets créés cette semaine"
+  mth2: "Projets créés ce moi-ci"
 #REGISTRATION/SIGNUP_PAGE
 
   holdermail: "Adresse e-mail"
