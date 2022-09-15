@@ -47,8 +47,8 @@
             <% end %>
 
             <% if project.finish != nil %>
+              <h1>Finish:</h1>
               <p class="my-3">
-                <h1>Finish:</h1>
                 <%= project.finish.strftime("%d/%m/%Y, at %I:%M%p") %>
               </p>
             <% end %>
@@ -123,7 +123,6 @@
           text-skin-base
           transition-colors
           duration-300
-
         "
       >
         <i class="fa-solid fa-circle-chevron-left fa-3x"></i>
@@ -145,7 +144,6 @@
           text-skin-base
           transition-colors
           duration-300
-
         "
       >
         <i class="fa-solid fa-circle-chevron-right fa-3x"></i>
