@@ -141,6 +141,8 @@ fr:
   allco1: "Voici la liste de tout les commentaires"
   contento: "contenu"
   postby: "posté par"
+  modic: "Modifie le commentaire"
+  posteon: "posté le"
 
 #REGISTRATION/SIGNUP_PAGE
 
@@ -152,4 +154,7 @@ fr:
   clickhere: "Cliquez ici"
   holdername: "Nom d'utilisateur"
   
- 
+#SEARCH_PAGE
+  noresultearch: "Aucun résultat. Vous pouvez essayer une zone plus large (arrondissement, comté, département...)"
+  textsearch1: "Results for"
+  textsearch2: "out of 12 plants selected."

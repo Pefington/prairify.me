@@ -1,17 +1,17 @@
 <div x-data="{ selectedCount: <%= @selected_plants.count %> }">
   <% if @local_plants == nil %>
     <p>
-      No result. You could try a wider area (district, county, département...)
+      <%=t 'noresultsearch'%>
     </p>
   <% else %>
     <section class="flex flex-col items-center justify-between text-center">
       <p class="text-xl"><%= @hits %>
-        results for
+       <%=t'textsearch1'%>
         <%= @place %></p>
       <% if current_user %>
         <h3 class="mt-8 text-xl">
           <span x-text="selectedCount"></span>
-          out of 12 plants selected.
+          <%=t 'textsearch2'%>
         </h3>
         <%= link_to 'Add them to a new project!', new_project_path, class:
     "btn-muted", params:[@plants] %>

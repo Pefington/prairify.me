@@ -167,8 +167,10 @@ en:
   searcc1: "Search comments by content"
   allco: "All Comments"
   allco1: "This is a list of all created comments"
-  contento: "content"
+  contento: "Content"
   postby: "posted by"
+  modic: "Edit Comment"
+  posteon: "posted on"
   
 #REGISTRATION_PAGE
 
@@ -179,3 +181,9 @@ en:
   signupbtn: "Sign up"
   clickhere: "Click here"
   holdername: "Username"
+
+#SEARCH_PAGE
+
+  noresultearch: "No result. You could try a wider area (district, county, département...)"
+  textsearch1: "Results for"
+  textsearch2: "out of 12 plants selected."
