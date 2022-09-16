@@ -142,11 +142,11 @@
         >
           <div class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
             <%= link_to t('homebtn'), root_path, class: "btn btn-base mx-3 mt-2 lg:mt-0" %>
-            <%= link_to t('teambtn'), team_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
-            <%= link_to t('aboutbtn'), about_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
-            <%= link_to t('contactbtn'), contact_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
+            <%= link_to t('teambtn'), team_path, class: "btn btn-base  mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
+            <%= link_to t('aboutbtn'), about_path, class: "btn btn-base  mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
+            <%= link_to t('contactbtn'), contact_path, class: "btn btn-base  mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
             <% if user_signed_in? %>
-              <%= link_to "Projects", projects_path, class: "px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
+              <%= link_to "Projects", projects_path, class: "btn btn-base mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
             <% end %>
             <div class="flex flex-row">
               <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
