@@ -1,6 +1,4 @@
-<% if current_user %>
-
-<% else %>
+<% if !current_user %>
   <section
     class="
       -mt-12
@@ -83,7 +81,7 @@
         activeSlide: 4,
         slides: Array.from({ length: <%= @projects.count %> }, (_, i) => i + 1)
       }"
-  class="relative mt-8 flex flex-col justify-center items-center px-4 sm:w-2/3"
+  class="relative flex flex-col justify-center items-center px-4 sm:w-2/3"
 >
   <h1
     class="

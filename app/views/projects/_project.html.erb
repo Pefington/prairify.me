@@ -102,7 +102,7 @@
     x-show="activeSlide == <%= project.id %>"
     class="
       h-min
-      rounded-md
+      rounded-lg
       bg-inverse
       p-8
       shadow-lg
@@ -137,7 +137,7 @@
             Anonymous
           <% end %>
         </p>
-        <p class=" text-sm italic 2xl:text-vivid><%= project.created_at.strftime("%d/%m/%Y") %></p>
+        <p class=" text-sm italic 2xl:text-vivid"><%= project.created_at.strftime("%d/%m/%Y") %></p>
 
       </div>
       <button
