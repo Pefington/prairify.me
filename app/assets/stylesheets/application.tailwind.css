@@ -10,7 +10,7 @@
 
 @layer base {
   * {
-    @apply transition-all duration-300 ease-in-out;
+    @apply transition-all duration-300 ease-in-out focus:outline-none;
   }
 
   html {
@@ -29,7 +29,7 @@
 
 @layer components {
   .link {
-    @apply hover:text-vivid cursor-pointer underline;
+    @apply hover:text-vivid focus:bg-middle focus:text-inverse cursor-pointer rounded-md px-3 py-2 drop-shadow-md;
   }
   ,
   .btn {
@@ -38,5 +38,14 @@
   ,
   .btn-vivid {
     @apply bg-vivid text-inverse;
+  }
+  ,
+  .btn-middle {
+    @apply bg-middle text-inverse;
+  }
+  ,
+  .btn-middle:hover,
+  .btn-middle:focus {
+    @apply bg-vivid;
   }
 }
