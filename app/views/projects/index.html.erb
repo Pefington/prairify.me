@@ -11,35 +11,35 @@
     p-8
   "
 >
-  <div class="h-5/6 max-w-xl rounded-lg bg-white/50 p-6 text-center">
-    <h1 class="mb-2 text-white text-4xl">
+  <div class="h-5/6 max-w-xl rounded-lg bg-inverse/50 p-6 text-center">
+    <h1 class="mb-2 text-inverse text-4xl">
       <%=t 'titlep'%>
     </h1>
     <br>
     <p
       class="
-        text-skin-base
+
         font-medium
         tracking-tight
         text-base
         sm:text-lg
         md:text-xl
-        text-gray-800
+        text-neutral-light
       "
     >
       <%=t 'subjectp' %>
     </p>
     <div class="m-8 text-center">
       <div class="w-full">
-       <%= link_to t('newp'), new_project_path, class: "btn-muted" %>
+       <%= link_to t('newp'), new_project_path, class: "btn" %>
       </div>
 </section>
 
 <section class="flex flex-wrap justify-center my-8">
-  <%= button_to t('mostancient'), projects_path, method: :get, params: {sort_by: "ancient"}, class:"btn-muted rounded-3xl"%>
-  <%= button_to t('mostrecent'), projects_path, method: :get, params: {sort_by: "recent"}, class:"btn-muted rounded-3xl"%>
-  <%= button_to t('mostlike'), projects_path, method: :get, params: {sort_by: "most_liked"}, class:"btn-muted rounded-3xl"%>
-  <%= button_to t('leastlike'), projects_path, method: :get, params: {sort_by: "least_liked"}, class:"btn-muted rounded-3xl"%>
+  <%= button_to t('mostancient'), projects_path, method: :get, params: {sort_by: "ancient"}, class:"btn rounded-3xl"%>
+  <%= button_to t('mostrecent'), projects_path, method: :get, params: {sort_by: "recent"}, class:"btn rounded-3xl"%>
+  <%= button_to t('mostlike'), projects_path, method: :get, params: {sort_by: "most_liked"}, class:"btn rounded-3xl"%>
+  <%= button_to t('leastlike'), projects_path, method: :get, params: {sort_by: "least_liked"}, class:"btn rounded-3xl"%>
 </section>
 
 <section class="p-5 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 h-min">

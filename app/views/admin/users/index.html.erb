@@ -2,7 +2,7 @@
   <div class="mx-8 mt-8 rounded-lg bg-white p-4 shadow sm:p-6 xl:p-8">
     <div>
       <h2 class="mb-2 text-xl font-bold text-gray-900"><%=t'searchu'%></h2>
-      <span class="text-base text-gray-500"><%=t'searchu1'%></span>
+      <span class="text-vividtext-gray-500"><%=t'searchu1'%></span>
     </div>
     <div class="flex flex-col items-center justify-start">
       <%= search_form_for @q, url: :admin_users, class: "w-full flex flex-col
@@ -38,7 +38,7 @@
     <div class="mb-4 flex items-center justify-between">
       <div>
         <h2 class="mb-2 text-xl font-bold text-gray-900"><%=t'alluse'%></h2>
-        <span class="text-base font-normal text-gray-500"><%=t'alluse1'%></span>
+        <span class="text-vividfont-normal text-gray-500"><%=t'alluse1'%></span>
       </div>
     </div>
     <div class="mt-8 flex flex-col">
@@ -57,8 +57,7 @@
                       font-medium
                       uppercase
                       tracking-wider
-                      text-gray-500
-                    "
+                      text-gray-500"
                   >
                     ID
                   </th>
@@ -71,8 +70,7 @@
                       font-medium
                       uppercase
                       tracking-wider
-                      text-gray-500
-                    "
+                      text-gray-500"
                   >
                     <%=t'nameprofil'%>
                   </th>
@@ -85,8 +83,7 @@
                       font-medium
                       uppercase
                       tracking-wider
-                      text-gray-500
-                    "
+                      text-gray-500"
                   >
                     Email
                   </th>
@@ -99,8 +96,7 @@
                       font-medium
                       uppercase
                       tracking-wider
-                      text-gray-500
-                    "
+                      text-gray-500"
                   >
                     Role
                   </th>
@@ -113,8 +109,7 @@
                       font-medium
                       uppercase
                       tracking-wider
-                      text-gray-500
-                    "
+                      text-gray-500"
                   >
                   <%=t'creat'%>
                   </th>
@@ -128,15 +123,12 @@
                       font-medium
                       uppercase
                       tracking-wider
-                      text-gray-500
-                    "
+                      text-gray-500"
                   >
                     Manage
                     <%= link_to new_admin_user_path, class: "ml-2
                     text-gray-600 transition-colors duration-300 transform
-                    rounded-md dark:text-gray-400 hover:bg-gray-200
-                    dark:hover:bg-gray-700 dark:hover:text-gray-200
-                    hover:text-gray-700" do %>
+                    rounded-md" do %>
                       <svg
                         class="h-5 w-5"
                         viewBox="0 0 24 24"
@@ -178,14 +170,11 @@
                         pl-1
                         text-sm
                         font-semibold
-                        text-gray-900
-                      "
+                        text-gray-900"
                     >
                       <%= link_to edit_admin_user_path(user.id), class: "flex
                     items-center px-4 py-2 mt-2 text-gray-600 transition-colors
-                    duration-300 transform rounded-md dark:text-gray-400
-                    hover:bg-gray-200 dark:hover:bg-gray-700
-                    dark:hover:text-gray-200 hover:text-gray-700" do %>
+                    duration-300 transform rounded-md" do %>
                         <svg
                           class="h-5 w-5"
                           viewBox="0 0 24 24"
@@ -202,9 +191,8 @@
                     :delete, form: { data: { 'turbo-confirm': 'Are you sure?' }
                     }, class: "w-full flex items-center px-4 py-2 mt-2
                     text-gray-600 transition-colors duration-300 transform
-                    rounded-md dark:text-gray-400 hover:bg-gray-200
-                    dark:hover:bg-gray-700 dark:hover:text-gray-200
-                    hover:text-gray-700" do %>
+                    rounded-md
+                    " do %>
                         <svg
                           class="h-5 w-5"
                           viewBox="0 0 24 24"

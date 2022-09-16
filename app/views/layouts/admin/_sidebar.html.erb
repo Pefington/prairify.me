@@ -1,4 +1,4 @@
-<header 
+<header
 class="flex flex-col lg:flex-row"
 >
   <button class="lg:hidden flex justify-end" @click="open = ! open">
@@ -26,23 +26,23 @@ class="flex flex-col lg:flex-row"
       lg:h-screen
       lg:w-64
       border-r
-      bg-white
+      bg-inverse
       px-2
       w-full
       text-center
-      
+
     "
     x-show="open"
     @click="open = !open"
   >
 
-  
-    <h1 class="text-3xl text-gray-800">Prairify</h1>
+
+    <h1 class="text-3xl text-neutral-light">Prairify</h1>
     <nav class="flex flex-wrap lg:flex-col justify-center mt-4">
       <%= link_to admin_root_path, class: "flex items-center px-4 py-2 mt-2
-      text-gray-600 transition-colors duration-300 transform rounded-md
-       hover:bg-gray-200
-       hover:text-gray-700" do %>
+      text-neutral-light transition-colors duration-300 transform rounded-md
+
+       " do %>
         <svg
           class="h-5 w-5"
           viewBox="0 0 24 24"
@@ -57,9 +57,9 @@ class="flex flex-col lg:flex-row"
         <span class="mx-2 font-medium"><%=t'ds0'%></span>
       <% end %>
       <%= link_to admin_users_path, class: "flex items-center px-4
-      py-2 mt-2 text-gray-600 transition-colors duration-300 transform
-      rounded-md  hover:bg-gray-200
-       hover:text-gray-700" do %>
+      py-2 mt-2 text-neutral-light transition-colors duration-300 transform
+      rounded-md
+       " do %>
         <svg
           class="h-5 w-5"
           viewBox="0 0 24 24"
@@ -74,9 +74,9 @@ class="flex flex-col lg:flex-row"
         <span class="mx-2 font-medium"><%=t'uso'%></span>
       <% end %>
       <%= link_to admin_projects_path, class: "flex items-center px-4
-      py-2 mt-2 text-gray-600 transition-colors duration-300 transform
-      rounded-md  hover:bg-gray-200
-       hover:text-gray-700" do %>
+      py-2 mt-2 text-neutral-light transition-colors duration-300 transform
+      rounded-md
+       " do %>
         <svg
           class="h-5 w-5"
           viewBox="0 0 24 24"
@@ -90,9 +90,9 @@ class="flex flex-col lg:flex-row"
         <span class="mx-2 font-medium"><%=t'projectadmin'%></span>
       <% end %>
       <%= link_to admin_comments_path, class: "flex items-center px-4
-      py-2 mt-2 text-gray-600 transition-colors duration-300 transform
-      rounded-md  hover:bg-gray-200
-       hover:text-gray-700" do %>
+      py-2 mt-2 text-neutral-light transition-colors duration-300 transform
+      rounded-md
+       " do %>
         <svg
           class="h-5 w-5"
           viewBox="0 0 24 24"
@@ -107,9 +107,9 @@ class="flex flex-col lg:flex-row"
       <% end %>
       <hr class="my-6 border-gray-200"/>
       <%= link_to root_path, class: "flex items-center px-4 py-2 mt-2
-      text-gray-600 transition-colors duration-300 transform rounded-md
-       hover:bg-gray-200
-       hover:text-gray-700" do %>
+      text-neutral-light transition-colors duration-300 transform rounded-md
+
+       " do %>
         <svg
           class="h-5 w-5"
           viewBox="0 0 24 24"
@@ -123,9 +123,9 @@ class="flex flex-col lg:flex-row"
         <span class="mx-2 font-medium"><%=t'websi'%></span>
       <% end %>
       <%= button_to destroy_user_session_path, method: :delete, class:
-      "w-full flex items-center px-4 py-2 mt-2 text-gray-600 transition-colors
-      duration-300 transform rounded-md  hover:bg-gray-200
-        hover:text-gray-700" do %>
+      "w-full flex items-center px-4 py-2 mt-2 text-neutral-light transition-colors
+      duration-300 transform rounded-md
+        " do %>
         <svg
           class="h-5 w-5"
           viewBox="0 0 24 24"
