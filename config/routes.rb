@@ -9,9 +9,8 @@ Rails.application.routes.draw do
       resources :users, only: %i[index new edit update create destroy]
       resources :comments, only: %i[index edit update destroy]
     end
-    resources :project_updates
     root 'static_pages#home'
-    post '/selected_plants/reset', to: 'selected_plants#reset'
+    resources :reset_selected_plants, only: %i[create]
     devise_for :users, skip: :omniauth_callbacks, controllers: {
       registrations: 'users/registrations'
     }
