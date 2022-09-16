@@ -64,6 +64,9 @@ en:
   btndestroyp: "Destroy this project"
   btnaddcomment: "Add a comment"
 
+  updatenewbtn: "Add an update"
+  projectdestroybtn: "Destroy project"
+
 #ABOUTPAGE
 
   goal: "What Is"
@@ -173,7 +176,8 @@ en:
 
 #SEARCH_PAGE
 
-  noresultearch: "No result. You could try a wider area (district, county, département...)"
+  noresultsearch: "No result. You could try a wider area (district, county, département...)"
+  nogeoloc: "Sorry we couldn't geolocate you. Please try to write the area you live in instead:"
   textsearch1: "Results for"
   textsearch2: "out of 12 plants selected."
   addplant: "Add them to a new project!"
@@ -198,3 +202,13 @@ en:
   favouritenotdestroy: "Favourite was not deleted due to an error."
   updateproject: "Project update was successfully created."
   updateprojectdestroy: "Project update was succesfully destroy"
+
+#COMMENT
+  commentcontent: "Comment:"
+  commentbtn: "Add a comment"
+
+#NEWCOMMENT
+  commenttitle: "New comment"
+  holdercomment: "Comment"
+  btnbackppro: "Back to the project"
+

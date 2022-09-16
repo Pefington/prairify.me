@@ -1,9 +1,15 @@
 <div x-data="{ selectedCount: <%= @selected_plants.count %> }">
   <% if @local_plants == nil %>
-    <p>
-      <%=t 'noresultsearch'%>
-    </p>
-    <%= render 'shared/search_bar'%>
+      <% if params[:search]== 'geoloc'%>
+        <p>
+          <%=t 'nogeoloc'%>
+        </p>
+      <%else%>
+        <p>
+          <%=t 'noresultsearch'%>
+        </p>
+      <%end%>
+      <%= render 'shared/search_bar'%>
   <% else %>
     <section class="flex flex-col items-center justify-between text-center">
       <p class="text-xl"><%= @hits %>

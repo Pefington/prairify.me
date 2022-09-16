@@ -59,6 +59,8 @@ fr:
   btndestroyp: "Supprimer ce projet" 
   btnaddcomment: "Ajouter un commentaire"
 
+  updatenewbtn: "Nouvel état d'avancement"
+  projectdestroybtn: "Detruire ce projet"
 #ABOUTPAGE
 
   goal: "Notre"
@@ -145,14 +147,14 @@ fr:
   allpr: "Tout les projets"
   allpr1: "Voici la liste de tout les projets"
   pays: "Pays"
-  modip: "Modifie le projet"
+  modip: "Modifier le projet"
   searcc: "Recherche les commentaires"
   searcc1: "Recherche les commentaires par contenu"
   allco: "Tout les commentaires"
   allco1: "Voici la liste de tout les commentaires"
   contento: "contenu"
   postby: "posté par"
-  modic: "Modifie le commentaire"
+  modic: "Modifier le commentaire"
   posteon: "posté le"
 
 #REGISTRATION/SIGNUP_PAGE
@@ -166,8 +168,8 @@ fr:
   holdername: "Nom d'utilisateur"
   
 #SEARCH_PAGE
-
-  noresultearch: "Aucun résultat. Vous pouvez essayer une zone plus large (arrondissement, comté, département...)"
+  noresultsearch: "Aucun résultat. Vous pouvez essayer une zone plus large (arrondissement, comté, département...)"
+  nogeoloc: "Nous n'avons pas pu vous géolocaliser. Essayez plutôt de nous écrire où vous vivez:"
   textsearch1: "Resultat(s) pour"
   textsearch2: "sur 12 plantes sélectionnées."
   addplant: "Ajoutez-les à un nouveau projet !"
@@ -192,3 +194,12 @@ fr:
   favouritenotdestroy: "Le projet n'a pas été supprimé des favoris a cause d'une erreur."
   updateproject: "La mise à jour du projet a bien été pris en compte"
   updateprojectdestroy: "La mise à jour du projet a bien été supprimé "
+
+#COMMENT
+  commentcontent: "Commentaire :"
+  commentbtn: "Ajouter un commentaire"
+
+#NEWCOMMENT
+  commenttitle: "Nouveau commentaire"
+  holdercomment: "Commentaire"
+  btnbackppro: "Retour au projet"
