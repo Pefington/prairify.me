@@ -1,4 +1,4 @@
-<section class="pt-16 bg-blueGray-50">
+<section class="pt-16 bg-inverse">
   <div class="w-full lg:w-4/12 px-4 mx-auto">
     <div
       class="
@@ -7,7 +7,7 @@
         flex-col
         min-w-0
         break-words
-        bg-white
+        bg-inverse
         w-full
         mb-6
         shadow-xl
@@ -19,12 +19,12 @@
         <div class="text-center mt-20">
           <h1 class="text-4xl mb-9"><%=t 'profiltitle'%></h1>
           <h2 class="text-2xl mt-4"><%=t 'nameprofil'%></h2>
-          <p class="text-xl text-gray-700 mt-2"><%= @profile.username %></p>
+          <p class="text-xl text-neutral-light mt-2"><%= @profile.username %></p>
           <h2 class="text-2xl mt-4"><%=t 'emailprofil'%></h2>
-          <p class="text-xl text-gray-700 mt-2"><%= @profile.email %></p>
+          <p class="text-xl text-neutral-light mt-2"><%= @profile.email %></p>
         </div>
         <div class="mt-10 py-10 border-t text-center flex flex-wrap justify-center">
-          <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
+          <p class="mb-4 text-lg leading-relaxed text-neutral-light">
            <%=t 'subjectprofil'%>
           </p>
           <%= link_to t('btnprofil'), edit_user_registration_path, class: "btn w-30" %>

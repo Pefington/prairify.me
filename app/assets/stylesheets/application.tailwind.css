@@ -15,7 +15,7 @@
 
   body,
   html {
-    @apply font-Cantarell;
+    @apply font-Cantarell text-neutral-light;
   }
 
   h1,
@@ -24,7 +24,7 @@
   h4,
   h5,
   h6 {
-    @apply font-FjallaOne  drop-shadow;
+    @apply font-FjallaOne drop-shadow text-soft;
   }
 }
 
@@ -33,6 +33,6 @@
     @apply rounded-md px-6 py-2 capitalize tracking-wide shadow-md;
   },
   .btn-base {
-    @apply bg-base-standard text-inverse-standard;
+    @apply bg-base text-inverse;
   }
 }
