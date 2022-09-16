@@ -17,8 +17,8 @@
         <%= link_to t('addplant'), new_project_path, class:
     "btn-muted", params:[@plants] %>
         <div @click="eliminated = false, selected = false, selectedCount = 0">
-          <%= button_to t('resetselect'), selected_plants_reset_path, method:
-      :reset, remote: :true, class: "btn-warning my-8" %>
+          <%= button_to t('resetselect'), reset_selected_plants_path, method:
+      :post, remote: :true, class: "btn-warning my-8" %>
         </div>
       <% else %>
         <p class="flex flex-col text-2xl sm:flex-row sm:items-center">
