@@ -10,6 +10,7 @@ class Project < ApplicationRecord
   validates :description, presence: true
   validates :place_name, presence: true
   validates :country, presence: true
+  validates :photos, presence: true
 
   after_create :project_post
 

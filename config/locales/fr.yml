@@ -53,6 +53,8 @@ fr:
   subject2p: "A quoi ressemble votre pelouse maintenant ?"
   subject3p: "Quand voulez-vous terminer votre projet ?"
   createprojectbtn: "Créer un projet"
+  updatenewbtn: "Nouvel état d'avancement"
+  projectdestroybtn: "Detruire ce projet"
 #ABOUTPAGE
 
   goal: "Notre"
@@ -136,14 +138,14 @@ fr:
   allpr: "Tout les projets"
   allpr1: "Voici la liste de tout les projets"
   pays: "Pays"
-  modip: "Modifie le projet"
+  modip: "Modifier le projet"
   searcc: "Recherche les commentaires"
   searcc1: "Recherche les commentaires par contenu"
   allco: "Tout les commentaires"
   allco1: "Voici la liste de tout les commentaires"
   contento: "contenu"
   postby: "posté par"
-  modic: "Modifie le commentaire"
+  modic: "Modifier le commentaire"
   posteon: "posté le"
 
 #REGISTRATION/SIGNUP_PAGE
@@ -163,3 +165,12 @@ fr:
   addplant: "Ajoutez-les à un nouveau projet !"
   resetselect: "Réinitialiser la sélection"
   moreplant: "Plus à propos de %{plant}"
+
+#COMMENT
+  commentcontent: "Commentaire :"
+  commentbtn: "Ajouter un commentaire"
+
+#NEWCOMMENT
+  commenttitle: "Nouveau commentaire"
+  holdercomment: "Commentaire"
+  btnbackppro: "Retour au projet"
