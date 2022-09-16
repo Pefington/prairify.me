@@ -84,6 +84,9 @@ en:
   subject2p: "What does your lawn look like now?"
   subject3p: "When do you want to end your project?"
   createprojectbtn: "Create a project"
+  updatenewbtn: "Add an update"
+  projectdestroybtn: "Destroy project"
+
 #ABOUTPAGE
   goal: "What Is"
   goal1: "Our Goal ?"
@@ -188,8 +191,19 @@ en:
 #SEARCH_PAGE
 
   noresultsearch: "No result. You could try a wider area (district, county, département...)"
+  nogeoloc: "Sorry we couldn't geolocate you. Please try to write the area you live in instead:"
   textsearch1: "Results for"
   textsearch2: "out of 12 plants selected."
   addplant: "Add them to a new project!"
   resetselect: "Reset selection"
   moreplant: "More about %{plant}"
+
+#COMMENT
+  commentcontent: "Comment:"
+  commentbtn: "Add a comment"
+
+#NEWCOMMENT
+  commenttitle: "New comment"
+  holdercomment: "Comment"
+  btnbackppro: "Back to the project"
+
