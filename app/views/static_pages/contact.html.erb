@@ -3,7 +3,7 @@
         <div class="lg:flex lg:items-center lg:-mx-6">
             <div class="lg:mx-6">
                 <h1 class="text-3xl font-semibold capitalize lg:text-4xl">
-                    Contact us for <br> more info
+                    <%=t 'contacttitle1'%> <br> <%=t 'contacttitle2'%>
                 </h1>
 
                 <div class="mt-6 space-y-8 md:mt-8">
@@ -14,7 +14,7 @@
                         </svg>
 
                         <span class="mx-2 w-72">
-                            7 rue du Général Pershing</br>
+                            7 rue du Général Pershing<br>
                             60600 Clermont
                         </span>
                     </p>
@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="mt-6 w-80 md:mt-8">
-                    <h3 class="text-gray-600 mt-4">Follow us</h3>
+                    <h3 class="text-gray-600 mt-4"><%=t 'followcontact'%></h3>
 
                     <div class="flex mt-4 -mx-1.5 ">
                       <%= link_to 'https://github.com/Pefington/prairify.me.git', target: :_blank, class: "mx-2 text-gray-600" do %>
@@ -55,16 +55,16 @@
             <div class="mt-8 lg:mx-6">
                 <div
                     class="w-full px-8 py-10 mx-auto overflow-hidden bg-white rounded-lg shadow-2xl lg:max-w-xl shadow-gray-300/50">
-                    <h1 class="text-lg font-medium">What do you want to ask</h1>
+                    <h1 class="text-lg font-medium"><%=t 'titlec'%></h1>
 
                     <form class="mt-6">
                         <div class="flex-1">
-                            <label class="block mb-2 text-sm font-semibold">Full Name</label>
+                            <label class="block mb-2 text-sm font-semibold"><%=t 'namec'%></label>
                             <input type="text" placeholder="John Doe" class="form-field indent-0" />
                         </div>
 
                         <div class="flex-1 mt-6">
-                            <label class="block mb-2 text-sm font-semibold">Email address</label>
+                            <label class="block mb-2 text-sm font-semibold"><%=t 'emailc'%></label>
                             <input type="email" placeholder="johndoe@example.com" class="form-field indent-0" />
                         </div>
 
@@ -74,7 +74,7 @@
                         </div>
 
                         <button class="btn-muted">
-                            get in touch
+                            <%=t 'btncontact'%>
                         </button>
                     </form>
                 </div>
