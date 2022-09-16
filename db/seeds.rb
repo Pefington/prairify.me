@@ -12,7 +12,7 @@ gardens = Unsplash::Photo.search('garden', 1, 20)
 users = User.all
 number_of_projects = 5
 number_of_projects.times do |index|
-  Project.create!(user: users.sample,
+  project = Project.new(user: users.sample,
                   name: Faker::Lorem.word,
                   description: Faker::Lorem.sentence(word_count: 10),
                   begin: Faker::Date.between(from: Time.zone.today, to: '2022-12-31'),
@@ -20,7 +20,8 @@ number_of_projects.times do |index|
                   place_name: Faker::Address.city,
                   country: Faker::Address.country)
   file = URI.parse(gardens[index].urls.regular).open
-  Project.last.photos.attach(io: file, filename: 'garden-image.jpg')
+  project.photos.attach(io: file, filename: 'garden-image.jpg')
+  project.save!
 end
 
 projects = Project.all
