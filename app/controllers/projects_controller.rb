@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
     @project.user = current_user
     if @project.save
       helpers.transfer_plants(@project)
-      redirect_to @project, notice: 'Project was successfully created.'
+      redirect_to @project, notice: t('projectcreatealert')
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      redirect_to @project, notice: 'Project was successfully updated.'
+      redirect_to @project, notice: t('projectupdatealert')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -43,7 +43,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    redirect_to projects_url, notice: 'Project was successfully destroyed.'
+    redirect_to projects_url, notice: t('projectdestroyalert')
   end
 
   private

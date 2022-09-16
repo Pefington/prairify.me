@@ -53,6 +53,7 @@ fr:
   subject2p: "A quoi ressemble votre pelouse maintenant ?"
   subject3p: "Quand voulez-vous terminer votre projet ?"
   createprojectbtn: "Créer un projet"
+  
 #ABOUTPAGE
 
   goal: "Notre"
@@ -163,3 +164,15 @@ fr:
   addplant: "Ajoutez-les à un nouveau projet !"
   resetselect: "Réinitialiser la sélection"
   moreplant: "Plus à propos de %{plant}"
+
+#EDIT_USER_PAGE
+
+  titleedituser: "Editer profil"
+  updateuser: "Enregistrer"
+  backbtn: "Retour"
+  currentpassword: "Mot de passe actuel"
+
+#ALERT
+  projectcreatealert: "Le projet a été créé avec succès."
+  projectupdatealert: "Le projet a été mis à jour avec succès."
+  projectdestroyalert: "Le projet a été supprimé avec succès."

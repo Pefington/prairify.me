@@ -193,3 +193,16 @@ en:
   addplant: "Add them to a new project!"
   resetselect: "Reset selection"
   moreplant: "More about %{@plant[:scientific_name]}"
+
+#EDIT_USER_PAGE
+
+  titleedituser: "Edit Profile"
+  updateuser: "Update"
+  backbtn: "Back"
+  currentpassword: "Current password"
+
+#ALERT
+
+  projectcreatealert: "Project was successfully created."
+  projectupdatealert: "Project was successfully updated."
+  projectdestroyalert: "Project was successfully destroyed."
