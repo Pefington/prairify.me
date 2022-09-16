@@ -1,75 +1,17 @@
 <header
-  x-data="{ locale: '<%= I18n.locale.to_s %>' }"
   class="w-full relative bg-soft"
 >
-  <div
-    x-cloak
-    x-show="locale === 'en'"
-    @click="locale = 'fr'"
-    transition
-    class="
-      absolute
-      opacity-50
-      left-4
-      top-8
-      z-50
-      cursor-pointer
-      transition-opacity
-      duration-300"
-  >
-    <%= link_to locale: 'fr' do %>
-      <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg",
-    alt: "Passer au Français",
-    class: "h-6",
-    scrset: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg 1x,
-    https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg 2x",
-    decoding: "async" %>
-    <% end %>
-  </div>
-
-  <div
-    x-cloak
-    x-show="locale === 'fr'"
-    @click="locale = 'en'"
-    transition
-    class="
-      absolute
-      opacity-50
-
-      left-4
-      top-8
-      z-50
-      cursor-pointer
-      transition-opacity
-      duration-300"
-  >
-    <%= link_to locale: 'en' do %>
-      <%= image_tag "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg",
-    alt: "Switch to English",
-    class: "h-6",
-    scrset: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg 1x,
-    https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg 2x",
-    decoding: "async" %>
-    <% end %>
-  </div>
-
   <nav x-data="{ isOpen: false }" class="relative ">
     <div class="container px-6 py-4 mx-auto">
       <div class="lg:flex lg:items-center lg:justify-between">
-        <div
-          class="
-            flex
-            items-center
-            justify-between
-            "
-        >
+        <div class=" flex items-center justify-between ">
           <div>
             <%= link_to root_path do %>
               <%= vite_image_tag 'images/logo.png', class: "mx-4 h-16" %>
             <% end %>
           </div>
 
-          <div class="text-xl  ">
+          <div class="text-xl ">
             <%= link_to "Prairify", root_path, class: "font-FjallaOne text-2xl transition-colors duration-300 transform lg:text-3xl rounded-md px-3 py-2 drop-shadow-md" %>
 
           </div>
@@ -80,10 +22,10 @@
               @click="isOpen = !isOpen"
               type="button"
               class="
-
                 rounded-md
                 px-3
-                py-2"
+                py-2
+              "
               aria-label="toggle menu"
             >
               <svg
@@ -116,17 +58,10 @@
           x-cloak
           :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
           class="
-
-
             absolute
             inset-x-0
             z-20
             w-full
-            px-6
-            py-4
-            transition-all
-            duration-300
-            ease-in-out
             lg:mt-0
             lg:p-0
             lg:top-0
@@ -136,17 +71,18 @@
             lg:opacity-100
             lg:translate-x-0
             lg:flex
-            lg:items-center"
+            lg:items-center
+          "
         >
-          <div class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
-            <%= link_to t('homebtn'), root_path, class: "btn btn-base mx-3 mt-2 lg:mt-0" %>
-            <%= link_to t('teambtn'), team_path, class: "btn btn-base  mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
-            <%= link_to t('aboutbtn'), about_path, class: "btn btn-base  mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
-            <%= link_to t('contactbtn'), contact_path, class: "btn btn-base  mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
+          <div class="flex flex-col p-8 bg-soft/75">
+            <%= link_to t('homebtn'), root_path, class: "btn btn-vividmb-4" %>
+            <%= link_to t('teambtn'), team_path, class: "btn btn-vividmb-4" %>
+            <%= link_to t('aboutbtn'), about_path, class: "btn btn-vividmb-4" %>
+            <%= link_to t('contactbtn'), contact_path, class: "btn btn-vividmb-4" %>
             <% if user_signed_in? %>
-              <%= link_to "Projects", projects_path, class: "btn btn-base mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0  drop-shadow-md" %>
+              <%= link_to "Projects", projects_path, class: "btn btn-vividmb-4" %>
             <% end %>
-            <div class="flex flex-row">
+            <div class="flex">
               <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -181,11 +117,10 @@
                   w-full
                   flex
                   items-center
-
-
                   rounded-md
                   px-2
-                  py-3"
+                  py-3
+                "
                 aria-label="toggle profile dropdown"
               >
                 <div class="w-8 h-8 overflow-hidden border-2 rounded-full">
@@ -198,9 +133,9 @@
 
                 <% if @profile %>
                   <% if @profile.username %>
-                    <h3 class="mx-2 lg:hidden  "><%= @profile.username %></h3>
+                    <h3 class="mx-2 lg:hidden "><%= @profile.username %></h3>
                   <% else %>
-                    <h3 class="mx-2 lg:hidden  "><%= @profile.email %></h3>
+                    <h3 class="mx-2 lg:hidden "><%= @profile.email %></h3>
                   <% end %>
                 <% end %>
 
@@ -212,7 +147,6 @@
               x-on:click.outside="isOpen = false"
               x-show="isOpen"
               class="
-
                 z-10
                 absolute
                 right-0
@@ -223,7 +157,8 @@
                 py-1
                 shadow-lg
                 ring-1
-                ring-opacity-5"
+                ring-opacity-5
+              "
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="user-menu-button"

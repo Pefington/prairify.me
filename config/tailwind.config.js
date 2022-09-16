@@ -22,7 +22,7 @@ module.exports = {
           light: "#585d65",
           dark: "#333339",
         },
-        base: "#12433c",
+        vivid: "#12433c",
         soft: "#3ea57a",
         inverse: "#efe",
         accent: "#ff9d00",

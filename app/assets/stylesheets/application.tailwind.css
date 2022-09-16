@@ -24,15 +24,20 @@
   h4,
   h5,
   h6 {
-    @apply font-FjallaOne drop-shadow text-soft;
+    @apply font-FjallaOne text-soft drop-shadow;
   }
 }
 
 @layer components {
+  .link {
+    @apply hover:text-vivid cursor-pointer underline;
+  }
+  ,
   .btn {
-    @apply rounded-md px-6 py-2 capitalize tracking-wide shadow-md;
-  },
-  .btn-base {
-    @apply bg-base text-inverse;
+    @apply rounded-md px-4 py-2 text-center capitalize shadow-md;
+  }
+  ,
+  .btn-vivid {
+    @apply bg-vividtext-inverse;
   }
 }
