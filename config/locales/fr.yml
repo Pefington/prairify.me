@@ -160,6 +160,7 @@ fr:
   
 #SEARCH_PAGE
   noresultsearch: "Aucun résultat. Vous pouvez essayer une zone plus large (arrondissement, comté, département...)"
+  nogeoloc: "Nous n'avons pas pu vous géolocaliser. Essayez plutôt de nous écrire où vous vivez:"
   textsearch1: "Resultat(s) pour"
   textsearch2: "sur 12 plantes sélectionnées."
   addplant: "Ajoutez-les à un nouveau projet !"
