@@ -23,33 +23,30 @@ module.exports = {
           hover: "#E8E8E8",
           focus: "#BDBDBD",
           active: "#DADADA",
-          disabled: "#E0E0E0",
-          placeholder: "#9E9E9E"
+          placeholder: "#9E9E9E",
         },
         inverse: {
           standard: "#000",
           hover: "#000",
           focus: "#000",
           active: "#000",
-          disabled: "#000",
-          placeholder: "#000"
+          placeholder: "#000",
         },
         accent: {
           standard: "#f0f",
           hover: "#E8E8E8",
           focus: "#BDBDBD",
           active: "#DADADA",
-          disabled: "#E0E0E0",
-          placeholder: "#9E9E9E"
+          placeholder: "#9E9E9E",
         },
         soft: {
           standard: "#f0f",
           hover: "#E8E8E8",
           focus: "#BDBDBD",
           active: "#DADADA",
-          disabled: "#E0E0E0",
-          placeholder: "#9E9E9E"
-          
+          placeholder: "#9E9E9E",
+        },
+      },
     },
   },
   variants: {
