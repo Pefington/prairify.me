@@ -38,6 +38,6 @@
   }
   ,
   .btn-vivid {
-    @apply bg-vividtext-inverse;
+    @apply bg-vivid text-inverse;
   }
 }
