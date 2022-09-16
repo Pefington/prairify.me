@@ -190,3 +190,5 @@ fr:
   favouritenotsave: "Le projet n'a pas été ajouté au favoris a cause d'une erreur."
   favouritedestroy: "Le projet a été supprimé des favoris avec succès."
   favouritenotdestroy: "Le projet n'a pas été supprimé des favoris a cause d'une erreur."
+  updateproject: "La mise à jour du projet a bien été pris en compte"
+  updateprojectdestroy: "La mise à jour du projet a bien été supprimé "

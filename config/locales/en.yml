@@ -196,3 +196,5 @@ en:
   favouritenotsave: "Favourite was not created due ton an error."
   favouritedestroy: "Favourite was successfully removed."
   favouritenotdestroy: "Favourite was not deleted due to an error."
+  updateproject: "Project update was successfully created."
+  updateprojectdestroy: "Project update was succesfully destroy"

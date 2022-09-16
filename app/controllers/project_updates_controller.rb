@@ -12,7 +12,7 @@ class ProjectUpdatesController < ApplicationController
     @project = Project.find(params[:project_update][:project_id])
     @project_update.update(project_id: @project.id)
     if @project_update.save
-      redirect_to @project, notice: 'Project update was successfully created.'
+      redirect_to @project, notice: t('updateproject')
     else
       render :new, status: :unprocessable_entity
     end
@@ -20,7 +20,7 @@ class ProjectUpdatesController < ApplicationController
 
   def destroy
     @project_update.destroy
-    redirect_to project_updates_url, notice: 'Project update was successfully destroyed.'
+    redirect_to project_updates_url, notice: t('updateprojectdestroy')
   end
 
   private
