@@ -2,26 +2,28 @@ module SearchHelper
   def get_place(place)
     place_record = nil
     place_url = "https://api.inaturalist.org/v1/search?q=#{place}&sources=places"
-    if HTTParty.get(place_url)['total_results'] == 0
+    if (HTTParty.get(place_url)['total_results']).zero?
       place_url = "https://api.inaturalist.org/v1/search?q=#{place}"
       if HTTParty.get(place_url)['total_results'] != 0
-        HTTParty.get(place_url)['results'].each_with_index do |result, index|
+        HTTParty.get(place_url)['results'].each_with_index do |result, _index|
           place_record = result['record'] if result['record']['slug'].start_with?(place)
           break if result['record']['slug'].start_with?(place)
         end
         place_name = find_place_name_in_inat(place_record) unless place_record.nil?
         place_id = place_record['id'] unless place_record.nil?
         return [place_name, place_id] if !place_id.nil? && !place_name.nil?
+
         nil
       end
     else
-      HTTParty.get(place_url)['results'].each_with_index do |result, index|
+      HTTParty.get(place_url)['results'].each_with_index do |result, _index|
         place_record = result['record'] if result['record']['slug'].start_with?(place)
         break if result['record']['slug'].start_with?(place)
       end
       place_name = find_place_name_in_inat(place_record) unless place_record.nil?
       place_id = place_record['id'] unless place_record.nil?
       return [place_name, place_id] if !place_id.nil? && !place_name.nil?
+
       nil
     end
   end
