@@ -1,6 +1,4 @@
 class SelectedPlantsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:reset]
-
   def create
     @selected_plant = SelectedPlant.new(selected_plant_params)
     @selected_plant.user_id = current_user.id
