@@ -21,14 +21,11 @@
 
       <div class="text-xl ">
         <%= link_to "Prairify.me", root_path, class: "font-FjallaOne text-2xl transition-colors duration-300 transform lg:text-3xl rounded-md px-3 py-2 drop-shadow-md" %>
-
       </div>
 
-      <div class="flex lg:hidden">
+      <%# Hamburger Button %>
+      <div class="flex lg:hidden" x-cloak @click="isOpen = !isOpen">
         <button
-          x-cloak
-          @click="isOpen = !isOpen"
-          @click.outside="isOpen = false"
           type="button"
           class="
             rounded-md
@@ -64,6 +61,7 @@
       </div>
     </div>
 
+    <%# Menu Items %>
     <div
       x-cloak
       :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
@@ -91,9 +89,9 @@
         <%= link_to t('aboutbtn'), about_path, class: "btn btn-vivid mb-4" %>
         <%= link_to t('contactbtn'), contact_path, class: "btn btn-vivid" %>
         <% if user_signed_in? %>
-          <%= link_to "Projects", projects_path, class: "btn btn-vivid my-4" %>
+          <%= link_to "Projects", projects_path, class: "btn btn-vivid mt-4" %>
         <% end %>
-        <div class="flex items-center mt-4 justify-center">
+        <section class="flex items-center my-8">
           <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +99,7 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-9 h-9 mt-1 mr-2"
+              class="w-9 h-9 pt-1 pr-2 text-inverse"
             >
               <path
                 stroke-linecap="round"
@@ -115,8 +113,19 @@
               />
             </svg>
           <% end %>
-        <%= render "shared/search_bar" %>
-        </div>
+          <%= render "shared/search_bar" %>
+        </section>
+        <section class="flex flex-col items-end">
+          <% if current_user %>
+            <%= link_to "Admin", admin_root_path, class: "btn btn-vivid mb-4 w-3/4" if current_user.admin? %>
+            <%= link_to t('myprofilebtn'), profile_path, class: "btn btn-vivid mb-4 w-3/4" %>
+            <%= link_to t('favoritebtn'), favourites_path, class: "btn btn-vivid mb-4 w-3/4" %>
+            <%= button_to t('signoutbtn'), destroy_user_session_path, method: :delete, class: "btn btn-vivid" %>
+          <% else %>
+            <%= link_to t('signinbtn'), user_session_path, class: "btn btn-vivid mb-4 w-3/4" %>
+            <%= link_to t('registerbtn'), new_user_registration_path, method: :get, class: "btn btn-vivid w-3/4" %>
+          <% end %>
+        </section>
       </div>
 
       <div x-data="{isOpen: false}" class="relative">
@@ -155,7 +164,6 @@
 
         <div
           x-cloak
-          x-on:click.outside="isOpen = false"
           x-show="isOpen"
           class="
             z-10
