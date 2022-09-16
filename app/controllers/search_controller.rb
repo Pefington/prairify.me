@@ -1,6 +1,21 @@
 class SearchController < ApplicationController
   def index
-    @place = helpers.get_place_name(params[:search])
-    @plants = helpers.get_data(params[:search], 120)
+    if params[:search] == 'geoloc'
+      @place_name_and_id = helpers.get_place_with_loc(request.location.data['loc']) unless request.location.data['loc'].nil?
+      @place = @place_name_and_id[0]
+      @local_plants = helpers.get_data(@place_name_and_id[1]) unless @place_name_and_id[1].nil?
+    else
+      @place_name_and_id = helpers.get_place(helpers.usable_url(params[:search].downcase))
+      @place = @place_name_and_id[0] unless @place_name_and_id.nil?
+      @local_plants = helpers.get_data(@place_name_and_id[1]) unless @place_name_and_id.nil?
+    end
+    @hits = @local_plants.count unless @local_plants.nil?
+    @hits = [] if @local_plants.nil?
+    selected_plants = if current_user
+                        SelectedPlant.where(user_id: current_user.id)
+                      else
+                        []
+                      end
+    @selected_plants = selected_plants.map(&:inaturalist_id)
   end
 end

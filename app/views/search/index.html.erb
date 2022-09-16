@@ -1,25 +1,61 @@
-<%if @plants == nil%>
-  <p>Sorry, couldn't find any plant, please try again.</p>
-<%else%>
-  <div class="flex flex-col items-center space-y-4">
-    <h2 class="text-xl">Results for:</h2>
-    <p class><%= @place %></p>
-    <p>-</p>
-  </div>
-
-  <div class="p-5 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 h-min">
-    <% 12.times do%>
-      <% @plant = @plants.sample %>
-      <%= render 'layouts/plant' %>
-
-    <%end%>
-  </div>
-<%end%>
-
-<section class="flex flex-col justify-evenly items-center space-y-8">
-  <h3 class="text-xl">Happy with the selected plants?</h3>
-  <%= link_to 'New project', new_project_path, class: "btn-muted", params:[@plants] %>
-  <p>or</p>
-  <h3 class="text-xl">Search another location</h3>
-  <%= render 'layouts/search_bar'%>
-</section>
+<div x-data="{ selectedCount: <%= @selected_plants.count %> }">
+  <% if @local_plants == nil %>
+    <p>
+      <%=t 'noresultsearch'%>
+    </p>
+    <%= render 'shared/search_bar'%>
+  <% else %>
+    <section class="flex flex-col items-center justify-between text-center">
+      <p class="text-xl"><%= @hits %>
+       <%=t'textsearch1'%>
+        <%= @place %></p>
+      <% if current_user %>
+        <h3 class="mt-8 text-xl">
+          <span x-text="selectedCount"></span>
+          <%=t 'textsearch2'%>
+        </h3>
+        <%= link_to t('addplant'), new_project_path, class:
+    "btn-muted", params:[@plants] %>
+        <div @click="eliminated = false, selected = false, selectedCount = 0">
+          <%= button_to t('resetselect'), selected_plants_reset_path, method:
+      :reset, remote: :true, class: "btn-warning my-8" %>
+        </div>
+      <% else %>
+        <p class="flex flex-col text-2xl sm:flex-row sm:items-center">
+          <%= link_to t('joinhomebtn'), new_user_registration_path, class: "btn-muted" %>
+          to start a project!
+        </p>
+      <% end %>
+    </section>
+    <section class="flex h-min w-full flex-wrap justify-evenly p-5 sm:p-10">
+      <% @local_plants.each do | plant | %>
+        <article
+          x-data="{
+            eliminated : false,
+            selected : <%= @selected_plants.include?(plant[:id]) %>
+          }"
+          x-transition
+          x-transition.duration.500ms
+          x-cloak
+          x-show="!eliminated"
+          class="
+            mb-12
+            flex
+            w-full
+            max-w-sm
+            flex-col
+            items-center
+            rounded-lg
+            bg-white
+            pb-4
+            shadow-lg
+            sm:mx-4
+          "
+        >
+          <% @plant = plant %>
+          <%= render 'shared/plant' %>
+        </article>
+      <% end %>
+    </section>
+  <% end %>
+</div>

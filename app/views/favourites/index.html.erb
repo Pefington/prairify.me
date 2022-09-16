@@ -1,9 +1,28 @@
-<% if @projects.empty?%>
-  <h1>You currently don't have any favourites</h1><br>
-  <h2>Get some inspiration by browsing our different projects!</h2><br>
-  <%= button_to 'Browse projects', projects_path, method: :get, class:'bg-blue-500 text-white active:bg-cyan-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'%>
-<%else%>
-  <%= render @projects%>
-<%end%>
+<section class="w-full md:w-2/3 flex flex-col text-center">
+  <h1 class="mt-4 font-bold text-4xl text-center"><%=t 'ftitle1'%></h1>
+  <hr class="mx-4 my-8">
+  <p class="text-center my-8"><%=t 'ftitle'%></p>
 
-
+  <% if @projects.empty? %>
+    <section class="bg-white rounded-lg shadow-lg m-4">
+      <p><%=t 'subjectf'%></p><br>
+      <h2><%=t 'paraf'%></h2><br>
+      <%= button_to t('btnshowproject'), projects_path, method: :get, class:'btn-muted' %>
+    </section>
+  <% else %>
+    <section
+      class="
+        p-5
+        sm:p-10
+        grid
+        grid-cols-1
+        md:grid-cols-2
+        gap-10
+        lg:grid-cols-3
+        h-min
+      "
+    >
+      <%= render @projects %>
+    </section>
+  <% end %>
+</section>

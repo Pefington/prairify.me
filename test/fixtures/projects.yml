@@ -3,13 +3,13 @@
 one:
   name: MyString
   description: MyText
-  place_id: 1
+  place_name: 1
   begin: 2022-09-07 11:27:56
   finish: 2022-09-07 11:27:56
 
 two:
   name: MyString
   description: MyText
-  place_id: 1
+  place_name: 1
   begin: 2022-09-07 11:27:56
   finish: 2022-09-07 11:27:56

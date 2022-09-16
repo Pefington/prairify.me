@@ -1,8 +1,11 @@
 <%= form_with(model: [@project, project_update], class: "contents", params: {project_id:@project.id}) do |form| %>
-
   <% if project_update.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(project_update.errors.count, "error") %> prohibited this project_update from being saved:</h2>
+    <div
+      id="error_explanation"
+      class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3"
+    >
+      <h2><%= pluralize(project_update.errors.count, "error") %>
+        prohibited this project_update from being saved:</h2>
 
       <ul>
         <% project_update.errors.each do |error| %>
@@ -12,25 +15,38 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+  <section
+    class="
+      bg-white
+      w-5/6
+      md:w-full
+      max-w-md
+      flex
+      flex-col
+      justify-center
+      mt-6
+      mx-auto
+    "
+  >
+    <div class="relative flex items-center mt-4">
+      <%= form.label :title, class:"hidden" %>
+      <%= form.text_field :title, placeholder: "Title", class:"form-field indent-0" %>
+    </div>
 
-  <div class="my-5">
-    <%= form.label :description %>
-    <%= form.text_field :description, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+    <div class="relative flex items-center mt-4">
+      <%= form.label :description, class:"hidden" %>
+      <%= form.text_area :description, rows:4, placeholder: "Description", class:"form-field indent-0" %>
+    </div>
 
-  <div class="my-5">
-    <%= form.label :photo %>
-    <%= form.file_field :photo, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"%>
-  </div>
+    <div class="relative flex items-center mt-4">
+      <h3 class="mr-3"><%=t'dscpr'%></h3>
+      <%= form.label :photo, class:"hidden" %>
+      <%= form.file_field :photo, class: "form-field indent-0 text-gray-500" %>
+    </div>
 
-  <div class="inline">
-    <%= form.hidden_field :project_id, value: @project.id %>
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"%>
-  </div>
-
+    <div class="relative flex justify-center mt-4">
+      <%= form.hidden_field :project_id, value: @project.id %>
+      <%= form.submit class: "btn" %>
+    </div>
+  </section>
 <% end %>
-

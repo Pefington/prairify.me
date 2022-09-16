@@ -1,28 +1,43 @@
-<section class="bg-white flex flex-1">
-  <div class="container mx-auto flex flex-col py-28 lg:py-0 lg:pt-28">
-    <h1 class="text-3xl font-semibold text-center capitalize lg:text-4xl">My profile</h1>
-    <div class="mt-8 xl:mt-16">
-      <div class="sm:px-12 py-8 border rounded-xl ">
-        <div class="flex flex-col sm:-mx-4 sm:flex-row">
-          <div class="mt-4 sm:mx-4 sm:mt-0 px-6 lg:px-0">
-            <div class="mb-5">
-              <h2 class="text-2xl">Username</h2>
-              <p class="text-xl text-gray-700"><%= @profiles.username %></p>
-            </div>
-            <div class="mb-5">
-              <h2 class="text-2xl">Email</h2>
-              <p class="text-xl text-gray-700"><%= @profiles.email %></p>
-            </div>
-          </div>
+<section class="pt-16 bg-blueGray-50">
+  <div class="w-full lg:w-4/12 px-4 mx-auto">
+    <div
+      class="
+        relative
+        flex
+        flex-col
+        min-w-0
+        break-words
+        bg-white
+        w-full
+        mb-6
+        shadow-xl
+        rounded-lg
+        mt-16
+      "
+    >
+      <div class="px-6">
+        <div class="text-center mt-20">
+          <h1 class="text-4xl mb-9"><%=t 'profiltitle'%></h1>
+          <h2 class="text-2xl mt-4"><%=t 'nameprofil'%></h2>
+          <p class="text-xl text-gray-700 mt-2"><%= @profile.username %></p>
+          <h2 class="text-2xl mt-4"><%=t 'emailprofil'%></h2>
+          <p class="text-xl text-gray-700 mt-2"><%= @profile.email %></p>
         </div>
-        <div class="flex text-center">
-          <%= link_to "Edit", edit_user_registration_path, class: "btn w-full" %>
+        <div class="mt-10 py-10 border-t text-center flex flex-wrap justify-center">
+          <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
+           <%=t 'subjectprofil'%>
+          </p>
+          <%= link_to t('btnprofil'), edit_user_registration_path, class: "btn w-30" %>
         </div>
       </div>
     </div>
   </div>
 </section>
-  <div class="mb-5 mt-4">
-    <h2 class="text-2xl">My Project(s) : </h2>
+<section class="w-4/5">
+  <hr class="my-8">
+  <div class="mb-5 mt-4 text-center">
+    <h2 class="text-2xl"><%=t 'projectprofil'%>
+    </h2>
   </div>
-<%= render @projects %>
+  <%= render @projects %>
+</section>

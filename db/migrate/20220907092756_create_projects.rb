@@ -3,11 +3,12 @@ class CreateProjects < ActiveRecord::Migration[7.0]
     create_table :projects do |t|
       t.string :name
       t.text :description
-      t.integer :place_id
+      t.string :place_name
+      t.string :country
       t.datetime :begin
       t.datetime :finish
-      t.belongs_to :user, index: true
-      
+      t.belongs_to :user, foreign_key: true, null: false
+
       t.timestamps
     end
   end
