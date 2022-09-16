@@ -29,15 +29,15 @@
           md:text-xl
         "
       >
-        <%= t 'hero' %>
+        <%= t'subject' %>
       </p>
 
       <div class="m-8 text-center">
         <div class="w-full">
-          <%= link_to "Join us", new_user_registration_path, class: "btn-muted" %>
+          <%= link_to t('joinhomebtn'), new_user_registration_path, class: "btn-muted" %>
         </div>
       </div>
-      <h1 class="mb-3">Look what species you could grow where you live!</h1>
+      <h1 class="mb-3"><%= t 'paragraph' %></h1>
       <div class="flex items-center justify-center">
         <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
           <svg
@@ -95,10 +95,10 @@
       xl:text-4xl
     "
   >
-    Our
-    <span class="text-skin-title">budding gardeners</span>
+    <%= t'our' %>
+    <span class="text-skin-title"><%= t('budding') %></span>
     <br>
-    projects
+    <%= t'projec' %>
   </h1>
 
   <div class=" mt-8 flex justify-center items-center w-full ">

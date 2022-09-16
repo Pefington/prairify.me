@@ -1,6 +1,8 @@
+<% unless @plant[:picture_url].nil?%>
 <%= image_tag @plant[:picture_url], class: "h-72 w-full rounded-t-lg
 object-cover object-center", alt: "A field photography of
 #{@plant[:scientific_name]}" %>
+<% end %>
 <div
   class="
     text-skin-base
@@ -23,7 +25,7 @@ object-cover object-center", alt: "A field photography of
   <p>-</p>
   <p class="font-semibold"><%= @plant[:scientific_name] %></p>
 </div>
-<%= link_to "More about #{@plant[:scientific_name]}", @plant[:wiki], class:
+<%= link_to t('moreplant', plant: @plant[:scientific_name]), @plant[:wiki], class:
 "btn-muted text-center mt-0" %>
 <% if current_user %>
   <div class="flex w-full items-center justify-center py-4">

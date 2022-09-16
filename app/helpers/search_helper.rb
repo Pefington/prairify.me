@@ -1,19 +1,26 @@
 module SearchHelper
   def get_place(place)
-    place_url = "https://api.inaturalist.org/v1/search?q=#{place}&sources=places&per_page=1"
+    place_record = nil
+    place_url = "https://api.inaturalist.org/v1/search?q=#{place}&sources=places"
     if HTTParty.get(place_url)['total_results'] == 0
-      place_url = "https://api.inaturalist.org/v1/search?q=#{place}&per_page=1"
+      place_url = "https://api.inaturalist.org/v1/search?q=#{place}"
       if HTTParty.get(place_url)['total_results'] != 0
-        place_record = HTTParty.get(place_url)['results'][0]
-        place_name = find_place_name_in_inat(place_record)
-        place_id = place_record['record']['id']
+        HTTParty.get(place_url)['results'].each_with_index do |result, index|
+          place_record = result['record'] if result['record']['slug'].start_with?(place)
+          break if result['record']['slug'].start_with?(place)
+        end
+        place_name = find_place_name_in_inat(place_record) unless place_record.nil?
+        place_id = place_record['id'] unless place_record.nil?
         return [place_name, place_id] if !place_id.nil? && !place_name.nil?
         nil
       end
     else
-      place_record = HTTParty.get(place_url)['results'][0]
-      place_name = find_place_name_in_inat(place_record)
-      place_id = place_record['record']['id']
+      HTTParty.get(place_url)['results'].each_with_index do |result, index|
+        place_record = result['record'] if result['record']['slug'].start_with?(place)
+        break if result['record']['slug'].start_with?(place)
+      end
+      place_name = find_place_name_in_inat(place_record) unless place_record.nil?
+      place_id = place_record['id'] unless place_record.nil?
       return [place_name, place_id] if !place_id.nil? && !place_name.nil?
       nil
     end
@@ -36,18 +43,13 @@ module SearchHelper
       end
       hash_data[:scientific_name] = obs['taxon']['name'] unless obs['taxon']['name'].nil?
       hash_data[:wiki] = obs['taxon']['wikipedia_url'] unless obs['taxon']['wikipedia_url'].nil?
-      unless obs['taxon']['default_photo']['medium_url'].nil?
+      unless obs['taxon']['default_photo'].nil? || obs['taxon']['default_photo']['medium_url'].nil?
         hash_data[:picture_url] =
           obs['taxon']['default_photo']['medium_url']
       end
       results.push(hash_data)
     end
     results
-  end
-
-  def usable_url(str)
-    str = str.gsub(/[!@%&"]/, '').gsub('-', ' ')
-    ERB::Util.url_encode(str)
   end
 
   def find_place_name_in_inat(place_record)
@@ -86,5 +88,10 @@ module SearchHelper
     place_name = find_place_name_in_inat(inat_result)
     place_id = inat_result['id']
     [place_name, place_id] if !place_id.nil? && !place_name.nil?
+  end
+
+  def usable_url(str)
+    str = I18n.transliterate(str.strip.squish)
+    str.gsub(/[!@%&"]/, '').gsub(' ', '-').gsub("'", '-').downcase
   end
 end

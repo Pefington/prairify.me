@@ -17,19 +17,17 @@
     >
       <div class="px-6">
         <div class="text-center mt-20">
-          <h1 class="text-4xl mb-9">My Profile</h1>
-          <h2 class="text-2xl mt-4">Username</h2>
-          <p class="text-xl text-gray-700 mt-2"><%= @profiles.username %></p>
-          <h2 class="text-2xl mt-4">Email</h2>
-          <p class="text-xl text-gray-700 mt-2"><%= @profiles.email %></p>
+          <h1 class="text-4xl mb-9"><%=t 'profiltitle'%></h1>
+          <h2 class="text-2xl mt-4"><%=t 'nameprofil'%></h2>
+          <p class="text-xl text-gray-700 mt-2"><%= @profile.username %></p>
+          <h2 class="text-2xl mt-4"><%=t 'emailprofil'%></h2>
+          <p class="text-xl text-gray-700 mt-2"><%= @profile.email %></p>
         </div>
         <div class="mt-10 py-10 border-t text-center flex flex-wrap justify-center">
           <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
-            Here you can modify your profile and see all your current or
-            completed projects. Welcome to Prairify, you are already on the
-            path to change!
+           <%=t 'subjectprofil'%>
           </p>
-          <%= link_to "Edit", edit_user_registration_path, class: "btn w-30" %>
+          <%= link_to t('btnprofil'), edit_user_registration_path, class: "btn w-30" %>
         </div>
       </div>
     </div>
@@ -38,7 +36,7 @@
 <section class="w-4/5">
   <hr class="my-8">
   <div class="mb-5 mt-4 text-center">
-    <h2 class="text-2xl">My Project(s) :
+    <h2 class="text-2xl"><%=t 'projectprofil'%>
     </h2>
   </div>
   <%= render @projects %>
