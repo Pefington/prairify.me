@@ -1,6 +1,8 @@
+<% unless @plant[:picture_url].nil?%>
 <%= image_tag @plant[:picture_url], class: "h-72 w-full rounded-t-lg
 object-cover object-center", alt: "A field photography of
 #{@plant[:scientific_name]}" %>
+<% end %>
 <div
   class="
 
