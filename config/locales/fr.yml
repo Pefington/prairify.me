@@ -21,8 +21,9 @@ fr:
   budding: "projets"
 
 #TEAMPAGE
+
   teamp: "La merveilleuse équipe sans laquelle ce projet n'aurait pas pu aboutir."
-  titlep: "L'Equipe Prairify "
+  titlet: "L'Equipe Prairify "
   
 #PROJECT_PAGES
 
@@ -40,7 +41,7 @@ fr:
   mostrecent: "Trier par: Plus récents"
   mostlike: "Trier par: Plus likés"
   leastlike: "Trier par: Moins likés"
-  showbtn: "Afficher le projet"
+  showbtn: "Afficher"
   placep: "Ville:"
   finishp: "Fin:"
   beginp: "Début:"
@@ -53,7 +54,11 @@ fr:
   subject2p: "A quoi ressemble votre pelouse maintenant ?"
   subject3p: "Quand voulez-vous terminer votre projet ?"
   createprojectbtn: "Créer un projet"
-  
+  btneditp: "Editer ce projet"
+  btnupdatep: "Mettre à jour"
+  btndestroyp: "Supprimer ce projet" 
+  btnaddcomment: "Ajouter un commentaire"
+
 #ABOUTPAGE
 
   goal: "Notre"
@@ -85,6 +90,7 @@ fr:
   btncontact: "Entrer en contact"
 
 #FAVORITES_PAGE
+
   ftitle: "Vous trouverez ici tous vos projets favoris :"
   fsubject: "Vous n'avez actuellement aucun(s) favori(s)..."
   fparagraph: "Inspirez-vous en parcourant nos différents projets !"
@@ -94,6 +100,7 @@ fr:
   btnshowproject: "Voir les projets"
 
 #PROFILE_PAGE
+
   profiltitle: "Mon Profil"
   nameprofil: "Pseudonyme"
   emailprofil: "Adresse e-mail"
@@ -102,6 +109,7 @@ fr:
   btnprofil: "Editer"
 
 #ADMIN
+
   num1: "Nombre d'utilisateur(s) enregistré(s) quotidiennement"
   num2: "Nombre de projet(s) enregistré(s) quotidiennement"
   tyl: "Dernier(s) Utilisateur(s) Enregistré(s)"
@@ -158,6 +166,7 @@ fr:
   holdername: "Nom d'utilisateur"
   
 #SEARCH_PAGE
+
   noresultearch: "Aucun résultat. Vous pouvez essayer une zone plus large (arrondissement, comté, département...)"
   textsearch1: "Resultat(s) pour"
   textsearch2: "sur 12 plantes sélectionnées."
@@ -173,6 +182,11 @@ fr:
   currentpassword: "Mot de passe actuel"
 
 #ALERT
+
   projectcreatealert: "Le projet a été créé avec succès."
   projectupdatealert: "Le projet a été mis à jour avec succès."
   projectdestroyalert: "Le projet a été supprimé avec succès."
+  favouritecreate: "Le projet a été ajouté au favoris avec succès."
+  favouritenotsave: "Le projet n'a pas été ajouté au favoris a cause d'une erreur."
+  favouritedestroy: "Le projet a été supprimé des favoris avec succès."
+  favouritenotdestroy: "Le projet n'a pas été supprimé des favoris a cause d'une erreur."

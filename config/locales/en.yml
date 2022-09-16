@@ -1,37 +1,7 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/I18n.html.
-
 en: 
 
 #NAVBAR_BTN
+
   homebtn: "Home"
   aboutbtn: "A propos"
   teambtn: "Team"
@@ -44,6 +14,7 @@ en:
   myprofilebtn: "My Profile"
   
 #HOMEPAGE
+
   title: "You want to make your first step to a better world?"
   subject: " We can help you change your purely decorative piece of grass into a very
         useful meadow welcoming a diversified fauna and flora!"
@@ -52,10 +23,14 @@ en:
   budding: "budding gardeners" 
   projec: "projects"
   joinhomebtn: "Join us"
+
 #TEAMPAGE
+
   teamp: "Here is the wonderful team who made this project happen."
-  titlep: "Our Exevutive Team"
+  titlet: "Our Exevutive Team"
+
 #PROJECT_PAGES
+
   post: "Posted on:"
   descrp: "Description:"
   titlep: "Projects"
@@ -84,7 +59,13 @@ en:
   subject2p: "What does your lawn look like now?"
   subject3p: "When do you want to end your project?"
   createprojectbtn: "Create a project"
+  btneditp: "Edit this project"
+  btnupdatep: "Add an update"
+  btndestroyp: "Destroy this project"
+  btnaddcomment: "Add a comment"
+
 #ABOUTPAGE
+
   goal: "What Is"
   goal1: "Our Goal ?"
   help: "Help the Planet"
@@ -93,14 +74,18 @@ en:
   help1: "Bring our part to the ecological transition, by helping everyone to know the flora that grows near them"
   share1: "We share the projects initiated by the community to transform their grass into a beautiful meadow"
   tip1: "We share the projects initiated by the community to transform their grass into a beautiful meadow"
+
 #SIGN_UP
+
   signup: "Sign Up"
   signin: "Sign In"
   signor: "or sign with"
   alre: "Already have an account?"
   alre1: "Don't have an account yet?"
   forgo: "Forgot your password?"
+
 #CONTACT_PAGES
+
   contacttitle1: "Contact us for"
   contacttitle2: "More informations"
   followcontact: "Follow us"
@@ -110,6 +95,7 @@ en:
   btncontact: "Get in touch"
 
 #FAVORITES_PAGE
+
   ftitle: "Here you will find all your favourite projects:"
   fsubject: "You currently don't have any favourites..."
   fparagraph: "Get some inspiration by browsing our different projects!"
@@ -120,6 +106,7 @@ en:
 
 
 #PROFILE_PAGE
+
   profiltitle: "My Profile"
   nameprofil: "Username"
   emailprofil: "Email adress"
@@ -127,9 +114,8 @@ en:
   projectprofil: "Project(s)"
   btnprofil: "Edit"
 
-
-
 #ADMIN
+
   num1: "Number of Daily Registered Users"
   num2: "Number of Daily Created Project"
   tyl: "Latest Registered Users"
@@ -206,3 +192,7 @@ en:
   projectcreatealert: "Project was successfully created."
   projectupdatealert: "Project was successfully updated."
   projectdestroyalert: "Project was successfully destroyed."
+  favouritecreate: "Favourite was successfully selected."
+  favouritenotsave: "Favourite was not created due ton an error."
+  favouritedestroy: "Favourite was successfully removed."
+  favouritenotdestroy: "Favourite was not deleted due to an error."
