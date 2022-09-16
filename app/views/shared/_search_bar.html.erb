@@ -1,7 +1,7 @@
 <%= form_with url: search_index_path, method: :get do |form| %>
   <div class="flex">
-    <span class="flex items-center bg-inverse">
-      <svg class="w-5 h-5 border-none" viewBox="0 0 24 24" fill="none">
+    <span class="flex items-center bg-inverse text-neutral-light/50 px-1 rounded-l-md">
+      <svg class="w-5 h-5border-none" viewBox="0 0 24 24" fill="none">
         <path
           d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
           stroke="currentColor"
@@ -14,7 +14,7 @@
     <input
       type="search"
       name="search"
-      class="bg-inverse border-none"
+      class="bg-inverse border-none py-2 rounded-r-md"
       placeholder=<%=t'holdersearch'%>
     >
   </div>

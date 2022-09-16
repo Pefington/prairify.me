@@ -93,7 +93,7 @@
         <% if user_signed_in? %>
           <%= link_to "Projects", projects_path, class: "btn btn-vivid my-4" %>
         <% end %>
-        <div class="flex">
+        <div class="flex items-center mt-4 justify-center">
           <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-9 h-9 mx-4 mt-3  drop-shadow-md"
+              class="w-9 h-9 mt-1 mr-2"
             >
               <path
                 stroke-linecap="round"
@@ -115,8 +115,8 @@
               />
             </svg>
           <% end %>
-        </div>
         <%= render "shared/search_bar" %>
+        </div>
       </div>
 
       <div x-data="{isOpen: false}" class="relative">

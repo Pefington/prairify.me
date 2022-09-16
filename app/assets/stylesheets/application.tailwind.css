@@ -10,7 +10,7 @@
 
 @layer base {
   * {
-    @apply ring-0 transition-all duration-300 ease-in-out hover:ring-0;
+    @apply transition-all duration-300 ease-in-out border-none ring-0 focus:ring-0 p-0;
   }
 
   body,
