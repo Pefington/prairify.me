@@ -187,9 +187,9 @@ en:
 
 #SEARCH_PAGE
 
-  noresultearch: "No result. You could try a wider area (district, county, département...)"
+  noresultsearch: "No result. You could try a wider area (district, county, département...)"
   textsearch1: "Results for"
   textsearch2: "out of 12 plants selected."
   addplant: "Add them to a new project!"
   resetselect: "Reset selection"
-  moreplant: "More about %{@plant[:scientific_name]}"
+  moreplant: "More about %{plant}"

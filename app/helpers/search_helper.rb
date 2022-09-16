@@ -45,7 +45,7 @@ module SearchHelper
       end
       hash_data[:scientific_name] = obs['taxon']['name'] unless obs['taxon']['name'].nil?
       hash_data[:wiki] = obs['taxon']['wikipedia_url'] unless obs['taxon']['wikipedia_url'].nil?
-      unless obs['taxon']['default_photo']['medium_url'].nil?
+      unless obs['taxon']['default_photo'].nil? || obs['taxon']['default_photo']['medium_url'].nil?
         hash_data[:picture_url] =
           obs['taxon']['default_photo']['medium_url']
       end
@@ -93,7 +93,7 @@ module SearchHelper
   end
 
   def usable_url(str)
-    str = I18n.transliterate(str)
+    str = I18n.transliterate(str.strip.squish)
     str.gsub(/[!@%&"]/, '').gsub(' ', '-').gsub("'", '-').downcase
   end
 end
