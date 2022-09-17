@@ -21,14 +21,14 @@
           <%=t 'textsearch2'%>
         </h3>
         <%= link_to t('addplant'), new_project_path, class:
-    "btn-muted", params:[@plants] %>
+    "btn", params:[@plants] %>
         <div @click="eliminated = false, selected = false, selectedCount = 0">
           <%= button_to t('resetselect'), selected_plants_reset_path, method:
       :reset, remote: :true, class: "btn-warning my-8" %>
         </div>
       <% else %>
         <p class="flex flex-col text-2xl sm:flex-row sm:items-center">
-          <%= link_to t('joinhomebtn'), new_user_registration_path, class: "btn-muted" %>
+          <%= link_to t('joinhomebtn'), new_user_registration_path, class: "btn" %>
           to start a project!
         </p>
       <% end %>
@@ -52,7 +52,7 @@
             flex-col
             items-center
             rounded-lg
-            bg-white
+            bg-inverse
             pb-4
             shadow-lg
             sm:mx-4

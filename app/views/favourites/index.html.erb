@@ -4,10 +4,10 @@
   <p class="text-center my-8"><%=t 'ftitle'%></p>
 
   <% if @projects.empty? %>
-    <section class="bg-white rounded-lg shadow-lg m-4">
+    <section class="bg-inverse rounded-lg shadow-lg m-4">
       <p><%=t 'subjectf'%></p><br>
       <h2><%=t 'paraf'%></h2><br>
-      <%= button_to t('btnshowproject'), projects_path, method: :get, class:'btn-muted' %>
+      <%= button_to t('btnshowproject'), projects_path, method: :get, class:'btn' %>
     </section>
   <% else %>
     <section
@@ -19,8 +19,7 @@
         md:grid-cols-2
         gap-10
         lg:grid-cols-3
-        h-min
-      "
+        h-min"
     >
       <%= render @projects %>
     </section>
