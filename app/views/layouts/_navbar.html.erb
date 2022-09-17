@@ -1,6 +1,6 @@
 <header class="w-full relative bg-soft text-inverse">
   <nav x-data="{ isOpen: false }" class="relative p-4 lg:flex ">
-    <div class="flex items-center justify-evenly flex-1">
+    <div class="flex items-center justify-around w-full">
 
       <div class="w-16">
         <%= link_to root_path do %>
@@ -13,7 +13,7 @@
       </div>
 
       <%# Large Links %>
-      <div class="hidden lg:flex items-start justify-center space-x-6">
+      <div class="hidden lg:flex items-start justify-center xl:space-x-8">
         <%= link_to t('homebtn'), root_path, class: "link text-xl drop-shadow-md" %>
         <%= link_to t('teambtn'), team_path, class: "link text-xl drop-shadow-md" %>
         <%= link_to t('aboutbtn'), about_path, class: "link text-xl drop-shadow-md" %>
@@ -34,14 +34,14 @@
         </section>
       </div>
       <section class="hidden lg:flex items-center">
-        <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
+        <%= button_to search_index_path, method: :get, params: {search: 'geoloc'}, class: "link p-1" do %>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-9 h-9 pt-1 pr-2 text-inverse"
+            class="w-9 h-9 text-inverse hover:text-vivid"
           >
             <path
               stroke-linecap="round"
@@ -56,10 +56,63 @@
           </svg>
         <% end %>
         <%= render "shared/search_bar" %>
+
+        <%# Profile Button %>
+        <div x-data="{largeOpen: true}" class="relative">
+          <button
+            x-on:click="largeOpen = !largeOpen"
+            type="button"
+            aria-label="toggle profile dropdown"
+            class=" link"
+          >
+            <i class="fa-solid fa-user fa-2x"></i>
+
+          </button>
+
+          <%# Profile Items %>
+          <div
+            x-cloak
+            x-show="largeOpen"
+            class="
+              z-10
+              absolute
+              right-0
+              mt-6
+              w-48
+              origin-top-right
+              rounded-md
+              py-1
+              shadow-lg
+              ring-1
+              ring-opacity-5
+            "
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="user-menu-button"
+            tabindex="-1"
+          >
+            <% if @profile %>
+              <% if @profile.username %>
+                <h3 class="mx-2 lg:hidden "><%= @profile.username %></h3>
+              <% else %>
+                <h3 class="mx-2 lg:hidden "><%= @profile.email %></h3>
+              <% end %>
+            <% end %>
+            <% if current_user %>
+              <%= link_to "Admin", admin_root_path, class: "block px-4 py-2 text-sm" if current_user.admin? %>
+              <%= link_to t('myprofilebtn'), profile_path, class: "block px-4 py-2 text-sm  rounded-md" %>
+              <%= link_to t('favoritebtn'), favourites_path, class: "block px-4 py-2 text-sm  rounded-md" %>
+              <%= button_to t('signoutbtn'), destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm  rounded-md" %>
+            <% else %>
+              <%= link_to t('signinbtn'), user_session_path, class: "block px-4 py-2 text-sm  rounded-md" %>
+              <%= link_to t('registerbtn'), new_user_registration_path, method: :get, class: "block px-4 py-2 text-sm  rounded-md" %>
+            <% end %>
+          </div>
+        </div>
       </section>
 
       <%# Hamburger Button %>
-      <div class="flex lg:hidden" x-cloak @keyup.space="isOpen = !isOpen" >
+      <div class="flex lg:hidden" x-cloak @keyup.space="isOpen = !isOpen">
         <button type="button" class="link" aria-label="toggle menu">
           <svg
             @click="isOpen = true"
@@ -152,72 +205,6 @@
         </section>
       </div>
 
-      <div x-data="{isOpen: false}" class="relative">
-        <div class="lg:pl-6 my-6 lg:my-0">
-          <button
-            x-on:click="isOpen = !isOpen"
-            type="button"
-            class="
-              w-full
-              flex
-              items-center
-              rounded-md
-              px-2
-              py-3
-            "
-            aria-label="toggle profile dropdown"
-          >
-            <div class="w-8 h-8 overflow-hidden border-2 rounded-full">
-              <img
-                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                class="object-cover w-full h-full"
-                alt="avatar"
-              >
-            </div>
-
-            <% if @profile %>
-              <% if @profile.username %>
-                <h3 class="mx-2 lg:hidden "><%= @profile.username %></h3>
-              <% else %>
-                <h3 class="mx-2 lg:hidden "><%= @profile.email %></h3>
-              <% end %>
-            <% end %>
-
-          </button>
-        </div>
-
-        <div
-          x-cloak
-          x-show="isOpen"
-          class="
-            z-10
-            absolute
-            right-0
-            mt-6
-            w-48
-            origin-top-right
-            rounded-md
-            py-1
-            shadow-lg
-            ring-1
-            ring-opacity-5
-          "
-          role="menu"
-          aria-orientation="vertical"
-          aria-labelledby="user-menu-button"
-          tabindex="-1"
-        >
-          <% if current_user %>
-            <%= link_to "Admin", admin_root_path, class: "block px-4 py-2 text-sm" if current_user.admin? %>
-            <%= link_to t('myprofilebtn'), profile_path, class: "block px-4 py-2 text-sm  rounded-md" %>
-            <%= link_to t('favoritebtn'), favourites_path, class: "block px-4 py-2 text-sm  rounded-md" %>
-            <%= button_to t('signoutbtn'), destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm  rounded-md" %>
-          <% else %>
-            <%= link_to t('signinbtn'), user_session_path, class: "block px-4 py-2 text-sm  rounded-md" %>
-            <%= link_to t('registerbtn'), new_user_registration_path, method: :get, class: "block px-4 py-2 text-sm  rounded-md" %>
-          <% end %>
-        </div>
-      </div>
     </div>
 
   </nav>
