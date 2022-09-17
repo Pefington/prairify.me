@@ -6,20 +6,19 @@
       flex-col
       justify-center
       overflow-hidden
-      bg-white
+      bg-inverse
       rounded-lg
       shadow-lg
       m-4
       p-4
-      md:p-8
-    "
+      md:p-8"
   >
     <div class="flex items-center justify-between">
-      <span class="text-sm font-light text-gray-600"><%= comment.created_at.strftime("%d/%m/%Y, at %I:%M%p") %></span>
+      <span class="text-sm font-light text-neutral-light"><%= comment.created_at.strftime("%d/%m/%Y, at %I:%M%p") %></span>
     </div>
 
     <div class="mt-2">
-      <h1>Content:</h1>
+      <h1><%=t 'commentcontent'%></h1>
       <p class="text-lg"><%= comment.content %></p>
     </div>
 
@@ -29,7 +28,7 @@
         src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=40&q=80"
         alt="avatar"
       >
-      <p class="my-5 font-light text-gray-600">
+      <p class="my-5 font-light text-neutral-light">
         <% if comment.user.username? %>
           <%= comment.user.username %>
         <% else %>

@@ -1,84 +1,47 @@
-<section class="bg-white">
-    <div class="container px-6 py-8 mx-auto">
-        <div class="lg:flex lg:items-center lg:-mx-6">
-            <div class="lg:mx-6">
-                <h1 class="text-3xl font-semibold capitalize lg:text-4xl">
-                    <%=t 'contacttitle1'%> <br> <%=t 'contacttitle2'%>
-                </h1>
+<section class="bg-inverse rounded-lg shadow-2xl flex flex-col justify-center items-center p-8 w-4/5 sm:w-2/3 md:w-1/2 my-auto">
+    <h1 class="text-3xl font-semibold capitalize lg:text-4xl">
+        <%=t 'contacttitle1'%> <br> <%=t 'contacttitle2'%>
+    </h1>
 
-                <div class="mt-6 space-y-8 md:mt-8">
-                    <p class="flex items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-skin-title" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
+    <div class="mt-8 space-y-8">
+        <p class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 mx-2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            
+            <span class="mx-2">
+                7 rue du Général Pershing<br>
+                60600 Clermont
+            </span>
+        </p>
 
-                        <span class="mx-2 w-72">
-                            7 rue du Général Pershing<br>
-                            60600 Clermont
-                        </span>
-                    </p>
+        <p class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
 
-                    <p class="flex items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-skin-title" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
+            <span class="mx-2 truncate">+33 1 02 03 04 05</span>
+        </p>
 
-                        <span class="mx-2 truncate w-72 ">+33 1 02 03 04 05</span>
-                    </p>
+        <p class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
 
-                    <p class="flex items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-2 text-skin-title" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
+            <span class="mx-2 truncate">prairify@yopmail.com</span>
+        </p>
+    </div>
 
-                        <span class="mx-2 truncate w-72">prairify@yopmail.com</span>
-                    </p>
-                </div>
-
-                <div class="mt-6 w-80 md:mt-8">
-                    <h3 class="text-gray-600 mt-4"><%=t 'followcontact'%></h3>
-
-                    <div class="flex mt-4 -mx-1.5 ">
-                      <%= link_to 'https://github.com/Pefington/prairify.me.git', target: :_blank, class: "mx-2 text-gray-600" do %>
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z">
-                          </path>
-                        </svg>
-                      <% end %>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-8 lg:mx-6">
-                <div
-                    class="w-full px-8 py-10 mx-auto overflow-hidden bg-white rounded-lg shadow-2xl lg:max-w-xl shadow-gray-300/50">
-                    <h1 class="text-lg font-medium"><%=t 'titlec'%></h1>
-
-                    <form class="mt-6">
-                        <div class="flex-1">
-                            <label class="block mb-2 text-sm font-semibold"><%=t 'namec'%></label>
-                            <input type="text" placeholder="John Doe" class="form-field indent-0" />
-                        </div>
-
-                        <div class="flex-1 mt-6">
-                            <label class="block mb-2 text-sm font-semibold"><%=t 'emailc'%></label>
-                            <input type="email" placeholder="johndoe@example.com" class="form-field indent-0" />
-                        </div>
-
-                        <div class="w-full mt-6">
-                            <label class="block mb-2 text-sm font-semibold">Message</label>
-                            <textarea class="form-field indent-0 h-32" placeholder="Message"></textarea>
-                        </div>
-
-                        <button class="btn-muted">
-                            <%=t 'btncontact'%>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div class="flex flex-col items-center my-8">
+        <h3 class="text-neutral-light mb-4"><%=t 'followcontact'%></h3>
+        <%= link_to 'https://github.com/Pefington/prairify.me.git', target: :_blank, class: "text-neutral-light drop-shadow-md hover:text-purple-600 transition-all duration-75" do %>
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+            d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z">
+            </path>
+        </svg>
+        <% end %>
     </div>
 </section>

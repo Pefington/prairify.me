@@ -6,6 +6,11 @@ class Project < ApplicationRecord
   has_many :project_updates, dependent: :destroy
   has_many_attached :photos, dependent: :destroy
   belongs_to :user
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :place_name, presence: true
+  validates :country, presence: true
+ 
 
   after_create :project_post
 

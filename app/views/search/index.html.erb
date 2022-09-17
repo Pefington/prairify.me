@@ -1,9 +1,15 @@
 <div x-data="{ selectedCount: <%= @selected_plants.count %> }">
   <% if @local_plants == nil %>
-    <p>
-      <%=t 'noresultsearch'%>
-    </p>
-    <%= render 'shared/search_bar'%>
+      <% if params[:search]== 'geoloc'%>
+        <p>
+          <%=t 'nogeoloc'%>
+        </p>
+      <%else%>
+        <p>
+          <%=t 'noresultsearch'%>
+        </p>
+      <%end%>
+      <%= render 'shared/search_bar'%>
   <% else %>
     <section class="flex flex-col items-center justify-between text-center">
       <p class="text-xl"><%= @hits %>
@@ -15,14 +21,14 @@
           <%=t 'textsearch2'%>
         </h3>
         <%= link_to t('addplant'), new_project_path, class:
-    "btn-muted", params:[@plants] %>
+    "btn", params:[@plants] %>
         <div @click="eliminated = false, selected = false, selectedCount = 0">
           <%= button_to t('resetselect'), reset_selected_plants_path, method:
       :post, remote: :true, class: "btn-warning my-8" %>
         </div>
       <% else %>
         <p class="flex flex-col text-2xl sm:flex-row sm:items-center">
-          <%= link_to t('joinhomebtn'), new_user_registration_path, class: "btn-muted" %>
+          <%= link_to t('joinhomebtn'), new_user_registration_path, class: "btn" %>
           to start a project!
         </p>
       <% end %>
@@ -46,7 +52,7 @@
             flex-col
             items-center
             rounded-lg
-            bg-white
+            bg-inverse
             pb-4
             shadow-lg
             sm:mx-4

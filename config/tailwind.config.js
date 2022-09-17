@@ -14,33 +14,20 @@ module.exports = {
         Cantarell: ["Cantarell", ...defaultTheme.fontFamily.sans],
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
-      textColor: {
-        skin: {
-          base: "var(--color-text-base)",
-          muted: "var(--color-text-muted)",
-          inverted: "var(--color-text-inverted)",
-          title: "var(--color-text-title)",
-        },
-      },
-      backgroundColor: {
-        skin: {
-          "back-nav": "var(--color-back-nav)",
-          "accent": "var(--color-back-accent)",
-          "button-accent": "var(--color-button-accent)",
-          "button-accent-hover": "var(--color-button-accent-hover)",
-          "button-muted": "var(--color-button-muted)",
-          "button-muted-hover": "var(--color-button-muted-hover)",
-          "button-warning": "var(--color-button-warning)",
-          "button-warning-hover": "var(--color-button-warning-hover)",
-        },
-      },
       backgroundImage: {
         "google-signin": "url('images/btn_google_signin_dark_normal_web.png')",
       },
-      borderColor: {
-        skin: {
-          base: "var(--color-border-base)",
+      colors: {
+        neutral: {
+          light: "#585d65",
+          dark: "#333339",
         },
+        vivid: "#12433c",
+        middle: "#086",
+        soft: "#3ea57a",
+        inverse: "#efe",
+        accent: "#ff9d00",
+        error: "#f00",
       },
     },
   },

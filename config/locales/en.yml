@@ -29,11 +29,11 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/I18n.html.
 
-en: 
+en:
 
 #NAVBAR_BTN
   homebtn: "Home"
-  aboutbtn: "A propos"
+  aboutbtn: "About"
   teambtn: "Team"
   contactbtn: "Contact"
   projectbtn: "Projects"
@@ -42,14 +42,14 @@ en:
   signoutbtn: "Sign Out"
   favoritebtn: "My Favourites"
   myprofilebtn: "My Profile"
-  
+
 #HOMEPAGE
   title: "You want to make your first step to a better world?"
   subject: " We can help you change your purely decorative piece of grass into a very
         useful meadow welcoming a diversified fauna and flora!"
   paragraph: "Look what plant species you could grow where you live!"
   our: "Our"
-  budding: "budding gardeners" 
+  budding: "budding gardeners"
   projec: "projects"
   joinhomebtn: "Join us"
 #TEAMPAGE
@@ -84,6 +84,9 @@ en:
   subject2p: "What does your lawn look like now?"
   subject3p: "When do you want to end your project?"
   createprojectbtn: "Create a project"
+  updatenewbtn: "Add an update"
+  projectdestroybtn: "Destroy project"
+
 #ABOUTPAGE
   goal: "What Is"
   goal1: "Our Goal ?"
@@ -174,7 +177,7 @@ en:
   postby: "posted by"
   modic: "Edit Comment"
   posteon: "posted on"
-  
+
 #REGISTRATION_PAGE
 
   holdermail: "Email adress"
@@ -188,8 +191,18 @@ en:
 #SEARCH_PAGE
 
   noresultsearch: "No result. You could try a wider area (district, county, département...)"
+  nogeoloc: "Sorry we couldn't geolocate you. Please try to write the area you live in instead:"
   textsearch1: "Results for"
   textsearch2: "out of 12 plants selected."
   addplant: "Add them to a new project!"
   resetselect: "Reset selection"
   moreplant: "More about %{plant}"
+
+#COMMENT
+  commentcontent: "Comment:"
+  commentbtn: "Add a comment"
+
+#NEWCOMMENT
+  commenttitle: "New comment"
+  holdercomment: "Comment"
+  btnbackppro: "Back to the project"
