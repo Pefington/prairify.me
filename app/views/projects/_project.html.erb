@@ -32,6 +32,7 @@
                 </p>
               <% end %>
             <% end %>
+            
             <% if project.country != nil %>
               <h1><%=t 'countryp'%></h1>
               <p class="my-3">
@@ -47,13 +48,13 @@
                 </p>
               <% end %>
 
-            <% if project.finish != nil %>
-              <h1><%=t 'finishp'%></h1>
-              <p class="my-3">
-                <%= project.finish.strftime("%d/%m/%Y, at %I:%M%p") %>
-              </p>
+              <% if project.finish != nil %>
+                <h1><%=t 'finishp'%></h1>
+                <p class="my-3">
+                  <%= project.finish.strftime("%d/%m/%Y, at %I:%M%p") %>
+                </p>
+              <% end %>
             <% end %>
-          <% end %>
         </div>
         <% if user_signed_in? %>
           <div
