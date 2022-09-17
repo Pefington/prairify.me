@@ -47,5 +47,8 @@
   .btn-middle:hover,
   .btn-middle:focus {
     @apply bg-vivid;
+  },
+  .btn-inverse {
+    @apply bg-inverse text-neutral-light;
   }
 }
