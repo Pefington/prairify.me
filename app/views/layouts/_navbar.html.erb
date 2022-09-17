@@ -10,6 +10,9 @@
     items-center
     h-max
     relative
+    border-b-2
+    border-solid
+    border-middle
   "
 >
   <%# Spacer %>
@@ -69,15 +72,12 @@
         flex-col
         items-center
         absolute
-        top-[72px]
+        top-[73px]
         sm:top-[80px]
-        md:top-[87px]
+        md:top-[88px]
         inset-x-0
         z-20
         bg-soft
-        border-t-[1px]
-        border-solid
-        border-middle
         rounded-b-[4rem]
       "
     >
@@ -206,23 +206,23 @@
       justify-center
       items-center
       absolute
-      top-[95px]
+      top-[96px]
       inset-x-0
       hidden
       lg:flex
       flex-col
       z-20
       pb-8
-      border-t-[1px]
-      border-solid
-      border-middle
       rounded-b-full
       bg-soft
+      border-b-2
+      border-solid
+      border-middle
     "
   >
     <% if current_user %>
       <h3 class="mt-8 text-inverse underline text-xl">
-          <%= current_user.email %>
+        <%= current_user.email %>
         <% if current_user.username %>
           <%= current_user.username %>
         <% end %>
