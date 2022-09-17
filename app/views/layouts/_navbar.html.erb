@@ -57,60 +57,82 @@
         <% end %>
         <%= render "shared/search_bar" %>
 
-        <%# Profile Button %>
-        <div x-data="{largeOpen: true}" class="relative">
+        <%# Large Profile Section %>
+        <section
+          x-data="{ largeOpen: true }"
+          class="relative inset-0 flex justify-center z-50"
+        >
+          <%# Profile Button %>
           <button
             x-on:click="largeOpen = !largeOpen"
             type="button"
-            aria-label="toggle profile dropdown"
-            class=" link"
+            aria-label="toggle profile modal"
+            class="link z-50"
           >
             <i class="fa-solid fa-user fa-2x"></i>
-
           </button>
 
           <%# Profile Items %>
           <div
-            x-cloak
-            x-show="largeOpen"
             class="
-              z-10
-              absolute
-              right-0
-              mt-6
-              w-48
-              origin-top-right
-              rounded-md
-              py-1
-              shadow-lg
-              ring-1
-              ring-opacity-5
+              fixed
+              inset-0
+              overflow-y-auto
+              flex
+              justify-center
+              items-center
+              transition
             "
-            role="menu"
-            aria-orientation="vertical"
-            aria-labelledby="user-menu-button"
-            tabindex="-1"
           >
-            <% if @profile %>
-              <% if @profile.username %>
-                <h3 class="mx-2 lg:hidden "><%= @profile.username %></h3>
-              <% else %>
-                <h3 class="mx-2 lg:hidden "><%= @profile.email %></h3>
+            <article
+              x-show="largeOpen"
+              @click.outside="largeOpen = false"
+              x-transition:enter="duration-300 ease-out"
+              x-transition:enter-start="opacity-0 translate-y-8 scale-95"
+              x-transition:enter-end="translate-y-0 opacity-100 scale-100"
+              x-transition:leave="duration-150 ease-in"
+              x-transition:leave-start="-translate-y-0 opacity-100 scale-100"
+              x-transition:leave-end="opacity-0 -translate-y-8 scale-95"
+              aria-labelledby="modal-title"
+              role="dialog"
+              aria-modal="true"
+              class="
+                relative
+                overflow-hidden
+                h-max
+                bg-soft
+                shadow-xl
+                max-w-md
+                rounded-lg
+                w-full
+                p-8
+                z-50
+              "
+            >
+              <% if @profile %>
+                <% if @profile.username %>
+                  <h3 class="mx-2 lg:hidden "><%= @profile.username %></h3>
+                <% else %>
+                  <h3 class="mx-2 lg:hidden "><%= @profile.email %></h3>
+                <% end %>
               <% end %>
-            <% end %>
-            <% if current_user %>
-              <%= link_to "Admin", admin_root_path, class: "block px-4 py-2 text-sm" if current_user.admin? %>
-              <%= link_to t('myprofilebtn'), profile_path, class: "block px-4 py-2 text-sm  rounded-md" %>
-              <%= link_to t('favoritebtn'), favourites_path, class: "block px-4 py-2 text-sm  rounded-md" %>
-              <%= button_to t('signoutbtn'), destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm  rounded-md" %>
-            <% else %>
-              <%= link_to t('signinbtn'), user_session_path, class: "block px-4 py-2 text-sm  rounded-md" %>
-              <%= link_to t('registerbtn'), new_user_registration_path, method: :get, class: "block px-4 py-2 text-sm  rounded-md" %>
-            <% end %>
+              <% if current_user %>
+                <%= link_to "Admin", admin_root_path, class: "btn btn-vivid w-full" if current_user.admin? %>
+                <%= link_to t('myprofilebtn'), profile_path, class: "btn btn-vivid w-full" %>
+                <%= link_to t('favoritebtn'), favourites_path, class: "btn btn-vivid w-full" %>
+                <%= button_to t('signoutbtn'), destroy_user_session_path, method: :delete, class: "btn btn-vivid w-full" %>
+              <% else %>
+                <%= link_to t('signinbtn'), user_session_path, class: "btn btn-vivid w-full" %>
+                <%= link_to t('registerbtn'), new_user_registration_path, method: :get, class: "btn btn-vivid w-full" %>
+              <% end %>
+
+            </article>
           </div>
-        </div>
+        </section>
+
       </section>
 
+      <%# Mobile Links + Profiles Combined Section %>
       <%# Hamburger Button %>
       <div class="flex lg:hidden" x-cloak @keyup.space="isOpen = !isOpen">
         <button type="button" class="link" aria-label="toggle menu">
@@ -204,8 +226,6 @@
           <% end %>
         </section>
       </div>
-
     </div>
-
   </nav>
 </header>
