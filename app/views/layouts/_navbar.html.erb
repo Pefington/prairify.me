@@ -9,6 +9,7 @@
     justify-evenly
     items-center
     h-max
+    relative
   "
 >
   <%# Spacer %>
@@ -69,14 +70,15 @@
         items-center
         absolute
         top-[72px]
-        sm:top-[76px]
-        md:top-[79px]
+        sm:top-[80px]
+        md:top-[87px]
         inset-x-0
         z-20
-        bg-gradient-to-b
-        from-soft
-        via-soft
-        to-inverse/90
+        bg-soft
+        border-t-[1px]
+        border-solid
+        border-middle
+        rounded-b-[4rem]
       "
     >
       <div
@@ -140,6 +142,7 @@
         justify-center
         xl:space-x-8
         text-xl
+        z-20
       "
     >
       <%= link_to t('homebtn'), root_path, class: "link drop-shadow-md" %>
@@ -188,58 +191,53 @@
     </button>
   </section>
 
-  <%# LG+ Profile Section %>
+  <%# LG+ Profile Items %>
   <section
     x-cloak
-    class="hidden lg:flex relative inset-0 justify-center"
+    x-show="largeOpen"
+    @click.outside="largeOpen = false"
+    x-transition:enter="transition duration-300 ease-out"
+    x-transition:enter-start="-translate-x-full opacity-0"
+    x-transition:enter-end="translate-x-0 opacity-100"
+    x-transition:leave="-transition duration-150 ease-in"
+    x-transition:leave-start="translate-x-0 opacity-100"
+    x-transition:leave-end="-translate-x-full opacity-0"
+    class="
+      justify-center
+      items-center
+      absolute
+      top-[95px]
+      inset-x-0
+      hidden
+      lg:flex
+      flex-col
+      z-20
+      pb-8
+      border-t-[1px]
+      border-solid
+      border-middle
+      rounded-b-full
+      bg-soft
+    "
   >
-
-    <%# LG+ Profile Items %>
-    <div class="fixed inset-0 flex justify-center items-center transition z-10">
-      <article
-        @click.outside="largeOpen = false"
-        x-show="largeOpen"
-        x-transition:enter="duration-300 ease-out"
-        x-transition:enter-start="opacity-0 translate-y-8 scale-95"
-        x-transition:enter-end="translate-y-0 opacity-100 scale-100"
-        x-transition:leave="duration-150 ease-in"
-        x-transition:leave-start="-translate-y-0 opacity-100 scale-100"
-        x-transition:leave-end="opacity-0 -translate-y-8 scale-95"
-        aria-labelledby="modal-title"
-        role="dialog"
-        aria-modal="true"
-        class="
-          relative
-          overflow-hidden
-          h-max
-          bg-inverse
-          shadow-xl
-          max-w-md
-          rounded-lg
-          w-full
-          p-8
-          flex
-          flex-col
-          items-center
-          justify-center
-        "
-      >
-        <% if current_user %>
-          <% if current_user.username %>
-            <h3 class="mx-2"><%= current_user.username %></h3>
-          <% else %>
-            <h3 class="mx-2"><%= current_user.email %></h3>
-          <% end %>
-          <%= link_to "Admin", admin_root_path, class: "btn btn-middle w-full" if current_user.admin? %>
-          <%= link_to t('myprofilebtn'), profile_path, class: "btn btn-middle w-full" %>
-          <%= link_to t('favoritebtn'), favourites_path, class: "btn btn-middle w-full" %>
-          <%= button_to t('signoutbtn'), destroy_user_session_path, method: :delete, class: "btn btn-middle w-full" %>
-        <% else %>
-          <%= link_to t('signinbtn'), user_session_path, class: "btn btn-middle w-full" %>
-          <%= link_to t('registerbtn'), new_user_registration_path, method: :get, class: "btn btn-middle w-full" %>
+    <% if current_user %>
+      <h3 class="mt-8 text-inverse underline text-xl">
+          <%= current_user.email %>
+        <% if current_user.username %>
+          <%= current_user.username %>
         <% end %>
-      </article>
+      </h3>
+    <% end %>
+    <div class="flex w-full justify-center space-x-6 my-4">
+      <% if current_user %>
+        <%= link_to "Admin", admin_root_path, class: "btn btn-middle w-48" if current_user.admin? %>
+        <%= link_to t('myprofilebtn'), profile_path, class: "btn btn-middle w-48" %>
+        <%= link_to t('favoritebtn'), favourites_path, class: "btn btn-middle w-48" %>
+        <%= button_to t('signoutbtn'), destroy_user_session_path, method: :delete, class: "btn btn-middle w-48" %>
+      <% else %>
+        <%= link_to t('signinbtn'), user_session_path, class: "btn btn-middle w-48" %>
+        <%= link_to t('registerbtn'), new_user_registration_path, method: :get, class: "btn btn-middle w-48" %>
+      <% end %>
     </div>
   </section>
-
 </header>
