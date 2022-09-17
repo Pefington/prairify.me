@@ -2,11 +2,11 @@
   <% if @local_plants == nil %>
       <% if params[:search]== 'geoloc'%>
         <p>
-          <%=t 'nogeoloc'%>
+          <%=t 'nogeolocsearchpage'%>
         </p>
       <%else%>
         <p>
-          <%=t 'noresultsearch'%>
+          <%=t 'noresultsearchpage'%>
         </p>
       <%end%>
       <%= render 'shared/search_bar'%>
@@ -20,16 +20,16 @@
           <span x-text="selectedCount"></span>
           <%=t 'textsearch2'%>
         </h3>
-        <%= link_to t('addplant'), new_project_path, class:
+        <%= link_to t('addplantsearchpage'), new_project_path, class:
     "btn", params:[@plants] %>
         <div @click="eliminated = false, selected = false, selectedCount = 0">
-          <%= button_to t('resetselect'), reset_selected_plants_path, method:
+          <%= button_to t('resetselectsearchpage'), reset_selected_plants_path, method:
       :post, remote: :true, class: "btn-warning my-8" %>
         </div>
       <% else %>
         <p class="flex flex-col text-2xl sm:flex-row sm:items-center">
           <%= link_to t('joinhomebtn'), new_user_registration_path, class: "btn" %>
-          to start a project!
+          <%=t 'startprojectsearchpage'%>
         </p>
       <% end %>
     </section>
@@ -64,4 +64,6 @@
       <% end %>
     </section>
   <% end %>
+    <button id="to-top-button" title="Go To Top"
+        class=" fixed z-90 bottom-8 right-8 border-0 w-12 h-12 rounded-full drop-shadow-md bg-soft text-white text-3xl font-bold" button x-cloak x-data="{scroll : false}" @scroll.window="document.documentElement.scrollTop > 20 ? scroll = true : scroll = false" x-show="scroll" @click="window.scrollTo({top: 0, behavior: 'smooth'})">&uarr;</button>
 </div>
