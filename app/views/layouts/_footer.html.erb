@@ -4,42 +4,47 @@
     bg-soft
     text-inverse
     w-full
-    pb-4
     flex
-    flex-col
     items-center
     justify-evenly
     z-20
-    "
+    py-4
+  "
 >
-  <%= link_to "Prairify.me", root_path, class: "text-xl font-FjallaOne drop-shadow-md hover:text-vivid mt-4" %>
-  <div class="flex mt-2">
+  <%# Language Switcher %>
+  <section class="flex items-center px-4 pb-1 sm:px-9 text-xs sm:text-sm lg:text-base">
+    <p
+      :class="{ 'text-inverse': locale === 'en', 'text-neutral-light underline underline-offset-4 disabled cursor-default': locale === 'fr' }"
+      @click="locale = 'fr'"
+      transition
+      class="link p-1"
+    >
+      <%= link_to 'FR', locale: 'fr' %>
+    </p>
+    <p class="text-neutral-light">|</p>
+    <p
+      :class="{ 'text-inverse': locale === 'fr', 'text-neutral-light underline underline-offset-4 disabled cursor-default': locale === 'en' }"
+      @click="locale = 'en'"
+      transition
+      class="link p-1"
+    >
+      <%= link_to 'EN', locale: 'en' %>
+    </p>
+  </section>
+
+  <%= link_to "Prairify.me", root_path, class: "text-xl sm:text-2xl lg:text-3xl font-FjallaOne drop-shadow-md hover:text-vivid" %>
+
+  <%# Social Links %>
+  <section class="flex items-center justify-center sm:space-x-6">
     <%= link_to 'https://www.reddit.com/r/NoLawns/top/?t=all', target: :_blank do %>
-      <i class="w-5 h-5 fa-brands fa-reddit fa-lg drop-shadow-md mx-3 hover:text-vivid"></i>
+      <i class="fa-brands fa-reddit fa-lg link"></i>
     <% end %>
-    <%= link_to 'https://www.facebook.com/groups/foodnotlawns.official', target: :_blank, class: "" do %>
-      <i class="w-5 h-5 fa-brands fa-facebook fa-lg drop-shadow-md mx-3 hover:text-vivid"></i>
+    <%= link_to 'https://www.facebook.com/groups/foodnotlawns.official', target: :_blank do %>
+      <i class="fa-brands fa-facebook fa-lg link"></i>
     <% end %>
-    <%= link_to 'https://github.com/Pefington/prairify.me.git', target: :_blank, class: "" do %>
-      <i class="w-5 h-5 fa-brands fa-github fa-lg drop-shadow-md mx-3 hover:text-vivid"></i>
+    <%= link_to 'https://github.com/Pefington/prairify.me.git', target: :_blank do %>
+      <i class="fa-brands fa-github fa-lg link"></i>
     <% end %>
-  </div>
-  <div
-    x-cloak
-    x-show="locale === 'en'"
-    @click="locale = 'fr'"
-    transition
-    class="link text-sm"
-  >
-    <%= link_to 'Site en Français', locale: 'fr' %>
-  </div>
-  <div
-    x-cloak
-    x-show="locale === 'fr'"
-    @click="locale = 'en'"
-    transition
-    class="link text-sm"
-  >
-    <%= link_to 'Site in English', locale: 'en' %>
-  </div>
+  </section>
+
 </footer>
