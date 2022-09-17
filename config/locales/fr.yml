@@ -166,6 +166,7 @@ fr:
   addplant: "Ajoutez-les à un nouveau projet !"
   resetselect: "Réinitialiser la sélection"
   moreplant: "Plus à propos de %{plant}"
+  startpsearch: "pour démarrer un projet"
 
 #COMMENT
   commentcontent: "Commentaire :"

@@ -197,6 +197,7 @@ en:
   addplant: "Add them to a new project!"
   resetselect: "Reset selection"
   moreplant: "More about %{plant}"
+  startpsearch: "to start a project!"
 
 #COMMENT
   commentcontent: "Comment:"
