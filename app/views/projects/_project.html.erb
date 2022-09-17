@@ -62,24 +62,24 @@
             class="flex absolute bottom-0 right-0 mr-2"
           >
             <div x-cloak x-show="liked" @click="liked = !liked, likesCount--">
-              <%= button_to like_path(project), method: :delete, class:"bg-blue-500 text-inverse text-sm active:bg-blue-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-blue-400 focus:outline-none ease-linear transition-all duration-150", remote: :true do %>
+              <%= button_to like_path(project), method: :delete, class:"bg-blue-500 text-inverse text-sm active:bg-blue-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-blue-400 focus:outline-none ease-linear transition-all", remote: :true do %>
                 <i class="fa-solid fa-thumbs-up"></i>
                 <span x-text="likesCount"></span>
               <% end %>
             </div>
             <div x-cloak x-show="!liked" transition @click="liked = !liked, likesCount++">
-              <%= button_to likes_path, method: :post, params: {project_id: project}, class:"bg-neutral-light text-inverse text-sm active:bg-neutral-light uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-blue-400 outline-none focus:outline-none ease-linear transition-all duration-150",remote: :true do %>
+              <%= button_to likes_path, method: :post, params: {project_id: project}, class:"bg-neutral-light text-inverse text-sm active:bg-neutral-light uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-blue-400 outline-none focus:outline-none ease-linear transition-all",remote: :true do %>
                 <i class="fa-solid fa-thumbs-up"></i>
                 <span x-text="likesCount"></span>
               <% end %>
             </div>
             <div x-cloak x-show="favourited" transition @click="favourited = !favourited">
-              <%= button_to favourite_path(project), method: :delete, class:"bg-pink-500 text-inverse text-sm active:bg-pink-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-pink-400 focus:outline-none ease-linear transition-all duration-150",remote: :true do %>
+              <%= button_to favourite_path(project), method: :delete, class:"bg-pink-500 text-inverse text-sm active:bg-pink-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-pink-400 focus:outline-none ease-linear transition-all",remote: :true do %>
                 <i class="fas fa-heart"></i>
               <% end %>
             </div>
             <div x-cloak x-show="!favourited" transition @click="favourited = !favourited">
-              <%= button_to favourites_path, method: :post, params: {project_id: project}, class:"bg-neutral-light text-inverse text-sm active:bg-neutral-ligth uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-pink-400 focus:outline-none outline-none ease-linear transition-all duration-150",remote: :true do %>
+              <%= button_to favourites_path, method: :post, params: {project_id: project}, class:"bg-neutral-light text-inverse text-sm active:bg-neutral-ligth uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-pink-400 focus:outline-none outline-none ease-linear transition-all",remote: :true do %>
                 <i class="fas fa-heart"></i>
               <% end %>
             </div>
