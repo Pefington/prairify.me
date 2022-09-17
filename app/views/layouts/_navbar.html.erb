@@ -59,7 +59,7 @@
       </section>
 
       <%# Hamburger Button %>
-      <div class="flex lg:hidden" x-cloak>
+      <div class="flex lg:hidden" x-cloak @keyup.space="isOpen = !isOpen" >
         <button type="button" class="link" aria-label="toggle menu">
           <svg
             @click="isOpen = true"

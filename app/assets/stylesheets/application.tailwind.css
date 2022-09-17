@@ -33,7 +33,7 @@
   }
   ,
   .btn {
-    @apply rounded-md px-4 py-2 text-center capitalize shadow-md;
+    @apply rounded-md px-4 py-2 text-center capitalize shadow-md cursor-pointer;
   }
   ,
   .btn-vivid {
