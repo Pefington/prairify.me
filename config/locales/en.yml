@@ -99,7 +99,7 @@ en:
 #SIGN_UP
   signup: "Sign Up"
   signin: "Sign In"
-  signor: "or sign with"
+  signor: "or"
   alre: "Already have an account?"
   alre1: "Don't have an account yet?"
   forgo: "Forgot your password?"
