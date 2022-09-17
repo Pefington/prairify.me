@@ -1,5 +1,8 @@
 fr:
+
+
 #NAVBAR_BTN
+
   homebtn: "Accueil"
   aboutbtn: "A propos"
   teambtn: "Equipe"
@@ -12,15 +15,17 @@ fr:
   myprofilebtn: "Mon Profil"
 
 #HOMEPAGE
-  title: "Veux tu faire tes premiers pas dans un monde meilleur ? "
-  subject: "Nous allons vous aider a changer votre gazon en une parfaite prairie favorable à la biodiversité"
+
+  title: "Veux-tu faire tes premiers pas dans un monde meilleur ? "
+  subject: "Nous allons vous aider à changer votre gazon en une parfaite prairie favorable à la biodiversité"
   paragraph: "Regardez quelles espèces de plantes vous pourriez cultiver là où vous habitez !"
   our: "Les"
-  projec: "de nos jardiniers en herbe"
+  homesubject: "de nos jardiniers en herbe"
   joinhomebtn: "Rejoignez-nous"
   budding: "projets"
 
 #TEAMPAGE
+
   teamp: "La merveilleuse équipe sans laquelle ce projet n'aurait pas pu aboutir."
   titlep: "L'Equipe Prairify "
   
@@ -55,15 +60,16 @@ fr:
   createprojectbtn: "Créer un projet"
   updatenewbtn: "Nouvel état d'avancement"
   projectdestroybtn: "Detruire ce projet"
+
 #ABOUTPAGE
 
   goal: "Notre"
   goal1: "But?"
-  help: "Aidez la planète"
+  help: "Aider la planète"
   share: "Partager des idées innovantes"
   tip: "Conseils"
   help1: "Ammener votre pierre à l'édifice dans cette transition écologique, en vous informant sur les plantes effectives de vos régions"
-  share1: "Nous partageons les projets de la communauté afin de vous aider a construire de magnifiques jardins"
+  share1: "Nous partageons les projets de la communauté afin de vous aider à construire de magnifiques jardins"
   tip1: "De nombreux conseils sur la mise en oeuvre et l'entretient de vos espaces verts "
 
 #SIGN_UP
@@ -80,21 +86,18 @@ fr:
   contacttitle1: "Contactez nous pour"
   contacttitle2: "Plus d'informations"
   followcontact: "Suivez-nous"
-  titlec: "Que veux-tu nous demander ?"
-  namec: "Nom complet"
-  emailc: "Adresse e-mail"
-  btncontact: "Entrer en contact"
+  
 
 #FAVORITES_PAGE
-  ftitle: "Vous trouverez ici tous vos projets favoris :"
-  fsubject: "Vous n'avez actuellement aucun(s) favori(s)..."
-  fparagraph: "Inspirez-vous en parcourant nos différents projets !"
-  ftitle1: "FAVORIS"
-  subjectf:  "Vous n'avez actuellement aucun(s) favori(s)..."
-  paraf: "Inspirez-vous en parcourant nos différents projets !"
+
+  favouritetitle: "Vous trouverez ici tous vos projets favoris :"
+  favouritetitle1: "FAVORIS"
+  favouritesubject:  "Vous n'avez actuellement aucun(s) favori(s)..."
+  favouriteparagraph: "Inspirez-vous en parcourant nos différents projets !"
   btnshowproject: "Voir les projets"
 
 #PROFILE_PAGE
+
   profiltitle: "Mon Profil"
   nameprofil: "Pseudonyme"
   emailprofil: "Adresse e-mail"
@@ -103,6 +106,7 @@ fr:
   btnprofil: "Editer"
 
 #ADMIN
+
   num1: "Nombre d'utilisateur(s) enregistré(s) quotidiennement"
   num2: "Nombre de projet(s) enregistré(s) quotidiennement"
   tyl: "Dernier(s) Utilisateur(s) Enregistré(s)"
@@ -159,19 +163,23 @@ fr:
   holdername: "Nom d'utilisateur"
   
 #SEARCH_PAGE
-  noresultsearch: "Aucun résultat. Vous pouvez essayer une zone plus large (arrondissement, comté, département...)"
-  nogeoloc: "Nous n'avons pas pu vous géolocaliser. Essayez plutôt de nous écrire où vous vivez:"
+
+  noresultsearchpage: "Aucun résultat. Vous pouvez essayer une zone plus large (arrondissement, comté, département...)"
+  nogeolocsearchpage: "Nous n'avons pas pu vous géolocaliser. Essayez plutôt de nous écrire où vous vivez:"
   textsearch1: "Resultat(s) pour"
   textsearch2: "sur 12 plantes sélectionnées."
-  addplant: "Ajoutez-les à un nouveau projet !"
-  resetselect: "Réinitialiser la sélection"
-  moreplant: "Plus à propos de %{plant}"
+  addplantsearchpage: "Ajoutez-les à un nouveau projet !"
+  resetselectsearchpage: "Réinitialiser la sélection"
+  wikiplantsearchpage: "Plus à propos de %{plant}"
+  startprojectsearchpage: "pour démarrer un projet"
 
 #COMMENT
+
   commentcontent: "Commentaire :"
   commentbtn: "Ajouter un commentaire"
 
 #NEWCOMMENT
+
   commenttitle: "Nouveau commentaire"
   holdercomment: "Commentaire"
   btnbackppro: "Retour au projet"

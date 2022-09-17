@@ -45,3 +45,5 @@
 <section class="p-5 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 h-min">
     <%= render @projects %>
 </section>
+<button id="to-top-button" title="Go To Top"
+        class=" fixed z-90 bottom-8 right-8 border-0 w-12 h-12 rounded-full drop-shadow-md bg-soft text-white text-3xl font-bold" button x-cloak x-data="{scroll : false}" @scroll.window="document.documentElement.scrollTop > 20 ? scroll = true : scroll = false" x-show="scroll" @click="window.scrollTo({top: 0, behavior: 'smooth'})">&uarr;</button>
