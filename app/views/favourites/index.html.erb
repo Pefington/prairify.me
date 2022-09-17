@@ -1,12 +1,12 @@
 <section class="w-full md:w-2/3 flex flex-col text-center">
-  <h1 class="mt-4 font-bold text-4xl text-center"><%=t 'ftitle1'%></h1>
+  <h1 class="mt-4 font-bold text-4xl text-center"><%=t 'favouritetitle1'%></h1>
   <hr class="mx-4 my-8">
-  <p class="text-center my-8"><%=t 'ftitle'%></p>
+  <p class="text-center my-8"><%=t 'favouritetitle'%></p>
 
   <% if @projects.empty? %>
     <section class="bg-inverse rounded-lg shadow-lg m-4">
-      <p><%=t 'subjectf'%></p><br>
-      <h2><%=t 'paraf'%></h2><br>
+      <p><%=t 'favouritesubject'%></p><br>
+      <h2><%=t 'favouriteparagraph'%></h2><br>
       <%= button_to t('btnshowproject'), projects_path, method: :get, class:'btn' %>
     </section>
   <% else %>
