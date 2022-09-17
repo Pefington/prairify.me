@@ -5,7 +5,7 @@ object-cover object-center", alt: "A field photography of
 <% end %>
 <div
   class="
-    text-skin-base
+
     flex
     w-full
     flex-col
@@ -25,8 +25,8 @@ object-cover object-center", alt: "A field photography of
   <p>-</p>
   <p class="font-semibold"><%= @plant[:scientific_name] %></p>
 </div>
-<%= link_to t('moreplant', plant: @plant[:scientific_name]), @plant[:wiki], target: :_blank, class:
-"btn-muted text-center mt-0" %>
+<%= link_to t('moreplant', plant: @plant[:scientific_name]), @plant[:wiki], class:
+"btn btn-soft text-center mt-0" %>
 <% if current_user %>
   <div class="flex w-full items-center justify-center py-4">
     <%= button_to selected_plants_path,action: :create, params: {inaturalist_id:
@@ -46,9 +46,9 @@ object-cover object-center", alt: "A field photography of
           items-center
           justify-center
           rounded-md
-          text-emerald-600
-          hover:cursor-pointer
-          hover:ring
+          text-soft
+
+
         "
       ></i>
     <% end %>
@@ -68,9 +68,9 @@ object-cover object-center", alt: "A field photography of
           items-center
           justify-center
           rounded-md
-          text-emerald-600
-          hover:cursor-pointer
-          hover:ring
+          text-soft
+
+
         "
       ></i>
     <% end %>
@@ -89,9 +89,9 @@ object-cover object-center", alt: "A field photography of
         items-center
         justify-center
         rounded-md
-        text-red-600/75
-        hover:cursor-pointer
-        hover:ring
+        text-error/75
+
+
       "
     ></i>
   </div>

@@ -2,7 +2,7 @@
   <div class="mx-8 mt-8 rounded-lg bg-white p-4 shadow sm:p-6 xl:p-8">
     <div>
       <h2 class="mb-2 text-xl font-bold text-gray-900"><%=t'searcc'%></h2>
-      <span class="text-base text-gray-500"><%=t'searcc1'%></span>
+      <span class="text-vividtext-gray-500"><%=t'searcc1'%></span>
     </div>
     <div class="flex flex-col items-center justify-start">
       <%= search_form_for @q, url: :admin_comments, class: "w-full flex flex-col
@@ -28,7 +28,7 @@
         <div class="mt-4 flex flex-row">
           <%= f.submit class: "lg:ml-4 mr-2 px-8 py-3 rounded-md bg-[#0092E4]
         text-white cursor-pointer" %>
-          <%= link_to "Clear", request.path, class:
+          <%= link_to "Clear", request.path, class:"btn"
         "px-8 py-3 rounded-md bg-gray-400 text-white" %>
         </div>
       <% end %>
@@ -39,7 +39,7 @@
       <div class="mb-4 flex items-center justify-between">
         <div>
           <h3 class="mb-2 text-xl font-bold text-gray-900"><%=t'allco'%></h3>
-          <span class="text-base font-normal text-gray-500"><%=t'allco1'%></span>
+          <span class="text-vividfont-normal text-gray-500"><%=t'allco1'%></span>
         </div>
       </div>
       <div class="mt-8 flex flex-col">
@@ -58,8 +58,7 @@
                         font-medium
                         uppercase
                         tracking-wider
-                        text-gray-500
-                      "
+                        text-gray-500"
                     >
                       ID
                     </th>
@@ -73,8 +72,7 @@
                         font-medium
                         uppercase
                         tracking-wider
-                        text-gray-500
-                      "
+                        text-gray-500"
                     >
                       <%=t'contento'%>
                     </th>
@@ -87,8 +85,7 @@
                         font-medium
                         uppercase
                         tracking-wider
-                        text-gray-500
-                      "
+                        text-gray-500"
                     >
                       <%=t'posteon'%>
                     </th>
@@ -101,8 +98,7 @@
                         font-medium
                         uppercase
                         tracking-wider
-                        text-gray-500
-                      "
+                        text-gray-500"
                     >
                       <%=t'postby'%>
                     </th>
@@ -115,8 +111,7 @@
                         font-medium
                         uppercase
                         tracking-wider
-                        text-gray-500
-                      "
+                        text-gray-500"
                     >
                       Manage
                     </th>
@@ -145,15 +140,11 @@
                           pl-1
                           text-sm
                           font-semibold
-                          text-gray-900
-                        "
+                          text-gray-900"
                       >
                         <%= link_to edit_admin_comment_path(comment.id), class:
                       "flex items-center px-4 py-2 mt-2 text-gray-600
-                      transition-colors duration-300 transform rounded-md
-                      dark:text-gray-400 hover:bg-gray-200
-                      dark:hover:bg-gray-700 dark:hover:text-gray-200
-                      hover:text-gray-700" do %>
+                      transition-colors duration-300 transform rounded-md " do %>
                           <svg
                             class="h-5 w-5"
                             viewBox="0 0 24 24"
@@ -170,9 +161,7 @@
                       method: :delete, form: { data: { 'turbo-confirm': 'Are you
                       sure?' } }, class: "w-full flex items-center px-4 py-2
                       mt-2 text-gray-600 transition-colors duration-300
-                      transform rounded-md dark:text-gray-400 hover:bg-gray-200
-                      dark:hover:bg-gray-700 dark:hover:text-gray-200
-                      hover:text-gray-700" do %>
+                      transform rounded-md " do %>
                           <svg
                             class="h-5 w-5"
                             viewBox="0 0 24 24"

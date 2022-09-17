@@ -29,11 +29,11 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/I18n.html.
 
-en: 
+en:
 
 #NAVBAR_BTN
   homebtn: "Home"
-  aboutbtn: "A propos"
+  aboutbtn: "About"
   teambtn: "Team"
   contactbtn: "Contact"
   projectbtn: "Projects"
@@ -42,14 +42,14 @@ en:
   signoutbtn: "Sign Out"
   favoritebtn: "My Favourites"
   myprofilebtn: "My Profile"
-  
+
 #HOMEPAGE
   title: "You want to make your first step to a better world?"
   subject: " We can help you change your purely decorative piece of grass into a very
         useful meadow welcoming a diversified fauna and flora!"
   paragraph: "Look what plant species you could grow where you live!"
   our: "Our"
-  budding: "budding gardeners" 
+  budding: "budding gardeners"
   projec: "projects"
   joinhomebtn: "Join us"
 #TEAMPAGE
@@ -177,7 +177,7 @@ en:
   postby: "posted by"
   modic: "Edit Comment"
   posteon: "posted on"
-  
+
 #REGISTRATION_PAGE
 
   holdermail: "Email adress"
@@ -206,4 +206,3 @@ en:
   commenttitle: "New comment"
   holdercomment: "Comment"
   btnbackppro: "Back to the project"
-

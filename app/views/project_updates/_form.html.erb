@@ -2,7 +2,7 @@
   <% if project_update.errors.any? %>
     <div
       id="error_explanation"
-      class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3"
+      class="bg-inverse text-error px-3 py-2 font-medium rounded-lg mt-3"
     >
       <h2><%= pluralize(project_update.errors.count, "error") %>
         prohibited this project_update from being saved:</h2>
@@ -17,7 +17,7 @@
 
   <section
     class="
-      bg-white
+      bg-inverse
       w-5/6
       md:w-full
       max-w-md
@@ -41,7 +41,7 @@
     <div class="relative flex items-center mt-4">
       <h3 class="mr-3"><%=t'dscpr'%></h3>
       <%= form.label :photo, class:"hidden" %>
-      <%= form.file_field :photo, class: "form-field indent-0 text-gray-500" %>
+      <%= form.file_field :photo, class: "form-field indent-0 text-neutral-light" %>
     </div>
 
     <div class="relative flex justify-center mt-4">
