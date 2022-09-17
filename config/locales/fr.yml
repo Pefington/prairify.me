@@ -16,8 +16,8 @@ fr:
 
 #HOMEPAGE
 
-  title: "Veux tu faire tes premiers pas dans un monde meilleur ? "
-  subject: "Nous allons vous aider a changer votre gazon en une parfaite prairie favorable à la biodiversité"
+  title: "Veux-tu faire tes premiers pas dans un monde meilleur ? "
+  subject: "Nous allons vous aider à changer votre gazon en une parfaite prairie favorable à la biodiversité"
   paragraph: "Regardez quelles espèces de plantes vous pourriez cultiver là où vous habitez !"
   our: "Les"
   homesubject: "de nos jardiniers en herbe"
@@ -65,18 +65,18 @@ fr:
 
   goal: "Notre"
   goal1: "But?"
-  help: "Aidez la planète"
+  help: "Aider la planète"
   share: "Partager des idées innovantes"
   tip: "Conseils"
   help1: "Ammener votre pierre à l'édifice dans cette transition écologique, en vous informant sur les plantes effectives de vos régions"
-  share1: "Nous partageons les projets de la communauté afin de vous aider a construire de magnifiques jardins"
+  share1: "Nous partageons les projets de la communauté afin de vous aider à construire de magnifiques jardins"
   tip1: "De nombreux conseils sur la mise en oeuvre et l'entretient de vos espaces verts "
 
 #SIGN_UP
 
   signup: "Inscription"
   signin: "Connecte-toi"
-  signor: "ou connecte toi avec"
+  signor: "Ou connecte toi avec"
   alre: "Tu as déjà un compte chez nous?"
   alre1: "Tu n'as pas encore de compte chez nous?"
   forgo: "Tu as oublié ton mot de passe?"
