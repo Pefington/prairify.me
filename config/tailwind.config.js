@@ -10,8 +10,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        FjallaOne: ["Fjalla One", ...defaultTheme.fontFamily.sans],
-        Cantarell: ["Cantarell", ...defaultTheme.fontFamily.sans],
+        fjalla: ["Fjalla One", ...defaultTheme.fontFamily.sans],
+        dosis: ["Dosis", ...defaultTheme.fontFamily.sans],
+        quicksand: ["Quicksand", ...defaultTheme.fontFamily.sans],
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
@@ -22,6 +23,7 @@ module.exports = {
           light: "#585d65",
           dark: "#333339",
         },
+        card: "#f7f7f3",
         vivid: "#12433c",
         middle: "#086",
         soft: "#3ea57a",

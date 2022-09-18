@@ -12,7 +12,7 @@
   }
 
   html {
-    @apply text-neutral-light font-Cantarell;
+    @apply text-neutral-light font-quicksand font-medium;
   }
 
   h1,
@@ -21,7 +21,7 @@
   h4,
   h5,
   h6 {
-    @apply font-FjallaOne text-soft drop-shadow;
+    @apply font-fjalla text-soft drop-shadow font-normal;
   }
 }
 
