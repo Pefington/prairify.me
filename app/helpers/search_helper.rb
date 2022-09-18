@@ -3,7 +3,7 @@ module SearchHelper
   # We first try to get data by giving the argument that we are looking for a place
   # but we then try to expand the search to all of iNaturalist database to make sure
   # we didn't miss a less known place.
-  # This method then calls get_place_name_and_id_from_inat in order to get 
+  # This method then calls get_place_name_and_id_from_inat in order to get
   # the id and the right name according to iNaturalist.
   def get_place_with_name(place)
     place_record = nil
@@ -38,13 +38,13 @@ module SearchHelper
     nil
   end
 
-  # Gets the different plants that were recorded in a specific place on iNaturalist. 
-  # This method needs an iNaturalist place id in order to work. This is provided by 
+  # Gets the different plants that were recorded in a specific place on iNaturalist.
+  # This method needs an iNaturalist place id in order to work. This is provided by
   # the method get_place_with_name or get_place_with_loc
   def get_taxa_from_place_id(place_id)
     return nil if place_id.nil?
 
-    obs_url = "https://api.inaturalist.org/v1/observations/species_counts?identified=true&taxon_is_active=true&place_id=#{place_id}&iconic_taxa=Plantae&identifications=most_agree"
+    obs_url = "https://api.inaturalist.org/v1/observations/species_counts?identified=true&taxon_is_active=true&place_id=#{place_id}&iconic_taxa=Plantae&identifications=most_agree&locale=#{I18n.locale}"
     return nil if HTTParty.get(obs_url)['error'] == 'Error'
 
     observations = HTTParty.get(obs_url)['results']
@@ -97,7 +97,7 @@ module SearchHelper
   # Gets the more precise location that iNaturalist could find by giving it coords.
   # Sometimes the results can be found in 'standard' and sometimes in 'community', that's
   # why this method tries to fetch data in both these places.
-  # This method then calls get_place_name_and_id_from_inat in order to get 
+  # This method then calls get_place_name_and_id_from_inat in order to get
   # the id and the right name according to iNaturalist.
   def get_place_with_loc(coord)
     long = coord.split(',')[0]
@@ -111,8 +111,8 @@ module SearchHelper
     get_place_name_and_id_from_inat(place_record)
   end
 
-  # Transform a query into a usable piece of url. 
-  # Spaces, special characters and so on have a unique way of being handled by browsers 
+  # Transform a query into a usable piece of url.
+  # Spaces, special characters and so on have a unique way of being handled by browsers
   # and we need to tranforme them in a readable string.
   def usable_url(str)
     str = I18n.transliterate(str.strip.squish)
