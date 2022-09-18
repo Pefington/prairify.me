@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Fjalla+One&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,11 +8,11 @@
 
 @layer base {
   * {
-    @apply transition-all duration-300 ease-in-out focus:outline-none;
+    @apply transition-all duration-300 ease-in-out focus:outline-none border-none;
   }
 
   html {
-    @apply font-Cantarell text-neutral-light;
+    @apply text-neutral-light font-Cantarell;
   }
 
   h1,
@@ -29,11 +27,11 @@
 
 @layer components {
   .link {
-    @apply hover:text-vivid focus:bg-middle focus:text-inverse cursor-pointer rounded-md px-3 py-2 drop-shadow-md;
+    @apply hover:text-vivid focus:bg-middle focus:text-inverse cursor-pointer rounded-md px-2 py-1 drop-shadow-md;
   }
   ,
   .btn {
-    @apply rounded-md px-4 py-2 text-center capitalize shadow-md;
+    @apply cursor-pointer rounded-md px-3 py-2 text-center capitalize shadow-md drop-shadow-md;
   }
   ,
   .btn-vivid {
@@ -47,10 +45,12 @@
   .btn-middle:hover,
   .btn-middle:focus {
     @apply bg-vivid;
-  },
+  }
+  ,
   .btn-inverse {
     @apply bg-inverse text-neutral-light;
-  },
+  }
+  ,
   .btn-inverse:hover {
     @apply bg-middle/80 text-inverse;
   }
