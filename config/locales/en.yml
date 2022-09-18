@@ -107,6 +107,12 @@ en:
   projectprofil: "Project(s)"
   btnprofil: "Edit"
 
+# EDIT_PROFILE
+
+  psswd: "Current password"
+  newpsswd: "New password"
+  confnewpsswd: "Confirm new password"
+
 #ADMIN
 
   num1: "Number of Daily Registered Users"
@@ -184,3 +190,13 @@ en:
   commenttitle: "New comment"
   holdercomment: "Comment (from 2 to 150 characters) "
   btnbackppro: "Back to the project"
+
+#FORMS
+
+  required: "Required"
+  minchar: "characters minimum"
+  maxchar: "characters maximum"
+  fgtpsswd: "Forgot your password?"
+  changepsswd: "Change my password"
+  resetpsswd: "Resest my password"
+  back: "Back"

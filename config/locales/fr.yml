@@ -105,6 +105,12 @@ fr:
   projectprofil: "Projet(s)"
   btnprofil: "Editer"
 
+# EDIT_PROFILE
+
+  psswd: "Mot de passe actuel"
+  newpsswd: "Nouveau mot de passe"
+  confnewpsswd: "Confirmer nouveau mot de passe"
+
 #ADMIN
 
   num1: "Nombre d'utilisateur(s) enregistré(s) quotidiennement"
@@ -183,3 +189,13 @@ fr:
   commenttitle: "Nouveau commentaire"
   holdercomment: "Commentaire (de 2 à 150 caractères)"
   btnbackppro: "Retour au projet"
+
+#FORMS
+
+  required: "Obligatoire"
+  minchar: "caractères minimum"
+  maxchar: "caractères maximum"
+  fgtpsswd: "Mot de passe oublié?"
+  changepsswd: "Changer mon mot de passe"
+  resetpsswd: "Réinitialiser mon mot de passe"
+  back: "Retour"
