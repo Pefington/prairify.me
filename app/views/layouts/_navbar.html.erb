@@ -24,7 +24,7 @@
   <% end %>
 
   <%# Prairify.me %>
-  <%= link_to "Prairify.me", root_path, class: "font-FjallaOne text-2xl sm:text-3xl lg:text-4xl link z-20" %>
+  <%= link_to "Prairify.me", root_path, class: "font-fjalla text-2xl sm:text-3xl lg:text-4xl link z-20" %>
 
   <%# SM- NAV %>
   <nav x-data="{ smallOpen: false }" x-cloak class="lg:hidden">
@@ -78,7 +78,10 @@
         inset-x-0
         z-20
         bg-soft
-        rounded-b-[4rem]
+        min-h-[780px]
+        h-[calc(100vh-73px)]
+        sm:h-[calc(100vh-81px)]
+        md:h-[calc(100vh-88px)]
       "
     >
       <div
@@ -212,7 +215,7 @@
       lg:flex
       flex-col
       z-20
-      pb-8
+      pb-4
       rounded-b-full
       bg-soft
       border-b-2
@@ -221,11 +224,13 @@
     "
   >
     <% if current_user %>
-      <h3 class="mt-8 text-inverse underline text-xl">
-        <%= current_user.email %>
         <% if current_user.username %>
-          <%= current_user.username %>
+          <h3 class="mt-4 text-inverse text-2xl">
+            <%= current_user.username %>
+          </h3>
         <% end %>
+      <h3 class="mt-4 mb-2 text-inverse text-lg">
+        <%= current_user.email %>
       </h3>
     <% end %>
     <div class="flex w-full justify-center space-x-6 my-4">
