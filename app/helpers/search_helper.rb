@@ -1,5 +1,5 @@
 module SearchHelper
-  def get_place(place)
+  def get_place_with_name(place)
     place_record = nil
     place_url = "https://api.inaturalist.org/v1/search?q=#{place}&sources=places"
     if (HTTParty.get(place_url)['total_results']).zero?
@@ -9,26 +9,28 @@ module SearchHelper
           place_record = result['record'] if result['record']['slug'].start_with?(place)
           break if result['record']['slug'].start_with?(place)
         end
-        place_name = find_place_name_in_inat(place_record) unless place_record.nil?
-        place_id = place_record['id'] unless place_record.nil?
-        return [place_name, place_id] if !place_id.nil? && !place_name.nil?
-
-        nil
+        get_place_name_and_id_from_inat(place_record)
       end
     else
       HTTParty.get(place_url)['results'].each_with_index do |result, _index|
         place_record = result['record'] if result['record']['slug'].start_with?(place)
         break if result['record']['slug'].start_with?(place)
       end
-      place_name = find_place_name_in_inat(place_record) unless place_record.nil?
-      place_id = place_record['id'] unless place_record.nil?
-      return [place_name, place_id] if !place_id.nil? && !place_name.nil?
-
-      nil
+      get_place_name_and_id_from_inat(place_record)
     end
   end
 
-  def get_data(place_id)
+  def get_place_name_and_id_from_inat(place_record)
+    return nil if place_record.nil?
+
+    place_name = find_place_name_in_inat(place_record)
+    place_id = place_record['id']
+    return [place_name, place_id] if !place_id.nil? && !place_name.nil?
+
+    nil
+  end
+
+  def get_taxa_from_place_id(place_id)
     return nil if place_id.nil?
 
     obs_url = "https://api.inaturalist.org/v1/observations/species_counts?identified=true&taxon_is_active=true&place_id=#{place_id}&iconic_taxa=Plantae&identifications=most_agree"
