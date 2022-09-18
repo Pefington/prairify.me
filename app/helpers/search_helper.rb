@@ -1,4 +1,10 @@
 module SearchHelper
+  # Fetches the data of iNaturalist by giving it the name of a place.
+  # We first try to get data by giving the argument that we are looking for a place
+  # but we then try to expand the search to all of iNaturalist database to make sure
+  # we didn't miss a less known place.
+  # This method then calls get_place_name_and_id_from_inat in order to get 
+  # the id and the right name according to iNaturalist.
   def get_place_with_name(place)
     place_record = nil
     place_url = "https://api.inaturalist.org/v1/search?q=#{place}&sources=places"
@@ -20,6 +26,8 @@ module SearchHelper
     end
   end
 
+  # Gets the id and name of a place in iNaturalist once we know if we're looking
+  # in the places of iNaturalist or in all of its databases.
   def get_place_name_and_id_from_inat(place_record)
     return nil if place_record.nil?
 
@@ -30,6 +38,9 @@ module SearchHelper
     nil
   end
 
+  # Gets the different plants that were recorded in a specific place on iNaturalist. 
+  # This method needs an iNaturalist place id in order to work. This is provided by 
+  # the method get_place_with_name or get_place_with_loc
   def get_taxa_from_place_id(place_id)
     return nil if place_id.nil?
 
@@ -56,6 +67,9 @@ module SearchHelper
     results
   end
 
+  # Gets the name that iNaturalist gives to a place. There are different iNaturalist fields that could
+  # give us the answer we are looking for so this method looks into all these fields one after the other
+  # and stops once one of the field is not empty.
   def find_place_name_in_inat(place_record)
     if !place_record['matches'].nil?
       place_record['matches'].join(' ')
@@ -80,20 +94,26 @@ module SearchHelper
     end
   end
 
+  # Gets the more precise location that iNaturalist could find by giving it coords.
+  # Sometimes the results can be found in 'standard' and sometimes in 'community', that's
+  # why this method tries to fetch data in both these places.
+  # This method then calls get_place_name_and_id_from_inat in order to get 
+  # the id and the right name according to iNaturalist.
   def get_place_with_loc(coord)
     long = coord.split(',')[0]
     lat = coord.split(',')[1]
     place_url = "https://api.inaturalist.org/v1/places/nearby?nelat=#{long}&nelng=#{lat}&swlat=#{long}&swlng=#{lat}"
     if !HTTParty.get(place_url)['results']['community'].last.nil?
-      inat_result = HTTParty.get(place_url)['results']['community'].last
+      place_record = HTTParty.get(place_url)['results']['community'].last
     elsif !HTTParty.get(place_url)['results']['standard'].last.nil?
-      inat_result = HTTParty.get(place_url)['results']['standard'].last
+      place_record = HTTParty.get(place_url)['results']['standard'].last
     end
-    place_name = find_place_name_in_inat(inat_result)
-    place_id = inat_result['id']
-    [place_name, place_id] if !place_id.nil? && !place_name.nil?
+    get_place_name_and_id_from_inat(place_record)
   end
 
+  # Transform a query into a usable piece of url. 
+  # Spaces, special characters and so on have a unique way of being handled by browsers 
+  # and we need to tranforme them in a readable string.
   def usable_url(str)
     str = I18n.transliterate(str.strip.squish)
     str.gsub(/[!@%&"]/, '').gsub(' ', '-').gsub("'", '-').downcase
