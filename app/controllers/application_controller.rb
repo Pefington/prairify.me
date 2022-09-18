@@ -13,6 +13,14 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def after_sign_in_path_for(resource)
+    if resource.role == 'admin'
+      admin_root_path
+    else
+      root_path
+    end
+  end
+
   def default_url_options
     { locale: I18n.locale }
   end
