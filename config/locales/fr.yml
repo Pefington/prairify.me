@@ -28,7 +28,7 @@ fr:
 
   teamp: "La merveilleuse équipe sans laquelle ce projet n'aurait pas pu aboutir."
   titlep: "L'Equipe Prairify "
-  
+
 #PROJECT_PAGES
 
   post: "Postée le :"
@@ -86,7 +86,7 @@ fr:
   contacttitle1: "Contactez nous pour"
   contacttitle2: "Plus d'informations"
   followcontact: "Suivez-nous"
-  
+
 
 #FAVORITES_PAGE
 
@@ -161,7 +161,7 @@ fr:
   signupbtn: "S'inscrire"
   clickhere: "Cliquez ici"
   holdername: "Nom d'utilisateur"
-  
+
 #SEARCH_PAGE
 
   noresultsearchpage: "Aucun résultat. Vous pouvez essayer une zone plus large (arrondissement, comté, département...)"
@@ -170,7 +170,7 @@ fr:
   textsearch2: "sur 12 plantes sélectionnées."
   addplantsearchpage: "Ajoutez-les à un nouveau projet !"
   resetselectsearchpage: "Réinitialiser la sélection"
-  wikiplantsearchpage: "Plus à propos de %{plant}"
+  wikiplantsearchpage: "Wikipedia"
   startprojectsearchpage: "pour démarrer un projet"
 
 #COMMENT

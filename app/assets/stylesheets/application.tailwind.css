@@ -35,7 +35,7 @@
   }
   ,
   .btn-vivid {
-    @apply bg-vivid text-inverse;0
+    @apply bg-vivid text-inverse;
   }
   ,
   .btn-middle {

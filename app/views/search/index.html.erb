@@ -44,20 +44,8 @@
           x-transition.duration.500ms
           x-cloak
           x-show="!eliminated"
-          class="
-            mb-12
-            flex
-            w-full
-            max-w-sm
-            flex-col
-            items-center
-            rounded-lg
-            bg-inverse
-            pb-4
-            shadow-lg
-            sm:mx-4
-          "
-        >
+          class="card max-w-sm w-full flex-col items-center"
+          >
           <% @plant = plant %>
           <%= render 'shared/plant' %>
         </article>
