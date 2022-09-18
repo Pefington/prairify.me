@@ -10,7 +10,7 @@
         <div class="mt-4 flex flex-col lg:w-full lg:flex-row lg:items-center">
           <span class="absolute">
             <svg
-              class="mx-3 my-3 h-6 w-6 lg:my-0"
+              class="mx-2 my-3 h-5 w-5"
               viewBox="0 0 24 24"
               fill="#0092E4"
               xmlns="http://www.w3.org/2000/svg"
@@ -21,10 +21,10 @@
             </svg>
           </span>
           <%= f.label :name, class: "hidden" %>
-          <%= f.text_field :name_cont, autofocus: true, placeholder: t('rsherch'), class: "form-field mt-0 indent-6" %>
+          <%= f.text_field :name_cont, autofocus: true, placeholder: t('rsherch'), class: "border-gray-300 w-full rounded-lg border-solid indent-6 py-3" %>
         </div>
         <div class="mt-4 flex flex-row">
-          <%= f.submit class: "lg:ml-4 mr-2 px-8 py-3 rounded-md bg-[#0092E4]
+          <%= f.submit class: "lg:ml-4 mr-2 px-8 py-3 rounded-md bg-[#0092E4] hover:bg-[#00a7e4]
         text-white cursor-pointer" %>
           <%= link_to "Clear", request.path, class:
         "px-8 py-3 rounded-md bg-gray-400 text-white" %>

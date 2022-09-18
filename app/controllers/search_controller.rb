@@ -5,10 +5,12 @@ class SearchController < ApplicationController
         @place_name_and_id = helpers.get_place_with_loc(request.location.data['loc'])
       end
     else
-      @place_name_and_id = helpers.get_place(helpers.usable_url(params[:search].downcase)) unless params[:search].nil?
+      unless params[:search].nil?
+        @place_name_and_id = helpers.get_place_with_name(helpers.usable_url(params[:search].downcase))
+      end
     end
     @place = @place_name_and_id[0] unless @place_name_and_id.nil?
-    @local_plants = helpers.get_data(@place_name_and_id[1]) unless @place_name_and_id.nil?
+    @local_plants = helpers.get_taxa_from_place_id(@place_name_and_id[1]) unless @place_name_and_id.nil?
     @hits = @local_plants.count unless @local_plants.nil?
     @hits = [] if @local_plants.nil?
     selected_plants = if current_user

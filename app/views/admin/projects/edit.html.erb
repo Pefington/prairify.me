@@ -1,20 +1,42 @@
-<section class="flex h-full w-full flex-col justify-center">
-  <div class="container mx-auto flex flex-col items-center justify-center px-6">
+<section class="flex flex-col items-center px-6 h-screen justify-center">
     <%= form_with(model: [:admin, @project], class: "bg-white rounded-lg m-8 p-8
     w-full max-w-md") do |form| %>
-      <h2 class="mb-2 text-2xl font-bold text-gray-900"><%=t'modip'%></h2>
+      <h2 class="mb-2 text-2xl font-bold text-gray-900"><%= t'modip' %></h2>
       <div class="my-5">
-        <%= form.label t('nam') %>
-        <%= form.text_field :name, class: "w-full mt-1
-      py-3 text-gray-700 bg-white border rounded-md" %>
+      
+                            <span class="absolute">
+            <svg
+              class="mx-2 mt-3 h-7 w-7"
+              viewBox="0 0 24 24"
+              fill="#D1D5DB"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17,6H7A1,1,0,0,0,7,8h4v9a1,1,0,0,0,2,0V8h4a1,1,0,0,0,0-2Z"/></svg>
+          </span>
+        <%= form.label t('nam'), class: "hidden" %>
+        <%= form.text_field :name, class: "border-gray-300 w-full rounded-lg border-solid indent-6 py-3 px-5 text-gray-700" %>
       </div>
       <div class="my-5">
-        <%= form.label :description %>
+                      <span class="absolute pl-1">
+            <svg
+              class="mx-2 mt-4 h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="#D1D5DB"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3,5H21a1,1,0,0,0,0-2H3A1,1,0,0,0,3,5ZM15,19H3a1,1,0,0,0,0,2H15a1,1,0,0,0,0-2Zm6-8H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Zm0-4H3A1,1,0,0,0,3,9H21a1,1,0,0,0,0-2Zm0,8H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z"/>
+                </svg>
+          </span>
+        <%= form.label :description, class: "hidden" %>
         <%= form.text_area :description, rows: 4,
-      class: "w-full mt-1 py-3 text-gray-700 bg-white border rounded-md" %>
+      class: "border-gray-300 w-full rounded-lg border-solid indent-6 py-3 px-5 text-gray-700" %>
       </div>
-      <div class="mt-6"><%= form.submit t('upt'), class: "btn w-full m-0" %></div>
-      <div class="mt-4 flex justify-center"><%= link_to t('bretour'), :back class:"btn" %></div>
+      <div class="mt-6"><%= form.submit t('upt'), class: "w-full bg-[#0092E4] hover:bg-[#00a7e4] text-white btn m-0" %></div>
+      <div class="mt-4 flex justify-center">
+        <%= link_to t('bretour'), :back %>
+      </div>
     <% end %>
   </div>
 </section>
