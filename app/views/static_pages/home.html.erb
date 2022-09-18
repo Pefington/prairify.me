@@ -1,4 +1,5 @@
 <% if !current_user %>
+  <%# HERO %>
   <section
     class="
       -mt-12
@@ -10,51 +11,33 @@
       bg-cover
       bg-center
       p-8
+      mb-12
     "
-  >
-    <div class="h-5/6 max-w-xl rounded-lg bg-inverse/50 p-6 text-center">
+    >
+    <div class="h-5/6 max-w-xl rounded-lg bg-inverse/50 p-6 text-center flex flex-col items-center">
       <h2 class="mb-2 font-semibold text-2xl">
         <%= t'title' %>
       </h2>
       <br>
-      <p
-        class="
-
-          font-medium
-          tracking-tight
-          text-base
-          sm:text-lg
-          md:text-xl
-        "
-      >
+      <p class="font-medium tracking-tight text-base sm:text-lg md:text-xl ">
         <%= t'subject' %>
       </p>
 
-      <div class="m-8 text-center">
-        <div class="w-full">
-          <%= link_to t('joinhomebtn'), new_user_registration_path, class: "btn" %>
-        </div>
-      </div>
+      <%= link_to t('joinhomebtn'), new_user_registration_path, class: "m-8 btn btn-middle text-xl font-bold px-8 py-3 my-8" %>
+
       <h1 class="mb-3"><%= t 'paragraph' %></h1>
-      <div class="flex items-center justify-center">
-        <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
+
+      <%# Search Bar %>
+      <article class="flex items-center z-20 pr-4 xl:ml-4 w-full">
+        <%= button_to search_index_path, method: :get, params: {search: 'geoloc'}, class: "link p-1" do %>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="
-              w-9
-              h-9
-              mr-2
-              sm:mr-6
-              -ml-6
-              mt-2
-
-
-            "
-          >
+            class="w-9 h-9 text-inverse hover:text-vivid xl:-mr-6"
+            >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -67,8 +50,9 @@
             />
           </svg>
         <% end %>
-        <%= render 'shared/search_bar' %>
-      </div>
+        <%= render "shared/search_bar" %>
+      </article>
+
     </div>
   </section>
 <% end %>
@@ -83,18 +67,9 @@
       }"
   class="relative flex flex-col justify-center items-center px-4 sm:w-2/3"
 >
-  <h1
-    class="
-      text-2xl
-      font-semibold
-      capitalize
-
-      lg:text-3xl
-      xl:text-4xl
-    "
-  >
+  <h1 class="text-2xl capitalize lg:text-3xl xl:text-4xl text-neutral-light">
     <%= t'our' %>
-    <span class=""><%= t('budding') %></span>
+    <span class="text-soft"><%= t('budding') %></span>
     <br>
     <%= t'homesubject' %>
   </h1>
