@@ -1,37 +1,8 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/I18n.html.
-
 en:
 
+
 #NAVBAR_BTN
+
   homebtn: "Home"
   aboutbtn: "About"
   teambtn: "Team"
@@ -44,18 +15,23 @@ en:
   myprofilebtn: "My Profile"
 
 #HOMEPAGE
+
   title: "You want to make your first step to a better world?"
   subject: " We can help you change your purely decorative piece of grass into a very
         useful meadow welcoming a diversified fauna and flora!"
   paragraph: "Look what plant species you could grow where you live!"
   our: "Our"
   budding: "budding gardeners"
-  projec: "projects"
+  homesubject: "projects"
   joinhomebtn: "Join us"
+
 #TEAMPAGE
+
   teamp: "Here is the wonderful team who made this project happen."
   titlep: "Our Exevutive Team"
+
 #PROJECT_PAGES
+
   post: "Posted on:"
   descrp: "Description:"
   titlep: "Projects"
@@ -88,6 +64,7 @@ en:
   projectdestroybtn: "Destroy project"
 
 #ABOUTPAGE
+
   goal: "What Is"
   goal1: "Our Goal ?"
   help: "Help the Planet"
@@ -96,33 +73,33 @@ en:
   help1: "Bring our part to the ecological transition, by helping everyone to know the flora that grows near them"
   share1: "We share the projects initiated by the community to transform their grass into a beautiful meadow"
   tip1: "We share the projects initiated by the community to transform their grass into a beautiful meadow"
+
 #SIGN_UP
+
   signup: "Sign Up"
   signin: "Sign In"
-  signor: "or sign with"
+  signor: "or"
   alre: "Already have an account?"
   alre1: "Don't have an account yet?"
   forgo: "Forgot your password?"
+
 #CONTACT_PAGES
+
   contacttitle1: "Contact us for"
   contacttitle2: "More informations"
   followcontact: "Follow us"
-  titlec: "What do you want to ask ?"
-  namec: "Full name"
-  emailc: "Email adress"
-  btncontact: "Get in touch"
+  
 
 #FAVORITES_PAGE
-  ftitle: "Here you will find all your favourite projects:"
-  fsubject: "You currently don't have any favourites..."
-  fparagraph: "Get some inspiration by browsing our different projects!"
-  ftitle1: "FAVOURITES"
-  subjectf: "You currently don't have any favourites..."
-  paraf: "Get some inspiration by browsing our different projects!"
+
+  favouritetitle: "Here you will find all your favourite projects:"
+  favouritetitle1: "FAVOURITES"
+  favouritesubject: "You currently don't have any favourites..."
+  favouriteparagraph: "Get some inspiration by browsing our different projects!"
   btnshowproject: "Browse projects"
 
-
 #PROFILE_PAGE
+
   profiltitle: "My Profile"
   nameprofil: "Username"
   emailprofil: "Email adress"
@@ -130,9 +107,8 @@ en:
   projectprofil: "Project(s)"
   btnprofil: "Edit"
 
-
-
 #ADMIN
+
   num1: "Number of Daily Registered Users"
   num2: "Number of Daily Created Project"
   tyl: "Latest Registered Users"
@@ -190,15 +166,17 @@ en:
 
 #SEARCH_PAGE
 
-  noresultsearch: "No result. You could try a wider area (district, county, département...)"
-  nogeoloc: "Sorry we couldn't geolocate you. Please try to write the area you live in instead:"
+  noresultsearchpage: "No result. You could try a wider area (district, county, département...)"
+  nogeolocsearchpage: "Sorry we couldn't geolocate you. Please try to write the area you live in instead:"
   textsearch1: "Results for"
   textsearch2: "out of 12 plants selected."
-  addplant: "Add them to a new project!"
-  resetselect: "Reset selection"
-  moreplant: "More about %{plant}"
+  addplantsearchpage: "Add them to a new project!"
+  resetselectsearchpage: "Reset selection"
+  wikiplantsearchpage: "More about %{plant}"
+  startprojectsearchpage: "to start a project!"
 
 #COMMENT
+
   commentcontent: "Comment:"
   commentbtn: "Add a comment"
 
