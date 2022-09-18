@@ -1,8 +1,8 @@
 <section class="flex flex-col lg:w-full">
   <div class="mx-8 mt-8 rounded-lg bg-white p-4 shadow sm:p-6 xl:p-8">
     <div>
-      <h2 class="mb-2 text-xl font-bold text-gray-900"><%=t'searchp1'%></h2>
-      <span class="text-base text-gray-500"><%=t'searchp2'%></span>
+      <h2 class="mb-2 text-xl font-bold text-gray-900"><%= t'searchp1' %></h2>
+      <span class="text-base text-gray-500"><%= t'searchp2' %></span>
     </div>
     <div class="flex flex-col items-center justify-start">
       <%= search_form_for @q, url: :admin_projects, class: "w-full flex flex-col
@@ -21,9 +21,7 @@
             </svg>
           </span>
           <%= f.label :name, class: "hidden" %>
-          <%= f.text_field :name_cont,
-        autofocus: true, placeholder: t('rsherch'), class: "form-field mt-0
-        indent-6" %>
+          <%= f.text_field :name_cont, autofocus: true, placeholder: t('rsherch'), class: "form-field mt-0 indent-6" %>
         </div>
         <div class="mt-4 flex flex-row">
           <%= f.submit class: "lg:ml-4 mr-2 px-8 py-3 rounded-md bg-[#0092E4]
@@ -37,8 +35,8 @@
   <div class="m-8 rounded-lg bg-white p-4 shadow sm:p-6 xl:p-8">
     <div class="mb-4 flex items-center justify-between">
       <div>
-        <h2 class="mb-2 text-xl font-bold text-gray-900"><%=t'allpr'%></h2>
-        <span class="text-base font-normal text-gray-500"><%=t'allpr1'%></span>
+        <h2 class="mb-2 text-xl font-bold text-gray-900"><%= t'allpr' %></h2>
+        <span class="text-base font-normal text-gray-500"><%= t'allpr1' %></span>
       </div>
     </div>
     <div class="mt-8 flex flex-col">
@@ -74,7 +72,7 @@
                       text-gray-500
                     "
                   >
-                    <%=t'nam'%>
+                    <%= t'nam' %>
                   </th>
                   <th
                     scope="col"
@@ -102,7 +100,7 @@
                       text-gray-500
                     "
                   >
-                    <%=t'pays'%>
+                    <%= t'pays' %>
                   </th>
                   <th
                     scope="col"
@@ -116,7 +114,7 @@
                       text-gray-500
                     "
                   >
-                    <%=t'creat'%>
+                    <%= t'creat' %>
                   </th>
                   <th
                     scope="col"
@@ -137,7 +135,8 @@
               </thead>
               <tbody class="bg-white">
                 <% @projects.each do |project| %>
-                  <tr>
+                  <% row_group_class = cycle('bg-white','bg-gray-50') %>
+                  <tr class=<%= row_group_class %>>
                     <td class="whitespace-nowrap pl-4 text-sm font-normal text-gray-900">
                       <%= project.id %>
                     </td>
@@ -166,9 +165,7 @@
                     >
                       <%= link_to edit_admin_project_path(project.id), class:
                     "flex items-center px-4 py-2 mt-2 text-gray-600
-                    transition-colors duration-300 transform rounded-md
-                    dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700
-                    dark:hover:text-gray-200 hover:text-gray-700" do %>
+                    transition-colors duration-300 transform rounded-md " do %>
                         <svg
                           class="h-5 w-5"
                           viewBox="0 0 24 24"
@@ -185,9 +182,7 @@
                     method: :delete, form: { data: { 'turbo-confirm': 'Are you
                     sure?' } }, class: "w-full flex items-center px-4 py-2 mt-2
                     text-gray-600 transition-colors duration-300 transform
-                    rounded-md dark:text-gray-400 hover:bg-gray-200
-                    dark:hover:bg-gray-700 dark:hover:text-gray-200
-                    hover:text-gray-700" do %>
+                    rounded-md" do %>
                         <svg
                           class="h-5 w-5"
                           viewBox="0 0 24 24"

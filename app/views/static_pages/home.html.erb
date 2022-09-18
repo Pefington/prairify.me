@@ -1,6 +1,4 @@
-<% if current_user %>
-
-<% else %>
+<% if !current_user %>
   <section
     class="
       -mt-12
@@ -14,14 +12,14 @@
       p-8
     "
   >
-    <div class="h-5/6 max-w-xl rounded-lg bg-white/50 p-6 text-center">
+    <div class="h-5/6 max-w-xl rounded-lg bg-inverse/50 p-6 text-center">
       <h2 class="mb-2 font-semibold text-2xl">
         <%= t'title' %>
       </h2>
       <br>
       <p
         class="
-          text-skin-base
+
           font-medium
           tracking-tight
           text-base
@@ -34,7 +32,7 @@
 
       <div class="m-8 text-center">
         <div class="w-full">
-          <%= link_to t('joinhomebtn'), new_user_registration_path, class: "btn-muted" %>
+          <%= link_to t('joinhomebtn'), new_user_registration_path, class: "btn" %>
         </div>
       </div>
       <h1 class="mb-3"><%= t 'paragraph' %></h1>
@@ -53,8 +51,8 @@
               sm:mr-6
               -ml-6
               mt-2
-              hover:bg-white/50
-              hover:rounded-full
+
+
             "
           >
             <path
@@ -83,25 +81,25 @@
         activeSlide: 4,
         slides: Array.from({ length: <%= @projects.count %> }, (_, i) => i + 1)
       }"
-  class="relative mt-8 flex flex-col justify-center items-center px-4 sm:w-2/3"
+  class="relative flex flex-col justify-center items-center px-4 sm:w-2/3"
 >
   <h1
     class="
       text-2xl
       font-semibold
       capitalize
-      text-skin-base
+
       lg:text-3xl
       xl:text-4xl
     "
   >
     <%= t'our' %>
-    <span class="text-skin-title"><%= t('budding') %></span>
+    <span class=""><%= t('budding') %></span>
     <br>
-    <%= t'projec' %>
+    <%= t'homesubject' %>
   </h1>
 
-  <div class=" mt-8 flex justify-center items-center w-full ">
+  <div class=" mt-8 flex justify-center items-center w-full">
 
     <%= render @projects %>
 

@@ -1,17 +1,3 @@
-<span
-  class="
-    px-4
-    py-2
-    mx-1
-    text-gray-700
-    border
-    border-gray-300
-    bg-white
-    rounded-md
-    sm:inline
-    hover:bg-blue-400
-    hover:text-white<%= ' current' if page.current? %>
-  "
->
-  <%= link_to_unless page.current?, page, url, {remote: remote, rel: page.rel} %>
+<span <%= 'current' if page.current? %>>
+  <%= link_to_unless page.current?, page, url, {remote: remote, rel: page.rel, class: "bg-white px-4 py-2 mx-1 hover:bg-blue-400 rounded-md sm:inline text-gray-700 border border-gray-300"} %>
 </span>

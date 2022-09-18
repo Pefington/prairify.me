@@ -1,32 +1,55 @@
 <footer
+  x-data="{ locale: '<%= I18n.locale.to_s %>' }"
   class="
-    bg-skin-back-nav
+    bg-soft
+    text-inverse
     w-full
-    text-skin-inverted
-    py-3
-    sm:px-16
     flex
-    flex-col
     items-center
     justify-evenly
-    sm:flex-row
-    sm:justify-between
-    sm:items-center
+    z-20
+    py-4
+    border-t-2
+    border-solid
+    border-middle
   "
 >
-  <%= link_to "Prairify", root_path, class: "text-xl font-FjallaOne font-bold hover:text-gray-700 drop-shadow-md px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700" %>
-  <p class="text-sm my-3">© Copyright 2022. All Rights Reserved.</p>
-<%= link_to_unless_current "fr", locale: :fr, class: "btn-muted" %>
-<%= link_to_unless_current "en", locale: :en, class: "btn-muted" %>
-  <div class="flex">
-    <%= link_to 'https://www.reddit.com/r/NoLawns/top/?t=all', target: :_blank, class: "hover:text-gray-700 px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" do %>
-      <i class="w-5 h-5 fill-current fa-brands fa-reddit fa-lg drop-shadow-md"></i>
+  <%# Language Switcher %>
+  <section
+    class="flex items-center px-4 pb-1 sm:px-9 text-xs sm:text-sm lg:text-base"
+  >
+    <p
+      :class="{ 'text-inverse': locale === 'en', 'text-neutral-light underline underline-offset-4 disabled cursor-default': locale === 'fr' }"
+      @click="locale = 'fr'"
+      transition
+      class="link p-1"
+    >
+      <%= link_to 'FR', locale: 'fr' %>
+    </p>
+    <p class="text-neutral-light">|</p>
+    <p
+      :class="{ 'text-inverse': locale === 'fr', 'text-neutral-light underline underline-offset-4 disabled cursor-default': locale === 'en' }"
+      @click="locale = 'en'"
+      transition
+      class="link p-1"
+    >
+      <%= link_to 'EN', locale: 'en' %>
+    </p>
+  </section>
+
+  <%= link_to "Prairify.me", root_path, class: "text-xl sm:text-2xl lg:text-3xl font-FjallaOne drop-shadow-md hover:text-vivid" %>
+
+  <%# Social Links %>
+  <section class="flex items-center justify-center sm:space-x-6">
+    <%= link_to 'https://www.reddit.com/r/NoLawns/top/?t=all', target: :_blank do %>
+      <i class="fa-brands fa-reddit fa-lg link"></i>
     <% end %>
-    <%= link_to 'https://www.facebook.com/groups/foodnotlawns.official', target: :_blank, class: "hover:text-gray-700 px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" do %>
-      <i class="w-5 h-5 fill-current fa-brands fa-facebook fa-lg drop-shadow-md"></i>
+    <%= link_to 'https://www.facebook.com/groups/foodnotlawns.official', target: :_blank do %>
+      <i class="fa-brands fa-facebook fa-lg link"></i>
     <% end %>
-    <%= link_to 'https://github.com/Pefington/prairify.me.git', target: :_blank, class: "hover:text-gray-700 px-3 py-2 mx-3 mt-2 transition-colors duration-300 transform rounded-md lg:mt-0 focus:bg-skin-button-accent-hover lg:hover:text-gray-700 drop-shadow-md" do %>
-      <i class="w-5 h-5 fill-current fa-brands fa-github fa-lg drop-shadow-md"></i>
+    <%= link_to 'https://github.com/Pefington/prairify.me.git', target: :_blank do %>
+      <i class="fa-brands fa-github fa-lg link"></i>
     <% end %>
-  </div>
+  </section>
+
 </footer>

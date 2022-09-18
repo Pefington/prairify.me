@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Fjalla+One&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,29 +7,12 @@
 }
 
 @layer base {
-  :root {
-    --color-text-base: #585d65;
-    --color-text-muted: #3db388;
-    --color-text-title: #2ea57a;
-    --color-text-inverted: #ffffff;
-    --color-button-accent: #12433c;
-    --color-button-accent-hover: #1f5b49;
-    --color-button-muted: #2ea57a;
-    --color-button-muted-hover: #3db388;
-    --color-button-warning: #f25834;
-    --color-button-warning-hover: #f67c12;
-    --color-border-base: #1f5b49;
-    --color-back-nav: #2ea57a;
-    --color-back-accent: #A5DDC8;
-  }
-
   * {
-    @apply ring-0 hover:ring-0 focus:ring-0 transition-all duration-300 ease-in-out;
+    @apply transition-all duration-300 ease-in-out focus:outline-none border-none;
   }
 
-  body,
   html {
-    @apply font-Cantarell text-skin-base;
+    @apply text-neutral-light font-Cantarell;
   }
 
   h1,
@@ -40,53 +21,37 @@
   h4,
   h5,
   h6 {
-    @apply font-FjallaOne text-skin-title drop-shadow;
+    @apply font-FjallaOne text-soft drop-shadow;
   }
 }
 
 @layer components {
-  .btn {
-    @apply text-skin-inverted bg-skin-button-accent m-4 transform rounded-md px-6 py-2 font-medium capitalize tracking-wide shadow transition-colors duration-300;
-  }
-  ,
-  .btn:hover {
-    @apply bg-skin-button-accent-hover cursor-pointer;
-  }
-  ,
-  .btn-muted {
-    @apply text-skin-inverted bg-skin-button-muted m-4 transform rounded-md px-6 py-2 font-medium capitalize tracking-wide shadow transition-colors duration-300;
-  }
-  ,
-  .btn-muted:hover {
-    @apply bg-skin-button-muted-hover;
-  }
-  ,
-  .btn-warning {
-    @apply text-skin-inverted bg-skin-button-warning m-4 transform rounded-md px-6 py-2 font-medium capitalize tracking-wide shadow transition-colors duration-300;
-  }
-  ,
-  .btn-warning:hover {
-    @apply bg-skin-button-warning-hover;
-  }
-  ,
-  .form-field {
-    @apply placeholder-gray-400 px-5 py-3 mt-2 block w-full rounded-md shadow bg-white border-skin-base border focus:outline-none focus:border-skin-base;
-  }
-  ,
-  .text-muted {
-    @apply text-skin-muted;
-  }
-  ,
   .link {
-    @apply text-skin-muted;
-  },
-  .link:hover {
-    @apply underline text-skin-title;
-  },
-  .form-check-input {
-    @apply appearance-none rounded focus:outline-none focus:border-skin-base checked:bg-skin-button-muted checked:border-skin-base checked:hover:bg-skin-button-muted checked:focus:bg-skin-button-muted transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer;
-  },
-  .form-check-input:hover {
-    @apply border-skin-base
+    @apply hover:text-vivid focus:bg-middle focus:text-inverse cursor-pointer rounded-md px-2 py-1 drop-shadow-md;
+  }
+  ,
+  .btn {
+    @apply cursor-pointer rounded-md px-3 py-2 text-center capitalize shadow-md drop-shadow-md;
+  }
+  ,
+  .btn-vivid {
+    @apply bg-vivid text-inverse;
+  }
+  ,
+  .btn-middle {
+    @apply bg-middle text-inverse;
+  }
+  ,
+  .btn-middle:hover,
+  .btn-middle:focus {
+    @apply bg-vivid;
+  }
+  ,
+  .btn-inverse {
+    @apply bg-inverse text-neutral-light;
+  }
+  ,
+  .btn-inverse:hover {
+    @apply bg-middle/80 text-inverse;
   }
 }
