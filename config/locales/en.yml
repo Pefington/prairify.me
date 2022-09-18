@@ -169,7 +169,7 @@ en:
   noresultsearchpage: "No result. You could try a wider area (district, county, département...)"
   nogeolocsearchpage: "Sorry we couldn't geolocate you. Please try to write the area you live in instead:"
   textsearch1: "Results for"
-  textsearch2: "out of 12 plants selected."
+  textsearch2: "out of 12 plants selected"
   addplantsearchpage: "Add them to a new project!"
   resetselectsearchpage: "Reset selection"
   wikiplantsearchpage: "Wikipedia"

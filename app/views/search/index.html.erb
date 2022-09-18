@@ -16,15 +16,15 @@
        <%=t'textsearch1'%>
         <%= @place %></p>
       <% if current_user %>
-        <h3 class="mt-8 text-xl">
+        <h3 class="my-8 text-xl">
           <span x-text="selectedCount"></span>
           <%=t 'textsearch2'%>
         </h3>
         <%= link_to t('addplantsearchpage'), new_project_path, class:
-    "btn", params:[@plants] %>
+    "btn btn-middle py-4 text-lg", params:[@plants] %>
         <div @click="eliminated = false, selected = false, selectedCount = 0">
           <%= button_to t('resetselectsearchpage'), reset_selected_plants_path, method:
-      :post, remote: :true, class: "btn-warning my-8" %>
+      :post, remote: :true, class: "link p-3 text-accent hover:text-red-600 focus:bg-red-600 focus:text-inverse underline font-bold mt-8" %>
         </div>
       <% else %>
         <p class="flex flex-col text-2xl sm:flex-row sm:items-center">

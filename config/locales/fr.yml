@@ -167,7 +167,7 @@ fr:
   noresultsearchpage: "Aucun résultat. Vous pouvez essayer une zone plus large (arrondissement, comté, département...)"
   nogeolocsearchpage: "Nous n'avons pas pu vous géolocaliser. Essayez plutôt de nous écrire où vous vivez:"
   textsearch1: "Resultat(s) pour"
-  textsearch2: "sur 12 plantes sélectionnées."
+  textsearch2: "sur 12 plantes sélectionnées"
   addplantsearchpage: "Ajoutez-les à un nouveau projet !"
   resetselectsearchpage: "Réinitialiser la sélection"
   wikiplantsearchpage: "Wikipedia"
