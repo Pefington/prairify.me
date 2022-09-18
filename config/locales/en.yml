@@ -182,5 +182,5 @@ en:
 
 #NEWCOMMENT
   commenttitle: "New comment"
-  holdercomment: "Comment"
+  holdercomment: "Comment (from 2 to 150 characters) "
   btnbackppro: "Back to the project"

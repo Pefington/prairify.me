@@ -181,5 +181,5 @@ fr:
 #NEWCOMMENT
 
   commenttitle: "Nouveau commentaire"
-  holdercomment: "Commentaire"
+  holdercomment: "Commentaire (de 2 à 150 caractères)"
   btnbackppro: "Retour au projet"
