@@ -56,6 +56,6 @@
   }
   ,
   .card {
-    @apply bg-card m-4 flex h-[500px] max-h-[500px] w-full justify-center overflow-hidden rounded-lg shadow-lg;
+    @apply bg-card m-4 flex w-full justify-center overflow-hidden rounded-lg shadow-lg;
   }
 }
