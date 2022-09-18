@@ -1,6 +1,5 @@
 fr:
 
-
 #NAVBAR_BTN
 
   homebtn: "Accueil"
@@ -183,3 +182,7 @@ fr:
   commenttitle: "Nouveau commentaire"
   holdercomment: "Commentaire"
   btnbackppro: "Retour au projet"
+
+#PLANT
+
+  nowiki: "Pas de wiki"

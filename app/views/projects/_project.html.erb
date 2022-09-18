@@ -20,6 +20,11 @@
           <p><%= project.country %></p>
         <% end %>
         <% if action_name == "show" %>
+          
+
+
+
+
           <% if project.begin != nil %>
             <h3 class="mt-4 mb-1"><%= t 'beginp' %></h3>
             <p><%= project.begin.strftime("%d/%m/%Y, at %I:%M%p") %></p>
