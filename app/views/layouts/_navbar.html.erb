@@ -1,113 +1,89 @@
-<header class="w-full relative bg-soft text-inverse">
-  <nav x-data="{ isOpen: false }" class="relative p-4 lg:flex ">
-    <div class="flex items-center justify-evenly flex-1">
+<header
+  x-data="{ largeOpen: false }"
+  class="
+    w-full
+    bg-soft
+    text-inverse
+    p-4
+    flex
+    justify-evenly
+    items-center
+    h-max
+    relative
+    border-b-2
+    border-solid
+    border-middle
+  "
+>
+  <%# Spacer %>
+  <div></div>
 
-      <div class="w-16">
-        <%= link_to root_path do %>
-          <%= vite_image_tag 'images/logo.png' %>
-        <% end %>
-      </div>
+  <%# Logo %>
+  <%= link_to root_path, class: "w-8 z-20 sm:w-12 md:w-14 lg:w-16 xl:w-18" do %>
+    <%= vite_image_tag 'images/logo.png' %>
+  <% end %>
 
-      <div class="text-xl ">
-        <%= link_to "Prairify.me", root_path, class: "font-FjallaOne text-2xl sm:text-3xl lg:text-4xl link" %>
-      </div>
+  <%# Prairify.me %>
+  <%= link_to "Prairify.me", root_path, class: "font-FjallaOne text-2xl sm:text-3xl lg:text-4xl link z-20" %>
 
-      <%# Large Links %>
-      <div class="hidden lg:flex items-start justify-center space-x-6">
-        <%= link_to t('homebtn'), root_path, class: "link text-xl drop-shadow-md" %>
-        <%= link_to t('teambtn'), team_path, class: "link text-xl drop-shadow-md" %>
-        <%= link_to t('aboutbtn'), about_path, class: "link text-xl drop-shadow-md" %>
-        <%= link_to t('contactbtn'), contact_path, class: "link text-xl drop-shadow-md" %>
-        <% if user_signed_in? %>
-          <%= link_to "Projects", projects_path, class: "link text-xl drop-shadow-md" %>
-        <% end %>
-        <section class="hidden">
-          <% if current_user %>
-            <%= link_to "Admin", admin_root_path, class: "btn btn-vivid mb-4 w-3/4" if current_user.admin? %>
-            <%= link_to t('myprofilebtn'), profile_path, class: "btn btn-vivid mb-4 w-3/4" %>
-            <%= link_to t('favoritebtn'), favourites_path, class: "btn btn-vivid mb-4 w-3/4" %>
-            <%= button_to t('signoutbtn'), destroy_user_session_path, method: :delete, class: "btn btn-vivid" %>
-          <% else %>
-            <%= link_to t('signinbtn'), user_session_path, class: "btn btn-vivid mb-4 w-3/4" %>
-            <%= link_to t('registerbtn'), new_user_registration_path, method: :get, class: "btn btn-vivid w-3/4" %>
-          <% end %>
-        </section>
-      </div>
-      <section class="hidden lg:flex items-center">
-        <%= button_to search_index_path, method: :get, params: {search: 'geoloc'} do %>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-9 h-9 pt-1 pr-2 text-inverse"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-            />
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-            />
-          </svg>
-        <% end %>
-        <%= render "shared/search_bar" %>
-      </section>
+  <%# SM- NAV %>
+  <nav x-data="{ smallOpen: false }" x-cloak class="lg:hidden">
 
-      <%# Hamburger Button %>
-      <div class="flex lg:hidden" x-cloak>
-        <button type="button" class="link" aria-label="toggle menu">
-          <svg
-            @click="isOpen = true"
-            x-show="!isOpen"
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16"/>
-          </svg>
-          <svg
-            x-show="isOpen"
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <%# Menu Items %>
-    <div
+    <%# SM- Hamburger Button %>
+    <button
       x-cloak
-      :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+      @keyup.space="smallOpen = !smallOpen"
+      type="button"
+      aria-label="toggle menu"
+      class="
+        link
+        flex
+        justify-center
+        items-center
+        lg:hidden
+        w-8
+        h-8
+        p-1
+        opacity-80
+      "
+    >
+      <%# Hamburger Icon %>
+      <i
+        @click="smallOpen = true"
+        x-show="!smallOpen"
+        class="fa-solid fa-bars text-lg sm:text-xl md:text-2xl"
+      >
+      </i>
+      <%# Close Icon %>
+      <i
+        x-cloak
+        x-show="smallOpen"
+        class="fa-solid fa-xmark text-lg sm:text-xl md:text-2xl"
+      >
+      </i>
+    </button>
+
+    <%# SM- Combined Links %>
+    <section
+      x-cloak
+      :class="[smallOpen ? 'translate-x-0 opacity-100' : 'opacity-0 -translate-x-full']"
       class="
         flex
         flex-col
         items-center
         absolute
+        top-[73px]
+        sm:top-[81px]
+        md:top-[88px]
         inset-x-0
         z-20
-        w-full
-        mt-4
-        p-8
-        bg-soft/90
+        bg-soft
+        rounded-b-[4rem]
       "
     >
       <div
-        @mousedown.outside="isOpen = false"
-        class="flex flex-col max-w-sm sm:justify-center"
+        @mousedown.outside="smallOpen = false"
+        class="flex flex-col w-full max-w-sm p-8"
       >
         <%= link_to t('homebtn'), root_path, class: "btn btn-middle mb-4" %>
         <%= link_to t('teambtn'), team_path, class: "btn btn-middle mb-4" %>
@@ -116,7 +92,7 @@
         <% if user_signed_in? %>
           <%= link_to "Projects", projects_path, class: "btn btn-middle mt-4" %>
         <% end %>
-        <section class="flex justify-end items-center my-8 w-full">
+        <article class="flex justify-end items-center my-8">
           <%= button_to search_index_path, method: :get, params: {search: 'geoloc'}, class: "mr-4 w-12 text-inverse hover:text-vivid focus:text-inverse focus:bg-vivid rounded-md p-1 hover:font-bold" do %>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -138,8 +114,8 @@
             </svg>
           <% end %>
           <%= render "shared/search_bar" %>
-        </section>
-        <section class="flex flex-col items-end">
+        </article>
+        <article class="flex flex-col items-end">
           <% if current_user %>
             <%= link_to "Admin", admin_root_path, class: "btn btn-middle mb-4 w-3/4" if current_user.admin? %>
             <%= link_to t('myprofilebtn'), profile_path, class: "btn btn-middle mb-4 w-3/4" %>
@@ -149,76 +125,119 @@
             <%= link_to t('signinbtn'), user_session_path, class: "btn btn-middle mb-4 w-3/4" %>
             <%= link_to t('registerbtn'), new_user_registration_path, method: :get, class: "btn btn-middle w-3/4" %>
           <% end %>
-        </section>
+        </article>
       </div>
-
-      <div x-data="{isOpen: false}" class="relative">
-        <div class="lg:pl-6 my-6 lg:my-0">
-          <button
-            x-on:click="isOpen = !isOpen"
-            type="button"
-            class="
-              w-full
-              flex
-              items-center
-              rounded-md
-              px-2
-              py-3
-            "
-            aria-label="toggle profile dropdown"
-          >
-            <div class="w-8 h-8 overflow-hidden border-2 rounded-full">
-              <img
-                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                class="object-cover w-full h-full"
-                alt="avatar"
-              >
-            </div>
-
-            <% if @profile %>
-              <% if @profile.username %>
-                <h3 class="mx-2 lg:hidden "><%= @profile.username %></h3>
-              <% else %>
-                <h3 class="mx-2 lg:hidden "><%= @profile.email %></h3>
-              <% end %>
-            <% end %>
-
-          </button>
-        </div>
-
-        <div
-          x-cloak
-          x-show="isOpen"
-          class="
-            z-10
-            absolute
-            right-0
-            mt-6
-            w-48
-            origin-top-right
-            rounded-md
-            py-1
-            shadow-lg
-            ring-1
-            ring-opacity-5
-          "
-          role="menu"
-          aria-orientation="vertical"
-          aria-labelledby="user-menu-button"
-          tabindex="-1"
-        >
-          <% if current_user %>
-            <%= link_to "Admin", admin_root_path, class: "block px-4 py-2 text-sm" if current_user.admin? %>
-            <%= link_to t('myprofilebtn'), profile_path, class: "block px-4 py-2 text-sm  rounded-md" %>
-            <%= link_to t('favoritebtn'), favourites_path, class: "block px-4 py-2 text-sm  rounded-md" %>
-            <%= button_to t('signoutbtn'), destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm  rounded-md" %>
-          <% else %>
-            <%= link_to t('signinbtn'), user_session_path, class: "block px-4 py-2 text-sm  rounded-md" %>
-            <%= link_to t('registerbtn'), new_user_registration_path, method: :get, class: "block px-4 py-2 text-sm  rounded-md" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
+    </section>
   </nav>
+
+  <%# LG+ NAV %>
+  <nav class="justify-between items-center z-20">
+
+    <%# LG+ Links %>
+    <section
+      class="
+        hidden
+        lg:flex
+        items-start
+        justify-center
+        xl:space-x-8
+        text-xl
+        z-20
+      "
+    >
+      <%= link_to t('homebtn'), root_path, class: "link drop-shadow-md" %>
+      <%= link_to t('teambtn'), team_path, class: "link drop-shadow-md" %>
+      <%= link_to t('aboutbtn'), about_path, class: "link drop-shadow-md" %>
+      <%= link_to t('contactbtn'), contact_path, class: "link drop-shadow-md" %>
+      <% if user_signed_in? %>
+        <%= link_to "Projects", projects_path, class: "link drop-shadow-md" %>
+      <% end %>
+    </section>
+  </nav>
+
+  <%# LG+ Search Bar %>
+  <section class="hidden lg:flex items-center z-20">
+    <%= button_to search_index_path, method: :get, params: {search: 'geoloc'}, class: "link p-1" do %>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-9 h-9 text-inverse hover:text-vivid"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+        />
+      </svg>
+    <% end %>
+    <%= render "shared/search_bar" %>
+
+    <%# LG+ Profile Button %>
+    <button
+      @click="largeOpen = !largeOpen"
+      type="button"
+      aria-label="toggle profile modal"
+      class="link z-50"
+    >
+      <i class="fa-solid fa-user fa-2x"></i>
+    </button>
+  </section>
+
+  <%# LG+ Profile Items %>
+  <section
+    x-cloak
+    x-show="largeOpen"
+    @click.outside="largeOpen = false"
+    x-transition:enter="transition duration-300 ease-out"
+    x-transition:enter-start="-translate-x-full opacity-0"
+    x-transition:enter-end="translate-x-0 opacity-100"
+    x-transition:leave="-transition duration-150 ease-in"
+    x-transition:leave-start="translate-x-0 opacity-100"
+    x-transition:leave-end="-translate-x-full opacity-0"
+    class="
+      justify-center
+      items-center
+      absolute
+      top-[96px]
+      inset-x-0
+      hidden
+      lg:flex
+      flex-col
+      z-20
+      pb-8
+      rounded-b-full
+      bg-soft
+      border-b-2
+      border-solid
+      border-middle
+    "
+  >
+    <% if current_user %>
+      <h3 class="mt-8 text-inverse underline text-xl">
+        <%= current_user.email %>
+        <% if current_user.username %>
+          <%= current_user.username %>
+        <% end %>
+      </h3>
+    <% end %>
+    <div class="flex w-full justify-center space-x-6 my-4">
+      <% if current_user %>
+        <%= link_to "Admin", admin_root_path, class: "btn btn-middle w-48" if current_user.admin? %>
+        <%= link_to t('myprofilebtn'), profile_path, class: "btn btn-middle w-48" %>
+        <%= link_to t('favoritebtn'), favourites_path, class: "btn btn-middle w-48" %>
+        <%= button_to t('signoutbtn'), destroy_user_session_path, method: :delete, class: "btn btn-middle w-48" %>
+      <% else %>
+        <%= link_to t('signinbtn'), user_session_path, class: "btn btn-middle w-48" %>
+        <%= link_to t('registerbtn'), new_user_registration_path, method: :get, class: "btn btn-middle w-48" %>
+      <% end %>
+    </div>
+  </section>
 </header>
