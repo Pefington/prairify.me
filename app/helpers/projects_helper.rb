@@ -7,13 +7,15 @@ module ProjectsHelper
     SelectedPlant.where(user_id: current_user.id).destroy_all
   end
 
+  # Returns true if a project is liked by the current user and false otheriwse
   def liked?(project)
     like = project.likes.find_by(user_id: current_user.id)
     return [true, like.id] unless like.nil?
-
+    
     [false, 0]
   end
-
+  
+  # Returns true if a project is favourited by the current user and false otheriwse
   def favourite?(project)
     favourite = project.favourites.find_by(user_id: current_user.id)
     return [true, favourite.id] unless favourite.nil?
@@ -21,6 +23,7 @@ module ProjectsHelper
     [false, 0]
   end
 
+  # Returns an array of all the projects the current user has as favourites
   def favourite_projects
     favourites = Favourite.where(user_id: current_user.id)
     projects = []
@@ -30,10 +33,12 @@ module ProjectsHelper
     projects
   end
 
+  # Returns the number of likes a project currently has
   def number_of_likes(project)
     project.likes.count
   end
 
+  # Gets in what way the user wants to display projects and then calls up the right method.
   def project_sorted_by(argument)
     case argument
     when 'ancient' || ''
@@ -49,11 +54,13 @@ module ProjectsHelper
     end
   end
 
+  # Returns a hash that has projects as keys and the number of likes as values
   def group_likes_by_project
     likes = Like.all
     hash = {}
-    Project.all.length.times do |index|
-      hash[index + 1] = 0
+    projects = Project.all
+    projects.each do |project|
+      hash[project.id] = 0
     end
     likes.each do |like|
       hash[like.project_id] += 1
@@ -61,6 +68,9 @@ module ProjectsHelper
     hash
   end
 
+  # Creates an array of Projects sorted by the number of likes.
+  # It could be with the highest number of likes to the least or the other
+  # way arround depending on the hash one gives as an argument.
   def create_right_order_of_display(hash)
     result = []
     hash.each_with_index do |_like, index|
