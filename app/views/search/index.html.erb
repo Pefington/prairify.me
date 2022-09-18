@@ -1,35 +1,35 @@
 <div x-data="{ selectedCount: <%= @selected_plants.count %> }">
   <% if @local_plants == nil %>
-      <% if params[:search]== 'geoloc'%>
-        <p>
-          <%=t 'nogeolocsearchpage'%>
-        </p>
-      <%else%>
-        <p>
-          <%=t 'noresultsearchpage'%>
-        </p>
-      <%end%>
-      <%= render 'shared/search_bar'%>
+    <% if params[:search]== 'geoloc' %>
+      <p>
+        <%= t 'nogeolocsearchpage' %>
+      </p>
+    <% else %>
+      <p>
+        <%= t 'noresultsearchpage' %>
+      </p>
+    <% end %>
+    <%= render 'shared/search_bar' %>
   <% else %>
     <section class="flex flex-col items-center justify-between text-center">
       <p class="text-xl"><%= @hits %>
-       <%=t'textsearch1'%>
+        <%= t'textsearch1' %>
         <%= @place %></p>
       <% if current_user %>
-        <h3 class="mt-8 text-xl">
+        <h3 class="my-8 text-xl">
           <span x-text="selectedCount"></span>
-          <%=t 'textsearch2'%>
+          <%= t 'textsearch2' %>
         </h3>
         <%= link_to t('addplantsearchpage'), new_project_path, class:
-    "btn", params:[@plants] %>
+    "btn btn-middle py-4 text-lg", params:[@plants] %>
         <div @click="eliminated = false, selected = false, selectedCount = 0">
           <%= button_to t('resetselectsearchpage'), reset_selected_plants_path, method:
-      :post, remote: :true, class: "btn-warning my-8" %>
+      :post, remote: :true, class: "link p-3 text-accent hover:text-red-600 focus:bg-red-600 focus:text-inverse underline font-bold mt-8" %>
         </div>
       <% else %>
         <p class="flex flex-col text-2xl sm:flex-row sm:items-center">
           <%= link_to t('joinhomebtn'), new_user_registration_path, class: "btn" %>
-          <%=t 'startprojectsearchpage'%>
+          <%= t 'startprojectsearchpage' %>
         </p>
       <% end %>
     </section>
@@ -44,19 +44,7 @@
           x-transition.duration.500ms
           x-cloak
           x-show="!eliminated"
-          class="
-            mb-12
-            flex
-            w-full
-            max-w-sm
-            flex-col
-            items-center
-            rounded-lg
-            bg-inverse
-            pb-4
-            shadow-lg
-            sm:mx-4
-          "
+          class="card max-w-sm w-full flex-col items-center"
         >
           <% @plant = plant %>
           <%= render 'shared/plant' %>
@@ -64,6 +52,22 @@
       <% end %>
     </section>
   <% end %>
-    <button id="to-top-button" title="Go To Top"
-        class=" fixed z-90 bottom-8 right-8 border-0 w-12 h-12 rounded-full drop-shadow-md bg-soft text-white text-3xl font-bold" button x-cloak x-data="{scroll : false}" @scroll.window="document.documentElement.scrollTop > 20 ? scroll = true : scroll = false" x-show="scroll" @click="window.scrollTo({top: 0, behavior: 'smooth'})">&uarr;</button>
+  <button
+    id="to-top-button"
+    title="Go To Top"
+    class="
+      fixed
+      z-50
+      bottom-24
+      right-8
+      link
+      text-middle
+      p-2
+    "
+    x-cloak
+    x-data="{scroll : false}"
+    @scroll.window="document.documentElement.scrollTop > 10000 ? scroll = true : scroll = false"
+    x-show="scroll"
+    @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+  ><i class="fa-solid fa-circle-chevron-up fa-3x"></i></button>
 </div>

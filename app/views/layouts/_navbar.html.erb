@@ -24,7 +24,7 @@
   <% end %>
 
   <%# Prairify.me %>
-  <%= link_to "Prairify.me", root_path, class: "font-FjallaOne text-2xl sm:text-3xl lg:text-4xl link z-20" %>
+  <%= link_to "Prairify.me", root_path, class: "font-fjalla text-2xl sm:text-3xl lg:text-4xl link z-20" %>
 
   <%# SM- NAV %>
   <nav x-data="{ smallOpen: false }" x-cloak class="lg:hidden">
@@ -225,11 +225,11 @@
   >
     <% if current_user %>
         <% if current_user.username %>
-          <h3 class="mt-4 text-inverse underline text-2xl">
+          <h3 class="mt-4 text-inverse text-2xl">
             <%= current_user.username %>
           </h3>
         <% end %>
-      <h3 class="mt-4 mb-2 text-inverse underline text-lg">
+      <h3 class="mt-4 mb-2 text-inverse text-lg">
         <%= current_user.email %>
       </h3>
     <% end %>

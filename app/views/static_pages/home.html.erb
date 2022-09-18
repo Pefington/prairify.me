@@ -1,5 +1,5 @@
 <% if !current_user %>
-  <%# HERO %>
+  <%# HERO / CTA %>
   <section
     class="
       -mt-12
@@ -15,28 +15,29 @@
     "
     >
     <div class="h-5/6 max-w-xl rounded-lg bg-inverse/50 p-6 text-center flex flex-col items-center">
-      <h2 class="mb-2 font-semibold text-2xl">
+      <h2 class="mb-2 text-2xl">
         <%= t'title' %>
       </h2>
       <br>
-      <p class="font-medium tracking-tight text-base sm:text-lg md:text-xl ">
+        <p class="sm:text-lg md:text-lg">
         <%= t'subject' %>
       </p>
 
-      <%= link_to t('joinhomebtn'), new_user_registration_path, class: "m-8 btn btn-middle text-xl font-bold px-8 py-3 my-8" %>
+      <%= link_to t('joinhomebtn'), new_user_registration_path, class: "m-8 btn btn-middle text-lg font-semibold px-8 py-3 my-8" %>
 
       <h1 class="mb-3"><%= t 'paragraph' %></h1>
 
       <%# Search Bar %>
-      <article class="flex items-center z-20 pr-4 xl:ml-4 w-full">
-        <%= button_to search_index_path, method: :get, params: {search: 'geoloc'}, class: "link p-1" do %>
+      <article class="flex items-center z-10 pr-4 xl:ml-4 w-full">
+        <%= button_to search_index_path, method: :get, params: {search: 'geoloc'}, class: "p-1 link text-middle hover:text-inverse mr-4
+        lg:mx-2 xl:-mr-4" do %>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-9 h-9 text-neutral-light hover:text-inverse xl:-mr-6"
+            class="w-9 h-9"
             >
             <path
               stroke-linecap="round"
