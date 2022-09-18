@@ -53,5 +53,14 @@
   ,
   .btn-inverse:hover {
     @apply bg-middle/80 text-inverse;
+  },
+  .form-field {
+    @apply border border-middle rounded-lg w-full placeholder-gray-400 px-5 py-3 mt-2 shadow focus:border-vivid;
+  },
+  .form-check-input {
+    @apply border-2 border-middle rounded focus:outline-none focus:border-soft checked:bg-middle checked:border-middle checked:hover:bg-soft checked:focus:bg-soft transition duration-200 mt-1 align-top float-left mr-2 cursor-pointer;
+  },
+  .form-check-input:hover {
+    @apply border-middle
   }
 }
