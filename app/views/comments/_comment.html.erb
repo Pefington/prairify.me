@@ -1,40 +1,27 @@
-<section class="flex flex-col justify-center w-full lg:w-2/3 max-h-[500px]">
-  <div
-    id="<%= dom_id comment %>"
-    class="
-      flex
-      flex-col
-      justify-center
-      overflow-hidden
-      bg-inverse
-      rounded-lg
-      shadow-lg
-      m-4
-      p-4
-      md:p-8"
-  >
-    <div class="flex items-center justify-between">
-      <span class="text-sm font-light text-neutral-light"><%= comment.created_at.strftime("%d/%m/%Y, at %I:%M%p") %></span>
-    </div>
+<article id="<%= dom_id comment %>" class="card flex-col p-4">
 
-    <div class="mt-2">
-      <h1><%=t 'commentcontent'%></h1>
-      <p class="text-lg"><%= comment.content %></p>
-    </div>
-
-    <div class="flex items-center justify-end">
-      <img
-        class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
-        src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=40&q=80"
-        alt="avatar"
-      >
-      <p class="my-5 font-light text-neutral-light">
-        <% if comment.user.username? %>
-          <%= comment.user.username %>
-        <% else %>
-          Annonymous
-        <% end %>
-      </p>
-    </div>
+  <div class="flex justify-between">
+    <h3 class="mb-2 text-middle"><%= t 'commentcontent' %></h3>
+    <p class="text-sm text-soft"><%= comment.created_at.strftime("%d/%m/%Y, at %I:%M%p") %></p>
   </div>
-</section>
+  <p class="text-lg">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic consequuntur
+    corrupti veniam iste aliquam. Sit pariatur nam nobis quasi autem non
+    similique, velit, amet quo iste inventore, quas dignissimos necessitatibus.
+    Harum provident eos enim architecto, corporis commodi atque, ad
+    reprehenderit culpa laboriosam maiores modi eius mollitia sunt in autem
+    placeat accusantium obcaecati debitis nemo? Illum quis rem atque in
+    quisquam. Dolor nemo ex fuga? Aliquid sunt voluptates, inventore optio qui
+    consequuntur suscipit aspernatur, nemo beatae autem eveniet, labore quae
+    quos dolore similique nulla architecto porro exercitationem? Itaque porro
+    consectetur dolore!
+    <%= comment.content %></p>
+
+  <p class="self-end text-middle">
+    <% if comment.user.username? %>
+      <%= comment.user.username %>
+    <% else %>
+      Annonymous
+    <% end %>
+  </p>
+</article>
