@@ -21,7 +21,7 @@
   h4,
   h5,
   h6 {
-    @apply font-fjalla text-soft font-normal drop-shadow;
+    @apply font-fjalla text-middle font-normal drop-shadow;
   }
 }
 
@@ -31,11 +31,11 @@
   }
   ,
   .btn {
-    @apply cursor-pointer rounded-md px-3 py-2 text-center capitalize shadow-md drop-shadow-md;
+    @apply cursor-pointer rounded-md px-3 py-2 text-center shadow-md drop-shadow-md;
   }
   ,
   .btn-vivid {
-    @apply bg-vivid text-inverse;
+    @apply bg-vivid text-inverse;0
   }
   ,
   .btn-middle {
@@ -56,6 +56,6 @@
   }
   ,
   .card {
-    @apply bg-card m-4 flex w-full justify-center overflow-hidden rounded-lg shadow-lg;
+    @apply bg-card m-4 flex justify-center rounded-lg shadow-lg;
   }
 }

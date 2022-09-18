@@ -5,79 +5,82 @@
         <%= image_tag photo, class:"w-1/2 object-cover object-center" %>
       <% end %>
     <% end %>
-    <article class="relative flex w-1/2 flex-col justify-start p-4 md:p-4">
-      <h2 class="truncate text-2xl mb-2"><%= project.name.capitalize %></h2>
+    <article class="relative flex w-1/2 flex-col p-4 pb-12 justify-between">
+      <div>
+        <h2 class="truncate text-2xl mb-2"><%= project.name.capitalize %></h2>
+        <p class="text-ellipsis"><%= project.description %></p>
+        <% if action_name == "show" %>
+          <% if project.place_name != nil %>
+            <h3 class="mt-4 mb-1"><%= t 'placep' %></h3>
+            <p><%= project.place_name %></p>
+          <% end %>
+        <% end %>
+        <% if project.country != nil %>
+          <h3 class="mt-4 mb-1"><%= t 'countryp' %></h3>
+          <p><%= project.country %></p>
+        <% end %>
+        <% if action_name == "show" %>
+          <% if project.begin != nil %>
+            <h3 class="mt-4 mb-1"><%= t 'beginp' %></h3>
+            <p><%= project.begin.strftime("%d/%m/%Y, at %I:%M%p") %></p>
+          <% end %>
+          <% if project.finish != nil %>
+            <h3 class="mt-4 mb-1"><%= t 'finishp' %></h3>
+            <p><%= project.finish.strftime("%d/%m/%Y, at %I:%M%p") %></p>
+          <% end %>
+        <% end %>
+        <% if user_signed_in? %>
+          <div
+            x-data="{ liked: <%= liked?(project)[0] %>, likesCount: <%=number_of_likes(project)%>, favourited: <%= favourite?(project)[0]%> }"
+            class="absolute bottom-0 right-0 mr-2 flex"
+          >
+            <div x-cloak x-show="liked" @click="liked = !liked, likesCount--">
+              <%= button_to like_path(project), method: :delete, class:"bg-blue-500
+          text-inverse text-sm active:bg-blue-600 uppercase px-4 py-2 my-4 mx-2
+          rounded-full shadow hover:drop-shadow-lg hover:bg-blue-400
+          focus:outline-none ease-linear transition-all", remote: :true do %>
+                <i class="fa-solid fa-thumbs-up"></i>
+                <span x-text="likesCount"></span>
+              <% end %>
+            </div>
+            <div x-cloak x-show="!liked" transition @click="liked = !liked, likesCount++">
+              <%= button_to likes_path, method: :post, params: {project_id: project},
+          class:"bg-neutral-light text-inverse text-sm active:bg-neutral-light
+          uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg
+          hover:bg-blue-400 outline-none focus:outline-none ease-linear
+          transition-all",remote: :true do %>
+                <i class="fa-solid fa-thumbs-up"></i>
+                <span x-text="likesCount"></span>
+              <% end %>
+            </div>
+            <div x-cloak x-show="favourited" transition @click="favourited = !favourited">
+              <%= button_to favourite_path(project), method: :delete,
+          class:"bg-pink-500 text-inverse text-sm active:bg-pink-600 uppercase
+          px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg
+          hover:bg-pink-400 focus:outline-none ease-linear transition-all",remote:
+          :true do %>
+                <i class="fas fa-heart"></i>
+              <% end %>
+            </div>
+            <div x-cloak x-show="!favourited" transition @click="favourited = !favourited">
+              <%= button_to favourites_path, method: :post, params: {project_id:
+          project}, class:"bg-neutral-light text-inverse text-sm
+          active:bg-neutral-ligth uppercase px-4 py-2 my-4 mx-2 rounded-full
+          shadow hover:drop-shadow-lg hover:bg-pink-400 focus:outline-none
+          outline-none ease-linear transition-all",remote: :true do %>
+                <i class="fas fa-heart"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
 
-      <p class="text-ellipsis"><%= project.description %></p>
-
-      <% if action_name == "show" %>
-        <% if project.place_name != nil %>
-          <h3 class="mt-4 mb-1"><%= t 'placep' %></h3>
-          <p><%= project.place_name %></p>
-        <% end %>
-      <% end %>
-      <% if project.country != nil %>
-        <h3 class="mt-4 mb-1"><%= t 'countryp' %></h3>
-        <p><%= project.country %></p>
-      <% end %>
-      <% if action_name != "show" %>
-        <%= link_to t('showbtn'), project,
-    class: "btn btn-middle mt-12" %>
-      <% end %>
-      <% if action_name == "show" %>
-        <% if project.begin != nil %>
-          <h3 class="mt-4 mb-1"><%= t 'beginp' %></h3>
-          <p><%= project.begin.strftime("%d/%m/%Y, at %I:%M%p") %></p>
-        <% end %>
-        <% if project.finish != nil %>
-          <h3 class="mt-4 mb-1"><%= t 'finishp' %></h3>
-          <p><%= project.finish.strftime("%d/%m/%Y, at %I:%M%p") %></p>
-        <% end %>
-      <% end %>
-      <% if user_signed_in? %>
-        <div
-          x-data="{ liked: <%= liked?(project)[0] %>, likesCount: <%=number_of_likes(project)%>, favourited: <%= favourite?(project)[0]%> }"
-          class="absolute bottom-0 right-0 mr-2 flex"
-        >
-          <div x-cloak x-show="liked" @click="liked = !liked, likesCount--">
-            <%= button_to like_path(project), method: :delete, class:"bg-blue-500
-        text-inverse text-sm active:bg-blue-600 uppercase px-4 py-2 my-4 mx-2
-        rounded-full shadow hover:drop-shadow-lg hover:bg-blue-400
-        focus:outline-none ease-linear transition-all", remote: :true do %>
-              <i class="fa-solid fa-thumbs-up"></i>
-              <span x-text="likesCount"></span>
-            <% end %>
-          </div>
-          <div x-cloak x-show="!liked" transition @click="liked = !liked, likesCount++">
-            <%= button_to likes_path, method: :post, params: {project_id: project},
-        class:"bg-neutral-light text-inverse text-sm active:bg-neutral-light
-        uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg
-        hover:bg-blue-400 outline-none focus:outline-none ease-linear
-        transition-all",remote: :true do %>
-              <i class="fa-solid fa-thumbs-up"></i>
-              <span x-text="likesCount"></span>
-            <% end %>
-          </div>
-          <div x-cloak x-show="favourited" transition @click="favourited = !favourited">
-            <%= button_to favourite_path(project), method: :delete,
-        class:"bg-pink-500 text-inverse text-sm active:bg-pink-600 uppercase
-        px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg
-        hover:bg-pink-400 focus:outline-none ease-linear transition-all",remote:
-        :true do %>
-              <i class="fas fa-heart"></i>
-            <% end %>
-          </div>
-          <div x-cloak x-show="!favourited" transition @click="favourited = !favourited">
-            <%= button_to favourites_path, method: :post, params: {project_id:
-        project}, class:"bg-neutral-light text-inverse text-sm
-        active:bg-neutral-ligth uppercase px-4 py-2 my-4 mx-2 rounded-full
-        shadow hover:drop-shadow-lg hover:bg-pink-400 focus:outline-none
-        outline-none ease-linear transition-all",remote: :true do %>
-              <i class="fas fa-heart"></i>
-            <% end %>
-          </div>
+        <div class="pb-16 w-full flex justify-end">
+          <% if action_name != "show" %>
+            <%= link_to t('showbtn'), project, class: "rounded-md px-3 py-2 btn-middle text-center" %>
+          <% end %>
         </div>
-      <% end %>
+
     </article>
   </section>
 <% elsif action_name == 'home' %>
