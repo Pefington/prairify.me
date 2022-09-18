@@ -15,7 +15,7 @@
     </div>
   <% end %>
 
-  <section class="relative flex flex-col items-center mt-4">
+  <section class="flex flex-col items-center mt-4">
     <%= form.label :content, class:"hidden" %>
     <%= form.text_area :content, rows:4, placeholder: t('holdercomment') %>
     <%= form.hidden_field :project_id, value: @project.id %>
