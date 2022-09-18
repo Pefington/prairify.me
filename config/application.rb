@@ -29,7 +29,7 @@ module PrairifyMe
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-
+    config.autoload_paths << "#{config.root}/lib"
     # Don't generate system test files.
     config.i18n.available_locales = %i[en fr]
     config.i18n.default_locale = :en

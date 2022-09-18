@@ -3,6 +3,11 @@ class CreatePlants < ActiveRecord::Migration[7.0]
     create_table :plants do |t|
       t.belongs_to :project, foreign_key: true, null: false
       t.integer :inaturalist_id, null: false
+      t.string :common_name, null: false
+      t.string :english_name, null: false
+      t.string :scientific_name, null: false
+      t.string :wiki
+      t.string :picture_url, null: false
 
       t.timestamps
     end
