@@ -110,6 +110,7 @@ en:
 
 # EDIT_PROFILE
 
+  editprofil: "Edit profile"
   psswd: "Current password"
   newpsswd: "New password"
   confnewpsswd: "Confirm new password"

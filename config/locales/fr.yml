@@ -107,6 +107,7 @@ fr:
 
 # EDIT_PROFILE
 
+  editprofil: "Editer mon profil"
   psswd: "Mot de passe actuel"
   newpsswd: "Nouveau mot de passe"
   confnewpsswd: "Confirmer nouveau mot de passe"
