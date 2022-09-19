@@ -2,8 +2,8 @@ class UserMailer < ApplicationMailer
   default from: 'prairify@yopmail.com'
   def welcome_email(user)
     @user = user
-    @url = 
-    @urlx = 
+    @url = 'https://www.prairify.me/'
+    @urlx ='https://www.prairify.me/projects'
     mail(to: @user.email, subject: 'Welcome at Prairify')
   end
 
