@@ -17,7 +17,7 @@ module ProjectsHelper
   def liked?(project)
     like = project.likes.find_by(user_id: current_user.id)
     return [true, like.id] unless like.nil?
-
+    
     [false, 0]
   end
 
