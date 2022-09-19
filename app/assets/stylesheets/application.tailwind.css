@@ -62,8 +62,7 @@
   },
   .form-check-input:hover {
     @apply border-middle
-  }
-  ,
+  },
   .card {
     @apply bg-card m-4 flex justify-center rounded-lg shadow-lg;
   }

@@ -38,6 +38,7 @@ en:
   subjectp: "Here you can see all the projects in progress, you can inspire yourself as you can inspire others, the first step is here!"
   newp: "New project"
   updatep: "Projects update"
+  editp: "Editing project"
   noupdatep: "Sorry, their is no update for the moment !"
   commentp: "Comments"
   nocommentp: "Sorry, their is no comment for the moment !"
@@ -53,9 +54,9 @@ en:
   beginp: "Begin:"
   countryp: "Country:"
   btnbackp: "Back to projects"
-  holderlocationp: "Location"
-  holdercountryp: "Country"
-  holdernamep: "Name"
+  holderlocationp: "Location *"
+  holdercountryp: "Country *"
+  holdernamep: "Name *"
   subject1p: "When do you want to begin your project?"
   subject2p: "What does your lawn look like now?"
   subject3p: "When do you want to end your project?"
@@ -194,6 +195,7 @@ en:
 #FORMS
 
   required: "Required"
+  requiredfields: "Required fields"
   minchar: "characters minimum"
   maxchar: "characters maximum"
   fgtpsswd: "Forgot your password?"

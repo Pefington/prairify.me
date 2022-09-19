@@ -37,6 +37,7 @@ fr:
   subjectp: "Ici vous pouvez voir tous les projets en cours, vous pouvez vous inspirer comme vous pouvez inspirer les autres, la première étape est là "
   newp: "Nouveau projet"
   updatep: "Mise à jour des projets"
+  editp: "Editer le projet"
   noupdate: "Désolé ! aucune mise à jour pour le moment !"
   commentp: "Commentaire(s)"
   nocommentp: "Désolé ! Aucun commentaire pour le moment !"
@@ -51,9 +52,9 @@ fr:
   beginp: "Début:"
   countryp: "Pays:"
   btnbackp: "Retour aux projets"
-  holderlocationp: "Ville"
-  holdercountryp: "Pays"
-  holdernamep: "Nom"
+  holderlocationp: "Ville *"
+  holdercountryp: "Pays *"
+  holdernamep: "Nom *"
   subject1p: "Quand souhaitez-vous démarrer votre projet ?"
   subject2p: "A quoi ressemble votre pelouse maintenant ?"
   subject3p: "Quand voulez-vous terminer votre projet ?"
@@ -193,6 +194,7 @@ fr:
 #FORMS
 
   required: "Obligatoire"
+  requiredfields: "Champs obligatoires"
   minchar: "caractères minimum"
   maxchar: "caractères maximum"
   fgtpsswd: "Mot de passe oublié?"
