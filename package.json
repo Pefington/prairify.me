@@ -7,8 +7,8 @@
     "vite-plugin-ruby": "^3.1.0"
   },
   "name": "prairify.me",
-  "version": "0.1.0",
-  "description": "Fuck lawns.",
+  "version": "1.0.0",
+  "description": "Down with the lawns.",
   "main": "application.js",
   "repository": "https://github.com/Pefington/prairify.me",
   "authors": [

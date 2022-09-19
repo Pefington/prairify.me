@@ -11,7 +11,6 @@ module.exports = {
     extend: {
       fontFamily: {
         fjalla: ["Fjalla One", ...defaultTheme.fontFamily.sans],
-        dosis: ["Dosis", ...defaultTheme.fontFamily.sans],
         quicksand: ["Quicksand", ...defaultTheme.fontFamily.sans],
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
