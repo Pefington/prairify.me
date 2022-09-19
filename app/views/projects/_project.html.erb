@@ -2,7 +2,7 @@
   <section id="<%= dom_id project %>" class="card min-h-[500px]">
     <% if project.photos.attached? %>
       <% project.photos.each do |photo| %>
-        <%= image_tag photo, class:"w-1/2 object-cover object-center rounded-l-md" %>
+        <%= image_tag photo, class:"w-1/2 object-cover object-center rounded-l-md", alt:"A photo of the project n°#{project.id}" %>
       <% end %>
     <% end %>
     <article class="relative flex w-1/2 flex-col p-4 pb-12 justify-between items-center">
