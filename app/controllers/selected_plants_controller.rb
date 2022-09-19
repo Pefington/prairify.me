@@ -17,6 +17,6 @@ class SelectedPlantsController < ApplicationController
   private
 
   def selected_plant_params
-    params.permit(:user_id, :inaturalist_id, :common_name, :english_name, :scientific_name, :wiki, :picture_url)
+    params.require(:selected_plant).permit(:user_id, :inaturalist_id, :common_name, :english_name, :scientific_name, :wiki, :picture_url)
   end
 end
