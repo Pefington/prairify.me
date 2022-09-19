@@ -1,6 +1,5 @@
 fr:
 
-
 #NAVBAR_BTN
 
   homebtn: "Accueil"
@@ -27,7 +26,7 @@ fr:
 #TEAMPAGE
 
   teamp: "La merveilleuse équipe sans laquelle ce projet n'aurait pas pu aboutir."
-  titlep: "L'Equipe Prairify "
+  titleteam: "L'Equipe Prairify "
 
 #PROJECT_PAGES
 
@@ -190,6 +189,10 @@ fr:
   commenttitle: "Nouveau commentaire"
   holdercomment: "Commentaire (de 2 à 150 caractères)"
   btnbackppro: "Retour au projet"
+
+#PLANT
+
+  nowiki: "Pas de wiki"
 
 #FORMS
 

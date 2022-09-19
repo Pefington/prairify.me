@@ -1,4 +1,4 @@
-<section class="w-full md:w-2/3 flex flex-col">
+<section class="w-full md:w-2/3 flex flex-col items-center">
   <%= render @project %>
   <hr class="my-8">
 
@@ -16,7 +16,7 @@
   <hr class="my-8">
 
   <% if @project_updates != nil %>
-    <h1 class="mt-4 font-bold text-4xl text-center"><%=t 'updatep'%></h1>
+    <h1 class="mt-4 text-4xl text-center"><%=t 'updatep'%></h1>
     <%= render @project_updates %>
     <hr class="my-8">
   <% else %>
@@ -24,7 +24,7 @@
       <%=t 'noupdatep'%></p>
   <% end %>
   <% if @comments != nil %>
-    <h1 class="mt-4 font-bold text-4xl text-center"><%=t 'commentp'%></h1>
+    <h1 class="mt-4 text-4xl text-center"><%=t 'commentp'%></h1>
     <%= render @comments %>
     <hr class="my-8">
   <%else%>

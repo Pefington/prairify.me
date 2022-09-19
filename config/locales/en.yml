@@ -28,7 +28,7 @@ en:
 #TEAMPAGE
 
   teamp: "Here is the wonderful team who made this project happen."
-  titlep: "Our Exevutive Team"
+  titleteam: "Our Exevutive Team"
 
 #PROJECT_PAGES
 
@@ -191,6 +191,10 @@ en:
   commenttitle: "New comment"
   holdercomment: "Comment (from 2 to 150 characters) "
   btnbackppro: "Back to the project"
+
+#PLANT
+
+  nowiki: "No wiki link"
 
 #FORMS
 
