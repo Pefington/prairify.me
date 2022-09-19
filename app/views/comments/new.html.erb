@@ -1,9 +1,5 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="mt-4 font-bold text-4xl text-center"><%= t'commenttitle'%></h1>
-
+<section class="w-full md:w-2/3 flex flex-col justify-center items-center">
+  <h1 class="text-4xl text-center"><%= t'commenttitle'%></h1>
   <%= render "form", comment: @comment %>
-
-  <div class="w-full flex justify-center">
-    <%= link_to t('btnbackppro'), project_path(params[:project_id]), class: "btn btn-soft" %>
-  </div>
-</div>
+  <%= link_to t('btnbackppro'), project_path(params[:project_id]) %>
+</section>

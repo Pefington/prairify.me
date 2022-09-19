@@ -24,7 +24,7 @@
   <% end %>
 
   <%# Prairify.me %>
-  <%= link_to "Prairify.me", root_path, class: "font-FjallaOne text-2xl sm:text-3xl lg:text-4xl link z-20" %>
+  <%= link_to "Prairify.me", root_path, class: "font-fjalla text-2xl sm:text-3xl lg:text-4xl link z-20" %>
 
   <%# SM- NAV %>
   <nav x-data="{ smallOpen: false }" x-cloak class="lg:hidden">
@@ -78,7 +78,10 @@
         inset-x-0
         z-20
         bg-soft
-        rounded-b-[4rem]
+        min-h-[620px]
+        h-[calc(100vh-73px)]
+        sm:h-[calc(100vh-81px)]
+        md:h-[calc(100vh-88px)]
       "
     >
       <div
@@ -90,7 +93,7 @@
         <%= link_to t('aboutbtn'), about_path, class: "btn btn-middle mb-4" %>
         <%= link_to t('contactbtn'), contact_path, class: "btn btn-middle" %>
         <% if user_signed_in? %>
-          <%= link_to "Projects", projects_path, class: "btn btn-middle mt-4" %>
+          <%= link_to t('projectbtn'), projects_path, class: "btn btn-middle mt-4" %>
         <% end %>
         <article class="flex justify-end items-center my-8">
           <%= button_to search_index_path, method: :get, params: {search: 'geoloc'}, class: "mr-4 w-12 text-inverse hover:text-vivid focus:text-inverse focus:bg-vivid rounded-md p-1 hover:font-bold" do %>
@@ -150,7 +153,7 @@
       <%= link_to t('aboutbtn'), about_path, class: "link drop-shadow-md" %>
       <%= link_to t('contactbtn'), contact_path, class: "link drop-shadow-md" %>
       <% if user_signed_in? %>
-        <%= link_to "Projects", projects_path, class: "link drop-shadow-md" %>
+        <%= link_to t('projectbtn'), projects_path, class: "link drop-shadow-md" %>
       <% end %>
     </section>
   </nav>
@@ -212,7 +215,7 @@
       lg:flex
       flex-col
       z-20
-      pb-8
+      pb-4
       rounded-b-full
       bg-soft
       border-b-2
@@ -221,11 +224,13 @@
     "
   >
     <% if current_user %>
-      <h3 class="mt-8 text-inverse underline text-xl">
-        <%= current_user.email %>
         <% if current_user.username %>
-          <%= current_user.username %>
+          <h3 class="mt-4 text-inverse text-2xl">
+            <%= current_user.username %>
+          </h3>
         <% end %>
+      <h3 class="mt-4 mb-2 text-inverse text-lg">
+        <%= current_user.email %>
       </h3>
     <% end %>
     <div class="flex w-full justify-center space-x-6 my-4">

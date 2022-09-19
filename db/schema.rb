@@ -73,6 +73,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_161148) do
   create_table "plants", force: :cascade do |t|
     t.bigint "project_id", null: false
     t.integer "inaturalist_id", null: false
+    t.string "common_name", null: false
+    t.string "english_name", null: false
+    t.string "scientific_name", null: false
+    t.string "wiki"
+    t.string "picture_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_plants_on_project_id"
@@ -103,6 +108,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_161148) do
   create_table "selected_plants", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "inaturalist_id", null: false
+    t.string "common_name", null: false
+    t.string "english_name", null: false
+    t.string "scientific_name", null: false
+    t.string "wiki"
+    t.string "picture_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_selected_plants_on_user_id"

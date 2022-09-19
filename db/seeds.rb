@@ -1,6 +1,7 @@
 require 'uri'
 require 'unsplash'
 
+
 User.create(email: 'admin@admin.com', password: 'adminpassword', role: User.roles[:admin])
 
 10.times do
@@ -23,11 +24,20 @@ number_of_projects.times do |index|
   project.photos.attach(io: file, filename: 'garden-image.jpg')
   project.save!
 end
-
 projects = Project.all
-plants = [61_905, 51_876, 47_853, 53_438, 47_603, 50_829, 47_561, 48_177, 126_844, 48_891, 60_001]
+
+place = QueryApi.get_place_with_name('san marino')
+plants = QueryApi.get_taxa_from_place_id(place[1])
+
 30.times do
-  Plant.create!(inaturalist_id: plants.sample, project: projects.sample)
+  plant = plants.sample
+  Plant.create!(inaturalist_id: plant[:id],
+                common_name: plant[:common_name],
+                english_name: plant[:english_name],
+                scientific_name: plant[:scientific_name],
+                wiki: plant[:wiki],
+                picture_url: plant[:picture_url],
+                project: projects.sample)
 end
 
 50.times do

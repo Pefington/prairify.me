@@ -1,8 +1,14 @@
 module ProjectsHelper
   def transfer_plants(project)
     selected_plants = SelectedPlant.where(user_id: current_user.id)
-    selected_plants.each do |pick|
-      Plant.create(inaturalist_id: pick.inaturalist_id, project_id: project.id)
+    selected_plants.each do |plant|
+      Plant.create(inaturalist_id: plant.inaturalist_id,
+                   common_name: plant.common_name,
+                   english_name: plant.english_name,
+                   scientific_name: plant.scientific_name,
+                   wiki: plant.wiki,
+                   picture_url: plant.picture_url,
+                   project_id: project.id)
     end
     SelectedPlant.where(user_id: current_user.id).destroy_all
   end
@@ -11,10 +17,10 @@ module ProjectsHelper
   def liked?(project)
     like = project.likes.find_by(user_id: current_user.id)
     return [true, like.id] unless like.nil?
-    
+
     [false, 0]
   end
-  
+
   # Returns true if a project is favourited by the current user and false otheriwse
   def favourite?(project)
     favourite = project.favourites.find_by(user_id: current_user.id)

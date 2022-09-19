@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project_updates = @project.project_updates
     @comments = @project.comments
+    @plants = @project.plants
   end
 
   def new
