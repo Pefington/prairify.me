@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
   def email_project(project)
     @project = project
     @user = @project.user
-    @url = 'https://prairify.herokuapp.com/'
+    @url = 'https://www.prairify.me/'
     mail(to: @user.email, subject: 'Project Begin on Prairify')
   end
 end
