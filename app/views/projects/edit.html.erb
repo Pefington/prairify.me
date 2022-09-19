@@ -1,10 +1,7 @@
-<section class="mx-auto md:w-2/3 w-full">
-  <h1 class="mt-4 font-bold text-4xl text-center">Editing project</h1>
+<section class="mx-auto md:w-2/3 w-full space-y-4">
+  <h1 class="mt-4 text-4xl text-center"><%= t('editp')%></h1>
 
   <%= render "form", project: @project %>
 
-  <div class="w-full flex justify-center">
-    <%= link_to t('btnbackp'), projects_path, class: "btn" %>
-    <%= link_to t('showbtn'), @project, class: "btn" %>
-  </div>
+  <%= link_to t('showbtn'), @project, class: "link flex justify-center" %>
 </section>

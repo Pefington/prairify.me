@@ -1,6 +1,5 @@
 fr:
 
-
 #NAVBAR_BTN
 
   homebtn: "Accueil"
@@ -27,8 +26,8 @@ fr:
 #TEAMPAGE
 
   teamp: "La merveilleuse équipe sans laquelle ce projet n'aurait pas pu aboutir."
-  titlep: "L'Equipe Prairify "
-  
+  titleteam: "L'Equipe Prairify "
+
 #PROJECT_PAGES
 
   post: "Postée le :"
@@ -37,6 +36,7 @@ fr:
   subjectp: "Ici vous pouvez voir tous les projets en cours, vous pouvez vous inspirer comme vous pouvez inspirer les autres, la première étape est là "
   newp: "Nouveau projet"
   updatep: "Mise à jour des projets"
+  editp: "Editer le projet"
   noupdate: "Désolé ! aucune mise à jour pour le moment !"
   commentp: "Commentaire(s)"
   nocommentp: "Désolé ! Aucun commentaire pour le moment !"
@@ -51,9 +51,9 @@ fr:
   beginp: "Début:"
   countryp: "Pays:"
   btnbackp: "Retour aux projets"
-  holderlocationp: "Ville"
-  holdercountryp: "Pays"
-  holdernamep: "Nom"
+  holderlocationp: "Ville *"
+  holdercountryp: "Pays *"
+  holdernamep: "Nom *"
   subject1p: "Quand souhaitez-vous démarrer votre projet ?"
   subject2p: "A quoi ressemble votre pelouse maintenant ?"
   subject3p: "Quand voulez-vous terminer votre projet ?"
@@ -86,7 +86,7 @@ fr:
   contacttitle1: "Contactez nous pour"
   contacttitle2: "Plus d'informations"
   followcontact: "Suivez-nous"
-  
+
 
 #FAVORITES_PAGE
 
@@ -104,6 +104,12 @@ fr:
   subjectprofil: "Ici, vous pouvez modifier votre profil et voir tous vos projets en cours ou terminés. Bienvenue chez Prairify, vous êtes déjà sur la voie du changement !"
   projectprofil: "Projet(s)"
   btnprofil: "Editer"
+
+# EDIT_PROFILE
+
+  psswd: "Mot de passe actuel"
+  newpsswd: "Nouveau mot de passe"
+  confnewpsswd: "Confirmer nouveau mot de passe"
 
 #ADMIN
 
@@ -161,16 +167,16 @@ fr:
   signupbtn: "S'inscrire"
   clickhere: "Cliquez ici"
   holdername: "Nom d'utilisateur"
-  
+
 #SEARCH_PAGE
 
   noresultsearchpage: "Aucun résultat. Vous pouvez essayer une zone plus large (arrondissement, comté, département...)"
   nogeolocsearchpage: "Nous n'avons pas pu vous géolocaliser. Essayez plutôt de nous écrire où vous vivez:"
   textsearch1: "Resultat(s) pour"
-  textsearch2: "sur 12 plantes sélectionnées."
+  textsearch2: "sur 12 plantes sélectionnées"
   addplantsearchpage: "Ajoutez-les à un nouveau projet !"
   resetselectsearchpage: "Réinitialiser la sélection"
-  wikiplantsearchpage: "Plus à propos de %{plant}"
+  wikiplantsearchpage: "Wikipedia"
   startprojectsearchpage: "pour démarrer un projet"
 
 #COMMENT
@@ -181,5 +187,19 @@ fr:
 #NEWCOMMENT
 
   commenttitle: "Nouveau commentaire"
-  holdercomment: "Commentaire"
+  holdercomment: "Commentaire (de 2 à 150 caractères)"
   btnbackppro: "Retour au projet"
+
+#PLANT
+
+  nowiki: "Pas de wiki"
+#FORMS
+
+  required: "Obligatoire"
+  requiredfields: "Champs obligatoires"
+  minchar: "caractères minimum"
+  maxchar: "caractères maximum"
+  fgtpsswd: "Mot de passe oublié?"
+  changepsswd: "Changer mon mot de passe"
+  resetpsswd: "Réinitialiser mon mot de passe"
+  back: "Retour"

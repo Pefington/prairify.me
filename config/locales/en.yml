@@ -28,7 +28,7 @@ en:
 #TEAMPAGE
 
   teamp: "Here is the wonderful team who made this project happen."
-  titlep: "Our Exevutive Team"
+  titleteam: "Our Exevutive Team"
 
 #PROJECT_PAGES
 
@@ -38,6 +38,7 @@ en:
   subjectp: "Here you can see all the projects in progress, you can inspire yourself as you can inspire others, the first step is here!"
   newp: "New project"
   updatep: "Projects update"
+  editp: "Editing project"
   noupdatep: "Sorry, their is no update for the moment !"
   commentp: "Comments"
   nocommentp: "Sorry, their is no comment for the moment !"
@@ -53,9 +54,9 @@ en:
   beginp: "Begin:"
   countryp: "Country:"
   btnbackp: "Back to projects"
-  holderlocationp: "Location"
-  holdercountryp: "Country"
-  holdernamep: "Name"
+  holderlocationp: "Location *"
+  holdercountryp: "Country *"
+  holdernamep: "Name *"
   subject1p: "When do you want to begin your project?"
   subject2p: "What does your lawn look like now?"
   subject3p: "When do you want to end your project?"
@@ -88,7 +89,7 @@ en:
   contacttitle1: "Contact us for"
   contacttitle2: "More informations"
   followcontact: "Follow us"
-  
+
 
 #FAVORITES_PAGE
 
@@ -106,6 +107,12 @@ en:
   subjectprofil: "Here you can modify your profile and see all your current or completed projects. Welcome to Prairify, you are already on the path to change!"
   projectprofil: "Project(s)"
   btnprofil: "Edit"
+
+# EDIT_PROFILE
+
+  psswd: "Current password"
+  newpsswd: "New password"
+  confnewpsswd: "Confirm new password"
 
 #ADMIN
 
@@ -169,10 +176,10 @@ en:
   noresultsearchpage: "No result. You could try a wider area (district, county, département...)"
   nogeolocsearchpage: "Sorry we couldn't geolocate you. Please try to write the area you live in instead:"
   textsearch1: "Results for"
-  textsearch2: "out of 12 plants selected."
+  textsearch2: "out of 12 plants selected"
   addplantsearchpage: "Add them to a new project!"
   resetselectsearchpage: "Reset selection"
-  wikiplantsearchpage: "More about %{plant}"
+  wikiplantsearchpage: "Wikipedia"
   startprojectsearchpage: "to start a project!"
 
 #COMMENT
@@ -182,5 +189,19 @@ en:
 
 #NEWCOMMENT
   commenttitle: "New comment"
-  holdercomment: "Comment"
+  holdercomment: "Comment (from 2 to 150 characters) "
   btnbackppro: "Back to the project"
+
+#PLANT
+
+  nowiki: "No wiki link"
+#FORMS
+
+  required: "Required"
+  requiredfields: "Required fields"
+  minchar: "characters minimum"
+  maxchar: "characters maximum"
+  fgtpsswd: "Forgot your password?"
+  changepsswd: "Change my password"
+  resetpsswd: "Resest my password"
+  back: "Back"

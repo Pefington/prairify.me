@@ -1,151 +1,143 @@
 <% if action_name != 'home' %>
-  <section class="flex flex-col justify-center w-full max-h-[500px]">
-    <div
-      id="<%= dom_id project %>"
-      class="
-        flex
-        justify-center
-        overflow-hidden
-        bg-inverse
-        rounded-lg
-        shadow-lg
-        m-4
-        h-[500px]
-      "
-    >
-      <% if project.photos.attached? %>
-        <% project.photos.each do |photo| %>
-          <%= image_tag photo, class:"w-1/2 object-cover object-center" %>
-        <% end %>
+  <section id="<%= dom_id project %>" class="card min-h-[500px]">
+    <% if project.photos.attached? %>
+      <% project.photos.each do |photo| %>
+        <%= image_tag photo, class:"w-1/2 object-cover object-center rounded-l-md" %>
       <% end %>
-      <div class="w-1/2 p-4 md:p-4 relative">
-        <div class=" flex flex-col justify-center">
-          <h1 class="text-2xl font-bold truncate"><%= project.name %></h1>
-
-            <p class="my-3 text-ellipsis"><%= project.description %></p>
-
-            <% if action_name == "show" %>
-              <% if project.place_name != nil %>
-                <h1><%=t 'placep'%></h1>
-                <p class="my-3">
-                  <%= project.place_name %>
-                </p>
-              <% end %>
-            <% end %>
-            
-            <% if project.country != nil %>
-              <h1><%=t 'countryp'%></h1>
-              <p class="my-3">
-                <%= project.country %>
-              </p>
-            <% end %>
-
-            <% if action_name == "show" %>
-              <% if project.begin != nil %>
-                <h1><%=t 'beginp'%></h1>
-                <p class="my-3">
-                  <%= project.begin.strftime("%d/%m/%Y, at %I:%M%p") %>
-                </p>
-              <% end %>
-
-              <% if project.finish != nil %>
-                <h1><%=t 'finishp'%></h1>
-                <p class="my-3">
-                  <%= project.finish.strftime("%d/%m/%Y, at %I:%M%p") %>
-                </p>
-              <% end %>
-            <% end %>
-        </div>
+    <% end %>
+    <article class="relative flex w-1/2 flex-col p-4 pb-12 justify-between items-center">
+      <div class="w-3/4">
+        <h2 class="truncate text-2xl mb-2"><%= project.name.capitalize %></h2>
+        <p class="text-ellipsis"><%= project.description %></p>
+        <% if action_name == "show" %>
+          <% if project.place_name != nil %>
+            <h3 class="mt-4 mb-1"><%= t 'placep' %></h3>
+            <p><%= project.place_name %></p>
+          <% end %>
+        <% end %>
+        <% if project.country != nil %>
+          <h3 class="mt-4 mb-1"><%= t 'countryp' %></h3>
+          <p><%= project.country %></p>
+        <% end %>
+        <% if action_name == "show" %>
+          <% if project.begin != nil %>
+            <h3 class="mt-4 mb-1"><%= t 'beginp' %></h3>
+            <p><%= project.begin.strftime("%d/%m/%Y") %></p>
+          <% end %>
+          <% if project.finish != nil %>
+            <h3 class="mt-4 mb-1"><%= t 'finishp' %></h3>
+            <p><%= project.finish.strftime("%d/%m/%Y") %></p>
+          <% end %>
+        <% end %>
         <% if user_signed_in? %>
           <div
             x-data="{ liked: <%= liked?(project)[0] %>, likesCount: <%=number_of_likes(project)%>, favourited: <%= favourite?(project)[0]%> }"
-            class="flex absolute bottom-0 right-0 mr-2"
+            class="absolute bottom-0 right-0 mr-2 flex"
           >
             <div x-cloak x-show="liked" @click="liked = !liked, likesCount--">
-              <%= button_to like_path(project), method: :delete, class:"bg-blue-500 text-inverse text-sm active:bg-blue-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-blue-400 focus:outline-none ease-linear transition-all", remote: :true do %>
+              <%= button_to like_path(project), method: :delete, class:"bg-blue-500
+          text-inverse text-sm active:bg-blue-600 uppercase px-4 py-2 my-4 mx-2
+          rounded-full shadow hover:drop-shadow-lg hover:bg-blue-400
+          focus:outline-none ease-linear transition-all", remote: :true do %>
                 <i class="fa-solid fa-thumbs-up"></i>
                 <span x-text="likesCount"></span>
               <% end %>
             </div>
             <div x-cloak x-show="!liked" transition @click="liked = !liked, likesCount++">
-              <%= button_to likes_path, method: :post, params: {project_id: project}, class:"bg-neutral-light text-inverse text-sm active:bg-neutral-light uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-blue-400 outline-none focus:outline-none ease-linear transition-all",remote: :true do %>
+              <%= button_to likes_path, method: :post, params: {project_id: project},
+          class:"bg-neutral-light text-inverse text-sm active:bg-neutral-light
+          uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg
+          hover:bg-blue-400 outline-none focus:outline-none ease-linear
+          transition-all",remote: :true do %>
                 <i class="fa-solid fa-thumbs-up"></i>
                 <span x-text="likesCount"></span>
               <% end %>
             </div>
             <div x-cloak x-show="favourited" transition @click="favourited = !favourited">
-              <%= button_to favourite_path(project), method: :delete, class:"bg-pink-500 text-inverse text-sm active:bg-pink-600 uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-pink-400 focus:outline-none ease-linear transition-all",remote: :true do %>
+              <%= button_to favourite_path(project), method: :delete,
+          class:"bg-pink-500 text-inverse text-sm active:bg-pink-600 uppercase
+          px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg
+          hover:bg-pink-400 focus:outline-none ease-linear transition-all",remote:
+          :true do %>
                 <i class="fas fa-heart"></i>
               <% end %>
             </div>
             <div x-cloak x-show="!favourited" transition @click="favourited = !favourited">
-              <%= button_to favourites_path, method: :post, params: {project_id: project}, class:"bg-neutral-light text-inverse text-sm active:bg-neutral-ligth uppercase px-4 py-2 my-4 mx-2 rounded-full shadow hover:drop-shadow-lg hover:bg-pink-400 focus:outline-none outline-none ease-linear transition-all",remote: :true do %>
+              <%= button_to favourites_path, method: :post, params: {project_id:
+          project}, class:"bg-neutral-light text-inverse text-sm
+          active:bg-neutral-ligth uppercase px-4 py-2 my-4 mx-2 rounded-full
+          shadow hover:drop-shadow-lg hover:bg-pink-400 focus:outline-none
+          outline-none ease-linear transition-all",remote: :true do %>
                 <i class="fas fa-heart"></i>
               <% end %>
             </div>
           </div>
         <% end %>
-
-          <div class="flex justify-end">
-            <% if action_name != "show" %>
-              <%= link_to t('showbtn'), project, class: "btn btn-middle" %>
-            <% end %>
-          </div>
-        </div>
       </div>
-    </section>
-  </div>
+
+      <% if action_name == "show" %>
+        <div class="flex flex-wrap mt-12 items-center justify-center">
+          <% @plants.each do |plant| %>
+            <article class="flex flex-col rounded-md sm:p-1 lg:p-4 lg:m-2 p-0 card m-1 w-5/12 text-xs"><%= image_tag plant.picture_url, class: "object-cover object-center rounded-md aspect-1", alt: "A picture of #{plant.scientific_name}" %>
+            <p class="hidden sm:flex items-center justify-center h-8 text-center"><%= plant.scientific_name %></p>
+            </article>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="pb-16 w-full flex justify-end">
+        <% if action_name != "show" %>
+          <%= link_to t('showbtn'), project, class: "rounded-md px-3 py-2 btn-middle text-center" %>
+        <% end %>
+      </div>
+
+    </article>
+  </section>
 <% elsif action_name == 'home' %>
   <div
     x-cloak
     x-show="activeSlide == <%= project.id %>"
     class="
+      bg-card
+      flex
       h-min
+      w-full
+      flex-col
+      items-center
+      justify-center
       rounded-lg
-      bg-inverse
       p-8
       shadow-lg
-      flex
-      flex-col
-      justify-center
-      items-center
-      w-full
     "
   >
     <% if project.photos.attached? %>
       <% project.photos.each do |photo| %>
-        <%= image_tag photo, class: "mb-4 rounded-lg object-center object-cover h-[66vh] w-full" %>
+        <%= image_tag photo, class: "mb-4 rounded-lg object-center object-cover h-[66vh]
+  w-full" %>
       <% end %>
     <% end %>
     <div class="-mx-2 mt-6 flex items-center">
       <button
         @click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1"
-        class="
-
-          transition-colors
-          duration-300
-        "
+        class="transition-colors duration-300"
       >
         <i class="fa-solid fa-circle-chevron-left fa-3x"></i>
       </button>
       <div class="mx-8">
-        <p class=" text-xl font-semibold drop-shadow 2xl:text-2xl">
+        <p class="text-xl font-semibold drop-shadow 2xl:text-2xl">
           <% if project.user.username? %>
             <%= project.user.username %>
           <% else %>
             Anonymous
           <% end %>
         </p>
-        <p class=" text-sm italic 2xl:text-vivid"><%= project.created_at.strftime("%d/%m/%Y") %></p>
-
+        <p class="2xl:text-vivid text-sm italic">
+          <%= project.created_at.strftime("%d/%m/%Y") %>
+        </p>
       </div>
       <button
         @click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1"
-        class="
-
-          transition-colors
-          duration-300
-        "
+        class="transition-colors duration-300"
       >
         <i class="fa-solid fa-circle-chevron-right fa-3x"></i>
       </button>
