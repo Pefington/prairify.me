@@ -98,7 +98,7 @@
 <% elsif action_name == 'home' %>
   <div
     x-cloak
-    x-show="activeSlide == <%= project.id %>"
+    x-show="activeSlide == <%= @projects.index(project) + 1%>"
     class="
       bg-card
       flex
