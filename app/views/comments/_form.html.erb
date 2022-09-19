@@ -15,10 +15,10 @@
     </div>
   <% end %>
 
-  <section class="flex flex-col items-center mt-4">
+  <section class="flex flex-col items-center mt-4 w-4/5">
     <%= form.label :content, class:"hidden" %>
-    <%= form.text_area :content, rows:4, placeholder: t('holdercomment') %>
+    <%= form.text_area :content, rows:6, class: "form-field",placeholder: t('holdercomment') %>
     <%= form.hidden_field :project_id, value: @project.id %>
-    <%= form.submit class: "btn" %>
+    <%= form.submit class: "btn btn-middle m-4" %>
   </section>
 <% end %>
