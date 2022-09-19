@@ -31,6 +31,7 @@ fr:
 #PROJECT_PAGES
 
   post: "Postée le :"
+  fieldtitle: "Titre"
   descrp: "Description :"
   titlep: "Projets"
   subjectp: "Ici vous pouvez voir tous les projets en cours, vous pouvez vous inspirer comme vous pouvez inspirer les autres, la première étape est là "
@@ -107,6 +108,7 @@ fr:
 
 # EDIT_PROFILE
 
+  editprofil: "Editer mon profil"
   psswd: "Mot de passe actuel"
   newpsswd: "Nouveau mot de passe"
   confnewpsswd: "Confirmer nouveau mot de passe"
@@ -193,6 +195,7 @@ fr:
 #PLANT
 
   nowiki: "Pas de wiki"
+
 #FORMS
 
   required: "Obligatoire"
