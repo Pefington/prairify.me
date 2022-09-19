@@ -13,12 +13,12 @@ users = User.all
 number_of_projects = 5
 number_of_projects.times do |index|
   project = Project.new(user: users.sample,
-                  name: Faker::Lorem.word,
-                  description: Faker::Lorem.sentence(word_count: 10),
-                  begin: Faker::Date.between(from: Time.zone.today, to: '2022-12-31'),
-                  finish: Faker::Date.between(from: '2023-01-01', to: '2023-12-31'),
-                  place_name: Faker::Address.city,
-                  country: Faker::Address.country)
+                        name: Faker::Lorem.word,
+                        description: Faker::Lorem.sentence(word_count: 10),
+                        begin: Faker::Date.between(from: Time.zone.today, to: '2022-12-31'),
+                        finish: Faker::Date.between(from: '2023-01-01', to: '2023-12-31'),
+                        place_name: Faker::Address.city,
+                        country: Faker::Address.country)
   file = URI.parse(gardens[index].urls.regular).open
   project.photos.attach(io: file, filename: 'garden-image.jpg')
   project.save!
