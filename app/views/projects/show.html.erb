@@ -2,6 +2,19 @@
   <%= render @project %>
   <hr class="my-8">
 
+  <div class="w-full flex flex-wrap justify-center text-center space-x-8">
+    <% if @project.user == current_user %>
+      <%= link_to t('modip'), edit_project_path(@project), class: "btn btn-inverse" %>
+      <%= button_to t('updatenewbtn'), new_project_project_update_path(@project), method: :get, class: "btn btn-middle" %>
+      <%= button_to t('projectdestroybtn'), project_path(@project), method: :delete, class: "link text-accent" %>
+    <% else %>
+      <%= link_to t('btnbackp'), projects_path, class: "btn" %>
+      <%= button_to t('commentbtn'), new_project_comment_path(@project), method: :get, class: "btn btn-soft" %>
+    <% end %>
+  </div>
+
+  <hr class="my-8">
+
   <% if @project_updates != nil %>
     <h1 class="mt-4 text-4xl text-center"><%=t 'updatep'%></h1>
     <%= render @project_updates %>
@@ -17,16 +30,4 @@
   <%else%>
     <p> <%=t 'nocommentp'%></p>
   <%end%>
-
-
-  <div class="w-full flex flex-col justify-center text-center space-y-4">
-    <% if @project.user == current_user %>
-      <%= link_to t('modip'), edit_project_path(@project), class: "btn btn-middle w-60 mx-auto" %>
-      <%= button_to t('updatenewbtn'), new_project_project_update_path(@project), method: :get, class: "btn btn-middle w-60" %>
-      <%= button_to t('projectdestroybtn'), project_path(@project), method: :delete, class: "btn bg-red-600/80 text-inverse hover:bg-red-600 focus:ring-2 ring-red-600 w-60" %>
-    <% else %>
-      <%= link_to t('btnbackp'), projects_path, class: "btn btn-middle w-60" %>
-      <%= button_to t('commentbtn'), new_project_comment_path(@project), method: :get, class: "btn btn-middle w-60" %>
-    <% end %>
-  </div>
 </section>

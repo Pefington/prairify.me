@@ -1,9 +1,5 @@
 <section class=" mx-auto md:w-2/3 w-full">
-  <h1 class="mt-4 text-4xl text-center"><%=t 'newp'%></h1>
-
+  <h1 class="mt-4 font-bold text-4xl text-center"><%=t 'newp'%></h1>
   <%= render "form", project: @project %>
-
-  <div class="w-full flex justify-center">
-    <%= link_to t('btnbackp'), projects_path, class: "btn inline-block" %>
-  </div>
+  <%= link_to t('btnbackp'), projects_path, class: "w-full flex justify-center link" %>
 </section>
