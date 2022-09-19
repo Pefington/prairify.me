@@ -2,8 +2,8 @@ class UserMailer < ApplicationMailer
   default from: 'prairify@yopmail.com'
   def welcome_email(user)
     @user = user
-    @url = 'http://prairify.herokuapp.com'
-    @urlx = 'http://prairify.herokuapp.com/projects'
+    @url = 
+    @urlx = 
     mail(to: @user.email, subject: 'Welcome at Prairify')
   end
 
