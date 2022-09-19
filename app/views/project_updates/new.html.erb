@@ -1,9 +1,5 @@
-<div class="mx-auto md:w-2/3 w-full">
+<div class="card w-full md:w-2/3 flex flex-col justify-center items-center mx-auto p-4">
   <h1 class="mt-4 text-4xl text-center"><%=t'updatep'%></h1>
-
   <%= render "form", project_update: @project_update %>
-
-  <div class="w-full flex justify-center">
-    <%= link_to "Back to project", project_path(params[:project_id]), class: "btn btn-middle" %>
-  </div>
+  <%= link_to t('btnbackppro'), project_path(params[:project_id]), class: "link" %>
 </div>

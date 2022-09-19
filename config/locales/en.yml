@@ -33,6 +33,7 @@ en:
 #PROJECT_PAGES
 
   post: "Posted on:"
+  fieldtitle: "Title"
   descrp: "Description:"
   titlep: "Projects"
   subjectp: "Here you can see all the projects in progress, you can inspire yourself as you can inspire others, the first step is here!"
