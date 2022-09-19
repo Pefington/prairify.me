@@ -114,8 +114,7 @@
   >
     <% if project.photos.attached? %>
       <% project.photos.each do |photo| %>
-        <%= image_tag photo, class: "mb-4 rounded-lg object-center object-cover h-[66vh]
-  w-full" %>
+        <%= image_tag photo, alt: "Project's photo", class: "mb-4 rounded-lg object-center object-cover h-[66vh] w-full" %>
       <% end %>
     <% end %>
     <div class="-mx-2 mt-6 flex items-center">

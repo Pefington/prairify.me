@@ -11,6 +11,6 @@
     </p>
   </div>
   <% if project_update.photo.attached? %>
-    <%= image_tag project_update.photo, class:"w-1/2 object-cover object-center h-[400px]" %>
+    <%= image_tag project_update.photo, alt: "Progress picture", class:"w-1/2 object-cover object-center h-[400px]" %>
   <% end %>
 </section>
