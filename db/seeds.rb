@@ -31,7 +31,7 @@ plants = QueryApi.get_taxa_from_place_id(place[1])
 
 30.times do
   plant = plants.sample
-  Plant.create!(inaturalist_id: plant[:id],
+  Plant.create(inaturalist_id: plant[:id],
                 common_name: plant[:common_name],
                 english_name: plant[:english_name],
                 scientific_name: plant[:scientific_name],

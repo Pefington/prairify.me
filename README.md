@@ -32,7 +32,7 @@ dashboard
 
 ## WEB version 🌐
 
-Le site est en prod ici  [Prairify](https://prairify.herokuapp.com/)
+Le site est en prod ici  [Prairify](https://www.prairify.me)
 
 
 
