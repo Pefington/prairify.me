@@ -78,7 +78,9 @@
       <% if action_name == "show" %>
         <div class="flex flex-wrap mt-12 items-center justify-center">
           <% @plants.each do |plant| %>
-            <article class="flex flex-col rounded-md sm:p-1 lg:p-4 lg:m-2 p-0 card m-1 w-5/12 text-xs"><%= image_tag plant.picture_url, class: "object-cover object-center rounded-md aspect-1", alt: "A picture of #{plant.scientific_name}" %>
+            <% unless plant.picture_url.nil? %>
+              <article class="flex flex-col rounded-md sm:p-1 lg:p-4 lg:m-2 p-0 card m-1 w-5/12 text-xs"><%= image_tag plant.picture_url, class: "object-cover object-center rounded-md aspect-1", alt: "A picture of #{plant.scientific_name}" %>
+            <% end%>
             <p class="hidden sm:flex items-center justify-center h-8 text-center"><%= plant.scientific_name %></p>
             </article>
           <% end %>
@@ -96,7 +98,7 @@
 <% elsif action_name == 'home' %>
   <div
     x-cloak
-    x-show="activeSlide == <%= project.id %>"
+    x-show="activeSlide == <%= @projects.index(project) + 1%>"
     class="
       bg-card
       flex
