@@ -42,6 +42,10 @@
     @apply bg-middle text-inverse;
   }
   ,
+  .btn-soft {
+    @apply bg-soft text-inverse;
+  }
+  ,
   .btn-middle:hover,
   .btn-middle:focus {
     @apply bg-vivid;

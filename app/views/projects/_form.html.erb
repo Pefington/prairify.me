@@ -35,7 +35,7 @@
       <div class="relative flex items-center mt-4">
         <h3 class="mr-3"><%=t 'subject1p'%></h3>
         <%= form.label :begin, class:"hidden" %>
-        <%= form.datetime_field :begin, class:"form-field indent-0 text-neutral-light" %>
+        <%= form.date_field :begin, class:"form-field indent-0 text-neutral-light" %>
       </div>
 
       <div class="relative flex items-center mt-4">
@@ -47,11 +47,11 @@
       <div class="relative flex items-center mt-4">
         <h3 class="mr-3"><%=t 'subject3p'%></h3>
         <%= form.label :finish, class:"hidden" %>
-        <%= form.datetime_field :finish, class:"form-field indent-0 text-neutral-light" %>
+        <%= form.date_field :finish, class:"form-field indent-0 text-neutral-light" %>
       </div>
 
       <div class="relative flex justify-center mt-4">
-        <%= form.submit t('createprojectbtn'), class: "btn" %>
+        <%= form.submit t('createprojectbtn'), class: "btn btn-middle" %>
       </div>
     </div>
   </section>

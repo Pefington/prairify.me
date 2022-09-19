@@ -93,7 +93,7 @@
         <%= link_to t('aboutbtn'), about_path, class: "btn btn-middle mb-4" %>
         <%= link_to t('contactbtn'), contact_path, class: "btn btn-middle" %>
         <% if user_signed_in? %>
-          <%= link_to "Projects", projects_path, class: "btn btn-middle mt-4" %>
+          <%= link_to t('projectbtn'), projects_path, class: "btn btn-middle mt-4" %>
         <% end %>
         <article class="flex justify-end items-center my-8">
           <%= button_to search_index_path, method: :get, params: {search: 'geoloc'}, class: "mr-4 w-12 text-inverse hover:text-vivid focus:text-inverse focus:bg-vivid rounded-md p-1 hover:font-bold" do %>
@@ -153,7 +153,7 @@
       <%= link_to t('aboutbtn'), about_path, class: "link drop-shadow-md" %>
       <%= link_to t('contactbtn'), contact_path, class: "link drop-shadow-md" %>
       <% if user_signed_in? %>
-        <%= link_to "Projects", projects_path, class: "link drop-shadow-md" %>
+        <%= link_to t('projectbtn'), projects_path, class: "link drop-shadow-md" %>
       <% end %>
     </section>
   </nav>
