@@ -1,10 +1,7 @@
 {
   "devDependencies": {
-    "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.13",
-    "vite": "^3.0.0",
-    "vite-plugin-full-reload": "^1.0.4",
-    "vite-plugin-ruby": "^3.1.0"
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.3"
   },
   "name": "prairify.me",
   "version": "1.0.0",
@@ -30,9 +27,9 @@
     "format": "pnpm format-rb && pnpm format-erb && pnpm format-rest"
   },
   "dependencies": {
-    "@alpinejs/intersect": "^3.10.3",
-    "alpinejs": "^3.10.3",
-    "chart.js": "^3.9.1",
-    "chartkick": "^4.2.0"
+    "@alpinejs/intersect": "^3.11.1",
+    "alpinejs": "^3.11.1",
+    "chart.js": "^4.2.1",
+    "chartkick": "^5.0.1"
   }
 }

@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: prairify_me_production
-  username: prairify_me
-  password: <%= ENV["PRAIRIFY_ME_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

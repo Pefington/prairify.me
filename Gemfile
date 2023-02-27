@@ -1,134 +1,123 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.4'
+ruby "3.1.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
+gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'sprockets-rails'
+gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 5.0'
+gem "puma", "~> 5.0"
 
-# Gem for translate
-gem 'rails-i18n'
-gem 'devise-i18n'
-########################################
-# ~ means gem we added for the project #
-########################################
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem "importmap-rails"
 
-# https://github.com/activerecord-hackery/ransack
-# Object-based searching
-gem 'ransack'
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem "turbo-rails"
 
-# https://github.com/ankane/groupdate
-# The simplest way to group temporal data
-gem 'groupdate'
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem "stimulus-rails"
 
-# https://github.com/ankane/chartkick
-# Create beautiful JavaScript charts with one line of Ruby
-gem 'chartkick'
+# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem "jbuilder"
 
-# https://github.com/kaminari/kaminari
-# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
-gem 'kaminari', '~> 1.2.2'
+# Use Redis adapter to run Action Cable in production
+gem "redis", "~> 4.0"
 
-# ~ Vite [https://github.com/ElMassimo/vite_ruby#readme]
-# Replaces rails crappy front end assets management
-gem 'vite_rails'
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+# gem "kredis"
 
-# ~ Tailwind CSS [https://github.com/rails/tailwindcss-rails#readme]
-# More flexible than bootstrap
-gem 'tailwindcss-rails'
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+gem "bcrypt", "~> 3.1.7"
 
-# ~ Faker [https://github.com/faker-ruby/faker#readme]
-# For generating fake data
-gem 'faker'
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
-# ~ bcrypt [https://github.com/bcrypt-ruby/bcrypt-ruby#readme]
-# For password hashing
-gem 'bcrypt'
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", require: false
 
-# ~ devise [https://github.com/heartcombo/devise#readme]
-gem 'devise'
+# Use Sass to process CSS
+# gem "sassc-rails"
 
-# ~ SendGrid or Mailjet [readme-url]
-# For sending emails
-# TO BE DECIDED BY THE TEAM
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+# gem "image_processing", "~> 1.2"
 
-# ~ https://github.com/omniauth/omniauth#readme
-# ~ https://github.com/zquestz/omniauth-google-oauth2#readme
-# ~ https://github.com/cookpad/omniauth-rails_csrf_protection#readme
-# For Google SSO
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-rails_csrf_protection'
-
-# ~ Amazon S3 [https://github.com/aws/aws-sdk-ruby#readme]
-# For active storage
-gem 'aws-sdk-s3', require: false
-
-# ~ httparty [https://github.com/jnunemaker/httparty#readme]
-# For handling API requests
-gem 'httparty'
-
-# ~ Unsplash [https://github.com/unsplash/unsplash_rb#readme]
-# For generating random images during dev and prod tests
-gem 'unsplash'
-gem 'geocoder'
-# ########################################
+group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+end
 
 group :development do
-  # ~ Better Errors [https://github.com/BetterErrors/better_errors#readme]
-  # For better error messages
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
 
-  # ~ DatabaseConsistency [https://github.com/djezzzl/database_consistency#readme]
-  # For checking database consistency
-  gem 'database_consistency', require: false
-
-  # ~ table_print [https://github.com/arches/table_print#readme]
-  # For console display of the database
-  gem 'table_print'
-
-  # ~ erb-formatter [https://github.com/nebulab/erb-formatter#readme]
-  # For formatting ERB files
-  gem 'erb-formatter'
-
-  # ~ rubocop [https://github.com/rubocop/rubocop#readme]
-  # ~ rubocop-faker [https://github.com/koic/rubocop-faker#readme]
-  # ~ rubocop-rails [https://github.com/rubocop/rubocop-rails#readme]
-  # ~ rubocop-rspec [https://github.com/rubocop/rubocop-rspec#readme]
-  # For code quality
-  gem 'rubocop', require: false
-  gem 'rubocop-faker'
-  gem 'rubocop-rails', require: false
-  gem 'rubocop-rspec', require: false
+  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
 
-# ########################################
-
-group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
-
-  # ~ rspec [https://github.com/rspec/rspec-rails#readme]
-  # For testing
-  gem 'rspec-rails', '~> 6.0.0.rc1'
-  gem 'factory_bot_rails'
-  gem 'shoulda-matchers', '4.0.0.rc1'
-  gem 'rails-controller-testing'
-
-end
 group :test do
-  gem "nyan-cat-formatter"
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
 end
+
+gem "rails-i18n", "~> 7.0.5"
+
+gem "devise-i18n", "~> 1.10.2"
+
+gem "ransack", "~> 3.2.1"
+
+gem "groupdate", "~> 6.1.0"
+
+gem "chartkick", "~> 4.2.1"
+
+gem "kaminari", "~> 1.2.2"
+
+gem "tailwindcss-rails", "~> 2.0"
+
+gem "faker", "~> 2.23.0"
+
+gem "devise", "~> 4.8.1"
+
+gem "omniauth", "~> 2.1.0"
+
+gem "omniauth-google-oauth2", "~> 1.0.1"
+
+gem "omniauth-rails_csrf_protection", "~> 1.0.1"
+
+gem "aws-sdk-s3", "~> 1.114.0"
+
+gem "httparty", "~> 0.20.0"
+
+gem "unsplash", "~> 2.1.0"
+
+gem "geocoder", "~> 1.8.0"
+
+gem "better_errors", "~> 2.9.1", :group => :development
+
+gem "binding_of_caller", "~> 1.0.0", :group => :development
+
+gem "database_consistency", "~> 1.2.2", :group => :development
+gem "table_print", "~> 1.5.7", :group => :development
+gem "erb-formatter", "~> 0.4.2", :group => :development
+gem "rubocop", "~> 1.46", :group => :development
+gem "rubocop-faker", "~> 1.1", :group => :development
+gem "rubocop-rails", "~> 2.17", :group => :development
+gem "rubocop-rspec", "~> 2.18", :group => :development
+
+gem "rspec-rails", "~> 6.0", :groups => [:development, :test]
+gem "factory_bot_rails", "~> 6.2", :groups => [:development, :test]
+gem "shoulda-matchers", "~> 5.3", :groups => [:development, :test]
+gem "rails-controller-testing", "~> 1.0", :groups => [:development, :test]
+
+gem "nyan-cat-formatter", "~> 0.12.0", :group => :test

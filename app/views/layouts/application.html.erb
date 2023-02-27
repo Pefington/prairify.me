@@ -5,16 +5,17 @@
     <link
       rel="icon"
       type="image/png"
-      href="<%= vite_asset_path 'images/logo.png' %>"
+      href="<%= asset_path 'logo.png' %>"
     />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <script src="https://kit.fontawesome.com/e05ffa89c7.js" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "tailwind", "https://fonts.googleapis.com/css2?family=Fjalla+One&family=Quicksand:wght@500;600&display=swap", "data-turbo-track": "reload" %>
-    <%= vite_client_tag %>
-    <%= vite_javascript_tag 'application' %>
+    <%= javascript_tag 'application' %>
+    <%= javascript_importmap_tags %>
   </head>
   <body
     class="
